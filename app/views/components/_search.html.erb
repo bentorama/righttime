@@ -5,52 +5,59 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
+        <p class="modal-title">FILTER</p>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">FILTER</h4>
       </div>
       <div class="modal-body">
-        <div id="filter-button-container">
-        <div>
-          <span>HOT</span>
-          <div class="filter-button">
-            <button>
-              <i class="fas fa-fire"></i>
-            </button>
+
+        <!-- Modal Toggle Buttons -->
+        <div class="toggle-container">
+          <div>
+            <span>HOT</span>
+            <div class="filter-button">
+              <button>
+                <i class="fas fa-fire"></i>
+                <!--  add toggle function -->
+              </button>
+            </div>
+          </div>
+          <div>
+            <span>FOOD</span>
+            <div class="filter-button">
+              <button>
+                <i class="fas fa-hamburger"></i>
+                <!--  add toggle function -->
+              </button>
+            </div>
+          </div>
+          <div>
+            <span>DRINK</span>
+            <div class="filter-button">
+              <button>
+                <i class="fas fa-wine-glass-alt"></i>
+                <!--  add toggle function -->
+              </button>
+            </div>
+          </div>
+          <div>
+            <span>SHOW</span>
+            <div class="filter-button">
+              <button>
+                <i class="fas fa-film"></i>
+                <!--  add toggle function -->
+              </button>
+            </div>
+          </div>
+          <div>
+            <span>MUSIC</span>
+            <div class="filter-button">
+              <button>
+                <i class="fas fa-music"></i>
+                <!--  add toggle function -->
+              </button>
+            </div>
           </div>
         </div>
-        <div>
-          <span>FOOD</span>
-          <div class="filter-button">
-            <button>
-              <i class="fas fa-hamburger"></i>
-            </button>
-          </div>
-        </div>
-        <div>
-          <span>DRINK</span>
-          <div class="filter-button">
-            <button>
-              <i class="fas fa-wine-glass-alt"></i>
-            </button>
-          </div>
-        </div>
-        <div>
-          <span>SHOW</span>
-          <div class="filter-button">
-            <button>
-              <i class="fas fa-film"></i>
-            </button>
-          </div>
-        </div>
-        <div>
-          <span>MUSIC</span>
-          <div class="filter-button">
-            <button>
-              <i class="fas fa-music"></i>
-            </button>
-          </div>
-        </div>
-      </div>
       </div>
     </div>
   </div>
@@ -65,10 +72,10 @@
     <div>
       <form id="form"> 
         <input type="search" id="query" name="q" placeholder="Search">
-        <!-- trigger/open filter -->
       </form>
     </div>
     <div>
+      <!-- open modal -->
       <button class="fas fa-sliders-h" data-toggle="modal" data-target="#myModal"></button>
     </div>
   </div>
