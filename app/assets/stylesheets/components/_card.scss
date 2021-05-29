@@ -1,5 +1,5 @@
 .card-product {
-  height: 144px;
+  height: 162px;
   background: white;
   display: flex;
   margin: 10px;
@@ -43,7 +43,6 @@
 .scroller {
   display: flex;
   overflow: auto;
-  white-space: nowrap;
   box-shadow: 0 0 20px 10px rgba(0,0,0,0.2);
   background-color: white;
 }
@@ -56,8 +55,8 @@
 
 .badge {
   position: absolute;
-  top: 105px;
-  right: 302px;
+  top: 122px;
+  right: 321px;
   padding: 7px 10px;
   border-radius: 20px;
   background: $content-color;
@@ -85,4 +84,8 @@
   p {
     font-size: 15px;
   }
+}
+
+.infos-middle {
+  width: 250px !important;
 }
