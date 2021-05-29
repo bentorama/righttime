@@ -12,6 +12,6 @@ class User < ApplicationRecord
   after_initialize :set_defaults
 
   def set_defaults
-    self.owner = false if self.owner.nil?
+    self.owner = false if owner.nil?
   end
 end

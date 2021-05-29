@@ -18,15 +18,14 @@ puts "creating users..."
   )
 end
 
-puts "users created"
+puts "users created!"
 
 puts "creating venues..."
 
 @venue_owners = User.first(5)
 
 @venue_owners.each do |owner|
-  owner.owner = TRUE
-  p owner
+  owner.owner = true
   5.times do 
     Venue.create!(
       address: Faker::Address.street_address,
@@ -34,8 +33,30 @@ puts "creating venues..."
       description: Faker::Restaurant.description,
       user: owner
     )
+  end
   owner.save!
 end
 
-puts "Venues created!"
+puts "venues created!"
+
+puts "creating events..."
+
+@venues = Venue.all
+
+@venues.each do |venue|
+  5.times do
+    starting_price = rand(10.0..100.0).round(2)
+    Event.create!(
+      starting_price: starting_price,
+      start_time: Faker::Time.forward(days: 5,  period: :evening, format: :long),
+      venue: venue,
+      description: Faker::Restaurant.description,
+      name: Faker::Kpop.iii_groups,
+      num_tickets: (1..100).to_a.sample,
+      duration: [30, 60, 90, 120].sample,
+      min_price: rand((starting_price * 0.5)..(starting_price*0.9)).round(2),
+    )
+  end
 end
+
+puts "events created!"
