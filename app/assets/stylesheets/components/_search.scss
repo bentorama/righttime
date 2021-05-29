@@ -6,8 +6,18 @@
 // }
 
 // Modal
+.close {
+  margin-left: auto;
+  color: white;
+  opacity: 1;
+}
+
 .header {
   display: flex;
+
+  span {
+    color: white;
+  }
 }
 
 .modal-body {
@@ -34,14 +44,23 @@
   font-size: 16px;
 }
 
+// Go button
+
+.go {
+  border: 3px solid #FFFFFF;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: white;
+  width: 97px;
+  height: 40px;
+}
+
 // Toggle Buttons
 .filter-button {
   border-style: solid;
   border-color: white;
   border-radius: 50%;
   display: flex;
-  font-family: Puritan;
-  font-size: 16px;
   height: 50px;
   justify-content: center;
   width: 50px;
@@ -49,15 +68,22 @@
   img {
     height: 30px;
   }
-  .fas {
-    height: 30px;
+
+  span {
+    font-family: Puritan;
+    font-size: 16px;
   }
+
 }
 
 .toggle-container {
   display: flex;
   justify-content: space-between;
   margin-top: 8%;
+
+  span {
+    color: white;
+  }
 }
 
 // Search
