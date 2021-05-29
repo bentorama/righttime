@@ -49,7 +49,7 @@ puts "creating events..."
 end
 
 @venues.each do |venue|
-  5.times do
+  1.times do
     starting_price = rand(10.0..100.0).round(2)
     Event.create!(
       starting_price: starting_price,
