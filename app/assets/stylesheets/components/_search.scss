@@ -25,8 +25,7 @@
   justify-content: center;
 }
 
-// Search Bar Design
-
+// Search form design
 .fas {
   color: white;
 }
@@ -36,30 +35,30 @@
   padding-right: 4px;
 }
 
-::placeholder { 
+::placeholder {
+  color: white; 
   font-family: puritan;
-  color: white;
   opacity: 1;
 }
 
 .search-container {
-  display: flex;
+  align-items: center;
   background-color: #B16F9E;
-  border-style: solid;
   border-color: white;
   border-radius: 16px;
+  border-style: solid;
+  display: flex;
+  height: 34px;
   width: 300px;
-  height: 2em;
-  align-items: center;
 
   i {
-    padding-right: 4px;
-    padding-left: 8px;
     color: white;
+    padding-left: 8px;
+    padding-right: 4px;
   }
 }
 
-// Remove Default Form Style
+// Remove default form styling
 input {
   border-top-style: hidden;
   border-right-style: hidden;
@@ -69,11 +68,12 @@ input {
   color: white;
 }
 
-// Remove Outline from Search Box
+// Remove outline from search box
 #query:focus {
   outline: none;
 }
 
+// Remove default button styling
 button {
   border-top-style: hidden;
   border-right-style: hidden;
@@ -82,7 +82,7 @@ button {
   background-color: #B16F9E;
 }
 
-// Remove Cancel from Input
+// Remove styling from input
 input[type=text]::-ms-clear {  display: none; width : 0; height: 0; }
 input[type=text]::-ms-reveal {  display: none; width : 0; height: 0; }
 input[type="search"]::-webkit-search-decoration,
