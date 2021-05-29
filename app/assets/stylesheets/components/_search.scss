@@ -17,6 +17,11 @@
 }
 
 // Search Bar Design
+::placeholder { 
+  color: white;
+  opacity: 1;
+}
+
 .search-container {
   display: flex;
   background-color: #B16F9E;
