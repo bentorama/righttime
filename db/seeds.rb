@@ -13,7 +13,7 @@ User.destroy_all
 
 puts "creating users..."
 
-10.times do
+20.times do
   User.create!(
     email: Faker::Internet.email,
     password: "password"
@@ -53,13 +53,14 @@ end
     starting_price = rand(10.0..100.0).round(2)
     Event.create!(
       starting_price: starting_price,
-      start_time: Faker::Time.forward(days: 5,  period: :evening, format: :long),
+      start_time: Faker::Time.between_dates(from: Date.today - 30, to: Date.today + 30, period: :evening),
+      # start_time: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
       venue: venue,
       description: Faker::Restaurant.description,
       name: Faker::Kpop.iii_groups,
       num_tickets: (5..100).to_a.sample,
       duration: [30, 60, 90, 120].sample,
-      min_price: rand((starting_price * 0.5)..(starting_price*0.9)).round(2),
+      min_price: rand((starting_price * 0.5)..(starting_price*0.9)).round(2)
     )
   end
 end
@@ -82,7 +83,8 @@ end
   counter = event.num_tickets
   5.times do
     if counter > 0
-      num_attendees = rand(1..counter)
+      max_attendees = [counter, 5].min
+      num_attendees = rand(1..max_attendees)
       total_cost = num_attendees * event.starting_price
       Booking.create!(
         num_attendees: num_attendees,
@@ -97,8 +99,11 @@ end
 
 puts 'bookings created!'
 puts 'creating reviews...'
-
+past_bookings = []
 Booking.all.each do |booking|
+  past_bookings << booking if booking.event.start_time < Time.zone.now
+end
+past_bookings.each do |booking|
   Review.create!(
     event_review: Faker::Restaurant.review,
     venue_rating: (1..5).to_a.sample,
