@@ -19,7 +19,6 @@ puts "creating users..."
 end
 
 puts "users created!"
-
 puts "creating venues..."
 
 @venue_owners = User.first(5)
@@ -38,7 +37,6 @@ puts "creating venues..."
 end
 
 puts "venues created!"
-
 puts "creating events..."
 
 @venues = Venue.all
@@ -52,7 +50,7 @@ puts "creating events..."
       venue: venue,
       description: Faker::Restaurant.description,
       name: Faker::Kpop.iii_groups,
-      num_tickets: (1..100).to_a.sample,
+      num_tickets: (5..100).to_a.sample,
       duration: [30, 60, 90, 120].sample,
       min_price: rand((starting_price * 0.5)..(starting_price*0.9)).round(2),
     )
@@ -60,3 +58,39 @@ puts "creating events..."
 end
 
 puts "events created!"
+puts "creating bookings..."
+@users = []
+User.where(owner: false).each do |user|
+  @users << user
+end
+
+@events = Event.all
+@events.each do |event|
+  counter = event.num_tickets
+  5.times do
+    if counter > 0
+      num_attendees = rand(1..counter)
+      total_cost = num_attendees * event.starting_price
+      Booking.create!(
+        num_attendees: num_attendees,
+        total_cost: total_cost,
+        event: event,
+        user: @users.sample
+      )
+      counter -= num_attendees
+    end
+  end
+end
+
+puts 'bookings created!'
+puts 'creating reviews...'
+
+Booking.all.each do |booking|
+  Review.create!(
+    event_review: Faker::Restaurant.review,
+    venue_rating: (1..5).to_a.sample,
+    booking: booking
+  )
+end
+
+puts 'reviews created!'
