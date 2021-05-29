@@ -8,4 +8,10 @@ class User < ApplicationRecord
   has_many :venues, dependent: :destroy
   has_many :events, through: :venues
   has_many :reviews, through: :bookings
+
+  after_initialize :set_defaults
+
+  def set_defaults
+    self.owner = false if owner.nil?
+  end
 end
