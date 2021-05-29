@@ -1,3 +1,11 @@
+// Component
+.component-container {
+  position: fixed;
+  z-index: 1;
+  margin-top: -16px;
+  left: 20px;
+}
+
 // Modal
 .modal-content {
   background-color: #B16F9E;
