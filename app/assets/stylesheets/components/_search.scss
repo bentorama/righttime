@@ -28,7 +28,6 @@
 // Search Bar Design
 ::placeholder { 
   font-family: puritan;
-  padding-left: 2px;
   color: white;
   opacity: 1;
 }
@@ -44,6 +43,7 @@
   align-items: center;
 
   i {
+    padding-right: 4px;
     padding-left: 8px;
     color: white;
   }
@@ -56,6 +56,11 @@ input {
   border-left-style: hidden;
   border-bottom-style: hidden;
   background-color: #B16F9E;
+  color: white;
+}
+
+#query::-ms-clear {
+  display: none;
 }
 
 #query:focus {
