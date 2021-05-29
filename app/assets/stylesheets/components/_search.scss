@@ -13,8 +13,11 @@
 
 .modal-content {
   background-color: #B16F9E;
-  border-style: solid;
   border-color: white;
+  border-style: solid;
+  border-radius: 16px;
+  border-width: 3px;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
   margin-top: 50%;
 }
 
@@ -31,7 +34,8 @@
   border-radius: 50%;
   font-family: Puritan;
   font-size: 16px;
-  width: 2em;
+  width: 40px;
+  height: 40px;
 }
 
 .toggle-container {
@@ -68,6 +72,7 @@
   border-radius: 16px;
   border-style: solid;
   display: flex;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
   height: 34px;
   width: 300px;
 
