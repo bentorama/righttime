@@ -1,0 +1,88 @@
+.card-product {
+  height: 144px;
+  background: white;
+  display: flex;
+  margin: 10px;
+  width: 1000px;
+  border-color: black;
+  position: relative;
+
+  h2 {
+    color: black;
+  }
+}
+
+.card-product img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 17px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 15px;
+  line-height: 1.4;
+  opacity: .7;
+}
+
+.card-product .card-product-infos {
+  padding: 0px 16px;
+}
+
+.card-product-infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.scroller {
+  display: flex;
+  overflow: auto;
+  white-space: nowrap;
+  box-shadow: 0 0 20px 10px rgba(0,0,0,0.2);
+  background-color: white;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.badge {
+  position: absolute;
+  top: 105px;
+  right: 302px;
+  padding: 7px 10px;
+  border-radius: 20px;
+  background: $content-color;
+  color: white;
+  font-size: 15px;
+  border: 3px solid white;
+}
+
+.card-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-content: flex-start;
+
+  a {
+    text-decoration: none;
+    color: $content-color;
+  }
+}
+
+.card-top-left {
+  display: flex;
+  justify-content: start;
+  align-content: flex-end;
+
+  p {
+    font-size: 15px;
+  }
+}
