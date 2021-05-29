@@ -1,3 +1,5 @@
+require "open-uri"
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -39,7 +41,12 @@ end
 puts "venues created!"
 puts "creating events..."
 
-@venues = Venue.all
+@venues = Venue.all 
+
+@venues.each do |venue|
+  file = URI.open('https://res.cloudinary.com/dhkhvto68/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1622300343/samples/venue/joshua-eckstein-lbRzSxHS2kU-unsplash_bd7tbv.jpg')
+  venue.photos.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+end
 
 @venues.each do |venue|
   5.times do
@@ -65,6 +72,12 @@ User.where(owner: false).each do |user|
 end
 
 @events = Event.all
+
+@events.each do |event|
+  file = URI.open('https://res.cloudinary.com/dhkhvto68/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1622298458/samples/venue/sebastiaan-stam-qWaWdIchPqE-unsplash_bu2ba4.jpg')
+  event.photos.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+end
+
 @events.each do |event|
   counter = event.num_tickets
   5.times do
