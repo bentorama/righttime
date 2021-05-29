@@ -22,9 +22,11 @@ puts "users created"
 
 puts "creating venues..."
 
-p @venue_owners = User.first(5)
+@venue_owners = User.first(5)
 
 @venue_owners.each do |owner|
+  owner.owner = TRUE
+  p owner
   5.times do 
     Venue.create!(
       address: Faker::Address.street_address,
@@ -32,6 +34,8 @@ p @venue_owners = User.first(5)
       description: Faker::Restaurant.description,
       user: owner
     )
+  owner.save!
 end
 
+puts "Venues created!"
 end
