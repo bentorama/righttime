@@ -23,6 +23,7 @@
 .modal-body {
   height: 200px;
   width: auto;
+  text-align: center;
 
   p {
     color: white;
@@ -64,6 +65,7 @@
   height: 50px;
   justify-content: center;
   width: 50px;
+  }
 
   img {
     height: 30px;
@@ -73,8 +75,6 @@
     font-family: Puritan;
     font-size: 16px;
   }
-
-}
 
 .toggle-container {
   display: flex;
