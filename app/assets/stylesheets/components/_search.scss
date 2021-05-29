@@ -1,16 +1,26 @@
 // Component
-.component-container {
-  position: fixed;
-  z-index: 1;
-  margin-top: -16px;
-  left: 20px;
-}
+// .component-container {
+//   position: fixed;
+//   margin-top: -16px;
+//   left: 20px;
+// }
 
 // Modal
+.modal-body {
+  height: 200px;
+  width: 300px;
+}
+
 .modal-content {
   background-color: #B16F9E;
   border-style: solid;
   border-color: white;
+  margin-top: 50%;
+}
+
+.modal-title {
+  font-family: Puritan;
+  font-size: 16px;
 }
 
 
@@ -19,6 +29,8 @@
   border-style: solid;
   border-color: white;
   border-radius: 50%;
+  font-family: Puritan;
+  font-size: 16px;
   width: 2em;
 }
 
@@ -28,7 +40,7 @@
 }
 
 // Search
-.container {
+.position-container {
   display: flex;
   justify-content: center;
 }
