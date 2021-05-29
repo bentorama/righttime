@@ -9,6 +9,10 @@
 .modal-body {
   height: 200px;
   width: 300px;
+
+  p {
+    color: white;
+  }
 }
 
 .modal-content {
@@ -32,15 +36,17 @@
   border-style: solid;
   border-color: white;
   border-radius: 50%;
+  display: flex;
   font-family: Puritan;
   font-size: 16px;
-  width: 40px;
   height: 40px;
+  justify-content: center;
+  width: 40px;
 }
 
 .toggle-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 // Search
