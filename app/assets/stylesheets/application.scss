@@ -12,6 +12,9 @@
 @import "components/index";
 @import "pages/index";
 
+.min-height {
+  min-height: calc(100vh - 48px);
+}
 
 h1 {
   font-family: $header-one;

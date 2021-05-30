@@ -9,13 +9,21 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Puritan&display=swap" rel="stylesheet">
+    <%= favicon_link_tag 'dice.png' %>
+
   </head>
 
   <body>
     <%= render 'shared/flashes' %>
 
-    <%= yield %>
+    <div class="min-height"><%= yield %></div>
+      <div class="footer">
+          <div><a href="/" class="fas fa-search"></a></div>
+          <div><a href="#" class="far fa-heart"></a></div>
+          <div><a href="/users/sign_in" class="far fa-user"></a></div>
+      </div>
   </body>
 </html>
