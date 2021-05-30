@@ -1,0 +1,165 @@
+// Component
+// .component-container {
+//   position: fixed;
+//   margin-top: -16px;
+//   left: 20px;
+// }
+
+// Modal
+.close {
+  margin-left: auto;
+  color: white;
+  opacity: 1;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  margin-top: -8px;
+
+  span {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+  }
+}
+
+.modal-body {
+  height: 210px;
+  width: auto;
+  text-align: center;
+
+  p {
+    color: white;
+  }
+}
+
+.modal-content {
+  background-color: #B16F9E;
+  border-color: white;
+  border-style: solid;
+  border-radius: 16px;
+  border-width: 3px;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
+  margin-top: 50%;
+}
+
+.modal-title {
+  font-family: Puritan;
+  font-size: 16px;
+}
+
+// Go button
+
+.go {
+  border: 3px solid #FFFFFF;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: white;
+  width: 97px;
+  height: 40px;
+}
+
+// Toggle Buttons
+.filter-button {
+  border-style: solid;
+  border-color: white;
+  border-radius: 50%;
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  margin-top: 4px;
+  width: 50px;
+  }
+
+  img {
+    height: 30px;
+  }
+
+  span {
+    font-family: Puritan;
+    font-size: 16px;
+  }
+
+.toggle-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6%;
+  margin-bottom: 6%;
+
+  span {
+    color: white;
+  }
+}
+
+// Search
+.position-container {
+  display: flex;
+  justify-content: center;
+}
+
+// Search form design
+.fas {
+  color: white;
+}
+
+.filter-icon {
+  margin-left: auto;
+  padding-right: 4px;
+}
+
+::placeholder {
+  color: white; 
+  font-family: puritan;
+  opacity: 1;
+}
+
+.search-container {
+  align-items: center;
+  background-color: #B16F9E;
+  border-color: white;
+  border-radius: 16px;
+  border-style: solid;
+  display: flex;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
+  height: 34px;
+  width: 300px;
+
+  i {
+    color: white;
+    padding-left: 8px;
+    padding-right: 4px;
+  }
+}
+
+// Remove default form styling
+input {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+  background-color: #B16F9E;
+  color: white;
+}
+
+// Remove outline from search box
+#query:focus {
+  outline: none;
+}
+
+// Remove default button styling
+button {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+  background-color: Transparent;
+}
+
+// Remove styling from input
+input[type=text]::-ms-clear {  display: none; width : 0; height: 0; }
+input[type=text]::-ms-reveal {  display: none; width : 0; height: 0; }
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
