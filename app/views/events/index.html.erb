@@ -1,46 +1,34 @@
 <%# <div class="map-placeholder">
     <img src="https://res.cloudinary.com/markcarson121/image/upload/v1622145309/map-example_eysme7.png">
 </div> %>
-
 <div class="min-height main-container">
     <!--card carousel-->
         <div class="scroller">
-            <div class="card-product">
-                <span class="badge">£10</span>
-                <img src="https://res.cloudinary.com/markcarson121/image/upload/v1622143414/noiseporn-JNuKyKXLh8U-unsplash_cy4jyr.jpg" />
-                <div class="card-product-infos">
-                    <div class="infos-top">
-                        <div class="card-top-row">
-                            <div class="card-top-left"><a href=# class="far fa-star"></a> <p> 4.2 (23)</p></div>
-                            <div><a href="#" class="far fa-heart"></a></div>
+            <% @events.each do |event| %>
+                <div class="card-product">
+                    <span class="badge">£<%= event.starting_price %></span>
+                    <img src="https://res.cloudinary.com/markcarson121/image/upload/v1622143414/noiseporn-JNuKyKXLh8U-unsplash_cy4jyr.jpg" />
+                    <div class="card-product-infos">
+                        <div class="infos-top">
+                            <div class="card-top-row">
+                                <div class="card-top-left"><a href=# class="far fa-star"></a> <p> 4.2 (23)</p></div>
+                                <div><a href="#" class="far fa-heart"></a></div>
+                            </div>
+                        </div>
+                        <div class="infos-middle">
+                            <h2><%= event.name %></h2>
+                            <p><% d = event.description %>
+                                <% description = d.split[0...15].join(' ') %>
+                                <%= description %>
+                            </p>
+                        </div>
+                        <div class="infos-bottom">
+                            <p>Starts at <% t = event.start_time %>
+                                         <%= t.strftime("%l:%M %P") %>
+                                            !</p>
                         </div>
                     </div>
-                    <div class="infos-middle">
-                        <h2>First Event</h2>
-                        <p>Here is a description of my event</p>
-                    </div>
-                    <div class="infos-bottom">
-                        <p>Starts in 20 mins!</p>
-                    </div>
                 </div>
-            </div>
-
-            <div class="card-product">
-                <span class="badge">£15</span>
-                <img src="https://res.cloudinary.com/markcarson121/image/upload/v1622143414/noiseporn-JNuKyKXLh8U-unsplash_cy4jyr.jpg" />
-                <div class="card-product-infos">
-                    <h2>Second Event</h2>
-                    <p>Here is a description of my event</p>
-                </div>
-            </div>
-
-            <div class="card-product">
-                <span class="badge">£20</span>
-                <img src="https://res.cloudinary.com/markcarson121/image/upload/v1622143414/noiseporn-JNuKyKXLh8U-unsplash_cy4jyr.jpg" />
-                <div class="card-product-infos">
-                    <h2>Third Event</h2>
-                    <p>Here is a description of my event</p>
-                </div>
-            </div>
+            <% end %>
         </div>
 </div>
