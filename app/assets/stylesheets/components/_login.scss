@@ -21,19 +21,22 @@
 }
 
 // Platform Login Buttons
+.platform-login {
+  display: flex;
+  justify-content: space-around;
+}
 .platform-login-button {
+  align-items: center;
   background-color: white;
   border-radius: 50%;
   display: flex;
-  height: 50px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  height: 45px;
   justify-content: center;
+  margin-top: 24px;
+  margin-bottom: 24px;
   position: relative;
-  width: 50px;
-
-  i {
-    height: 50px;
-    width: 50px;
-  }
+  width: 45px;
 
   img {
     height: 35px;
@@ -72,6 +75,28 @@
   font-size: 16px;
 }
 
+
+// Country Codes
+
+.country-codes {
+  select {
+    background-color: white;
+    border-style: solid;
+    width: 75%;
+  }
+
+  span {
+    color: white;
+    font-family: Puritan;
+    font-size: 12px;
+  }
+}
+// Removes default <select> CSS
+#country-codes {
+  -webkit-appearance: none;
+}
+
+
 // Phone Number Input
 #phone-number{
   input {
@@ -96,24 +121,4 @@
   font-family: Puritan;
   font-size: 16px;
   margin-bottom: 4px;
-}
-
-// Country Codes
-
-.country-codes {
-  select {
-    background-color: white;
-    border-style: solid;
-    width: 75%;
-  }
-
-  span {
-    color: white;
-    font-family: Puritan;
-    font-size: 12px;
-  }
-}
-// Removes default <select> CSS
-#country-codes {
-  -webkit-appearance: none;
 }
