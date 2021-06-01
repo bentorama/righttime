@@ -1,0 +1,22 @@
+.booking-bar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  height: 64px;
+  background-color: $content-color;
+
+  p {
+    margin-bottom: 0rem !important;
+    color: white;
+    font-size: 20px;
+  }
+}
+
+.booking-btn {
+  border-style: solid; 
+  border-radius: 5px;
+  border-color: white; 
+  padding: 4px;
+  color: white;
+}
