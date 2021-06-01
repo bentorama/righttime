@@ -27,7 +27,7 @@ puts "creating venues..."
 address_array = []
 csv_options = { headers: :first_row, header_converters: :symbol }
 CSV.foreach('./app/assets/data/london_postcodes.csv', csv_options) do |row|
-  address = "London, #{row[:pcd]}"
+  address = "#{row[:pcd]}, London, UK"
   address_array << address
 end
 
@@ -50,10 +50,10 @@ puts "creating events..."
 
 #create 1 event at each venue
 
-Venue.all.each do |venue|
-  file = URI.open('https://res.cloudinary.com/dhkhvto68/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1622300343/samples/venue/joshua-eckstein-lbRzSxHS2kU-unsplash_bd7tbv.jpg')
-  venue.photos.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
-end
+# Venue.all.each do |venue|
+#   file = URI.open('https://res.cloudinary.com/dhkhvto68/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1622300343/samples/venue/joshua-eckstein-lbRzSxHS2kU-unsplash_bd7tbv.jpg')
+#   venue.photos.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+# end
 
 Venue.all.each do |venue|
   1.times do
@@ -79,10 +79,10 @@ User.where(owner: false).each do |user|
   users << user
 end
 
-Event.all.each do |event|
-  file = URI.open('https://res.cloudinary.com/dhkhvto68/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1622298458/samples/venue/sebastiaan-stam-qWaWdIchPqE-unsplash_bu2ba4.jpg')
-  event.photos.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
-end
+# Event.all.each do |event|
+#   file = URI.open('https://res.cloudinary.com/dhkhvto68/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1622298458/samples/venue/sebastiaan-stam-qWaWdIchPqE-unsplash_bu2ba4.jpg')
+#   event.photos.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+# end
 
 Event.all.each do |event|
   counter = event.num_tickets
