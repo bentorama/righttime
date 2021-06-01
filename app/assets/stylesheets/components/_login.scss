@@ -7,6 +7,13 @@
   color: white;
   font-family: Puritan;
 }
+
+// Country Codes
+// Removes default <select> CSS
+#country-codes {
+  -webkit-appearance: none;
+}
+
 // input {
 //   background-color: white;
 // }
