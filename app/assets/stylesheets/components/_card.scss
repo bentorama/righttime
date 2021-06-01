@@ -22,6 +22,14 @@
   font-size: 17px;
   font-weight: bold;
   margin: 0;
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  a:hover {
+    color: $content-color;
+  }
 }
 
 .card-product p {
