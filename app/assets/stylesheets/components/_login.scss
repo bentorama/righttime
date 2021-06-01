@@ -18,6 +18,8 @@
   border-radius: 8px;
   color: white;
   font-family: Puritan;
+  height: 40px;
+  width: 140px;
 }
 
 // Platform Login Buttons
@@ -25,6 +27,7 @@
   display: flex;
   justify-content: space-around;
 }
+
 .platform-login-button {
   align-items: center;
   background-color: white;
@@ -33,8 +36,8 @@
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   height: 45px;
   justify-content: center;
-  margin-top: 24px;
-  margin-bottom: 24px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   position: relative;
   width: 45px;
 
@@ -50,6 +53,10 @@
 
 
 // Modal Design
+.header {
+  margin-bottom: 8px;
+}
+
 .modal-body {
   height: auto;
   width: auto;
@@ -67,7 +74,14 @@
   border-radius: 16px;
   border-width: 3px;
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
-  margin-top: 50%;
+  margin-top: 30%;
+  padding-bottom: 12px;
+  width: 90%
+}
+
+.modal-dialog {
+  display: flex;
+  justify-content: center;
 }
 
 .modal-title {
@@ -77,11 +91,13 @@
 
 
 // Country Codes
-
 .country-codes {
   select {
     background-color: white;
+    border-radius: 4px;
     border-style: solid;
+    height: 40px;
+    padding-left: 8px;
     width: 75%;
   }
 
@@ -101,18 +117,22 @@
 #phone-number{
   input {
     background-color: white;
+    border-radius: 4px;
     color: black;
+    height: 40px;
+    margin-bottom: 12px;
+    padding-left: 8px;
     width: 75%;
-    margin-bottom: 4px;
-  }
-
-  label {
-    color: white;
-    font-family: Puritan;
-    font-size: 12px;
-    margin-bottom: -4px;
   }
 }
+
+label {
+  color: white;
+  font-family: Puritan;
+  font-size: 12px;
+  margin-bottom: -4px;
+}
+
 
 // Or
 
@@ -120,5 +140,5 @@
   color: white;
   font-family: Puritan;
   font-size: 16px;
-  margin-bottom: 4px;
+  margin-bottom: 12px;
 }
