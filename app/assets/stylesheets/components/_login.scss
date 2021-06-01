@@ -23,13 +23,11 @@
 // Platform Login Buttons
 .platform-login-button {
   background-color: white;
-  border-style: solid;
-  border-color: white;
   border-radius: 50%;
   display: flex;
   height: 50px;
   justify-content: center;
-  margin-top: 4px;
+  position: relative;
   width: 50px;
 
   i {
@@ -40,8 +38,13 @@
   img {
     height: 35px;
     width: 35px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
   }
 }
+
 
 // Modal Design
 .modal-body {
@@ -68,12 +71,49 @@
   font-family: Puritan;
   font-size: 16px;
 }
+
+// Phone Number Input
+#phone-number{
+  input {
+    background-color: white;
+    color: black;
+    width: 75%;
+    margin-bottom: 4px;
+  }
+
+  label {
+    color: white;
+    font-family: Puritan;
+    font-size: 12px;
+    margin-bottom: -4px;
+  }
+}
+
+// Or
+
+#or {
+  color: white;
+  font-family: Puritan;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
 // Country Codes
+
+.country-codes {
+  select {
+    background-color: white;
+    border-style: solid;
+    width: 75%;
+  }
+
+  span {
+    color: white;
+    font-family: Puritan;
+    font-size: 12px;
+  }
+}
 // Removes default <select> CSS
 #country-codes {
   -webkit-appearance: none;
 }
-
-// input {
-//   background-color: white;
-// }

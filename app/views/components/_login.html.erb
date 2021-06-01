@@ -13,7 +13,7 @@
           </div>
 
           <!-- Country Codes -->
-          <div>
+          <div class="country-codes">
             <span>Country/Region</span>
             <select name="countryCode" id="country-codes">
               <option data-countryCode="GB" value="44" Selected>UK (+44)</option>
@@ -237,12 +237,14 @@
           </div>
 
           <!-- Phone Number Input -->
-          <div>
+          <div id="phone-number">
             <label for="phone">Phone Number</label>
             <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
           </div>
-
-          <p>Or</p>
+          
+          <div id="or">
+            <span>Or</span>
+          </div>
 
           <!-- Continue Button -->
           <div>
@@ -253,21 +255,27 @@
 
           <!-- Facebook, Google and Apple Links -->
           <div class="platform-login">
-            <a href="#">
-              <button type="button" class="platform-login-button">
-                <i class="fab fa-facebook"></i>
-              </button>
-            </a>
-            <a href="#">
-              <button type="button" class="platform-login-button">
-                <img src="assets/google" alt="Google">
-              </button>
-            </a>
-            <a href="#">
-              <button type="button" class="platform-login-button">
-                <img src="assets/apple" alt="Apple">
-              </button>
-            </a>
+            <div>
+              <a href="#">
+                <button type="button" class="platform-login-button">
+                  <img src="assets/facebook" alt="Facebook">
+                </button>
+              </a>
+            </div>
+            <div>
+              <a href="#">
+                <button type="button" class="platform-login-button">
+                  <img src="assets/google" alt="Google">
+                </button>
+              </a>
+            </div>
+            <div>
+              <a href="#">
+                <button type="button" class="platform-login-button">
+                  <img src="assets/apple" alt="Apple">
+                </button>
+              </a>
+            </div>
           </div>
 
           <!-- Email Button -->
