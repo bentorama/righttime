@@ -1,4 +1,6 @@
 // Button Design
+
+// Book Now Button
 #book-now {
   background-color: #b16f9e; 
   border: 3px solid #FFFFFF;
@@ -8,6 +10,64 @@
   font-family: Puritan;
 }
 
+// Continue and Email Buttons
+.nav-button {
+  background-color: #b16f9e; 
+  border: 3px solid #FFFFFF;
+  box-sizing: border-box;
+  border-radius: 8px;
+  color: white;
+  font-family: Puritan;
+}
+
+// Platform Login Buttons
+.platform-login-button {
+  background-color: white;
+  border-style: solid;
+  border-color: white;
+  border-radius: 50%;
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  margin-top: 4px;
+  width: 50px;
+
+  i {
+    height: 50px;
+    width: 50px;
+  }
+
+  img {
+    height: 35px;
+    width: 35px;
+  }
+}
+
+// Modal Design
+.modal-body {
+  height: auto;
+  width: auto;
+  text-align: center;
+
+  p {
+    color: white;
+  }
+}
+
+.modal-content {
+  background-color: #B16F9E;
+  border-color: white;
+  border-style: solid;
+  border-radius: 16px;
+  border-width: 3px;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
+  margin-top: 50%;
+}
+
+.modal-title {
+  font-family: Puritan;
+  font-size: 16px;
+}
 // Country Codes
 // Removes default <select> CSS
 #country-codes {
