@@ -1,0 +1,62 @@
+.sign-in-container {
+  padding: 20px;
+    h1 {
+    color: $content-color;
+    }
+
+}
+
+.form-container {
+  padding-top: 36px;
+}
+
+.log-in-button {
+  color: white;
+  font: $header-two;
+  background-color: $content-color;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sign-up-container {
+  margin-top: 50px;
+}
+
+.sign-up-btn {
+  color: $content-color;
+  font: $header-two;
+  background-color: white;
+  padding: 8px 8px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: $content-color;
+  border-radius: 4px;
+  font-weight: bolder;
+  font-size: 15px;
+}
+
+.sign-up-btn:hover {
+  text-decoration: none;
+  font-weight: bolder;
+  color: $content-color;
+}
+
+.forgot-password-btn {
+  color: $content-color;
+}
+
+.forgot-password-btn:hover {
+  text-decoration: none;
+  font-weight: bolder;
+  color: $content-color;
+}
+
+.form-links {
+  padding-top: 20px;
+}
