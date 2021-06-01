@@ -1,0 +1,11 @@
+<div class="footer">
+    <div><a href="/" class="fas fa-search"></a></div>
+    <div><a href="#" class="far fa-heart"></a></div>
+    <% if user_signed_in? %>
+        <%= link_to(destroy_user_session_path, method: :delete) do %> 
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", class: "avatar-bordered", alt: "avatar-bordered" %>
+        <% end %>
+    <% else %>
+        <div><a href="/users/sign_in" class="far fa-user"></a></div>
+    <% end %>
+</div>

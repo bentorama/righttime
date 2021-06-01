@@ -16,7 +16,7 @@
 #
 default: &default
   adapter: postgresql
-  encoding: SQL_ASCII
+  encoding: UTF-8
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -24,6 +24,7 @@ default: &default
 development:
   <<: *default
   database: righttime_development
+  template: template0
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -58,6 +59,7 @@ development:
 test:
   <<: *default
   database: righttime_test
+  template: template0
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -83,3 +85,4 @@ production:
   database: righttime_production
   username: righttime
   password: <%= ENV['RIGHTTIME_DATABASE_PASSWORD'] %>
+  template: template0
