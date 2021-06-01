@@ -7,7 +7,7 @@
             <% @events.each do |event| %>
                 <div class="card-product">
                     <span class="badge">£<%= event.starting_price %></span>
-                    <img src="https://res.cloudinary.com/markcarson121/image/upload/v1622143414/noiseporn-JNuKyKXLh8U-unsplash_cy4jyr.jpg" />
+                    <%= link_to image_tag("https://res.cloudinary.com/markcarson121/image/upload/v1622143414/noiseporn-JNuKyKXLh8U-unsplash_cy4jyr.jpg"), event_path(event) %>
                     <div class="card-product-infos">
                         <div class="infos-top">
                             <div class="card-top-row">
@@ -16,10 +16,10 @@
                             </div>
                         </div>
                         <div class="infos-middle">
-                            <h2><%= event.name %></h2>
+                            <h2><%= link_to event.name, event_path(event) %></h2>
                             <p><% d = event.description %>
                                 <% description = d.split[0...15].join(' ') %>
-                                <%= description %>
+                                <%= description %>...
                             </p>
                         </div>
                         <div class="infos-bottom">

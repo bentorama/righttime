@@ -1,0 +1,45 @@
+
+p {
+  font-size: 14px;
+}
+
+.show-container {
+  padding: 20px;
+  h2 {
+    color: black;
+    font-size: 22px !important;
+  }
+}
+
+.show-stars {
+  display:flex;
+}
+
+.review-container {
+  display:flex;
+  p {
+    margin-left: 1rem;
+    margin-top: 0.3rem;
+  }
+
+  .avatar-bordered {
+    height: 34px;
+  }
+}
+
+.show-time-badge {
+  background-color: $content-color;
+  border-style: solid; 
+  border-radius: 10px;
+  border-color: white;
+  color: white;
+  width: 120px;
+  padding: 6px;
+  align-content: center;
+  position: absolute;
+  right: 10px; 
+  top: 10px;
+  p {
+    margin-bottom: 0rem;
+  }
+}
