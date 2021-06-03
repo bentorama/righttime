@@ -7,6 +7,12 @@ class EventsController < ApplicationController
     else
       @events = Event.all
     end
+    @markers = @events.map do |event|
+      {
+        lat: event.venue.latitude,
+        lng: event.venue.longitude
+      }
+    end
   end
 
   def show
