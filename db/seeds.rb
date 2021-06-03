@@ -26,7 +26,7 @@ puts "creating venues..."
 
 address_array = []
 csv_options = { headers: :first_row, header_converters: :symbol }
-CSV.foreach('./app/assets/data/london_postcodes.csv', csv_options) do |row|
+CSV.foreach('./app/assets/data/london_postcodes_v3.csv', csv_options) do |row|
   address = "#{row[:pcd]}, London, UK"
   address_array << address
 end
