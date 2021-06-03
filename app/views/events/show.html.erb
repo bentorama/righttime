@@ -1,4 +1,5 @@
-<%= render "components/carousel" %>
+<%= render "components/carousel", locals: { event: @event } %> 
+
 
 <div class="show-time-badge">
   <p>Starts in 45 mins</p>
@@ -19,3 +20,5 @@
 </div>
 
 <%= render "components/booking-bar" %>
+
+
