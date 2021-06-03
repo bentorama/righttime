@@ -2,14 +2,20 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 125px 0;
+  padding: 41px 0;
+  height: 100vh;
+  position: relative;
+  text-align: center;
 }
 
-.banner-bottom {
-  background-size: cover;
-  background-position: center;
-  padding: 160px 0;
-  opacity: 0.5;
+.bottom-text {
+  position: absolute;
+  bottom: 0px;
+  padding: 23px;
+  text-align: center;
+  P {
+    color: white;
+  }
 }
 
 h1 {
