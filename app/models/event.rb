@@ -13,4 +13,6 @@ class Event < ApplicationRecord
       using: {
         tsearch: { prefix: true } # <-- partial words allowed
       }
+      
+  monetize :price_cents
 end
