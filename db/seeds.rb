@@ -68,6 +68,7 @@ Venue.all.each do |venue|
   end
 end
 
+count = 0
 Venue.all.each do |venue|
   1.times do
     starting_price = rand(10.0..100.0).round(2)
@@ -80,9 +81,11 @@ Venue.all.each do |venue|
       name: Faker::Kpop.iii_groups,
       num_tickets: (5..100).to_a.sample,
       duration: [30, 60, 90, 120].sample,
-      min_price: rand((starting_price * 0.5)..(starting_price*0.9)).round(2)
+      min_price: rand((starting_price * 0.5)..(starting_price*0.9)).round(2),
+      sku: "event_#{count}"
     )
   end
+  count += 1
 end
 
 puts "events created!"
