@@ -33,4 +33,10 @@ class VenuesController < ApplicationController
   def destroy
 
   end
+
+private
+
+  def venue_params
+  end
+
 end
