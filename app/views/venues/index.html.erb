@@ -4,6 +4,9 @@
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
 
+
 <% @venues.each do |venue| %>
-  <%= cl_image_tag venue.photo.key %>
+  <% venue.photos.each do |photo| %>
+    <%= cl_image_tag photo.key %> 
+  <% end %>
 <% end %>
