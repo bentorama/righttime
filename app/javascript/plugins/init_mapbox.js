@@ -1,11 +1,11 @@
-import mapboxgl from 'mapbox-gl';
+import mapboxgl, { GeolocateControl } from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 const buildMap = (mapElement) => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v10'
+    style: 'mapbox://styles/bentorama/ckph9m798007s17qistei9iwy'
   });
 };
 
@@ -23,6 +23,15 @@ const fitMapToMarkers = (map, markers) => {
   map.fitBounds(bounds, { padding: 70, maxZoom: 15 });
 };
 
+const addGeolocateToMap = (map) => {
+  new mapboxgl,GeolocateControl({
+    positionOptions: {
+      enableHighAccuracy: true
+    },
+    trackUserLocation: true
+  })
+};
+
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
   if (mapElement) {
@@ -30,6 +39,7 @@ const initMapbox = () => {
     const markers = JSON.parse(mapElement.dataset.markers);
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
+    addGeolocateToMap(map);
   }
 };
 
