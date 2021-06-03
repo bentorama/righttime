@@ -28,11 +28,16 @@ p {
     font-size: 14px;
   }
 
+.star {
+  color: gold;
+}
+
   .reviews {
-    font-size: 14px;
     justify-content: space-between;
   p {
-    margin-left: 5px ;
+    margin: 5px ;
+    font-size: 12px;
+    font-style: italic;
   }
   }
 
