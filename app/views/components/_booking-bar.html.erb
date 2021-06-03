@@ -1,5 +1,10 @@
 <div class="booking-bar-container">
   <p>Total £95</p>
   <p><span class="fas fa-minus"></span>  <span class="far fa-user"></span>   1   <span class ="fas fa-plus"></span></p>
-  <div class="booking-btn">Book Now</div>
+  <div>
+    <%= form_tag orders_path do %>
+      <%= hidden_field_tag 'event_id', @event.id %>
+      <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+    <% end %>
+  </div>
 </div>
