@@ -27,11 +27,12 @@ puts "creating venues..."
 address_array = []
 csv_options = { headers: :first_row, header_converters: :symbol }
 CSV.foreach('./app/assets/data/london_postcodes.csv', csv_options) do |row|
-  address = "London, #{row[:pcd]}"
+  address = "#{row[:pcd]}, London, UK"
   address_array << address
 end
 
 # make the first 5 users venue owners and create 5 venues each
+# if geocoding fails (latitude == nil) delete the last venue and try with another address
 User.first(5).each do |owner|
   owner.owner = true
   5.times do 
@@ -41,6 +42,15 @@ User.first(5).each do |owner|
       description: Faker::Restaurant.description,
       user: owner
     )
+    while Venue.last.latitude.nil?
+      Venue.last.destroy
+      Venue.create!(
+      address: address_array.sample,
+      name: Faker::Restaurant.name,
+      description: Faker::Restaurant.description,
+      user: owner
+    )
+    end
   end
   owner.save!
 end
@@ -48,7 +58,7 @@ end
 puts "venues created!"
 puts "creating events..."
 
-#create 1 event at each venue
+# create 1 event at each venue
 
 Venue.all.each do |venue|
   image_file = ['https://res.cloudinary.com/dhkhvto68/image/upload/v1622731507/samples/venue/Iconic-music-venues-Chicago-Theatre_imtjhe.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731507/samples/venue/Iconic-music-venues-Red-Rock-Colorado_ba8rvg.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731507/samples/venue/Iconic-music-venues-Krakow-salt-mines_hnonny.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731508/samples/venue/Iconic-music-venues-Royal-Albert-Hall_ududjw.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731507/samples/venue/best-music-venues-_patrickhayeslighting-Fonda-Theatre_znwsf0.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731508/samples/venue/best-music-venues-_mike__manos-Preservation-Hall-New-Orleans_z6g9s8.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731509/samples/venue/Best-music-venues-Bowery-Ballroom_ubd41l.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731508/samples/venue/Iconic-music-venues-Sydney-opera-house_wjw2lb.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731509/samples/venue/Best-music-venues-Cherry-Bar-Melbourne_gnpft9.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1622300343/samples/venue/joshua-eckstein-lbRzSxHS2kU-unsplash_bd7tbv.jpg'].sample
