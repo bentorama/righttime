@@ -2,7 +2,11 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show]
 
   def index
-    @events = Event.all
+    if params[:query].present?
+      @events = Event.search_events_pg(params[:query])
+    else
+      @events = Event.all
+    end
   end
 
   def show
