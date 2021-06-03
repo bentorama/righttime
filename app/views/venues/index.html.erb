@@ -5,8 +5,8 @@
 </div>
 
 
-                        <% @venues.each do |venue| %>
-                          <% venue.photos.each do |photo| %>
-                            <%= cl_image_tag photo.key %> 
-                            <% end %>
-                        <% end %>
+<% @venues.each do |venue| %>
+  <% venue.photos.each do |photo| %>
+    <%= cl_image_tag photo.key %> 
+  <% end %>
+<% end %>
