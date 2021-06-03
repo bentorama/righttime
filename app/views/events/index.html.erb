@@ -7,7 +7,7 @@
             <% @events.each do |event| %>
                 <div class="card-product">
                     <span class="badge">£<%= event.starting_price %></span>
-                    <%= link_to events_path(event) do %>
+                    <%= link_to event_path(event) do %>
                         <% event.photos.each do |photo| %>
                             <%= cl_image_tag photo.key %> 
                         <% end %>
