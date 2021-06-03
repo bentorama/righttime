@@ -7,9 +7,11 @@
             <% @events.each do |event| %>
                 <div class="card-product">
                     <span class="badge">£<%= event.starting_price %></span>
-                     <% event.photos.each do |photo| %>
-                        <%=cl_image_tag photo.key%> 
-                     <% end %>
+                    <%= link_to events_path(event) do %>
+                        <% event.photos.each do |photo| %>
+                            <%= cl_image_tag photo.key %> 
+                        <% end %>
+                    <% end %>
                     <div class="card-product-infos">
                         <div class="infos-top">
                             <div class="card-top-row">
