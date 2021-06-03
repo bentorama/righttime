@@ -73,6 +73,7 @@ Venue.all.each do |venue|
   1.times do
     starting_price = rand(10.0..100.0).round(2)
     Event.create!(
+      price_cents: starting_price,
       starting_price: starting_price,
       start_time: Faker::Time.between_dates(from: Date.today - 30, to: Date.today + 30, period: :evening),
       # start_time: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
