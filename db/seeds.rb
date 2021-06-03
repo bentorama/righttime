@@ -71,6 +71,7 @@ end
 Venue.all.each do |venue|
   1.times do
     starting_price = rand(10.0..100.0).round(2)
+    category = ["Hot", "Food", "Drink", "Show", "Music"].sample
     Event.create!(
       starting_price: starting_price,
       start_time: Faker::Time.between_dates(from: Date.today - 30, to: Date.today + 30, period: :evening),
@@ -80,7 +81,8 @@ Venue.all.each do |venue|
       name: Faker::Kpop.iii_groups,
       num_tickets: (5..100).to_a.sample,
       duration: [30, 60, 90, 120].sample,
-      min_price: rand((starting_price * 0.5)..(starting_price*0.9)).round(2)
+      min_price: rand((starting_price * 0.5)..(starting_price*0.9)).round(2),
+      category: category
     )
   end
 end
@@ -122,10 +124,10 @@ end
 puts 'bookings created!'
 puts 'creating reviews...'
 # past_bookings = []
-# Booking.all.each do |booking|
+Booking.all.each do |booking|
 #   past_bookings << booking if booking.event.start_time < Time.zone.now
 # end
-Booking.joins(:event).where('events.start_time < ?', Time.now).each do |booking|
+# Booking.joins(:event).where('events.start_time < ?', Time.now).each do |booking|
   Review.create!(
     event_review: Faker::Restaurant.review,
     venue_rating: (1..5).to_a.sample,

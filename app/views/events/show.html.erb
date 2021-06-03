@@ -12,13 +12,26 @@
     <a href=# class="far fa-star"></a> <p> 4.2 (23)</p>
   </div>
   <p><%= @event.description %></p>
-  <h2>Reviews (1)</h2>
+  <h2><%= "Reviews (#{@event.reviews.count})"%></h2>
   <div class="review-container">
-    <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
-    <p>"This venue put on a really good show."</p>
+    <% @event.reviews.each do |review| %>
+      <div class="reviews">
+        <div class="ratings">
+        <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+          <% review.venue_rating.times do  %>
+            <i class="fas fa-star"></i>
+          <% end %>
+        </div>  
+        <div class="review-content">
+          <p><%=review.event_review %> </p>         
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
 
 <%= render "components/booking-bar" %>
+
+
 
 

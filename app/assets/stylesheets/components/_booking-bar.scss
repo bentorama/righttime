@@ -5,6 +5,9 @@
   padding: 10px;
   height: 64px;
   background-color: $content-color;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
 
   p {
     margin-bottom: 0rem !important;
