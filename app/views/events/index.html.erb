@@ -7,7 +7,9 @@
             <% @events.each do |event| %>
                 <div class="card-product">
                     <span class="badge">£<%= event.starting_price %></span>
-                    <%= link_to image_tag("https://res.cloudinary.com/markcarson121/image/upload/v1622143414/noiseporn-JNuKyKXLh8U-unsplash_cy4jyr.jpg"), event_path(event) %>
+                     <% event.photos.each do |photo| %>
+                        <%=cl_image_tag photo.key%> 
+                     <% end %>
                     <div class="card-product-infos">
                         <div class="infos-top">
                             <div class="card-top-row">
