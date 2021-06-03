@@ -1,4 +1,4 @@
-import mapboxgl, { GeolocateControl } from 'mapbox-gl';
+import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 const buildMap = (mapElement) => {
@@ -23,15 +23,6 @@ const fitMapToMarkers = (map, markers) => {
   map.fitBounds(bounds, { padding: 70, maxZoom: 15 });
 };
 
-const addGeolocateToMap = (map) => {
-  new mapboxgl,GeolocateControl({
-    positionOptions: {
-      enableHighAccuracy: true
-    },
-    trackUserLocation: true
-  })
-};
-
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
   if (mapElement) {
@@ -39,7 +30,14 @@ const initMapbox = () => {
     const markers = JSON.parse(mapElement.dataset.markers);
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
-    addGeolocateToMap(map);
+    map.addControl(
+      new mapboxgl.GeolocateControl({
+        positionOptions: {
+          enableHighAccuracy: true
+        },
+        trackUserLocation: true
+      })
+    );
   }
 };
 
