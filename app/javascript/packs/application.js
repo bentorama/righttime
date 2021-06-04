@@ -40,14 +40,11 @@ document.addEventListener('turbolinks:load', () => {
 })
 
 const currentLocation = document.getElementById("current-location");
-const query = document.getElementById("search");
+const search = document.getElementById("search");
 
 currentLocation.addEventListener("click", (event) => {
-  // resultList.innerHTML = "";
   event.preventDefault();
-  console.log("my location")
   navigator.geolocation.getCurrentPosition((data) => {
-    console.log([data.coords.latitude, data.coords.longitude])
   search.value = [data.coords.latitude, data.coords.longitude];
   });
 });
