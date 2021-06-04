@@ -56,17 +56,22 @@ User.first(5).each do |owner|
 end
 
 puts "venues created!"
-puts "creating events..."
-
-# create 1 event at each venue
+puts "adding venue images..."
+puts "wait for it..."
 
 Venue.all.each do |venue|
   3.times do
     image_file = ['https://res.cloudinary.com/dhkhvto68/image/upload/v1622731507/samples/venue/Iconic-music-venues-Chicago-Theatre_imtjhe.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731507/samples/venue/Iconic-music-venues-Red-Rock-Colorado_ba8rvg.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731507/samples/venue/Iconic-music-venues-Krakow-salt-mines_hnonny.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731508/samples/venue/Iconic-music-venues-Royal-Albert-Hall_ududjw.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731507/samples/venue/best-music-venues-_patrickhayeslighting-Fonda-Theatre_znwsf0.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731508/samples/venue/best-music-venues-_mike__manos-Preservation-Hall-New-Orleans_z6g9s8.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731509/samples/venue/Best-music-venues-Bowery-Ballroom_ubd41l.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731508/samples/venue/Iconic-music-venues-Sydney-opera-house_wjw2lb.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731509/samples/venue/Best-music-venues-Cherry-Bar-Melbourne_gnpft9.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1622300343/samples/venue/joshua-eckstein-lbRzSxHS2kU-unsplash_bd7tbv.jpg'].sample
     file = URI.open(image_file)
     venue.photos.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+    puts "still going..."
   end
 end
+
+puts "venue images added!"
+puts "creating events..."
+
+# create 1 event at each venue
 
 Venue.all.each do |venue|
   1.times do
@@ -86,17 +91,22 @@ Venue.all.each do |venue|
 end
 
 puts "events created!"
-
-puts "creating bookings..."
-users = []
-User.where(owner: false).each do |user|
-  users << user
-end
+puts "adding events images..."
+puts "wait for it..."
 
 Event.all.each do |event|
   image_file = ['https://res.cloudinary.com/dhkhvto68/image/upload/v1622731307/samples/venue/beac4cdb16edb9d0cfd1db1e70cabb9b--concert-posters-music-posters_q3erlf.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731307/samples/venue/18001520-1b12-11e8-bd93-a3fa09536edb_ut2qxk.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731307/samples/venue/rolling-stones-steven-parker-canvas-print_afreoi.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731307/samples/venue/901b97c7af133ee9a63f35c13d946e0a_sexd4m.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731308/samples/venue/fleeceposters_vlkb3l.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731308/samples/venue/Blues_Concert_Band_Line-up_Flyer_-_Made_with_PosterMyWall_faz7ij.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622730667/samples/venue/Joseph_waw57x.png','https://res.cloudinary.com/dhkhvto68/image/upload/v1622730667/samples/venue/grease_fe5rk1.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622730667/samples/venue/phantom_kslpay.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622298458/samples/venue/sebastiaan-stam-qWaWdIchPqE-unsplash_bu2ba4.jpg', 'https://res.cloudinary.com/dhkhvto68/image/upload/v1622729754/samples/venue/Theatre_claqtr.jpg', 'https://res.cloudinary.com/dhkhvto68/image/upload/v1622730554/samples/venue/lionking_nmnvpi.jpg'].sample
   file = URI.open(image_file)
   event.photos.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+  puts "still going..."
+end
+
+puts "added events images!"
+puts "creating bookings..."
+
+users = []
+User.where(owner: false).each do |user|
+  users << user
 end
 
 Event.all.each do |event|
@@ -119,10 +129,7 @@ end
 
 puts 'bookings created!'
 puts 'creating reviews...'
-# past_bookings = []
-# Booking.all.each do |booking|
-#   past_bookings << booking if booking.event.start_time < Time.zone.now
-# end
+
 Booking.joins(:event).where('events.start_time < ?', Time.now).each do |booking|
   Review.create!(
     event_review: Faker::Restaurant.review,
@@ -132,3 +139,4 @@ Booking.joins(:event).where('events.start_time < ?', Time.now).each do |booking|
 end
 
 puts 'reviews created!'
+puts "all done! you're good to go"
