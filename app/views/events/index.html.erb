@@ -11,7 +11,7 @@
         <div class="scroller">
             <% @events.each do |event| %>
                 <div class="card-product">
-                    <span class="badge">£<%= event.starting_price %></span>
+                    <span class="badge">£<%= event.price_cents %></span>
                     <%= link_to event_path(event) do %>
                         <% event.photos.each do |photo| %>
                             <%= cl_image_tag photo.key %> 
