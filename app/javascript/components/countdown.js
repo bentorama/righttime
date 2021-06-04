@@ -18,17 +18,26 @@ const getTimeRemaining = (endtime) => {
 
 const initializeClock = (id, endtime) => {
   const clock = document.getElementById(id);
+  const daysSpan = clock.querySelector('.days');
+  const hoursSpan = clock.querySelector('.hours');
+  const minutesSpan = clock.querySelector('.minutes');
+  const secondsSpan = clock.querySelector('.seconds');
 
-  const timeinterval = setInterval(() => {
+  const updateClock = () => {
     const t = getTimeRemaining(endtime);
-    clock.innerHTML = 'days: ' + t.days + '<br>' +
-                      'hours: ' + t.hours + '<br>' +
-                      'minutes: ' + t.minutes + '<br>' +
-                      'seconds: ' + t.seconds;
+
+    daysSpan.innerHTML = ('0' + t.days).slice(-2);
+    hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+    minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+    secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
     if (t.total <= 0) {
       clearInterval(timeinterval);
     }
-  }, 1000);
+  }
+
+  updateClock(); // run function once at first to avoid delay
+  var timeinterval = setInterval(updateClock, 1000);
 }
 
 export { initializeClock };

@@ -49,61 +49,22 @@ p {
     height: 34px;
   }
 
-
-.show-time-badge {
-  background-color: $content-color;
-  border-style: solid; 
-  border-radius: 10px;
-  border-color: white;
-  color: white;
-  width: 80px;
-  padding: 6px;
-  align-content: center;
-  position: absolute;
-  right: 10px; 
-  top: 10px;
-  p {
-    margin-bottom: 0rem;
-  }
-}
-
 .event-divider {
   border-top: 1px solid $content-color ;
 }
 
-.base-timer {
-  position: relative;
-  height: 150px;
-  width: 150px;
+.show-time-badge {
+  text-align: center;
 }
 
-/* Removes SVG styling that would hide the time label */
-.base-timer__circle {
-  fill: none;
-  stroke: none;
-}
-
-/* The SVG path that displays the timer's progress */
-.base-timer__path-elapsed {
-  stroke-width: 7px;
-  stroke: white;
-}
-
-.base-timer__label {
-  position: absolute;
-  
-  /* Size should match the parent container */
-  width: 300px;
-  height: 300px;
-  
-  /* Keep the label aligned to the top */
-  top: 0;
-  
-  /* Create a flexible box that centers content vertically and horizontally */
+#clockdiv{
+  color: #fff;
   display: flex;
-  align-items: center;
-  justify-content: center;
-
-  /* Sort of an arbitrary number; adjust to your liking */
-  font-size: 48px;
+  justify-content: space-evenly;
+  font-weight: 100;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 100;
+  font-size: 14px;
+  background-color: $content-color;
 }
