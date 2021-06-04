@@ -81,8 +81,10 @@
         <%= form_tag events_path, method: :get do %>
           <%= text_field_tag :query,
             params[:query],
-            placeholder: "Enter Postcode:"
+            placeholder: "Enter Postcode:", 
+            id: "search"
             %>
+          <%= submit_tag "Go!", class: "go-btn" %>
         <% end %>
       </div>
       <%# <div class="filter-icon">
@@ -93,5 +95,7 @@
   </div>
 
 </div>
+
+
 
 <%= javascript_pack_tag 'toggle' %>

@@ -38,3 +38,13 @@ import { initMapbox } from '../plugins/init_mapbox';
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
 })
+
+const currentLocation = document.getElementById("current-location");
+const search = document.getElementById("search");
+
+currentLocation.addEventListener("click", (event) => {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition((data) => {
+  search.value = [data.coords.latitude, data.coords.longitude];
+  });
+});
