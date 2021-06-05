@@ -49,7 +49,8 @@ class EventsController < ApplicationController
     @markers = @events.map do |event|
       {
         lat: event.venue.latitude,
-        lng: event.venue.longitude
+        lng: event.venue.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { event: event })
       }
     end
     if params[:query].nil?
