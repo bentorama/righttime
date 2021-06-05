@@ -120,8 +120,8 @@
 // }
 
 ::placeholder {
-  color: white; 
-  font-family: puritan;
+  color: var(--clr-text); 
+  font-family: var(--ff-primary);
   opacity: 1;
 }
 
@@ -133,7 +133,8 @@
   border-style: solid;
   display: flex;
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
-  width: 80%;
+  height: 2em;
+  width: 90vw;
   // height: 34px;
   // width: 300px;
   // position: absolute;

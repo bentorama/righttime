@@ -1,13 +1,16 @@
 .footer {
   bottom: 0px;
   align-items: center;
-  background-color: #FFF;
+  background-color: var(--clr-footer-bg);
   display: flex;
+  height: 2.5em;
   justify-content: space-around;
   position: fixed;
   width: 100%;
 
   a {
-    color: #A9729C;
+    color: var(--clr-footer-icons);
+    font-size: 1.3em;
+    padding-top: 4px; 
   }
 }
