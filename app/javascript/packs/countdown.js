@@ -14,8 +14,6 @@
 //       });
 
 
-const events = JSON.parse(dataset.events);
-console.log(events);
 
 const getTimeRemaining = (endtime) => {
   const total = Date.parse(endtime) - Date.parse(new Date());
@@ -57,6 +55,6 @@ const initializeClock = (id, endtime) => {
   var timeinterval = setInterval(updateClock, 1000);
 }
 
-// initializeClock('clockdiv', 'December 31 2021 23:59:59 GMT+0200')
-initializeClock('clockdiv', start_time)
+initializeClock('clockdiv', obj.start_time)
+// initializeClock('clockdiv', start_time)
 // export { initializeClock };
