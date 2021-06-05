@@ -11,42 +11,46 @@
     <!--card carousel-->
         <div class="scroller">
             <% @events.each do |event| %>
-                <div class="card-product">
-                    <span class="badge">£<%= event.price_cents %></span>
-                    <%= link_to event_path(event) do %>
-                        <% event.photos.each_with_index do |photo, index| %>
-                            <%= cl_image_tag photo.key if index == 0%> 
+                <% if event.start_time > Time.now %>
+                <!--card images-->
+                    <div class="card-product">
+                        <span class="badge">£<%= event.price_cents %></span>
+                        <%= link_to event_path(event) do %>
+                            <%= image_tag(event.photos.first) %>
                         <% end %>
-                    <% end %>
-                    <div class="card-product-infos">
-                        <div class="infos-top">
-                            <div class="card-top-row">
-                                <div class="card-top-left">  
-                                    <% if event.reviews.count > 0 %>
-                                        <p class="rating"> <%= "#{event.reviews.average(:venue_rating)}" %> </p>
-                                        <% event.reviews.average(:venue_rating).round.times do  %>  
-                                            <i class="far fa-heart star"></i>
-                                        <% end %>
-                                            
+                <!--card ratings-->
+                        <div class="card-product-infos">
+                            <div class="infos-top">
+                                <div class="card-top-row">
+                                    <div class="card-top-left rating">  
+                                        <% if event.reviews.count > 0 %>
+                                            <p class=""> <%= "#{event.reviews.average(:venue_rating)}" %> </p>
+                                            <% event.reviews.average(:venue_rating).round.times do  %>  
+                                                <i class="far fa-heart star"></i>
+                                            <% end %>  
+
                                             <p><%= "(#{event.reviews.count})"%></p>
-                                    <% end %>
+                                        <% end %>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="infos-middle">
-                            <h2><%= link_to event.name, event_path(event) %></h2>
-                            <p><% d = event.description %>
-                                <% description = d.split[0...15].join(' ') %>
-                                <%= description %>...
-                            </p>
-                        </div>
-                        <div class="infos-bottom">
-                            <p>Starts at <% t = event.start_time %>
-                                         <%= t.strftime("%l:%M %P") %>
-                                            !</p>
+                <!--card information-->
+                            <div class="infos-middle">
+                                <h2><%= link_to event.name, event_path(event) %></h2>
+                                <p><% d = event.description %>
+                                    <% description = d.split[0...15].join(' ') %>
+                                    <%= description %>...
+                                </p>
+                            </div>
+                <!--card start time-->
+                            <div class="infos-bottom">
+                                <p>Starts at <% t = event.start_time %>
+                                            <%= t.strftime("%l:%M %P") %>
+                                                !</p>
+                            </div>
                         </div>
                     </div>
-                </div>
+                <% end %>
             <% end %>
         </div>
 </div>
