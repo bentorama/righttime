@@ -1,4 +1,18 @@
 // const deadline = '31/12/2015'
+// const id = 'clockdiv';
+// const endtime = @event.start_time;
+
+// fetch('http://example.com/movies.json')
+//   .then(response => response.json())
+//   .then(data => console.log(data));
+
+
+// fetch('/event', { headers: { accept: "application/json" } })
+//       .then(response => response.json())
+//       .then((data) => {
+//         console.log(data);
+//       });
+
 
 const getTimeRemaining = (endtime) => {
   const total = Date.parse(endtime) - Date.parse(new Date());
@@ -36,8 +50,10 @@ const initializeClock = (id, endtime) => {
     }
   }
 
-  updateClock(); // run function once at first to avoid delay
+  updateClock(); 
   var timeinterval = setInterval(updateClock, 1000);
 }
+
+// initializeClock('clockdiv', 'December 31 2021 23:59:59 GMT+0200')
 
 export { initializeClock };
