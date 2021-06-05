@@ -35,7 +35,8 @@
       </div>
     <a href="/events"><i class="fas fa-map-marked-alt"></i></a>
     </div>
-      <p><%= @event.start_time.strftime("%B %d %Y %I:%M:%S") %></p>
+  <a href="/events"><i class="fas fa-map-marked-alt"></i></a>
+  </div>
 
       <div class="show-stars">
         <p class="rating"> <%= "#{@event.reviews.average(:venue_rating)}" %> </p>  
