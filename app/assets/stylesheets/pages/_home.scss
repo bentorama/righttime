@@ -1,17 +1,41 @@
+.go-btn {
+  border-color: var(--clr-text);
+  border-radius: 16px;
+  border-style: solid;
+  border-width: var(--border-width);
+  color: var(--clr-text);
+  font-family: var(--ff-primary);
+  font-size: 1.5em;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 300%;
+}
+
 h1 {
   color: var(--clr-logo);
   font-family: var(--ff-logo);
   font-size: var(--f-size-logo);
+  padding-top: 50px;
 }
 
 header {
-  margin-left: 12px;
+  margin-left: 16px;
+
+  p {
+    font-size: var(--f-size-header);
+    margin-left: 4px;
+    margin-top: -12px;
+  }
 }
 
 .home-container {
   background-attachment: fixed;
   background-size: cover;
-  background-image: url(https://res.cloudinary.com/markcarson121/image/upload/v1622143414/noiseporn-JNuKyKXLh8U-unsplash_cy4jyr.jpg);
+  background-image: linear-gradient(141.11deg, #000000 -0.95%, rgba(0, 0, 0, 0) 49.65%), url(https://res.cloudinary.com/markcarson121/image/upload/v1622143414/noiseporn-JNuKyKXLh8U-unsplash_cy4jyr.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   height: 100vh;
@@ -27,6 +51,14 @@ section {
   p {
     font-size: var(--f-size-header);
   }
+}
+
+#search-bar {
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
+  position: absolute;
 }
 
 #text-bottom {
@@ -89,13 +121,6 @@ p {
 //   color: white;
 // }
 
-#current-location {
-  position: absolute;
-  // bottom: 299px;
-  // right: 168px;
-  // font-size: 60px;
-}
-
 // .or {
 //   position: absolute; 
 //   top: 244px;
@@ -111,20 +136,3 @@ p {
 //   top: 368px;
 //   right: 155px;
 // }
-
-.go-btn {
-  border-color: var(--clr-text);
-  border-radius: 16px;
-  border-style: solid;
-  border-width: var(--border-width);
-  color: var(--clr-text);
-  font-family: var(--ff-primary);
-  font-size: 1.5em;
-  left: 0;
-  margin-left: auto;
-  margin-right: auto;
-  position: absolute;
-  right: 0;
-  text-align: center;
-  top: 300%;
-}
