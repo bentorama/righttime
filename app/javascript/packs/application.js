@@ -24,16 +24,17 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import{ initializeClock } from '../components/countdown';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
+  initializeClock('clockdiv', 'December 31 2021 23:59:59 GMT+0200')
 });
 
 import { initMapbox } from '../plugins/init_mapbox';
+
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();

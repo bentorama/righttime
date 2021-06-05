@@ -12,7 +12,12 @@ class EventsController < ApplicationController
     markers_and_center
   end
 
+
   def show
+    respond_to do |format|
+      format.html
+      format.json { render json: { event: @event } }
+    end
   end
 
   def new

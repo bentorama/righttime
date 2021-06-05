@@ -13,33 +13,66 @@ p {
 
 .show-stars {
   display:flex;
+p {
+  margin-left: 5px;
+}
+.rating {
+  margin-left: 0px;
+  margin-right: 5px;
+
+}
 }
 
-.review-container {
-  display:flex;
+.star {
+  color: gold;
+}
+
+.ratings {
+  display: flex;
+  align-items: center;
+  i {
+    padding-left: 5px;
+  }
+}
+
+.reviews {
+  justify-content: space-between;
+
   p {
-    margin-left: 1rem;
-    margin-top: 0.3rem;
+    margin: 5px ;
+    font-size: 12px;
+    font-style: italic;
+  }
   }
 
   .avatar-bordered {
     height: 34px;
   }
+
+.event-divider {
+  border-top: 1px solid $content-color ;
 }
 
 .show-time-badge {
+  text-align: center;
+}
+
+#clockdiv{
+  color: #fff;
+  display: flex;
+  justify-content: space-evenly;
+  font-weight: 100;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 100;
+  font-size: 14px;
   background-color: $content-color;
-  border-style: solid; 
-  border-radius: 10px;
-  border-color: white;
-  color: white;
-  width: 120px;
-  padding: 6px;
-  align-content: center;
-  position: absolute;
-  right: 10px; 
-  top: 10px;
-  p {
-    margin-bottom: 0rem;
+
+  h2 {
+    font-size: 12px;
+    align-items: center;
+    margin: auto;
+    margin-right: 0px;
+    margin-left: 0px;
   }
 }
