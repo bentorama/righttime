@@ -13,12 +13,7 @@ class EventsController < ApplicationController
   end
 
 
-  def show
-    respond_to do |format|
-      format.html
-      format.json { render json: { event: @event } }
-    end
-  end
+  def show; end
 
   def new
   end
@@ -54,7 +49,8 @@ class EventsController < ApplicationController
     @markers = @events.map do |event|
       {
         lat: event.venue.latitude,
-        lng: event.venue.longitude
+        lng: event.venue.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { event: event })
       }
     end
     if params[:query].nil?

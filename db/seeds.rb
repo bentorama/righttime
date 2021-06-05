@@ -92,8 +92,7 @@ Venue.all.each do |venue|
       num_tickets: (5..100).to_a.sample,
       duration: [30, 60, 90, 120].sample,
       min_price: rand((starting_price * 0.5)..(starting_price*0.9)).round(2),
-
-      category: category
+      category: category,
       sku: "event_#{count}"
     )
   end
@@ -110,6 +109,7 @@ Event.all.each do |event|
     file = URI.open(image_file)
     event.photos.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
   end
+  puts "still going..."
 end
 
 puts "added events images!"
@@ -118,7 +118,6 @@ puts "creating bookings..."
 users = []
 User.where(owner: false).each do |user|
   users << user
->>>>>>> master
 end
 
 Event.all.each do |event|
@@ -127,10 +126,10 @@ Event.all.each do |event|
     if counter > 0
       max_attendees = [counter, 5].min
       num_attendees = rand(1..max_attendees)
-      total_cost = num_attendees * event.starting_price
-      Booking.create!(
+      total_price = num_attendees * event.starting_price
+      Order.create!(
         num_attendees: num_attendees,
-        total_cost: total_cost,
+        amount_cents: total_price,
         event: event,
         user: users.sample
       )
@@ -141,20 +140,12 @@ end
 
 puts 'bookings created!'
 puts 'creating reviews...'
-<<<<<<< HEAD
-# past_bookings = []
-Booking.all.each do |booking|
-#   past_bookings << booking if booking.event.start_time < Time.zone.now
-# end
-# Booking.joins(:event).where('events.start_time < ?', Time.now).each do |booking|
-=======
 
-Booking.joins(:event).where('events.start_time < ?', Time.now).each do |booking|
->>>>>>> master
+Order.joins(:event).where('events.start_time < ?', Time.now).each do |order|
   Review.create!(
     event_review: Faker::Restaurant.review,
     venue_rating: (1..5).to_a.sample,
-    booking: booking
+    order: order
   )
 end
 

@@ -57,6 +57,12 @@ p {
   text-align: center;
 }
 
+.past-event {
+  color: white;
+  justify-content: center;
+  margin: auto;
+}
+
 #clockdiv{
   color: #fff;
   display: flex;
@@ -74,5 +80,14 @@ p {
     margin: auto;
     margin-right: 0px;
     margin-left: 0px;
+  }
+}
+
+.show-top {
+  display: flex;
+  justify-content: space-between;
+  i {
+    color: purple;
+    font-size: 30px;
   }
 }

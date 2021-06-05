@@ -1,5 +1,5 @@
 class Review < ApplicationRecord
-  belongs_to :booking
+  belongs_to :order
 
   validates :event_review, presence: true
   # validates :venue_rating, inclusion: { in: [1..5] }
