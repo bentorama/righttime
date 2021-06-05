@@ -21,8 +21,15 @@
                     <div class="card-product-infos">
                         <div class="infos-top">
                             <div class="card-top-row">
-                                <div class="card-top-left"><a href=# class="far fa-star"></a> <p> 4.2 (23)</p></div>
-                                <div><a href="#" class="far fa-heart"></a></div>
+                                <div class="card-top-left">  
+                                    <% if event.reviews.count > 0 %>
+                                        <% event.reviews.average(:venue_rating).round.times do  %>  
+                                            <i class="far fa-heart star"></i>
+                                        <% end %>
+                                            <p class="rating"> <%= "#{event.reviews.average(:venue_rating)}" %> </p>
+                                            <p><%= "(#{event.reviews.count})"%></p>
+                                    <% end %>
+                                </div>
                             </div>
                         </div>
                         <div class="infos-middle">
