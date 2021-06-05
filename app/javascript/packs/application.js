@@ -32,7 +32,7 @@ import "bootstrap";
 import { initMapbox } from '../plugins/init_mapbox';
 
 document.addEventListener('turbolinks:load', () => {
-  initializeClock('clockdiv', 'December 31 2021 23:59:59 GMT+0200')
+  // initializeClock('clockdiv', 'December 31 2021 23:59:59 GMT+0200')
   initMapbox();
   
   const currentLocation = document.getElementById("current-location");
