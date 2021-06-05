@@ -5,14 +5,14 @@
   border-width: var(--border-width);
   color: var(--clr-text);
   font-family: var(--ff-primary);
-  font-size: 1.5em;
+  font-size: var(--f-size-header);
   left: 0;
   margin-left: auto;
   margin-right: auto;
   position: absolute;
   right: 0;
   text-align: center;
-  top: 300%;
+  top: 150%;
 }
 
 h1 {
