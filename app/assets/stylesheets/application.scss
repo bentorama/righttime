@@ -12,22 +12,8 @@
 @import "components/index";
 @import "pages/index";
 
-// .min-height {
-//   min-height: calc(100vh - 48px);
-// }
+:root {
+  --clr-primary: #A9729C;
 
-h1 {
-  font-family: $header-one;
-  font-size: 50px;
+  --ff-primary: 'Puritan';
 }
-
-h2 {
-  font-family: $header-two;
-  font-size: 28px;
-}
-  
-
-p {
-  font-family: 'Hind Siliguri', sans-serif;
-}
-

@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2021_06_03_192522) do
-=======
-ActiveRecord::Schema.define(version: 2021_06_03_191324) do
->>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,9 +58,9 @@ ActiveRecord::Schema.define(version: 2021_06_03_191324) do
     t.bigint "venue_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "category"
     t.string "sku"
     t.integer "price_cents", default: 0, null: false
+    t.string "category"
     t.index ["venue_id"], name: "index_events_on_venue_id"
   end
 

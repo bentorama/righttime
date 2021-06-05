@@ -1,62 +1,100 @@
-// Specific CSS for your home-page
-.banner {
+.home-container {
+  background-attachment: fixed;
   background-size: cover;
-  background-position: center;
-  padding: 41px 0;
+  background-image: url(https://res.cloudinary.com/markcarson121/image/upload/v1622143414/noiseporn-JNuKyKXLh8U-unsplash_cy4jyr.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
   height: 100vh;
-  position: relative;
-  text-align: center;
 }
 
-.bottom-text {
-  position: absolute;
-  bottom: 0px;
-  padding: 23px;
-  text-align: center;
-  P {
-    color: white;
-  }
+p {
+  font-family: var(--ff-primary);
 }
 
-h1 {
-  color: white;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-h2 {
-  color: white;
+body,
+h1,
+h2,
+h3,
+p {
+  margin:0
 }
 
-#current-location {
-  position: absolute;
-  bottom: 299px;
-  right: 168px;
-  font-size: 60px;
-}
 
-.or {
-  position: absolute; 
-  top: 244px;
-  right: 165px;
 
-  h2 {
-    font-size: 54px;
-  }
-}
 
-.find-me {
-  position: absolute;
-  top: 368px;
-  right: 155px;
-}
 
-.go-btn {
-  position: absolute;
-  top: 213px;
-  right: 112px;
-  border-radius: 16px;
-  padding: 5px 21px;
-  border-style: solid;
-  border-color: white;
-  font-size: 24px;
 
-}
+
+
+
+
+
+
+// Specific CSS for your home-page
+// .banner {
+//   background-size: cover;
+//   background-position: center;
+//   padding: 41px 0;
+//   height: 100vh;
+//   position: relative;
+//   text-align: center;
+// }
+
+// .bottom-text {
+//   position: absolute;
+//   bottom: 0px;
+//   padding: 23px;
+//   text-align: center;
+//   P {
+//     color: white;
+//   }
+// }
+
+// h1 {
+//   color: white;
+// }
+
+// h2 {
+//   color: white;
+// }
+
+// #current-location {
+//   position: absolute;
+//   bottom: 299px;
+//   right: 168px;
+//   font-size: 60px;
+// }
+
+// .or {
+//   position: absolute; 
+//   top: 244px;
+//   right: 165px;
+
+//   h2 {
+//     font-size: 54px;
+//   }
+// }
+
+// .find-me {
+//   position: absolute;
+//   top: 368px;
+//   right: 155px;
+// }
+
+// .go-btn {
+//   position: absolute;
+//   top: 213px;
+//   right: 112px;
+//   border-radius: 16px;
+//   padding: 5px 21px;
+//   border-style: solid;
+//   border-color: white;
+//   font-size: 24px;
+
+// }
