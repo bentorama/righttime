@@ -29,23 +29,52 @@ import{ initializeClock } from '../components/countdown';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
-document.addEventListener('turbolinks:load', () => {
-  initializeClock('clockdiv', 'December 31 2021 23:59:59 GMT+0200')
-});
-
 import { initMapbox } from '../plugins/init_mapbox';
 
-
 document.addEventListener('turbolinks:load', () => {
+  initializeClock('clockdiv', 'December 31 2021 23:59:59 GMT+0200')
   initMapbox();
-})
+  
+  const currentLocation = document.getElementById("current-location");
+  const search = document.getElementById("search");
+  
+  // current location pin 
+  if (currentLocation) {
+    currentLocation.addEventListener("click", (event) => {
+      event.preventDefault();
+      navigator.geolocation.getCurrentPosition((data) => {
+      search.value = [data.coords.latitude, data.coords.longitude];
+      });
+    });
+  };
+  
+  // counter buttons on booking bar 
+  const plus = document.getElementById("plus");
+  const minus = document.getElementById("minus");
+  const counterHtml = document.getElementById("counter-Html");
+  let counter = Number.parseInt(document.getElementById("counter-Html").innerText);
+  const priceHtml = document.getElementById("price-html");
+  let price = Number.parseInt(document.getElementById("price-html").innerText);
+  let ticketPrice = Number.parseInt(document.getElementById("price-html").innerText);
 
-const currentLocation = document.getElementById("current-location");
-const search = document.getElementById("search");
 
-currentLocation.addEventListener("click", (event) => {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition((data) => {
-  search.value = [data.coords.latitude, data.coords.longitude];
+  plus.addEventListener("click", (event) => {
+    event.preventDefault();
+    counter++;
+    counterHtml.innerText = counter;
+    price += ticketPrice;
+    priceHtml.innerText = price;
+  });
+  
+  minus.addEventListener("click", (event) => {
+    event.preventDefault();
+    if (counter < 2) {
+      minus.disabled = true;
+    } else {
+      counter -= 1;
+      counterHtml.innerText = counter;
+      price -= ticketPrice;
+      priceHtml.innerText = price;
+    }
   });
 });

@@ -34,7 +34,7 @@ const fitMapToMarkers = (map, markers) => {
 
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
-  console.log(mapElement.dataset.center)
+  // console.log(mapElement.dataset.center)
   if (mapElement) {
     const center = JSON.parse(mapElement.dataset.center);
     console.log(center);
