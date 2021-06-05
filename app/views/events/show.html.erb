@@ -1,28 +1,30 @@
 <%= render "components/carousel", locals: { event: @event } %>
 
-<% if @event.start_time > Time.now %>
-  <div class="show-time-badge">
-    <div id= "clockdiv">
+<div class="show-time-badge">
+  <div id= "clockdiv">
+    <% if @event.start_time > Time.now %>
       <h2> Starting in: </h2>
-    <div>
-      <span class="days"></span>
-      <div class="smalltext">Days</div>
+      <div>
+        <span class="days"></span>
+        <div class="smalltext">Days</div>
+        </div>
+      <div>
+        <span class="hours"></span>
+        <div class="smalltext">Hours</div>
       </div>
-    <div>
-      <span class="hours"></span>
-      <div class="smalltext">Hours</div>
-    </div>
-    <div>
-      <span class="minutes"></span>
-      <div class="smalltext">Minutes</div>
-    </div>
-    <div>
-      <span class="seconds"></span>
-      <div class="smalltext">Seconds</div>
-    </div>
+      <div>
+        <span class="minutes"></span>
+        <div class="smalltext">Minutes</div>
+      </div>
+      <div>
+        <span class="seconds"></span>
+        <div class="smalltext">Seconds</div>
+      </div>
+    <% else %>
+      <p class = "past-event"> Past event </p>  
+    <% end %>
   </div>
 </div>
-<% end %>
 
 <div class="show-container">
   <div class="show-top">
