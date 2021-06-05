@@ -1,1 +1,9 @@
-<h2><%= event.name %></h2>
+<div class="img-map-card">
+  <% if event.photos.attached? %>
+    <%= cl_image_tag event.photos.first.key %>
+  <% else %>
+    <%= [image_tag("https://res.cloudinary.com/markcarson121/image/upload/v1621537842/snorlax_tayhnt.png"), image_tag("https://res.cloudinary.com/markcarson121/image/upload/v1621537841/bulbsaur_qz7jh4.png"), image_tag("https://res.cloudinary.com/markcarson121/image/upload/v1621537842/charizard_r9uub6.png"), image_tag("https://res.cloudinary.com/markcarson121/image/upload/v1621537840/pachi_zosvdq.png"), image_tag("https://res.cloudinary.com/markcarson121/image/upload/v1621537840/eevee_jmi0qq.png"), image_tag("https://res.cloudinary.com/markcarson121/image/upload/v1621538125/pikachu_qfugzj.png")].sample %>
+  <% end %>  
+</div>
+<h2><%= link_to event.name, event_path(event), :class => "show-link" %></h2>
+<p><%= event.price %></p>
