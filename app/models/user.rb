@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :venues, dependent: :destroy
   has_many :events, through: :venues
   has_many :reviews, through: :bookings
+  has_many :orders
 
   after_initialize :set_defaults
 

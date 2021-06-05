@@ -1,12 +1,21 @@
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-const buildMap = (mapElement) => {
+const buildMap = (mapElement, center) => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
-  return new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v10'
-  });
+  if (center == null) {
+    return new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/bentorama/ckph9m798007s17qistei9iwy'
+    });
+  } else {
+    return new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/bentorama/ckph9m798007s17qistei9iwy',
+      center: center,
+      zoom: 15
+    });
+  }
 };
 
 const addMarkersToMap = (map, markers) => {
@@ -25,11 +34,25 @@ const fitMapToMarkers = (map, markers) => {
 
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
+  console.log(mapElement.dataset.center)
   if (mapElement) {
-    const map = buildMap(mapElement);
+    const center = JSON.parse(mapElement.dataset.center);
+    console.log(center);
+    const map = buildMap(mapElement, center);
     const markers = JSON.parse(mapElement.dataset.markers);
+    console.log(markers);
     addMarkersToMap(map, markers);
-    fitMapToMarkers(map, markers);
+    if (center == null) {
+      fitMapToMarkers(map, markers);
+    }
+    map.addControl(
+      new mapboxgl.GeolocateControl({
+        positionOptions: {
+          enableHighAccuracy: true
+        },
+        trackUserLocation: true
+      })
+    );
   }
 };
 
