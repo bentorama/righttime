@@ -23,10 +23,11 @@
                             <div class="card-top-row">
                                 <div class="card-top-left">  
                                     <% if event.reviews.count > 0 %>
+                                        <p class="rating"> <%= "#{event.reviews.average(:venue_rating)}" %> </p>
                                         <% event.reviews.average(:venue_rating).round.times do  %>  
                                             <i class="far fa-heart star"></i>
                                         <% end %>
-                                            <p class="rating"> <%= "#{event.reviews.average(:venue_rating)}" %> </p>
+                                            
                                             <p><%= "(#{event.reviews.count})"%></p>
                                     <% end %>
                                 </div>
