@@ -70,12 +70,12 @@ p {
 //   color: white;
 // }
 
-// #current-location {
-//   position: absolute;
-//   bottom: 299px;
-//   right: 168px;
-//   font-size: 60px;
-// }
+#current-location {
+  position: absolute;
+  // bottom: 299px;
+  // right: 168px;
+  // font-size: 60px;
+}
 
 // .or {
 //   position: absolute; 
@@ -93,14 +93,19 @@ p {
 //   right: 155px;
 // }
 
-// .go-btn {
-//   position: absolute;
-//   top: 213px;
-//   right: 112px;
-//   border-radius: 16px;
-//   padding: 5px 21px;
-//   border-style: solid;
-//   border-color: white;
-//   font-size: 24px;
-
-// }
+.go-btn {
+  border-color: var(--clr-text);
+  border-radius: 16px;
+  border-style: solid;
+  border-width: var(--border-width);
+  color: var(--clr-text);
+  font-family: var(--ff-primary);
+  font-size: 1.5em;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 300%;
+}
