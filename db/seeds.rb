@@ -92,8 +92,7 @@ Venue.all.each do |venue|
       num_tickets: (5..100).to_a.sample,
       duration: [30, 60, 90, 120].sample,
       min_price: rand((starting_price * 0.5)..(starting_price*0.9)).round(2),
-
-      category: category
+      category: category,
       sku: "event_#{count}"
     )
   end
@@ -118,7 +117,6 @@ puts "creating bookings..."
 users = []
 User.where(owner: false).each do |user|
   users << user
->>>>>>> master
 end
 
 Event.all.each do |event|
@@ -141,16 +139,8 @@ end
 
 puts 'bookings created!'
 puts 'creating reviews...'
-<<<<<<< HEAD
-# past_bookings = []
-Booking.all.each do |booking|
-#   past_bookings << booking if booking.event.start_time < Time.zone.now
-# end
-# Booking.joins(:event).where('events.start_time < ?', Time.now).each do |booking|
-=======
 
 Booking.joins(:event).where('events.start_time < ?', Time.now).each do |booking|
->>>>>>> master
   Review.create!(
     event_review: Faker::Restaurant.review,
     venue_rating: (1..5).to_a.sample,
