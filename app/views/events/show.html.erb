@@ -30,9 +30,7 @@
 
     <div class="show-stars">
       <p class="rating"> <%= "#{@event.reviews.average(:venue_rating)}" %> </p>  
-      <% @event.reviews.average(:venue_rating).round.times do  %>  
-        <i class="fas fa-star star"></i>
-      <% end %>
+      
      <p><%= "  | #{@event.category}" %></p>
     </div>
     <p><%= @event.description %></p>

@@ -148,5 +148,7 @@ Booking.joins(:event).where('events.start_time < ?', Time.now).each do |booking|
   )
 end
 
+
+
 puts 'reviews created!'
 puts "all done! you're good to go"

@@ -14,8 +14,8 @@
                 <div class="card-product">
                     <span class="badge">£<%= event.price_cents %></span>
                     <%= link_to event_path(event) do %>
-                        <% event.photos.each do |photo| %>
-                            <%= cl_image_tag photo.key %> 
+                        <% event.photos.each_with_index do |photo, index| %>
+                            <%= cl_image_tag photo.key if index == 0%> 
                         <% end %>
                     <% end %>
                     <div class="card-product-infos">
