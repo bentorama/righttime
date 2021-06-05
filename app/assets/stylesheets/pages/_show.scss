@@ -76,3 +76,12 @@ p {
     margin-left: 0px;
   }
 }
+
+.show-top {
+  display: flex;
+  justify-content: space-between;
+  i {
+    color: purple;
+    font-size: 30px;
+  }
+}

@@ -25,9 +25,13 @@
 <% end %>
 
 <div class="show-container">
-  
-    <h2><%= @event.name %></h2>
-    <p><%= @event.venue.name %></p>
+  <div class="show-top">
+    <div class="show-title">
+      <h2><%= @event.name %></h2>
+      <p><%= @event.venue.name %></p>
+    </div>
+  <a href="/events"><i class="fas fa-map-marked-alt"></i></a>
+  </div>
     <p><%= @event.start_time.strftime("%B %d %Y %I:%M:%S") %></p>
 
     <div class="show-stars">
@@ -65,6 +69,7 @@
 </div>
 
 <%= render "components/booking-bar" %>
+<%= render "components/footer" %>
 
 <%= javascript_tag "var obj = #{@event.to_json}" %>
 
