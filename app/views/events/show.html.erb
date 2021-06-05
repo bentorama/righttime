@@ -1,6 +1,5 @@
 <div class="show-container">
   <%= render "components/carousel", locals: { event: @event } %>
-
   <div class="show-time-badge">
     <div id= "clockdiv">
       <% if @event.start_time > Time.now %>
@@ -75,7 +74,6 @@
   <%= render "components/footer" %>
 
   <%= javascript_tag "var obj = #{@event.to_json}" %>
-
   <%= javascript_pack_tag 'countdown' %>
 </div>
 
