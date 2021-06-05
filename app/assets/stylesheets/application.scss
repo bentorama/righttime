@@ -12,22 +12,19 @@
 @import "components/index";
 @import "pages/index";
 
-// .min-height {
-//   min-height: calc(100vh - 48px);
-// }
+:root {
+  --clr-footer-icons: #A9729C;
+  --clr-footer-bg: #fff;
+  --clr-logo: #fff;
+  --clr-primary: #A9729C;
+  --clr-text: #fff;
 
-h1 {
-  font-family: $header-one;
-  font-size: 50px;
+  --ff-logo: 'Fredoka One', cursive;
+  --ff-header: 'Arial';
+  --ff-primary: 'Puritan';
+
+  --border-width: 3px;
+
+  --f-size-logo: 3.2em;
+  --f-size-header: 1.2em;
 }
-
-h2 {
-  font-family: $header-two;
-  font-size: 28px;
-}
-  
-
-p {
-  font-family: 'Hind Siliguri', sans-serif;
-}
-
