@@ -1,8 +1,8 @@
 <%= render "components/carousel", locals: { event: @event } %> 
 
 <div class="show-time-badge">
-  
-  <div id="clockdiv">
+  <div id="clockdiv"
+      data-events="<%= @events.to_json %>">
     <h2> Starting in: </h2>
   <div>
     <span class="days"></span>
@@ -30,10 +30,14 @@
 
     <div class="show-stars">
       <p class="rating"> <%= "#{@event.reviews.average(:venue_rating)}" %> </p>  
-      <% @event.reviews.average(:venue_rating).round.times do  %>  
-        <i class="fas fa-star star"></i>
+      <% if @event.reviews.count > 0 %>
+        <% @event.reviews.average(:venue_rating).round.times do  %>  
+          <i class="fas fa-star star"></i>
+        <% end %>
+        <p><%= "  | #{@event.category}" %></p>
+      <% else %>
+        <p><%="No reviews | #{@event.category}" %></p>
       <% end %>
-     <p><%= "  | #{@event.category}" %></p>
     </div>
     <p><%= @event.description %></p>
     <hr class="event-divider">
@@ -50,7 +54,8 @@
         </div>  
 
         <div class="review-content">
-          <p><%=review.event_review %> </p>         
+          <p><%=review.event_review %> </p>
+      
         </div>
       </div>
       <% end %>
@@ -59,6 +64,6 @@
 
 <%= render "components/booking-bar" %>
 
-
+<%= javascript_pack_tag 'countdown' %>
 
 
