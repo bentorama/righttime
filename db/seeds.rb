@@ -126,10 +126,10 @@ Event.all.each do |event|
     if counter > 0
       max_attendees = [counter, 5].min
       num_attendees = rand(1..max_attendees)
-      total_cost = num_attendees * event.starting_price
-      Booking.create!(
+      total_price = num_attendees * event.starting_price
+      Order.create!(
         num_attendees: num_attendees,
-        total_cost: total_cost,
+        amount_cents: total_price,
         event: event,
         user: users.sample
       )
@@ -141,11 +141,11 @@ end
 puts 'bookings created!'
 puts 'creating reviews...'
 
-Booking.joins(:event).where('events.start_time < ?', Time.now).each do |booking|
+Order.joins(:event).where('events.start_time < ?', Time.now).each do |order|
   Review.create!(
     event_review: Faker::Restaurant.review,
     venue_rating: (1..5).to_a.sample,
-    booking: booking
+    order: order
   )
 end
 
