@@ -104,9 +104,11 @@ puts "adding events images..."
 puts "wait for it..."
 
 Event.all.each do |event|
-  image_file = ['https://res.cloudinary.com/dhkhvto68/image/upload/v1622731307/samples/venue/beac4cdb16edb9d0cfd1db1e70cabb9b--concert-posters-music-posters_q3erlf.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731307/samples/venue/18001520-1b12-11e8-bd93-a3fa09536edb_ut2qxk.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731307/samples/venue/rolling-stones-steven-parker-canvas-print_afreoi.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731307/samples/venue/901b97c7af133ee9a63f35c13d946e0a_sexd4m.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731308/samples/venue/fleeceposters_vlkb3l.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731308/samples/venue/Blues_Concert_Band_Line-up_Flyer_-_Made_with_PosterMyWall_faz7ij.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622730667/samples/venue/Joseph_waw57x.png','https://res.cloudinary.com/dhkhvto68/image/upload/v1622730667/samples/venue/grease_fe5rk1.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622730667/samples/venue/phantom_kslpay.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622298458/samples/venue/sebastiaan-stam-qWaWdIchPqE-unsplash_bu2ba4.jpg', 'https://res.cloudinary.com/dhkhvto68/image/upload/v1622729754/samples/venue/Theatre_claqtr.jpg', 'https://res.cloudinary.com/dhkhvto68/image/upload/v1622730554/samples/venue/lionking_nmnvpi.jpg'].sample
-  file = URI.open(image_file)
-  event.photos.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+  3.times do
+    image_file = ['https://res.cloudinary.com/dhkhvto68/image/upload/v1622731307/samples/venue/beac4cdb16edb9d0cfd1db1e70cabb9b--concert-posters-music-posters_q3erlf.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731307/samples/venue/18001520-1b12-11e8-bd93-a3fa09536edb_ut2qxk.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731307/samples/venue/rolling-stones-steven-parker-canvas-print_afreoi.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731307/samples/venue/901b97c7af133ee9a63f35c13d946e0a_sexd4m.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731308/samples/venue/fleeceposters_vlkb3l.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731308/samples/venue/Blues_Concert_Band_Line-up_Flyer_-_Made_with_PosterMyWall_faz7ij.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622730667/samples/venue/Joseph_waw57x.png','https://res.cloudinary.com/dhkhvto68/image/upload/v1622730667/samples/venue/grease_fe5rk1.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622730667/samples/venue/phantom_kslpay.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622298458/samples/venue/sebastiaan-stam-qWaWdIchPqE-unsplash_bu2ba4.jpg', 'https://res.cloudinary.com/dhkhvto68/image/upload/v1622729754/samples/venue/Theatre_claqtr.jpg', 'https://res.cloudinary.com/dhkhvto68/image/upload/v1622730554/samples/venue/lionking_nmnvpi.jpg'].sample
+    file = URI.open(image_file)
+    event.photos.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+  end
   puts "still going..."
 end
 
@@ -146,8 +148,6 @@ Booking.joins(:event).where('events.start_time < ?', Time.now).each do |booking|
     booking: booking
   )
 end
-
-
 
 puts 'reviews created!'
 puts "all done! you're good to go"
