@@ -24,7 +24,7 @@ require("channels")
 
 // External imports
 import "bootstrap";
-import{ initializeClock } from '../components/countdown';
+// import{ initializeClock } from '../components/countdown';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';

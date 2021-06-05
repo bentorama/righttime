@@ -1,39 +1,45 @@
-<%= render "components/carousel", locals: { event: @event } %> 
+<%= render "components/carousel", locals: { event: @event } %>
 
-<div class="show-time-badge">
-  
-  <div id="clockdiv">
-    <h2> Starting in: </h2>
-  <div>
-    <span class="days"></span>
-    <div class="smalltext">Days</div>
-  </div>
-  <div>
-    <span class="hours"></span>
-    <div class="smalltext">Hours</div>
-  </div>
-  <div>
-    <span class="minutes"></span>
-    <div class="smalltext">Minutes</div>
-  </div>
-  <div>
-    <span class="seconds"></span>
-    <div class="smalltext">Seconds</div>
+<% if @event.start_time > Time.now %>
+  <div class="show-time-badge">
+    <div id= "clockdiv">
+      <h2> Starting in: </h2>
+    <div>
+      <span class="days"></span>
+      <div class="smalltext">Days</div>
+      </div>
+    <div>
+      <span class="hours"></span>
+      <div class="smalltext">Hours</div>
+    </div>
+    <div>
+      <span class="minutes"></span>
+      <div class="smalltext">Minutes</div>
+    </div>
+    <div>
+      <span class="seconds"></span>
+      <div class="smalltext">Seconds</div>
+    </div>
   </div>
 </div>
-</div>
+<% end %>
 
 <div class="show-container">
   
     <h2><%= @event.name %></h2>
     <p><%= @event.venue.name %></p>
+    <p><%= @event.start_time.strftime("%B %d %Y %I:%M:%S") %></p>
 
     <div class="show-stars">
       <p class="rating"> <%= "#{@event.reviews.average(:venue_rating)}" %> </p>  
-      <% @event.reviews.average(:venue_rating).round.times do  %>  
-        <i class="fas fa-star star"></i>
+      <% if @event.reviews.count > 0 %>
+        <% @event.reviews.average(:venue_rating).round.times do  %>  
+          <i class="fas fa-star star"></i>
+        <% end %>
+        <p><%= "  | #{@event.category}" %></p>
+      <% else %>
+        <p><%="No reviews | #{@event.category}" %></p>
       <% end %>
-     <p><%= "  | #{@event.category}" %></p>
     </div>
     <p><%= @event.description %></p>
     <hr class="event-divider">
@@ -50,7 +56,8 @@
         </div>  
 
         <div class="review-content">
-          <p><%=review.event_review %> </p>         
+          <p><%=review.event_review %> </p>
+      
         </div>
       </div>
       <% end %>
@@ -58,6 +65,12 @@
 </div>
 
 <%= render "components/booking-bar" %>
+
+<%= javascript_tag "var obj = #{@event.to_json}" %>
+
+<%= javascript_pack_tag 'countdown' %>
+
+
 
 
 
