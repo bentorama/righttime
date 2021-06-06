@@ -1,0 +1,29 @@
+.payment-new-container {
+  text-align: center;
+  h1 {
+    color: black;
+    margin: 20px;
+  }
+
+  p {
+    font-size: 20px;
+    margin: 20px;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.payment-back-btn {
+  margin: 119px;
+  text-decoration: none;
+  color: white;
+  border-style: solid;
+  border-width: 2px;
+  background-color: purple;
+  border-color: white;
+  padding: 10px;
+  border-radius: 8px;
+}
