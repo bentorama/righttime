@@ -1,9 +1,4 @@
 
-p {
-  font-size: 14px;
-  color: black;
-}
-
 .card-product {
   height: 162px;
   background: white;
@@ -12,7 +7,12 @@ p {
   width: 1000px;
   border-color: black;
   position: relative;
-
+  
+  
+  p {
+    font-size: 14px;
+    color: black;
+  }
   
   h2 {
     color: black;
