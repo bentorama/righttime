@@ -7,7 +7,7 @@
         <div>
           <span class="days"></span>
           <div class="smalltext">Days</div>
-          </div>
+        </div>
         <div>
           <span class="hours"></span>
           <div class="smalltext">Hours</div>
@@ -32,22 +32,25 @@
         <h2><%= @event.name %></h2>
         <p><%= @event.venue.name %></p>
       </div>
-    <a href="/events"><i class="fas fa-map-marked-alt"></i></a>
+      <a href="/events">
+        <i class="fas fa-map-marked-alt"></i>
+      </a>
     </div>
-  <a href="/events"><i class="fas fa-map-marked-alt"></i></a>
   </div>
 
-      <div class="show-stars">
-        <p class="rating"> <%= "#{@event.reviews.average(:venue_rating)}" %> </p>  
-        <% if @event.reviews.count > 0 %>
-          <% @event.reviews.average(:venue_rating).round.times do  %>  
-            <i class="fas fa-star star"></i>
-          <% end %>
-          <p><%= "  | #{@event.category}" %></p>
-        <% else %>
-          <p><%="No reviews | #{@event.category}" %></p>
+  <div class="show-stars">
+    <p class="rating">
+      <%= "#{@event.reviews.average(:venue_rating)}" %>    
+    </p>  
+      <% if @event.reviews.count > 0 %>
+        <% @event.reviews.average(:venue_rating).round.times do  %>  
+          <i class="fas fa-star star"></i>
         <% end %>
-      </div>
+        <p><%= "  | #{@event.category}" %></p>
+      <% else %>
+        <p><%="No reviews | #{@event.category}" %></p>
+      <% end %>
+  </div>
       <p><%= @event.description %></p>
       <hr class="event-divider">
 
@@ -70,14 +73,20 @@
         <% end %>
     </div>  
   </div>
-
-  <%= render "components/booking-bar" %>
-  <%= render "components/footer" %>
-
-  <%= javascript_tag "var obj = #{@event.to_json}" %>
-  <%= javascript_pack_tag 'countdown' %>
+  
+  <div id="booking-container">
+    <%= render "components/booking-bar" %>
+  </div>
 </div>
 
+<style>
+  .footer {
+    position: fixed;
+  }
+</style>
+
+<%= javascript_tag "var obj = #{@event.to_json}" %>
+<%= javascript_pack_tag 'countdown' %>
 
 
 
