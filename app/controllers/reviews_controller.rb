@@ -1,19 +1,23 @@
 class ReviewsController < ApplicationController
   def new
-    @event = Event.find(params[:event_id])
-    @order = Order.new
+    @order = Order.find(params[:order_id])
+    @review = Review.new
   end
 
   def create
     @review = Review.new(review_params)
     @order = Order.find(params[:order_id])
     @review.order = @order
-    @review.save!
+    if @review.save!
+      redirect_to order_path(@order)
+    else
+      render :new
+    end
   end
 
   private
 
   def review_params
-    sparams.require(:review).permit(:order_id, :event_review, :venue_rating)
+    params.require(:review).permit(:order_id, :event_review, :venue_rating)
   end
 end
