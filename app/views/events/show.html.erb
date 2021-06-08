@@ -1,83 +1,94 @@
-<div class="show-container">
-  <%= render "components/carousel", locals: { event: @event } %>
-  <div class="show-time-badge">
+<div id="show-container">
+
+  <!-- image carousel -->
+  <div id="carousel-container">
+    <%= render "components/carousel", locals: { event: @event } %>
+  </div>
+
+  <!-- event countdown -->
+  <div id="event-countdown">
     <div id= "clockdiv">
       <% if @event.start_time > Time.now %>
-        <h2> Starting in: </h2>
+        <h2>Starting in:</h2>
         <div>
           <span class="days"></span>
           <div class="smalltext">Days</div>
-          </div>
+        </div>
         <div>
           <span class="hours"></span>
           <div class="smalltext">Hours</div>
         </div>
         <div>
           <span class="minutes"></span>
-          <div class="smalltext">Minutes</div>
+          <div class="smalltext">Mins</div>
         </div>
         <div>
           <span class="seconds"></span>
-          <div class="smalltext">Seconds</div>
+          <div class="smalltext">Secs</div>
         </div>
       <% else %>
-        <p class = "past-event"> Past event </p>  
+        <span class="past-event">Past event</span>  
       <% end %>
     </div>
   </div>
 
-  <div class="show-container">
-    <div class="show-top">
-      <div class="show-title">
-        <h2><%= @event.name %></h2>
-        <p><%= @event.venue.name %></p>
-      </div>
-    <a href="/events"><i class="fas fa-map-marked-alt"></i></a>
+  <!-- event/venue names -->
+  <div class="show-header">
+    <div class="show-title">
+      <h2><%= @event.name %></h2>
+      <span><%= @event.venue.name %></span>
     </div>
-  <a href="/events"><i class="fas fa-map-marked-alt"></i></a>
+    <i class="fas fa-map-marked-alt"></i>
+  </div>
+  
+  <!-- event rating -->
+  <div class="rating-container">
+    <span><%= "#{@event.reviews.average(:venue_rating)}" %></span>  
+    <% if @event.reviews.count > 0 %>
+      <% @event.reviews.average(:venue_rating).round.times do %>  
+        <i class="fas fa-star star"></i>
+      <% end %>
+      <span><%= "  | #{@event.category}" %></span>
+    <% else %>
+      <span><%="No reviews | #{@event.category}" %></span>
+    <% end %>
   </div>
 
-      <div class="show-stars">
-        <p class="rating"> <%= "#{@event.reviews.average(:venue_rating)}" %> </p>  
-        <% if @event.reviews.count > 0 %>
-          <% @event.reviews.average(:venue_rating).round.times do  %>  
-            <i class="fas fa-star star"></i>
-          <% end %>
-          <p><%= "  | #{@event.category}" %></p>
-        <% else %>
-          <p><%="No reviews | #{@event.category}" %></p>
-        <% end %>
+  <!-- full event description -->
+  <span><%= @event.description %></span>
+
+  <!-- user reviews -->
+  <div class="review-container">
+    <!-- review header -->
+    <h2><%= "Reviews (#{@event.reviews.count})"%></h2>
+    <!-- review-content -->
+    <% @event.reviews.each do |review| %>
+      <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+      <% review.venue_rating.times do  %>
+        <i class="fas fa-star star"></i>
+      <% end %>
+      <div class="review-content">
+        <span><%=review.event_review %></span>
       </div>
-      <p><%= @event.description %></p>
-      <hr class="event-divider">
-
-    <div class="review-container">
-      <h2><%= "Reviews (#{@event.reviews.count})"%></h2>
-      <% @event.reviews.each do |review| %>
-        <div class="reviews">
-          <div class="ratings">
-            <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
-              <% review.venue_rating.times do  %>
-                <i class="fas fa-star star"></i>
-              <% end %>
-          </div>  
-
-          <div class="review-content">
-            <p><%=review.event_review %> </p>
-        
-          </div>
-        </div>
-        <% end %>
-    </div>  
-  </div>
-
-  <%= render "components/booking-bar" %>
-  <%= render "components/footer" %>
-
-  <%= javascript_tag "var obj = #{@event.to_json}" %>
-  <%= javascript_pack_tag 'countdown' %>
+    <% end %>
+  </div>  
 </div>
 
+<!-- total transaction bar -->  
+<div id="booking-container">
+  <%= render "components/booking-bar" %>
+</div>
+
+<!-- unique footer styling -->
+<style>
+  .footer {
+    position: fixed;
+  }
+</style>
+
+<!-- javascript -->
+<%= javascript_tag "var obj = #{@event.to_json}" %>
+<%= javascript_pack_tag 'countdown' %>
 
 
 
