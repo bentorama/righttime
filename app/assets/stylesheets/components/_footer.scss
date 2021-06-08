@@ -1,12 +1,12 @@
 .footer {
-  bottom: 0px;
   align-items: center;
   background-color: var(--clr-footer-bg);
+  bottom: 0px;
   display: flex;
   height: 7vh;
   justify-content: space-around;
-  position: relative;
   min-width: 320px;
+  position: relative;
 
   a {
     color: var(--clr-footer-icons);
