@@ -1,9 +1,9 @@
 .event-card {
   background: var(--clr-card-bg);
   display: flex;
-  height: 28vh;  
+  height: 25vh;  
   position: relative;
-  width: 500px;
+  width: 100vw;
 
   a {
     text-decoration: none;
@@ -11,6 +11,7 @@
   }
 
   h2 {
+    font-family: var(--ff-primary);
     font-size: 17px;
     font-weight: bold;
     margin: 0;
@@ -20,11 +21,12 @@
   img {
     height: 100%;
     object-fit: cover;
-    width: 18vw;
+    width: 150px;
   }
 
   p {
     color: var(--clr-card-text);
+    font-family: var(--ff-primary);
     font-size: 16px;
     line-height: 1.4;
     padding-left: 4px;
@@ -38,8 +40,8 @@
 .event-card-container {
   align-items: center;
   display: flex;
-  height: 28vh;
-  overflow: auto;
+  height: 25vh;
+  overflow: scroll;
   min-width: 320px;
   padding-bottom: 8px;  
   padding-top: 8px;
@@ -51,7 +53,7 @@
 }
 
 .event-details {
-  margin-top: -4px;
+  margin-top: -8px;
 }
 
 .event-price {
