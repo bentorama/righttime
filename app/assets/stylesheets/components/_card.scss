@@ -1,7 +1,7 @@
 .event-card {
   background: var(--clr-card-bg);
   display: flex;
-  height: 25vh;  
+  height: 25vh; 
   position: relative;
   // min-width: 100vw;
   width: 100vw;
@@ -42,19 +42,19 @@
   align-items: center;
   display: flex;
   height: 25vh;
-  overflow: scroll;
   min-width: 320px;
+  overflow: scroll;
   padding-bottom: 8px;  
   padding-top: 8px;
   position: static;
 }
 
 .event-timer {
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 
 .event-details {
-  margin-top: -8px;
+  margin-top: -4px;
 }
 
 .event-price {
