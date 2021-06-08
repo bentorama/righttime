@@ -1,27 +1,18 @@
 p {
   color: var(--clr-card-text);
-  font-size: 14px;
-  margin-left: 5px;
-
-  .rating {
-    margin-left: 0px;
-    margin-right: 5px;
-  }
+  font-size: 14px; 
 }
 
 .avatar-bordered {
-  height: 34px;
+  // height: 34px;
 }
 
 #clockdiv{
   color: var(--clr-text);
   display: flex;
   justify-content: space-evenly;
-  font-weight: 100;
   text-align: center;
-  font-size: 30px;
-  font-weight: 100;
-  font-size: 14px;
+  font-size: 12px;
   background-color: var(--clr-primary);
 
   h2 {
@@ -37,12 +28,8 @@ p {
   text-align: center;
 }
 
-.event-divider {
-  border-top: 1px solid $content-color ;
-}
-
 .past-event {
-  color: white;
+  color: var(--clr-text);
   justify-content: center;
   margin: auto;
 }
@@ -56,7 +43,7 @@ p {
 
   i {
     color: var(--clr-primary);
-    font-size: 30px;
+    font-size: 12px;
   }
 }
 
