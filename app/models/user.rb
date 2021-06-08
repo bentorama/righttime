@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :events, through: :venues
   has_many :reviews, through: :bookings
   has_many :orders, dependent: :destroy
+  has_many :favourites, dependent: :destroy
 
   after_initialize :set_defaults
 

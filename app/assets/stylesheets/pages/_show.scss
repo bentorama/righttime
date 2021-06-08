@@ -1,13 +1,14 @@
 
 p {
   font-size: 14px;
+  color: var(--clr-card-text);
 }
 
 .show-container {
   padding: 20px;
   h2 {
-    color: black;
-    font-size: 22px !important;
+    color: var(--clr-card-text);
+    font-size: 22px;
   }
 }
 

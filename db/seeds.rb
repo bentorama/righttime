@@ -143,7 +143,8 @@ end
 puts 'bookings created!'
 puts 'creating reviews...'
 
-Order.joins(:event).where('events.start_time < ?', Time.now).each do |order|
+# Order.joins(:event).where('events.start_time < ?', Time.now).each do |order|
+Order.all.each do |order|
   Review.create!(
     event_review: Faker::Restaurant.review,
     venue_rating: (1..5).to_a.sample,

@@ -26,9 +26,11 @@ header {
   margin-left: 16px;
 
   p {
+    color: var(--clr-text);
     font-size: var(--f-size-header);
     margin-left: 4px;
     margin-top: -12px;
+    color: white;
   }
 }
 
@@ -49,7 +51,9 @@ p {
 
 section {
   p {
+    color: var(--clr-text);
     font-size: var(--f-size-header);
+    color: white;
   }
 }
 
