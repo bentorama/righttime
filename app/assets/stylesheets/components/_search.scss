@@ -2,108 +2,13 @@
  margin-left: auto;
  padding-right: 8px;
 }
-// Component
-// .component-container {
-//   position: fixed;
-//   margin-top: -16px;
-//   left: 20px;
-// }
-
-// Modal
-// .close {
-//   margin-left: auto;
-//   color: white;
-//   opacity: 1;
-// }
-
-// .header {
-//   display: flex;
-//   justify-content: center;
-//   margin-top: -8px;
-
-//   span {
-//     font-size: 20px;
-//     color: white;
-//     text-align: center;
-//   }
-// }
-
-// .modal-body {
-//   height: 210px;
-//   width: auto;
-//   text-align: center;
-
-//   p {
-//     color: white;
-//   }
-// }
-
-// .modal-content {
-//   background-color: #B16F9E;
-//   border-color: white;
-//   border-style: solid;
-//   border-radius: 16px;
-//   border-width: 3px;
-//   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
-//   margin-top: 50%;
-// }
-
-// .modal-title {
-//   font-family: Puritan;
-//   font-size: 16px;
-// }
 
 // Go button
 
 .go {
   border: 3px solid #FFFFFF;
   border-radius: 8px;
-  // box-sizing: border-box;
-  // width: 97px;
-  // height: 40px;
 }
-
-// Toggle Buttons
-
-// .platform-login {
-//   display: flex;
-// }
-
-// .filter-button {
-//   border-style: solid;
-//   border-color: white;
-//   border-radius: 50%;
-//   display: flex;
-//   height: 50px;
-//   justify-content: center;
-//   margin-top: 4px;
-//   width: 50px;
-//   }
-
-//   .filter-button-active {
-//     border-radius: 50%;
-//     box-shadow: inset 2px 2px 4px #643b58;
-//   }
-
-//   img {
-//     height: 30px;
-//   }
-
-//   span {
-//     font-family: Puritan;
-//     font-size: 16px;
-//   }
-
-// .toggle-container {
-//   display: flex;
-//   justify-content: space-between;
-//   margin-top: 6%;
-//   margin-bottom: 6%;
-
-//   span {
-//     color: white;
-//   }
-// }
 
 // Search
 .position-container {
@@ -115,11 +20,6 @@
 .fas {
   color: white;
 }
-
-// .filter-icon {
-//   margin-left: auto;
-//   padding-right: 4px;
-// }
 
 ::placeholder {
   color: var(--clr-text); 
@@ -137,12 +37,7 @@
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
   height: 2em;
   width: min(90vw);
-  // height: 34px;
-  // width: 300px;
-  // position: absolute;
-  // top: 209px;
-  // right: 38px;
-
+ 
   i {
     color: white;
     padding-left: 8px;
