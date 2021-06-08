@@ -48,7 +48,7 @@
         <div class="event-card">
         <!-- event card image -->
         <div>
-          <span class="event-price">£<%= event.price_cents %></span>
+          <span class="event-price">£<%= event.price_cents / 100 %></span>
           <%= link_to event_path(event) do %>
             <%= image_tag(event.photos.first) %>
           <% end %>
