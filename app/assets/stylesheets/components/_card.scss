@@ -1,106 +1,100 @@
 
-.card-product {
-  height: 162px;
-  background: white;
+
+
+.event-card {
+  background: var(--clr-card-bg);
   display: flex;
-  margin: 10px;
-  width: 1000px;
-  border-color: black;
+  height: 25vh; 
   position: relative;
-  
-  
-  p {
-    font-size: 14px;
-    color: black;
-  }
-  
-  h2 {
-    color: black;
-  }
-}
+  width: 100vw;
 
-.card-product img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
-}
-
-.card-product h2 {
-  font-size: 17px;
-  font-weight: bold;
-  margin: 0;
   a {
     text-decoration: none;
-    color: black;
+    color: var(--clr-card-text);
   }
 
-  a:hover {
-    color: $content-color;
+  h2 {
+    font-family: var(--ff-header);
+    font-size: 17px;
+    font-weight: bold;
+    margin: 0;
+    padding-left: 8px;
+  }
+
+  img {
+    height: 100%;
+    object-fit: cover;
+    width: 150px;
+  }
+
+  p {
+    color: var(--clr-card-text);
+    font-family: var(--ff-primary);
+    font-size: 16px;
+    line-height: 1.4;
+    padding-left: 8px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
   }
 }
 
-.card-product p {
-  font-size: 15px;
-  line-height: 1.4;
-  opacity: .7;
+.event-card-container {
+  align-items: center;
+  display: flex;
+  height: 25vh;
+  min-width: 320px;
+  overflow: scroll;
+  padding-bottom: 8px;  
+  padding-top: 8px;
+  position: static;
 }
 
-.card-product .card-product-infos {
-  padding: 0px 16px;
+.event-timer {
+  margin-bottom: 8px;
 }
 
-.card-product-infos {
+.event-details {
+  margin-top: -4px;
+}
+
+.event-price {
+  background-color: var(--clr-primary);
+  bottom: 0px;
+  border: 3px solid white;
+  border-radius: 20px;
+  color: var(--clr-text);
+  font-family: var(--ff-primary);
+  font-size: 16px;
+  margin-bottom: 8px;
+  margin-left: 8px;
+  padding: 7px 10px;
+  position: absolute;
+  z-index: 1;
+}
+
+.event-information {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-.scroller {
-  display: flex;
-  overflow: auto;
-  box-shadow: 0 0 20px 10px rgba(0,0,0,0.2);
-  background-color: white;
-}
-
-.main-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
-.badge {
-  position: absolute;
-  top: 122px;
-  right: 348px;
-  padding: 7px 10px;
-  border-radius: 20px;
-  background: $content-color;
-  color: white;
-  font-size: 15px;
-  border: 3px solid white;
+  width: 200px;
 }
 
 .card-top-row {
   display: flex;
-  justify-content: space-between;
-  align-content: flex-start;
+  padding-left: 4px;
+  padding-top: 4px;
+ }
 
-  a {
-    text-decoration: none;
-    color: $content-color;
+ #heart {
+    margin-top: -2px;
+    margin-left: auto;
+    padding-right: 4px;
   }
-}
 
-.card-top-left {
+.event-review {
   display: flex;
   justify-content: start;
   align-content: flex-end;
-
-  p {
-    font-size: 15px;
-  }
-}
-
-.infos-middle {
-  width: 250px !important;
 }
