@@ -1,4 +1,6 @@
 class FavouritesController < ApplicationController
+  # before_action :set_favourite, only: [:destroy]
+
   def index
     @favourites = Favourite.all
   end
@@ -18,6 +20,12 @@ class FavouritesController < ApplicationController
       flash[:alert] = "didn't save!"
       render 'new'
     end
+  end
+
+  def destroy
+    @favourite = Favourite.find(params[:id])
+    @favourite.destroy
+    redirect_to favourites_path
   end
 
   private

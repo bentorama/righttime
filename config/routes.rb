@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :favourites, only: [:new, :create]
   end
   resources :venues
-  resources :favourites, only: [:index, :delete]
+  resources :favourites, only: [:index, :destroy]
   # resources :bookings do
   #   resources :reviews, only: [ :new, :create ] 
   # end
