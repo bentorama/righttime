@@ -1,12 +1,10 @@
 class FavouritesController < ApplicationController
-  before_action :set_favourite, only: [:show]
-
-  def show
+  def index
+    @favourites = Favourite.all
   end
 
   def new
     @event = Event.find(params[:event_id])
-    @favourite = Favourite.new
   end
 
   def create
@@ -15,7 +13,7 @@ class FavouritesController < ApplicationController
     @favourite.user = current_user
     @favourite.event = @event
     if @favourite.save
-        redirect_to(@favourite)
+        redirect_to favourites_path
     else
       flash[:alert] = "didn't save!"
       render 'new'
