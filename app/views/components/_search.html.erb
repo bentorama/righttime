@@ -79,6 +79,7 @@
           <input type="search" id="query" name="location" placeholder="Search">
         </form> %>
         <%= form_tag events_path, method: :get do %>
+          <%= hidden_field_tag 'coordinates' %>
           <%= text_field_tag :query,
             params[:query],
             placeholder: "Enter Postcode:", 

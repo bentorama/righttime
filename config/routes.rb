@@ -6,8 +6,11 @@ Rails.application.routes.draw do
     resources :payments, only: :new
     resources :reviews, only: [ :new, :create ]
   end
-  resources :events
+  resources :events do
+    resources :favourites, only: [:new, :create]
+  end
   resources :venues
+  resources :favourites, only: [:index, :destroy]
   # resources :bookings do
   #   resources :reviews, only: [ :new, :create ] 
   # end

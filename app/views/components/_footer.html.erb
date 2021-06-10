@@ -1,7 +1,9 @@
 <div class="wrapper">
   <div class="footer">
     <div>
-      <a href="#" class="far fa-heart"></a>
+      <%= link_to favourites_path do %>
+        <i href="#" id="footer-heart" class="far fa-heart"></i>
+      <% end %>
     </div>
     <% if user_signed_in? %>
       <div>
