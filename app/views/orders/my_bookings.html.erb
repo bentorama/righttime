@@ -1,0 +1,8 @@
+<div class="show-container">
+    <div class="show-title">
+      <% @bookings.each do |booking| %>
+          <h2><%=booking.event.name%></h2>
+          <%= link_to "Leave a review", new_order_review_path(booking)   %>
+      <% end %>
+    </div>
+</div>

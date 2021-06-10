@@ -24,16 +24,19 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import 'jquery-bar-rating/dist/themes/css-stars';
 // import{ initializeClock } from '../components/countdown';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
 import { initMapbox } from '../plugins/init_mapbox';
+import { initStarRating } from '../plugins/init_star_rating';
 
 document.addEventListener('turbolinks:load', () => {
   // initializeClock('clockdiv', 'December 31 2021 23:59:59 GMT+0200')
   initMapbox();
+  initStarRating();
   
   const currentLocation = document.getElementById("current-location");
   const search = document.getElementById("search");
