@@ -47,4 +47,4 @@ document.addEventListener('turbolinks:load', () => {
       });
     });
   };
-  
+});
