@@ -1,9 +1,12 @@
 <div class="booking-bar-container">
-  <p id="price-input">Total: £
+  <div id="price-input">
+    <div>
+      <span>Total: £</span>
+    </div>
     <div id="price-html">
       <%= @event.price_cents / 100 %>
     </div>
-  </p>
+  </div>
   <p>
     <div id="minus" class="counter-btn">
       <span class="fas fa-minus"></span>
@@ -23,3 +26,5 @@
     <% end %>
   </div>
 </div>
+
+<%= javascript_pack_tag 'counter' %>
