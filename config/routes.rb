@@ -5,8 +5,11 @@ Rails.application.routes.draw do
   resources :orders, only: [:show, :create] do
     resources :payments, only: :new
     resources :reviews, only: [ :new, :create ]
+    collection do
+      get :my_bookings
+    end
   end
-  resources :events
+  resources :events 
   resources :venues
   # resources :bookings do
   #   resources :reviews, only: [ :new, :create ] 

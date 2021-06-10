@@ -12,7 +12,6 @@ class EventsController < ApplicationController
     markers_and_center
   end
 
-
   def show; end
 
   def new
