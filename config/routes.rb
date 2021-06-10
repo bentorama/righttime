@@ -9,7 +9,9 @@ Rails.application.routes.draw do
       get :my_bookings
     end
   end
-  resources :events 
+  resources :events do
+    resources :favourites, only: [:create]
+  end
   resources :venues
   resources :favourites, only: [:index, :destroy]
   # resources :bookings do
