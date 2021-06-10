@@ -1,24 +1,20 @@
 <div class="booking-bar-container">
+  <span>Total: £</span>
   <div id="price-input">
-    <div>
-      <span>Total: £</span>
-    </div>
     <div id="price-html">
       <%= @event.price_cents / 100 %>
     </div>
   </div>
-  <p>
-    <div id="minus" class="counter-btn">
-      <span class="fas fa-minus"></span>
-    </div>  
-      <span class="far fa-user"></span>   
-    <div id="counter-Html">
-      1
-    </div>   
-    <div id="plus" class="counter-btn">
-      <span class="fas fa-plus"></span>
-    </div>
-  </p>
+  <div id="minus" class="counter-btn">
+    <span class="fas fa-minus"></span>
+  </div>  
+    <span class="far fa-user"></span>   
+  <div id="counter-Html">
+    1
+  </div>   
+  <div id="plus" class="counter-btn">
+    <span class="fas fa-plus"></span>
+  </div>
   <div>
     <%= form_tag orders_path do %>
       <%= hidden_field_tag 'event_id', @event.id %>
