@@ -1,3 +1,8 @@
+// icon color
+.fas {
+  color: white;
+}
+
 // go button
 .go-btn {
   border-color: var(--clr-text);
@@ -16,6 +21,16 @@
   top: 150%;
 }
 
+// remove default form styling
+input {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+  background-color: #B16F9E;
+  color: white;
+}
+
 // location pin positioning
 #pin {
   margin-left: auto;
@@ -28,15 +43,29 @@
   justify-content: center;
 }
 
-// search form design
-.fas {
-  color: white;
-}
-
 ::placeholder {
   color: var(--clr-text); 
   font-family: var(--ff-primary);
   opacity: 1;
+}
+
+// remove outline from search form
+#query:focus {
+  outline: none;
+}
+
+#search {
+  width: 225px;
+}
+
+// position search form
+#search-bar {
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  top: 60%;
+  position: absolute;
+  right: 0;
 }
 
 .search-container {
@@ -57,45 +86,8 @@
   }
 }
 
-#search {
-  width: 225px;
-}
-
 #search:focus {
   outline: none;
-}
-
-// Remove default form styling
-input {
-  border-top-style: hidden;
-  border-right-style: hidden;
-  border-left-style: hidden;
-  border-bottom-style: hidden;
-  background-color: #B16F9E;
-  color: white;
-}
-
-// Remove outline from search box
-#query:focus {
-  outline: none;
-}
-
-// Remove default button styling
-button {
-  border-top-style: hidden;
-  border-right-style: hidden;
-  border-left-style: hidden;
-  border-bottom-style: hidden;
-  background-color: Transparent;
-}
-
-#search-bar {
-  left: 0;
-  margin-left: auto;
-  margin-right: auto;
-  top: 60%;
-  position: absolute;
-  right: 0;
 }
 
 // Remove styling from input
