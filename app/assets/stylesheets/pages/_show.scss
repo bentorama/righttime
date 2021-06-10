@@ -3,6 +3,12 @@ p {
   font-size: 14px; 
 }
 
+.show-container {
+  h2 {
+    font-weight: bold;
+  }
+}
+
 #clockdiv{
   color: var(--clr-text);
   display: flex;
@@ -10,6 +16,7 @@ p {
   text-align: center;
   font-size: 12px;
   background-color: var(--clr-primary);
+  font-weight: bold;
 
   h2 {
     font-size: 12px;
@@ -32,6 +39,7 @@ p {
 
 .rating-container {
   display:flex;
+
 }
 
 .show-header {
@@ -45,4 +53,18 @@ p {
 
 .star {
   color: gold;
+}
+
+.review-container {
+   h2 {
+    margin-top: 5px;
+    font-size: 25px;
+  }
+}
+
+.review-content {
+  span {
+  font-size: 12px;
+  font-style: italic;
+}
 }

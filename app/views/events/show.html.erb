@@ -45,10 +45,6 @@
       <h2><%= @event.name %></h2>
       <span><%= @event.venue.name %></span>
       <a href="/events"><i class="fas fa-map-marked-alt"></i></a>
-
-    </div>
-    <i class="fas fa-map-marked-alt"></i>
-  </div>
   
   <!-- event rating -->
   <div class="rating-container">
@@ -65,6 +61,8 @@
 
   <!-- full event description -->
   <span><%= @event.description %></span>
+
+  <hr class = "card-break">
 
   <!-- user reviews -->
   <div class="review-container">
