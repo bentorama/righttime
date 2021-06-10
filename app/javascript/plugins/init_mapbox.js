@@ -12,8 +12,7 @@ const buildMap = (mapElement, center) => {
     return new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/bentorama/ckph9m798007s17qistei9iwy',
-      center: center,
-      zoom: 15
+      center: center
     });
   }
 };
@@ -44,9 +43,7 @@ const initMapbox = () => {
     const markers = JSON.parse(mapElement.dataset.markers);
     console.log(markers);
     addMarkersToMap(map, markers);
-    if (center == null) {
-      fitMapToMarkers(map, markers);
-    }
+    fitMapToMarkers(map, markers);
     map.addControl(
       new mapboxgl.GeolocateControl({
         positionOptions: {
