@@ -2,45 +2,10 @@
   <!-- map viewport -->  
   <div id="map" style="min-width: 320px; min-height: 68vh;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" data-center="<%= @center.to_json %>">
     <!-- filter buttons -->
-    <div class="toggle-container">
-      <div>
-        <div class="filter-button">
-          <button type="button" data-toggle="button">
-            <img src="assets/white_hot">
-          </button>
-        </div>
-      </div>
-      <div>
-        <div class="filter-button">
-          <button type="button" data-toggle="button">
-            <img src="assets/white_food">
-          </button>
-        </div>
-      </div>
-      <div>
-        <div class="filter-button">
-          <button type="button" data-toggle="button">
-            <img src="assets/white_drink">
-          </button>
-        </div>
-      </div>
-      <div>
-        <div class="filter-button">
-          <button type="button" data-toggle="button">
-            <img src="assets/white_show">
-          </button>
-        </div>
-      </div>
-      <div>
-        <div class="filter-button">
-          <button type="button" data-toggle="button">
-            <img src="assets/white_music">
-          </button>
-        </div>
-      </div>
+    <div id="filter-flex">  
+      <%= render "components/filter" %>
     </div>
   </div>
-
   <!-- event cards -->
   <div class="event-card-container">
     <% @events.each do |event| %>
@@ -60,7 +25,7 @@
                 <% if event.reviews.count > 0 %>
                   <p><%= "#{event.reviews.average(:venue_rating)}" %></p>
                   <% event.reviews.average(:venue_rating).round.times do  %>  
-                    <i class="far fa-heart star"></i>
+                    <i class="far fa-star"></i>
                   <% end %>  
                   <p><%= "(#{event.reviews.count})"%></p>
                 <% end %>

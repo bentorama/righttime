@@ -82,6 +82,7 @@
     <% end %>
   </div>  
 </div>
+</div>
 
 <!-- total transaction bar -->  
 <div id="booking-container">
@@ -92,9 +93,10 @@
 <style>
   .footer {
     position: fixed;
+    width: 100vw;
   }
 </style>
 
 <!-- javascript -->
 <%= javascript_tag "var obj = #{@event.to_json}" %>
-<%= javascript_pack_tag 'countdown' %>
+<%= javascript_pack_tag "countdown" %>

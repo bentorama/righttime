@@ -1,10 +1,3 @@
-// button positioning
-#map {
-  display: flex;
-  justify-content: center;
-}
-
-// filter buttons
 .filter-button {
   background-color: #B16F9E;
   border-style: solid;
@@ -15,6 +8,11 @@
   justify-content: center;
   margin: 2px;
   width: 50px;
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
   }
   
   //javascript toggle property

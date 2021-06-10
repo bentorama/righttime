@@ -1,20 +1,3 @@
-.go-btn {
-  border-color: var(--clr-text);
-  border-radius: 16px;
-  border-style: solid;
-  border-width: var(--border-width);
-  color: var(--clr-text);
-  font-family: var(--ff-primary);
-  font-size: var(--f-size-header);
-  left: 0;
-  margin-left: auto;
-  margin-right: auto;
-  position: absolute;
-  right: 0;
-  text-align: center;
-  top: 150%;
-}
-
 h1 {
   color: var(--clr-logo);
   font-family: var(--ff-logo);
@@ -55,15 +38,6 @@ section {
     font-size: var(--f-size-header);
     color: white;
   }
-}
-
-#search-bar {
-  left: 0;
-  margin-left: auto;
-  margin-right: auto;
-  top: 60%;
-  position: absolute;
-  right: 0;
 }
 
 #text-bottom {
