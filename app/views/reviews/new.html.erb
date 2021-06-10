@@ -1,9 +1,10 @@
 <div class="review-show-container">
   <h1>Add a review</h1>  
-    <%= simple_form_for [ @order, @review ] do |f| %>
+  <%= simple_form_for [ @order, @review ] do |f| %>
     <%= f.input :event_review, class: "form-label" %>
     <%= f.input :venue_rating, as: :select, collection: (1..5), required: true, prompt: "What's your rating", input_html: { id: 'review_rating' } %>
     <%= f.button :submit, "Add your review", class: "submit-btn" %>
+<<<<<<< HEAD
 <% end %>
 </div>
 
@@ -11,3 +12,7 @@
 
 
 
+=======
+  <% end %>
+</div>
+>>>>>>> master

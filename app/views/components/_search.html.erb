@@ -1,104 +1,17 @@
 <div class="component-container">
-
-  <!-- Modal -->
-  <div id="filter-modal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-      <!-- Modal Content-->
-      <div class="modal-content">
-        <div class="modal-body">
-          <div class="header">
-            <span class="modal-title">Filter</span>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-          </div>
-
-          <!-- filter buttons -->
-          <div class="toggle-container">
-            <div>
-              <span>Hot</span>
-              <div class="filter-button">
-                <button type="button" data-toggle="button">
-                  <img src="assets/white_hot">
-                  <!--  add toggle function -->
-                </button>
-              </div>
-            </div>
-            <div>
-              <span>Food</span>
-              <div class="filter-button">
-                <button type="button" data-toggle="button">
-                  <img src="assets/white_food">
-                  <!--  add toggle function -->
-                </button>
-              </div>
-            </div>
-            <div>
-              <span>Drink</span>
-              <div class="filter-button">
-                <button type="button" data-toggle="button">
-                  <img src="assets/white_drink">
-                  <!--  add toggle function -->
-                </button>
-              </div>
-            </div>
-            <div>
-              <span>Show</span>
-              <div class="filter-button">
-                <button type="button" data-toggle="button">
-                  <img src="assets/white_show">
-                  <!--  add toggle function -->
-                </button>
-              </div>
-            </div>
-            <div>
-              <span>Music</span>
-              <div class="filter-button">
-                <button type="button" data-toggle="button">
-                  <img src="assets/white_music">
-                  <!--  add toggle function -->
-                </button>
-              </div>
-            </div>
-          </div>
-          <a href="#">
-            <button type="button" class="go">Go!</button>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Search Form -->
   <div class="position-container">
     <div class="search-container">
       <div>
         <i class="fas fa-search"></i>
       </div>
-      
-        <%# <form id="form"> 
-          <input type="search" id="query" name="location" placeholder="Search">
-        </form> %>
-        <%= form_tag events_path, method: :get do %>
-          <%= text_field_tag :query,
-            params[:query],
-            placeholder: "Enter Postcode:", 
-            id: "search"
-            %>
-          <%= submit_tag "Go!", class: "go-btn" %>
-        <% end %>
-  
-      <%# <div class="filter-icon">
-        <!-- open modal -->
-        <button class="fas fa-sliders-h" data-toggle="modal" data-target="#filter-modal"></button>
-      </div> %>
+      <%= form_tag events_path, method: :get do %>
+        <%= hidden_field_tag 'coordinates' %>
+        <%= text_field_tag :query, params[:query], placeholder: "Enter Postcode:", id: "search" %>
+        <%= submit_tag "Go!", class: "go-btn" %>
+      <% end %>
       <div id="pin">
         <span id="current-location" class="fas fa-map-marker-alt"></span>
       </div>
     </div>
   </div>
-
 </div>
-
-
-
-<%= javascript_pack_tag 'toggle' %>

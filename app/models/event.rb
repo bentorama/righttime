@@ -2,6 +2,7 @@ class Event < ApplicationRecord
   belongs_to :venue
   # has_many :bookings, dependent: :destroy
   has_many :orders, dependent: :destroy
+  has_many :favourites, dependent: :destroy
   has_many :reviews, through: :orders
   has_many_attached :photos
 

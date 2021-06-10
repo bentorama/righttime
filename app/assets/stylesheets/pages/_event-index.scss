@@ -1,5 +1,7 @@
-
-
+#filter-flex {
+  display: flex;
+  justify-content: center;
+}
 
 .event-card {
   background: var(--clr-card-bg);

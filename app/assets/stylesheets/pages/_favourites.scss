@@ -1,0 +1,21 @@
+.favourites-card-container {
+  padding: 10px;
+
+  .event-card {
+    margin: 10px;
+  }
+
+  #icon-heart {
+    color: purple;
+  }
+
+  .delete-favourite {
+    border-style: solid;
+    border-color: purple;
+    padding: 4px;
+    border-radius: 5px;
+    color: purple;
+    text-align: center;
+    margin: 0px 10px;
+  }
+}

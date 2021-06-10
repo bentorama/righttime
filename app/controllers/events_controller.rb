@@ -37,9 +37,11 @@ class EventsController < ApplicationController
 
   def find_near_events
     @events = []
-    Venue.near(params[:query], 2).each do |venue|
+    Venue.near(params[:query], 1).each do |venue|
       venue.events.each do |event|
-        @events << event
+        if event.start_time < (Date.today + 1).midnight && event.start_time > Time.now
+          @events << event
+        end
       end
     end
   end
