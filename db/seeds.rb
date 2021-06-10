@@ -79,7 +79,7 @@ count = 0
 
 Venue.all.each do |venue|
   1.times do
-    starting_price = rand(10.0..100.0).round(2)
+    starting_price = rand(5.0...40.0).round(2)
     category = ["Hot", "Food", "Drink", "Show", "Music"].sample
     Event.create!(
       price_cents: starting_price * 100,
