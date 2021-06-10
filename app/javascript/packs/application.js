@@ -24,7 +24,7 @@ require("channels")
 
 // External imports
 import "bootstrap";
-import 'jquery-bar-rating/dist/themes/css-stars';
+// import 'jquery-bar-rating/dist/themes/css-stars';
 // import{ initializeClock } from '../components/countdown';
 
 // Internal imports, e.g:
