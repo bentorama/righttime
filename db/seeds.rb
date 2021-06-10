@@ -26,7 +26,7 @@ puts "creating venues..."
 
 address_array = []
 csv_options = { headers: :first_row, header_converters: :symbol }
-CSV.foreach('./app/assets/data/london_postcodes_v3.csv', csv_options) do |row|
+CSV.foreach('./app/assets/data/london_postcodes_v4.csv', csv_options) do |row|
   address = "#{row[:pcd]}, London, UK"
   address_array << address
 end
@@ -82,9 +82,10 @@ Venue.all.each do |venue|
     starting_price = rand(10.0..100.0).round(2)
     category = ["Hot", "Food", "Drink", "Show", "Music"].sample
     Event.create!(
-      price_cents: starting_price,
+      price_cents: starting_price * 100,
+      # starting_price in £
       starting_price: starting_price,
-      start_time: Faker::Time.between_dates(from: Date.today - 30, to: Date.today + 30, period: :evening),
+      start_time: Faker::Time.between_dates(from: Date.today, to: Date.today + 1, period: :night),
       # start_time: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
       venue: venue,
       description: Faker::Restaurant.description,
@@ -126,7 +127,8 @@ Event.all.each do |event|
     if counter > 0
       max_attendees = [counter, 5].min
       num_attendees = rand(1..max_attendees)
-      total_price = num_attendees * event.starting_price
+      # total_price in cents / pence
+      total_price = num_attendees * event.starting_price * 100
       Order.create!(
         num_attendees: num_attendees,
         amount_cents: total_price,
