@@ -1,0 +1,94 @@
+.log-out-orders {
+
+  p {
+    margin-top: 5px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #E6E6E6;
+    color: var(--clr-primary);
+    font-family: var(--ff-primary);
+    font-size: 10px;
+    width: 90%;
+    margin: auto;
+    padding: 7px 2px;
+  }
+}
+
+.my-orders-container {
+  background: var(--clr-card-bg);
+  padding: 12px;
+  margin: 5px auto;
+  width: 90%;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    background-color: var(--clr-primary);
+    border: 3px solid white;
+    border-radius: 20px;
+    color: var(--clr-text);
+    font-family: var(--ff-primary);
+    font-size: 16px;
+    padding: 7px 10px;
+
+  }
+
+  a:active {
+      background-color: white;
+      border: 3px solid var(--clr-primary);
+      color:var(--clr-primary);
+    }
+
+
+  h2 {
+    font-family: var(--ff-header);
+    font-weight: bold;
+    margin: 4px;
+  }
+
+  p {
+    color: var(--clr-card-text);
+    font-family: var(--ff-primary);
+    font-size: 16px;
+    line-height: 1.4;
+    padding-left: 8px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+}
+
+.order-bookings {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+}
+
+.order-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+
+  h2 {
+    font-weight: bold;
+  }
+}
+
+.order-back {
+  left: 5px;
+  position: absolute;
+}
+
+.title-card-break {
+    margin-top: 0px;
+    width: 100%;
+  }
+
+.back-btn{
+  color: var(--clr-primary);
+  font-size: 24px;
+
+}

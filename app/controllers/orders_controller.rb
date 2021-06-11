@@ -24,6 +24,6 @@ class OrdersController < ApplicationController
   end
 
   def my_bookings
-    @bookings = Order.where(user: current_user)
+    @orders = Order.where(user: current_user)
   end
 end

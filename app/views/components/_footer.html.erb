@@ -7,7 +7,7 @@
     </div>
     <% if user_signed_in? %>
       <div>
-        <%= link_to(destroy_user_session_path, method: :delete) do %>
+        <%= link_to(my_bookings_orders_path) do %>
           <i class="fas fa-user"></i>
         <% end %>
       </div>
