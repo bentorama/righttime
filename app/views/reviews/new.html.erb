@@ -1,8 +1,18 @@
-<div class="review-show-container">
-  <h1>Add a review</h1>  
-  <%= simple_form_for [ @order, @review ] do |f| %>
-    <%= f.input :event_review, class: "form-label" %>
-    <%= f.input :venue_rating, as: :select, collection: (1..5), required: true, prompt: "What's your rating", input_html: { id: 'review_rating' } %>
-    <%= f.button :submit, "Add your review", class: "submit-btn" %>
-  <% end %>
+<div class="my-order-container">
+  <div class="order-header">
+    <div class="order-back">      
+      <%= link_to(my_bookings_orders_path) do  %>
+        <i class="fas fa-chevron-left back-btn"></i>
+      <% end %>
+    </div>
+    <h2>Add a review</h2>
+  </div>
+  <hr class ="title-card-break">
+  <div class = "review-show-container" >
+    <%= simple_form_for [ @order, @review ] do |f| %>
+      <%= f.input :event_review, class: "form-label" %>
+      <%= f.input :venue_rating, as: :select, collection: (1..5), required: true, prompt: "What's your rating", input_html: { id: 'review_rating' } %>
+      <%= f.button :submit, "Add your review", class: "submit-btn" %>
+    <% end %>
+  </div>
 </div>
