@@ -10,11 +10,14 @@
   <hr class ="title-card-break">
 
   <div class="order-bookings">
-    <h2>Your Details</h2>
+    <h2>Your details</h2>
   </div>
   <div class="my-orders-container">
     <p><strong>Email:</strong> <%="#{current_user.email}"  %></p>
   </div>
+
+  <hr class ="title-card-break">
+
 
   <div class="order-bookings">
       <h2>Your past bookings</h2>
@@ -23,13 +26,17 @@
     <% @orders.each do |order| %>
         <% if order.event.start_time < Time.now %>
           <p><%= order.event.start_time.strftime('%D') %></p>
-          <h2><%=order.event.name%></h2>
+          <h3><%=order.event.venue.name%></h2>
+          <p><%=order.event.name%></p>
           <%= link_to "Leave a review", new_order_review_path(order), class: "order-button"   %>
           <hr class = "card-break">
         <% end %>
     <% end %>
   </div>
 </div>
+
+<hr class ="title-card-break">
+
 
 <% if user_signed_in? %>
   <div class = "log-out-orders">

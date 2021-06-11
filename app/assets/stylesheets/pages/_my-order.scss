@@ -11,22 +11,25 @@
     width: 90%;
     margin: auto;
     padding: 7px 2px;
+    border-radius: 8px;
   }
 }
 
 .my-orders-container {
   background: var(--clr-card-bg);
+  border-radius: 8px;
   padding: 12px;
-  margin: 5px auto;
+  margin: 10px auto;
+
   width: 90%;
   text-align: center;
 
   a {
     text-decoration: none;
-    background-color: var(--clr-primary);
-    border: 3px solid white;
+    // background-color: var(--clr-primary);
+    // border: 3px solid white;
     border-radius: 20px;
-    color: var(--clr-text);
+    color: var(--clr-primary);
     font-family: var(--ff-primary);
     font-size: 16px;
     padding: 7px 10px;
@@ -52,6 +55,7 @@
     font-size: 16px;
     line-height: 1.4;
     padding-left: 8px;
+    margin: 4px;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -83,8 +87,9 @@
 }
 
 .title-card-break {
-    margin-top: 0px;
-    width: 100%;
+    margin-top: 4px;
+    width: 90%;
+  
   }
 
 .back-btn{
