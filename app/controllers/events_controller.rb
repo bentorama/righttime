@@ -6,8 +6,7 @@ class EventsController < ApplicationController
     if params[:query].present? && params[:query] != "" 
       location = params[:query]
       find_near_events(location)
-    elsif
-      params[:hidden].present? && params[:hidden] != "" 
+    elsif params[:hidden].present? && params[:hidden] != "" 
       location = params[:hidden]
       find_near_events(location)
     else
@@ -58,7 +57,7 @@ class EventsController < ApplicationController
         info_window: render_to_string(partial: "info_window", locals: { event: event })
       }
     end
-    if params[:query] == ""
+    if params[:query] == "" || params[:query].nil?
       @center = nil
     else
       @center = {
