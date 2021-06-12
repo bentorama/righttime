@@ -1,14 +1,42 @@
 .review-show-container {
-  text-align: center;
-  padding: 5px;
+  border-radius: 8px;
+  margin: 10px auto;
+  width: 90%;
 
-  h1 {
-    color: black;
-    margin: 10px;
-  }
   
   label {
   color: purple;
+  }
+
+  input {
+    margin: 0px;
+    
+  }
+
+  a:active {
+      background-color: white;
+      border: 3px solid var(--clr-primary);
+      color:var(--clr-primary);
+    }
+
+
+  h2 {
+    font-family: var(--ff-header);
+    font-weight: bold;
+    margin: 4px;
+  }
+
+  p {
+    color: var(--clr-card-text);
+    font-family: var(--ff-primary);
+    font-size: 16px;
+    line-height: 1.4;
+    padding-left: 8px;
+    margin: 4px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
   }
 }
 

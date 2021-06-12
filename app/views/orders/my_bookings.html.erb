@@ -1,8 +1,54 @@
-<div class="show-container">
-    <div class="show-title">
-      <% @bookings.each do |booking| %>
-          <h2><%=booking.event.name%></h2>
-          <%= link_to "Leave a review", new_order_review_path(booking)   %>
-      <% end %>
-    </div>
+<div class="my-order-container">
+<div class="order-header">
+      <div class="order-back">      
+        <%= link_to(events_path) do  %>
+          <i class="fas fa-chevron-left back-btn"></i>
+        <% end %>
+      </div>
+      <h2>Profile</h2>
 </div>
+  <hr class ="title-card-break">
+
+  <div class="order-bookings">
+    <h2>Your details</h2>
+  </div>
+  <div class="my-orders-container">
+    <p><strong>Email:</strong> <%="#{current_user.email}"  %></p>
+  </div>
+
+  <hr class ="title-card-break">
+
+
+  <div class="order-bookings">
+      <h2>Your past bookings</h2>
+  </div>
+  <div class="my-orders-container">
+    <% @orders.each do |order| %>
+        <% if order.event.start_time < Time.now %>
+          <p><%= order.event.start_time.strftime('%D') %></p>
+          <h3><%=order.event.venue.name%></h2>
+          <p><%=order.event.name%></p>
+          <%= link_to "Leave a review", new_order_review_path(order), class: "order-button"   %>
+          <hr class = "card-break">
+        <% end %>
+    <% end %>
+  </div>
+</div>
+
+<hr class ="title-card-break">
+
+
+<% if user_signed_in? %>
+  <div class = "log-out-orders">
+    <%= link_to(destroy_user_session_path, method: :delete) do %>
+      <p>Log out</p>
+    <% end %>
+  </div>
+<% end %>
+
+<style>
+  .footer {
+    position: fixed;
+    width: 100vw;
+  }
+</style>

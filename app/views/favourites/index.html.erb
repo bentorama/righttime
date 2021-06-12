@@ -1,5 +1,13 @@
 <div class="favourites-card-container">
-<%= link_to "Back to events", events_path  %>
+  <div class="order-header">
+        <div class="order-back">      
+          <%= link_to(events_path) do  %>
+            <i class="fas fa-chevron-left back-btn"></i>
+          <% end %>
+        </div>
+        <h2>Favorites</h2>
+  </div>
+  <hr class ="title-card-break">
     <% @favourites.each do |favourite| %>
       <% if favourite.event.start_time > Time.now %>
         <div class="event-card">
