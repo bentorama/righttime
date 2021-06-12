@@ -13,8 +13,8 @@ plus.addEventListener("click", (event) => {
   counter++;
   counterHtml.innerText = counter;
   price += ticketPrice;
-  priceHtml.innerText = price;
-  hiddenField.value = price;
+  priceHtml.innerText = price.toFixed(2);
+  hiddenField.value = price.toFixed(2);
 });
   
 minus.addEventListener("click", (event) => {
@@ -25,7 +25,7 @@ minus.addEventListener("click", (event) => {
     counter -= 1;
     counterHtml.innerText = counter;
     price -= ticketPrice;
-    priceHtml.innerText = price;
-    hiddenField.value = price;
+    priceHtml.innerText = price.toFixed(2);
+    hiddenField.value = price.toFixed(2);
   }
 });
