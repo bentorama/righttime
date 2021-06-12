@@ -5,11 +5,12 @@
       <div>
         <i class="fas fa-search"></i>
       </div>
-      <%= form_tag events_path, method: :get do %>
-        <%= hidden_field_tag 'coordinates' %>
-        <%= text_field_tag :query, params[:query], placeholder: "Enter Postcode:", id: "search" %>
-        <%= submit_tag "Go!", class: "go-btn" %>
+      
+      <%= form_tag events_path, method: :get, id: "search-form" do %>
+        <%= hidden_field_tag 'hidden', params[:hidden], id: "hidden" %>
+        <%= text_field_tag :query, params[:query], placeholder: "Enter Postcode or Find Me:", id: "search" %>
       <% end %>
+
       <div id="pin">
         <span id="current-location" class="fas fa-map-marker-alt"></span>
       </div>
