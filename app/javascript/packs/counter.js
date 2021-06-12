@@ -3,8 +3,9 @@ const minus = document.getElementById("minus");
 const counterHtml = document.getElementById("counter-Html");
 let counter = Number.parseInt(document.getElementById("counter-Html").innerText);
 const priceHtml = document.getElementById("price-html");
-let price = Number.parseInt(document.getElementById("price-html").innerText);
-let ticketPrice = Number.parseInt(document.getElementById("price-html").innerText);
+let price = Number.parseFloat(document.getElementById("price-html").innerText);
+let ticketPrice = Number.parseFloat(document.getElementById("price-html").innerText);
+let hiddenField = document.getElementById("order_amount");
 
 
 plus.addEventListener("click", (event) => {
@@ -13,6 +14,7 @@ plus.addEventListener("click", (event) => {
   counterHtml.innerText = counter;
   price += ticketPrice;
   priceHtml.innerText = price;
+  hiddenField.value = price;
 });
   
 minus.addEventListener("click", (event) => {
@@ -24,5 +26,6 @@ minus.addEventListener("click", (event) => {
     counterHtml.innerText = counter;
     price -= ticketPrice;
     priceHtml.innerText = price;
+    hiddenField.value = price;
   }
 });
