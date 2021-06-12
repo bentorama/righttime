@@ -1,5 +1,6 @@
 <div id="index-container">
   <!-- map viewport -->  
+  <!-- map dimensions -->
   <div id="map" style="min-width: 320px; min-height: 68vh;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" data-center="<%= @center.to_json %>">
     <!-- filter buttons -->
     <div id="filter-flex">  
@@ -13,6 +14,10 @@
         <div class="event-card">
         <!-- event card image -->
         <div>
+
+
+          
+          <!-- event price -->
           <span class="event-price">£<%= event.price_cents / 100 %></span>
           <%= link_to event_path(event) do %>
             <%= image_tag(event.photos.first) %>
