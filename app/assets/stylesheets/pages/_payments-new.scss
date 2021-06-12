@@ -1,4 +1,13 @@
 //checkout summary 
+#page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#checkout-footer {
+  margin-top: auto;
+}
 
 .payment-new-container {
   text-align: center;
