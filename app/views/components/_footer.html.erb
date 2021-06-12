@@ -5,6 +5,11 @@
         <i href="#" id="footer-heart" class="far fa-heart"></i>
       <% end %>
     </div>
+    <div>
+      <%= link_to events_path do %>
+        <i class="far fa-map"></i>
+      <% end %>
+    </div>
     <% if user_signed_in? %>
       <div>
         <%= link_to(my_bookings_orders_path) do %>
