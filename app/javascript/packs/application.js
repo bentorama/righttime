@@ -39,14 +39,17 @@ document.addEventListener('turbolinks:load', () => {
   initStarRating();
   
   const currentLocation = document.getElementById("current-location");
+  const hiddenSearch = document.getElementById("hidden");
   const search = document.getElementById("search");
-  
+
   // current location pin 
   if (currentLocation) {
     currentLocation.addEventListener("click", (event) => {
       event.preventDefault();
+      console.log(event.currentTarget);
       navigator.geolocation.getCurrentPosition((data) => {
-      search.value = [data.coords.latitude, data.coords.longitude];
+      hiddenSearch.value = [data.coords.latitude, data.coords.longitude];
+      document.getElementById("search-form").submit();
       });
     });
   };
