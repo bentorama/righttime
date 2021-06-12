@@ -2,7 +2,7 @@
   <span>Total: £</span>
   <div id="price-input">
     <div id="price-html">
-      <%= @event.price_cents / 100 %>
+      <%= @event.price %>
     </div>
   </div>
   <div id="minus" class="counter-btn">
@@ -18,9 +18,20 @@
   <div>
     <%= form_tag orders_path do %>
       <%= hidden_field_tag 'event_id', @event.id %>
+      <%= hidden_field_tag 'order_amount', @event.price %>
       <%= submit_tag 'Book Now', class: 'btn btn-primary' %>
     <% end %>
   </div>
 </div>
 
 <%= javascript_pack_tag 'counter' %>
+
+<%# <%=f.text_field :email ,:id=>"email_field" %>
+
+<%# <script type="text/javascript">
+   var total= document.getElementById("price-html").innerText
+   console.log(total)
+   $(document).ready(function(){
+        $("#total").val(total);
+   });
+</script> %>

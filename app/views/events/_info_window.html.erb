@@ -1,6 +1,6 @@
 <!-- map marker card -->
-<div class="img-map-card">
-  <%= cl_image_tag event.photos.first.key %> 
+<div>
+  <%= cl_image_tag event.photos.first.key, class: "img-map-card" %> 
 </div>
 <h2><%= link_to event.name, event_path(event), :class => "show-link" %></h2>
 <p>£<%= event.price %></p>

@@ -3,9 +3,16 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show]
 
   def index
-    if params[:query].present?
-      # @events = Event.search_events_pg(params[:query])
-      find_near_events
+    if session[:location]
+      find_near_events(session[:location])
+    elsif params[:query].present? && params[:query] != ""
+      location = params[:query]
+      session[:location] = location
+      find_near_events(location)
+    elsif params[:hidden].present? && params[:hidden] != ""
+      location = params[:hidden]
+      session[:location] = location
+      find_near_events(location)
     else
       @events = Event.all
     end
@@ -35,9 +42,9 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
-  def find_near_events
+  def find_near_events(location)
     @events = []
-    Venue.near(params[:query], 1).each do |venue|
+    Venue.near(location, 1).each do |venue|
       venue.events.each do |event|
         if event.start_time < (Date.today + 1).midnight && event.start_time > Time.now
           @events << event
@@ -51,10 +58,11 @@ class EventsController < ApplicationController
       {
         lat: event.venue.latitude,
         lng: event.venue.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { event: event })
+        info_window: render_to_string(partial: "info_window", locals: { event: event }),
+        image_url: helpers.asset_url('stopwatch.png')
       }
     end
-    if params[:query].nil?
+    if params[:query] == "" || params[:query].nil?
       @center = nil
     else
       @center = {
@@ -64,3 +72,5 @@ class EventsController < ApplicationController
     end
   end
 end
+
+
