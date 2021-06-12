@@ -59,8 +59,13 @@
   </div>
 
   <!-- full event description -->
-  <span><%= @event.description %></span>
-
+  <p id="expand" class="line-clamp"><%= @event.description %></p>
+  <button id="see-more">See More</button>
+  <script type="text/javascript">
+    document.getElementById("see-more").addEventListener("click", () => {
+      document.getElementById("expand").classList.toggle("line-clamp")
+    })
+  </script>
   <hr class = "card-break">
 
   <!-- user reviews -->
