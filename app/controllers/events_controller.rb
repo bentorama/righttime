@@ -55,7 +55,8 @@ class EventsController < ApplicationController
       {
         lat: event.venue.latitude,
         lng: event.venue.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { event: event })
+        info_window: render_to_string(partial: "info_window", locals: { event: event }),
+        image_url: helpers.asset_url('stopwatch.png')
       }
     end
     if params[:query] == ""
@@ -68,3 +69,5 @@ class EventsController < ApplicationController
     end
   end
 end
+
+
