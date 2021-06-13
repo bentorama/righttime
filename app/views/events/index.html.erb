@@ -36,7 +36,11 @@
                 <% end %>
               </div>
               <div id="heart">
-                <span class="far fa-heart"></span>
+                <%= simple_form_for([ event, Favourite.new ]) do |f|  %>
+                  <%= button_tag type: 'submit' do %>
+                  <span class="far fa-heart" id="index-heart"></span> 
+                  <% end %>
+                <% end %>
               </div>
             </div>
           </div>

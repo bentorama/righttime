@@ -14,12 +14,13 @@ class FavouritesController < ApplicationController
     @event = Event.find(params[:event_id])
     @favourite.user = current_user
     @favourite.event = @event
-    if @favourite.save
-        redirect_to favourites_path
-    else
-      flash[:alert] = "didn't save!"
-      render 'new'
-    end
+    @favourite.save!
+    # if @favourite.save
+    #     redirect_to favourites_path
+    # else
+    #   flash[:alert] = "didn't save!"
+    #   render 'new'
+    # end
   end
 
   def destroy
