@@ -12,12 +12,18 @@
   // margin-top: auto;
 }
 
+#review-reveal {
+  // display: none;
+}
+
 p {
   color: var(--clr-card-text);
   font-size: 14px; 
 }
 
 .show-container {
+  min-height: 100vh;
+  
   h2 {
     font-weight: bold;
   }
@@ -77,7 +83,8 @@ p {
 }
 
 .review-content {
-  span {
+  p {
+  display: none;
   font-size: 12px;
   font-style: italic;
 }

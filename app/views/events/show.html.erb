@@ -76,13 +76,25 @@
             <h2><%= "Reviews (#{@event.reviews.count})"%></h2>
             <!-- review-content -->
             <% @event.reviews.each do |review| %>
-              <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
-              <% review.venue_rating.times do  %>
-                <i class="fas fa-star star"></i>
-              <% end %>
+              <button id="review-front">
+                <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+                <% review.venue_rating.times do  %>
+                  <i class="fas fa-star star"></i>
+                <% end %>
+              </button>
               <div class="review-content">
-                <span><%=review.event_review %></span>
+                <p id="review-reveal"><%=review.event_review %></p>
               </div>
+              <script type="text/javascript">
+                document.getElementById("review-front").addEventListener("click", () => {
+                  const toggle = document.getElementById("review-reveal");
+                  if (toggle.style.display === "none") {
+                    toggle.style.display = "block";
+                  } else {
+                    toggle.style.display = "none";
+                  }
+                })
+              </script>
             <% end %>
           </div>  
         </div>
