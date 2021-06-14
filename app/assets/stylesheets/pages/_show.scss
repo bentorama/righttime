@@ -1,3 +1,17 @@
+#page-container-show {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#checkout-footer {
+  bottom: 0;
+  position: fixed;
+  width: 100vw;
+  // margin-top: auto;
+}
+
 p {
   color: var(--clr-card-text);
   font-size: 14px; 
