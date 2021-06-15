@@ -7,6 +7,7 @@
   <div class="carousel-inner">
     <% @event.photos.each_with_index do |photo, index| %>
       <div class="carousel-item <%= "active" if index == 0 %>">
+        <!-- bootstrap class -->
         <%= cl_image_tag photo.key, class: "d-block w-100" %>
       </div>
     <% end %>

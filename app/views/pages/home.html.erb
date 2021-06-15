@@ -3,22 +3,23 @@
   <div>
     <header>
       <h1>RIGHTTIME</h1>
-      <p>Where will your night take you..?</h2>
+      <div class="typewriter">
+        <h2>The Clock's Ticking...</h2>
+      </div>  
     </header>
   </div>
-
+  <% session[:location] = nil %>
   <!-- search bar -->
   <div id="search-bar">
     <%= render "components/search" %>
   </div>
 
   <!-- app information -->
-  <div id="text-bottom">
+<!--   <div id="text-bottom">
     <section>
-      <p>Have a SPONTANEOUS evening</p>
-      <p>Great deals for events starting soon nearby</p>
+      <p>Find discounted entertainment starting near you soon.</p>
     </section>
-  </div>
+  </div> -->
 </div>
 
 <style>
