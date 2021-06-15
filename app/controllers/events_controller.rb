@@ -72,5 +72,3 @@ class EventsController < ApplicationController
     end
   end
 end
-
-
