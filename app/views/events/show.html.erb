@@ -77,10 +77,11 @@
             <!-- review-content -->
             <% @event.reviews.each do |review| %>
               <button id="review-front">
-                <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
-                <% review.venue_rating.times do  %>
-                  <i class="fas fa-star star"></i>
-                <% end %>
+                  <%= image_tag(review.order.user.avatar, class: "avatar-bordered") if review.order.user.avatar.attached? %>                 
+                  <p><%= review.order.user.first_name %></p>
+                  <% review.venue_rating.times do  %>
+                    <i class="fas fa-star star"></i>
+                  <% end %>
               </button>
               <div class="review-content">
                 <p id="review-reveal"><%=review.event_review %></p>

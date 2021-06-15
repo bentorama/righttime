@@ -5,6 +5,8 @@
       <%= f.error_notification %>
 
       <div class="form-inputs">
+        <%= f.input :first_name %>
+        <%= f.input :last_name %>
         <%= f.input :email,
                     label: false, 
                     placeholder: 'Email',
@@ -22,6 +24,8 @@
                     placeholder: 'Confirm Password',
                     required: true,
                     input_html: { autocomplete: "new-password" } %>
+
+        <%= f.input :avatar, label: "Add profile picture" %>
       </div>
 
       <div class="form-actions">

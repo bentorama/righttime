@@ -82,6 +82,15 @@ p {
   }
 }
 
+.review-header {
+  display: flex;
+}
+
+.review-info {
+  padding-left: 5px;
+  font-weight: bold;
+}
+
 .review-content {
   p {
   display: none;
