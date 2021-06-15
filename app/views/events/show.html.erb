@@ -65,19 +65,6 @@
           <h2>Full Description</h2>
           <p id="expand" class="line-clamp"><%= @event.description %></p>
           <button id="see-more">See More</button>
-          <script type="text/javascript">
-            const more = document.getElementById("see-more");
-
-            more.addEventListener("click", () => {
-              document.getElementById("expand").classList.toggle("line-clamp")
-
-              if (more.innerText === "See More") {
-                more.innerText = "See Less";
-              } else {
-                more.innerText = "See More";
-              }
-            })
-          </script>
 
           <hr class = "card-break">
 
@@ -87,25 +74,28 @@
             <h2><%= "Reviews (#{@event.reviews.count})"%></h2>
             <!-- review-content -->
             <% @event.reviews.each do |review| %>
-              <button id="review-front">
+              <button class="review-front">
                   <%= image_tag(review.order.user.avatar, class: "avatar-bordered") if review.order.user.avatar.attached? %>                 
                   <p><%= review.order.user.first_name %></p>
                   <% review.venue_rating.times do  %>
                     <i class="fas fa-star star"></i>
                   <% end %>
               </button>
-              <div class="review-content">
-                <p id="review-reveal"><%=review.event_review %></p>
+              <div>
+                <p class="review-content"><%=review.event_review %></p>
               </div>
-              <script type="text/javascript">
-                document.getElementById("review-front").addEventListener("click", () => {
-                  const toggle = document.getElementById("review-reveal");
-                  if (toggle.style.display === "none") {
-                    toggle.style.display = "block";
-                  } else {
-                    toggle.style.display = "none";
-                  }
-                })
+              <script>
+                document.querySelectorAll(".review-front").forEach((button) => { 
+                  button.addEventListener("click", () => {
+                    document.querySelectorAll(".review-content").forEach((reveal) => {
+                      if (reveal.style.display === "none") {
+                        reveal.style.display = "block";
+                      } else {
+                        reveal.style.display = "none";
+                      }
+                    });
+                  });
+                });
               </script>
             <% end %>
           </div>  
@@ -131,3 +121,5 @@
 <!-- javascript -->
 <%= javascript_tag "var obj = #{@event.to_json}" %>
 <%= javascript_pack_tag "countdown" %>
+<%= javascript_pack_tag "description-reveal" %>
+
