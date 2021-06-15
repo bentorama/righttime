@@ -37,6 +37,7 @@
       <!-- event/venue names -->
       <div class="show-header">
         <div class="show-title">
+          Add to favourites
           <%= simple_form_for([ @event, Favourite.new ]) do |f|  %>
             <%= button_tag type: 'submit' do %>
               <i class="fab fa-gratipay"></i> 
