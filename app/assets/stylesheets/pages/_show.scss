@@ -45,9 +45,21 @@
 }
 
 // review section
-.flex-col {
+.review-container {
+  align-items: center;
   display: flex;
   flex-direction: column;
+}
+
+.review-card {
+  background-color: lightblue;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+  min-width: 128px;
+  padding-bottom: 4px;
+  padding-top: 8px;
+  width: auto;
 }
 
 .hide {

@@ -9,7 +9,7 @@
   <div id="event-countdown">
     <div id="clockdiv">
       <% if @event.start_time > Time.now %>
-        <p>Starting in:</p>
+        <p>You Have</p>
       <!--   <div>
           <span class="days"></span>
           <div class="smalltext">Days</div>
@@ -26,6 +26,7 @@
           <span class="seconds"></span>
           <div class="smalltext">Secs</div>
         </div>
+        <p>Left</p>
       <% else %>
         <span class="past-event">Past event</span>  
       <% end %>
@@ -64,24 +65,25 @@
     <button id="see-more">See More</button>
 
     <!-- review section -->
-    <div class="review-container">
+    
       <!-- review header -->
       <p><%= "Reviews (#{@event.reviews.count})"%></p>
+      <div class="review-container">
       <!-- user reviews -->
-      <div class="flex-col">
         <% @event.reviews.each do |review| %>
-          <button class="review-click">
-            <%= image_tag(review.order.user.avatar, class: "avatar-bordered") if review.order.user.avatar.attached? %>
-            <p><%= review.order.user.first_name %></p>
-            <% review.venue_rating.times do  %>
-              <i class="fas fa-star star"></i>
-            <% end %>
-          </button>
-          <div class="hide">
-            <p class="review-content"><%=review.event_review %></p>
+          <div class="review-card">
+            <button class="review-click">
+              <%= image_tag(review.order.user.avatar, class: "avatar-bordered") if review.order.user.avatar.attached? %>
+              <p><%= review.order.user.first_name %></p>
+              <% review.venue_rating.times do  %>
+                <i class="fas fa-star star"></i>
+              <% end %>
+            </button>
+            <div class="hide">
+              <p class="review-content"><%=review.event_review %></p>
+            </div>
           </div>
         <% end %>
-      </div>
     </div>  
   </div>
 </div>
