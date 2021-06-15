@@ -1,55 +1,62 @@
-<div class="favourites-card-container">
-  <div class="order-header">
-        <div class="order-back">      
-          <%= link_to(events_path) do  %>
-            <i class="fas fa-chevron-left back-btn"></i>
-          <% end %>
-        </div>
-        <h2>Favorites</h2>
-  </div>
-  <hr class ="title-card-break">
+<div id="page-container-favourites">
+  <div class="favourites-card-container">
+    <div class="order-header">
+      <div class="order-back">      
+        <%= link_to(events_path) do  %>
+          <i class="fas fa-chevron-left back-btn"></i>
+        <% end %>
+      </div>
+      <h2>Favorites</h2>
+    </div>
+
+    <hr class ="title-card-break">
+
     <% @favourites.each do |favourite| %>
       <% if favourite.event.start_time > Time.now %>
         <div class="event-card">
-        <!-- event card image -->
-        <div>
-          <span class="event-price">£<%= favourite.event.price_cents %></span>
-          <%= link_to event_path(favourite.event) do %>
-            <%= image_tag(favourite.event.photos.first) %>
-          <% end %>
-        </div>
-        <div class="event-information">
+          <!-- event card image -->
           <div>
-            <div class="card-top-row">
-              <div class="event-review">
-                <% if favourite.event.reviews.count > 0 %>
-                  <p><%= "#{favourite.event.reviews.average(:venue_rating)}" %></p>
-                  <% favourite.event.reviews.average(:venue_rating).round.times do  %>  
-                    <i class="far fa-star"></i>
-                  <% end %>  
-                  <p><%= "(#{favourite.event.reviews.count})"%></p>
-                <% end %>
-              </div>
-              <div id="heart">
-                <i id="icon-heart" class="fas fa-heart"></i>
+            <span class="event-price">£<%= favourite.event.price_cents %></span>
+            <%= link_to event_path(favourite.event) do %>
+              <%= image_tag(favourite.event.photos.first) %>
+            <% end %>
+          </div>
+          <div class="event-information">
+            <div>
+              <div class="card-top-row">
+                <div class="event-review">
+                  <% if favourite.event.reviews.count > 0 %>
+                    <p><%= "#{favourite.event.reviews.average(:venue_rating)}" %></p>
+                    <% favourite.event.reviews.average(:venue_rating).round.times do  %>  
+                      <i class="far fa-star"></i>
+                    <% end %>  
+                    <p><%= "(#{favourite.event.reviews.count})"%></p>
+                  <% end %>
+                </div>
+                <div id="heart">
+                  <i id="icon-heart" class="fas fa-heart"></i>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="event-details">
-            <h2><%= link_to favourite.event.name, event_path(favourite.event) %></h2>
-            <p><% d = favourite.event.description %><% description = d.split[0...15].join(' ') %><%= description %>...</p>
-          </div>
-          <div class="event-timer">
-            <p>Starts at <% t = favourite.event.start_time %><%= t.strftime("%l:%M %P") %>!</p>
-            <%= link_to "Remove",
-            favourite_path(favourite),
-            method: :delete,
-            class: "delete-favourite", 
-            remote: true %>
+            <div class="event-details">
+              <h2><%= link_to favourite.event.name, event_path(favourite.event) %></h2>
+              <p><% d = favourite.event.description %><% description = d.split[0...15].join(' ') %><%= description %>...</p>
+            </div>
+            <div class="event-timer">
+              <p>Starts at <% t = favourite.event.start_time %><%= t.strftime("%l:%M %P") %>!</p>
+              <%= link_to "Remove",
+              favourite_path(favourite),
+              method: :delete,
+              class: "delete-favourite", 
+              remote: true %>
+            </div>
           </div>
         </div>
-
-      </div>
-        <% end %>
+      <% end %>
     <% end %>
+  </div>
+
+  <div id="checkout-footer">
+    <%= render "components/footer" %>
+  </div>
 </div>
