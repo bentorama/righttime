@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(version: 2021_06_15_134006) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
-  create_table "reviews", force: :cascade do |t|
+  create_taxble "reviews", force: :cascade do |t|
     t.text "event_review"
     t.integer "venue_rating"
     t.datetime "created_at", precision: 6, null: false

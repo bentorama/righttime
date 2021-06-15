@@ -34,18 +34,26 @@
       <h4>Your past bookings</h4>
   </div>
   <div class="my-orders-container">
-      <% @orders.each do |order| %>
-          <% if order.event.start_time < Time.now %>
-            <p><%= order.event.start_time.strftime('%D') %></p>
-            <h3><%=order.event.venue.name%></h2>
-            <p><%=order.event.name%></p>
-            <%= link_to "Leave a review", new_order_review_path(order), class: "order-button"   %>
-            <hr class = "card-break">
-          <% else %>
-            <p>You have no previous bookings</p>
-          <% end %>
+    <% if @orders.empty? %>
+      <p>You have no previous bookings</p>
+    <% else %>
+      <% @orders.each do |order| %> 
+        <% if order.event.start_time < Time.now %>
+          <p><%= order.event.start_time.strftime('%D') %></p>
+          <h3><%=order.event.venue.name%></h2>
+          <p><%=order.event.name%></p>
+          <%= link_to "Leave a review", new_order_review_path(order), class: "order-button"   %>
+          <hr class = "card-break">
+        <% elsif order.event.start_time > Time.now %>
+          <p><%= order.event.start_time.strftime('%D') %></p>
+          <h3><%=order.event.venue.name%></h2>
+          <p><%=order.event.name%></p>
+          <hr class = "card-break">
+        <% end %>
       <% end %>
+    <% end %>
   </div>
+
 
 
   <hr class ="title-card-break">
