@@ -29,8 +29,8 @@
   display: flex;
 }
 
-// review star colour
-.show-container {
+// content
+.content {
   i {
     color: black;
   }
@@ -45,7 +45,7 @@
 }
 
 // review section
-.flex {
+.flex-col {
   display: flex;
   flex-direction: column;
 }
