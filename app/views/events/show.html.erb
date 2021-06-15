@@ -1,14 +1,11 @@
 <div id="page-container-show">
-  <div id="show-container">
-    
     <!-- image carousel -->
     <div id="carousel-container">
       <%= render "components/carousel", locals: { event: @event } %>
     </div>
-
     <!-- event countdown -->
     <div id="event-countdown">
-      <div id= "clockdiv">
+      <div id="clockdiv">
         <% if @event.start_time > Time.now %>
           <h2>Starting in:</h2>
         <!--   <div>
@@ -66,7 +63,7 @@
           <p id="expand" class="line-clamp"><%= @event.description %></p>
           <button id="see-more">See More</button>
 
-          <hr class = "card-break">
+          <hr>
 
           <!-- user reviews -->
           <div class="review-container">
