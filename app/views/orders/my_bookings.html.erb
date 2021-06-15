@@ -1,14 +1,23 @@
 <div class="my-order-container">
-<div class="order-header">
-      <div class="order-back">      
-        <%= link_to(events_path) do  %>
-          <i class="fas fa-chevron-left back-btn"></i>
-        <% end %>
-      </div>
-      <h2>Profile</h2>
-        <%= image_tag(current_user.avatar, class: "avatar-bordered") if current_user.avatar.attached? %>
+  <div class="order-header">
+        <div class="order-back">      
+          <%= link_to(events_path) do  %>
+            <i class="fas fa-chevron-left back-btn"></i>
+          <% end %>
+        </div>
+        <div class = "order-title">
+          <h2>Profile</h2>
+        </div>
+  </div>
 
-</div>
+  <hr class ="title-card-break">
+  <div class="order-profile-picture">
+    <h2 class ="">Profile picture</h2>
+    <div class="profile-picture">
+      <%= image_tag(current_user.avatar, class: "avatar-bordered-large") if current_user.avatar.attached? %>
+    </div>
+  </div>
+
   <hr class ="title-card-break">
 
   <div class="order-bookings">
@@ -35,23 +44,19 @@
         <% end %>
     <% end %>
   </div>
+
+
+  <hr class ="title-card-break">
+
+    <% if user_signed_in? %>
+      <div class="log-out-orders">
+        <%= link_to "Edit account", edit_user_registration_path  %>
+      </div>
+      <div class="log-out-orders">
+        <%= link_to "Log out", destroy_user_session_path, method: :destroy  %>
+      </div>
+    <% end %>
 </div>
-
-<hr class ="title-card-break">
-
-<% if user_signed_in? %>
-  <div class="log-out-orders">
-    <%= link_to "Edit account", edit_user_registration_path  %>
-  </div>
-
-  <div class = "">
-    
-  </div>
-  <div class = "log-out-orders">
-    <%= link_to "Log out", destroy_user_session_path, method: :destroy  %>
-  </div>
-<% end %>
-
 <style>
   .footer {
     position: fixed;
