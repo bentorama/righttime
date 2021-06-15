@@ -59,7 +59,7 @@
   </div>
 
   <!-- full event description -->
-  <h2>Full Description</h2>
+  <h2>Description</h2>
   <p id="expand" class="line-clamp"><%= @event.description %></p>
   <button id="see-more">See More</button>
   <script type="text/javascript">
@@ -75,7 +75,7 @@
     <h2><%= "Reviews (#{@event.reviews.count})"%></h2>
     <!-- review-content -->
     <% @event.reviews.each do |review| %>
-      <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+      <%= image_tag(review.order.user.avatar, class: "avatar-bordered") if review.order.user.avatar.attached? %>
       <% review.venue_rating.times do  %>
         <i class="fas fa-star star"></i>
       <% end %>

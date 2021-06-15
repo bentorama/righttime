@@ -6,6 +6,8 @@
         <% end %>
       </div>
       <h2>Profile</h2>
+        <%= image_tag(current_user.avatar, class: "avatar-bordered") if current_user.avatar.attached? %>
+
 </div>
   <hr class ="title-card-break">
 
@@ -37,12 +39,16 @@
 
 <hr class ="title-card-break">
 
-
 <% if user_signed_in? %>
+  <div class="log-out-orders">
+    <%= link_to "Edit account", edit_user_registration_path  %>
+  </div>
+
+  <div class = "">
+    
+  </div>
   <div class = "log-out-orders">
-    <%= link_to(destroy_user_session_path, method: :delete) do %>
-      <p>Log out</p>
-    <% end %>
+    <%= link_to "Log out", destroy_user_session_path, method: :destroy  %>
   </div>
 <% end %>
 

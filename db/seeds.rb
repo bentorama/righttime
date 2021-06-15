@@ -14,11 +14,19 @@ User.destroy_all
 
 puts "creating users..."
 
+def image_fetcher
+    URI.open(Faker::Avatar.image)
+end
+
 20.times do
-  User.create!(
+  user = User.create!(
     email: Faker::Internet.email,
     password: "password"
   )
+  user.avatar.attach({
+     io: image_fetcher,
+     filename: "faker_image.jpg"
+  })
 end
 
 puts "users created!"
