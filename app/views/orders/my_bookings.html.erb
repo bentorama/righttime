@@ -1,16 +1,27 @@
 <div class="my-order-container">
-<div class="order-header">
-      <div class="order-back">      
-        <%= link_to(events_path) do  %>
-          <i class="fas fa-chevron-left back-btn"></i>
-        <% end %>
-      </div>
-      <h2>Profile</h2>
-</div>
+  <div class="order-header">
+        <div class="order-back">      
+          <%= link_to(events_path) do  %>
+            <i class="fas fa-chevron-left back-btn"></i>
+          <% end %>
+        </div>
+        <div class = "order-title">
+          <h2><%= "Hi #{current_user.first_name}" %></h2>
+        </div>
+  </div>
+
+  <hr class ="title-card-break">
+  <div class="order-profile-picture">
+    <h4 class ="">Profile picture</h4>
+  </div>
+    <div class="profile-picture">
+      <%= image_tag(current_user.avatar, class: "avatar-bordered-large") if current_user.avatar.attached? %>
+    </div>
+
   <hr class ="title-card-break">
 
   <div class="order-bookings">
-    <h2>Your details</h2>
+    <h4>Your details</h4>
   </div>
   <div class="my-orders-container">
     <p><strong>Email:</strong> <%="#{current_user.email}"  %></p>
@@ -20,32 +31,42 @@
 
 
   <div class="order-bookings">
-      <h2>Your past bookings</h2>
+      <h4>Your past bookings</h4>
   </div>
   <div class="my-orders-container">
-    <% @orders.each do |order| %>
+    <% if @orders.empty? %>
+      <p>You have no previous bookings</p>
+    <% else %>
+      <% @orders.each do |order| %> 
         <% if order.event.start_time < Time.now %>
           <p><%= order.event.start_time.strftime('%D') %></p>
           <h3><%=order.event.venue.name%></h2>
           <p><%=order.event.name%></p>
           <%= link_to "Leave a review", new_order_review_path(order), class: "order-button"   %>
           <hr class = "card-break">
+        <% elsif order.event.start_time > Time.now %>
+          <p><%= order.event.start_time.strftime('%D') %></p>
+          <h3><%=order.event.venue.name%></h2>
+          <p><%=order.event.name%></p>
+          <hr class = "card-break">
         <% end %>
+      <% end %>
     <% end %>
   </div>
+
+
+
+  <hr class ="title-card-break">
+
+    <% if user_signed_in? %>
+      <div class="log-out-orders">
+        <%= link_to "Edit account", edit_user_registration_path  %>
+      </div>
+      <div class="log-out-orders">
+        <%= link_to :logout, destroy_user_session_path, :method => :delete %>
+      </div>
+    <% end %>
 </div>
-
-<hr class ="title-card-break">
-
-
-<% if user_signed_in? %>
-  <div class = "log-out-orders">
-    <%= link_to(destroy_user_session_path, method: :delete) do %>
-      <p>Log out</p>
-    <% end %>
-  </div>
-<% end %>
-
 <style>
   .footer {
     position: fixed;

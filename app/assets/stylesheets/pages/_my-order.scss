@@ -1,18 +1,18 @@
 .log-out-orders {
-
-  p {
-    margin-top: 5px;
     text-align: center;
     text-decoration: none;
-    background-color: #E6E6E6;
-    color: var(--clr-primary);
-    font-family: var(--ff-primary);
-    font-size: 10px;
-    width: 90%;
-    margin: auto;
-    padding: 7px 2px;
+    background-color: #E6E6E6;  
+    margin: auto ;
+    margin-bottom: 5px;
+    padding: 4px;
     border-radius: 8px;
-  }
+    width: 90%;
+
+    a {
+      color: var(--clr-primary);
+      font-family: var(--ff-primary);
+      font-size: 10px;   
+    }
 }
 
 .my-orders-container {
@@ -20,9 +20,13 @@
   border-radius: 8px;
   padding: 12px;
   margin: 10px auto;
-
   width: 90%;
   text-align: center;
+
+  h2 {
+    font-family: var(--ff-header);
+    margin-left: 18px;
+  }
 
   a {
     text-decoration: none;
@@ -42,20 +46,11 @@
       color:var(--clr-primary);
     }
 
-
-  h2 {
-    font-family: var(--ff-header);
-    font-weight: bold;
-    margin: 4px;
-  }
-
   p {
     color: var(--clr-card-text);
     font-family: var(--ff-primary);
     font-size: 16px;
     line-height: 1.4;
-    padding-left: 8px;
-    margin: 4px;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -63,11 +58,25 @@
   }
 }
 
+.order-profile-picture {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.profile-picture {
+  display: flex;
+  justify-content: center;
+}
+
+
+
 .order-bookings {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   position: relative;
+
 }
 
 .order-header {

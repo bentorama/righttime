@@ -3,11 +3,15 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show]
 
   def index
-    if params[:query].present? && params[:query] != "" 
+    if session[:location]
+      find_near_events(session[:location])
+    elsif params[:query].present? && params[:query] != ""
       location = params[:query]
+      session[:location] = location
       find_near_events(location)
-    elsif params[:hidden].present? && params[:hidden] != "" 
+    elsif params[:hidden].present? && params[:hidden] != ""
       location = params[:hidden]
+      session[:location] = location
       find_near_events(location)
     else
       @events = Event.all
@@ -54,7 +58,8 @@ class EventsController < ApplicationController
       {
         lat: event.venue.latitude,
         lng: event.venue.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { event: event })
+        info_window: render_to_string(partial: "info_window", locals: { event: event }),
+        image_url: helpers.asset_url('stopwatch.png')
       }
     end
     if params[:query] == "" || params[:query].nil?

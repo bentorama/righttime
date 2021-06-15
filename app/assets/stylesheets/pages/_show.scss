@@ -1,9 +1,29 @@
+#page-container-show {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#checkout-footer {
+  bottom: 0;
+  position: fixed;
+  width: 100vw;
+  // margin-top: auto;
+}
+
+#review-reveal {
+  // display: none;
+}
+
 p {
   color: var(--clr-card-text);
   font-size: 14px; 
 }
 
 .show-container {
+  min-height: 100vh;
+  
   h2 {
     font-weight: bold;
   }
@@ -62,9 +82,26 @@ p {
   }
 }
 
+.review-header {
+  display: flex;
+}
+
+.review-info {
+  padding-left: 5px;
+  font-weight: bold;
+}
+
 .review-content {
-  span {
+  p {
+  display: none;
   font-size: 12px;
   font-style: italic;
 }
+}
+
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
 }
