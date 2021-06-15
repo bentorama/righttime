@@ -13,10 +13,10 @@
   <hr class ="title-card-break">
   <div class="order-profile-picture">
     <h2 class ="">Profile picture</h2>
+  </div>
     <div class="profile-picture">
       <%= image_tag(current_user.avatar, class: "avatar-bordered-large") if current_user.avatar.attached? %>
     </div>
-  </div>
 
   <hr class ="title-card-break">
 
@@ -34,15 +34,17 @@
       <h2>Your past bookings</h2>
   </div>
   <div class="my-orders-container">
-    <% @orders.each do |order| %>
-        <% if order.event.start_time < Time.now %>
-          <p><%= order.event.start_time.strftime('%D') %></p>
-          <h3><%=order.event.venue.name%></h2>
-          <p><%=order.event.name%></p>
-          <%= link_to "Leave a review", new_order_review_path(order), class: "order-button"   %>
-          <hr class = "card-break">
-        <% end %>
-    <% end %>
+      <% @orders.each do |order| %>
+          <% if order.event.start_time < Time.now %>
+            <p><%= order.event.start_time.strftime('%D') %></p>
+            <h3><%=order.event.venue.name%></h2>
+            <p><%=order.event.name%></p>
+            <%= link_to "Leave a review", new_order_review_path(order), class: "order-button"   %>
+            <hr class = "card-break">
+          <% else %>
+            <p>You have no previous bookings</p>
+          <% end %>
+      <% end %>
   </div>
 
 

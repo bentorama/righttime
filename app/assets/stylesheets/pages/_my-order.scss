@@ -59,7 +59,8 @@
 }
 
 .order-profile-picture {
-  
+  display: flex;
+  justify-content: center;
   margin-bottom: 10px;
 }
 
@@ -73,7 +74,7 @@
 .order-bookings {
   display: flex;
   align-items: center;
-  // justify-content: space-evenly;
+  justify-content: space-evenly;
   position: relative;
 
 }
