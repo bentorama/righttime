@@ -16,4 +16,8 @@ class User < ApplicationRecord
   def set_defaults
     self.owner = false if owner.nil?
   end
+
+  def is_favourite_event?(event_id)
+    self.favourites.map(&:event_id).include?(event_id)
+  end
 end

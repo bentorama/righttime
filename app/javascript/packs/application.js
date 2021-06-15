@@ -62,19 +62,14 @@ document.addEventListener('turbolinks:load', () => {
 
   function toggleFavourite(heart) {
     heart.addEventListener("click", (event) => {
-      console.log(indexHeart);
-      event.preventDefault();
-      // indexHeart.classList.remove("far.fa-heart");
-      console.log(indexHeart.classList);
+      // event.preventDefault();
+      if (event.target.classList.contains("far")) {
+        event.target.classList.remove("far", "fa-heart");
+        event.target.classList.add("fas", "fa-heart");
+      } else {
+        event.target.classList.remove("fas", "fa-heart");
+        event.target.classList.add("far", "fa-heart");
+      };
     });
   };
-
-  // for (var i = 0; i < indexHeart.length; i++) {
-  //   indexHeart[i].addEventListener("click", (event) => {
-  //     console.log(indexHeart);
-  //     event.preventDefault();
-  //     // indexHeart.classList.remove("far.fa-heart");
-  //     indexHeart.style.display = "none";
-  //   });
-  // };
 });
