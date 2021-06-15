@@ -6,13 +6,13 @@
           <% end %>
         </div>
         <div class = "order-title">
-          <h2>Profile</h2>
+          <h2><%= "Hi #{current_user.first_name}" %></h2>
         </div>
   </div>
 
   <hr class ="title-card-break">
   <div class="order-profile-picture">
-    <h2 class ="">Profile picture</h2>
+    <h4 class ="">Profile picture</h4>
   </div>
     <div class="profile-picture">
       <%= image_tag(current_user.avatar, class: "avatar-bordered-large") if current_user.avatar.attached? %>
@@ -21,7 +21,7 @@
   <hr class ="title-card-break">
 
   <div class="order-bookings">
-    <h2>Your details</h2>
+    <h4>Your details</h4>
   </div>
   <div class="my-orders-container">
     <p><strong>Email:</strong> <%="#{current_user.email}"  %></p>
@@ -31,7 +31,7 @@
 
 
   <div class="order-bookings">
-      <h2>Your past bookings</h2>
+      <h4>Your past bookings</h4>
   </div>
   <div class="my-orders-container">
       <% @orders.each do |order| %>
@@ -55,7 +55,7 @@
         <%= link_to "Edit account", edit_user_registration_path  %>
       </div>
       <div class="log-out-orders">
-        <%= link_to "Log out", destroy_user_session_path, method: :destroy  %>
+        <%= link_to :logout, destroy_user_session_path, :method => :delete %>
       </div>
     <% end %>
 </div>
