@@ -27,21 +27,30 @@
 // add to favourites
 .show-favorites {
   display: flex;
+  justify-content: flex-end;
 }
 
-// content
+// show content
 .content {
+  h1 {
+    color: black;
+  }
+
+  h2 {
+    color: black;
+  }
+
+  h3 {
+    color: black;
+  }
+
   i {
     color: black;
   }
-}
 
-// full description javascript
-.line-clamp {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;  
-  overflow: hidden;
+  p {
+    color: black;
+  }
 }
 
 // review section
@@ -72,4 +81,12 @@
   position: fixed;
   width: 100vw;
   box-shadow: none;
+}
+
+// full description javascript
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
 }

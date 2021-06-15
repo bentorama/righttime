@@ -43,8 +43,8 @@
         <% end %>
       <% end %>
     </div>
-    <p><%= @event.name %></p>
-    <p><%= @event.venue.name %></p>
+    <h1><%= @event.name %></h1>
+    <h2><%= @event.venue.name %></h2>
 
     <!-- event rating -->
     <div class="rating-container">
@@ -60,14 +60,14 @@
     </div>
 
     <!-- full event description -->
-    <p>Full Description</p>
+    <h3>Full Description</h3>
     <p id="expand" class="line-clamp"><%= @event.description %></p>
     <button id="see-more">See More</button>
 
     <!-- review section -->
     
       <!-- review header -->
-      <p><%= "Reviews (#{@event.reviews.count})"%></p>
+      <h3><%= "Reviews (#{@event.reviews.count})"%></h3>
       <div class="review-container">
       <!-- user reviews -->
         <% @event.reviews.each do |review| %>
@@ -80,7 +80,7 @@
               <% end %>
             </button>
             <div class="hide">
-              <p class="review-content"><%=review.event_review %></p>
+              <p><%=review.event_review %></p>
             </div>
           </div>
         <% end %>
