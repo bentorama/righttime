@@ -26,4 +26,10 @@ class OrdersController < ApplicationController
   def my_bookings
     @orders = Order.where(user: current_user)
   end
+
+  private
+
+  def get_directions
+    
+  end
 end
