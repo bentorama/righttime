@@ -15,15 +15,6 @@
   text-align: center;
   font-size: 12px;
   background-color: var(--clr-primary);
-  font-weight: bold;
-
-  h2 {
-    font-size: 12px;
-    align-items: center;
-    margin: auto;
-    margin-right: 0px;
-    margin-left: 0px;
-  }
 }
 
 // after-countdown
@@ -53,7 +44,17 @@
   overflow: hidden;
 }
 
-//footer 
+// review section
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.hide {
+  display: none;
+}
+
+// footer 
 #checkout-footer {
   bottom: 0;
   position: fixed;

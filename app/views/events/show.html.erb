@@ -1,116 +1,104 @@
 <div id="page-container-show">
-    <!-- image carousel -->
-    <div id="carousel-container">
-      <%= render "components/carousel", locals: { event: @event } %>
-    </div>
-    <!-- event countdown -->
-    <div id="event-countdown">
-      <div id="clockdiv">
-        <% if @event.start_time > Time.now %>
-          <h2>Starting in:</h2>
-        <!--   <div>
-            <span class="days"></span>
-            <div class="smalltext">Days</div>
-          </div>
-          <div>
-            <span class="hours"></span>
-            <div class="smalltext">Hours</div>
-          </div> -->
-          <div>
-            <span class="minutes"></span>
-            <div class="smalltext">Mins</div>
-          </div>
-          <div>
-            <span class="seconds"></span>
-            <div class="smalltext">Secs</div>
-          </div>
-        <% else %>
-          <span class="past-event">Past event</span>  
-        <% end %>
-      </div>
-    </div>
 
-    <div class="show-container">
-      <!-- event/venue names -->
-      <div class="show-header">
-        <div class="show-title">
-          <div class="show-favorites">
-          <p>Add to favourites</p>
-            <%= simple_form_for([ @event, Favourite.new ]) do |f|  %>
-              <%= button_tag type: 'submit' do %>
-                <i class="fab fa-gratipay"></i> 
-              <% end %>
-            <% end %>
-          </div>
-          <h2><%= @event.name %></h2>
-          <span><%= @event.venue.name %></span>
-
-          <!-- event rating -->
-          <div class="rating-container">
-            <span><%= "#{@event.reviews.average(:venue_rating)}" %></span>  
-            <% if @event.reviews.count > 0 %>
-              <% @event.reviews.average(:venue_rating).round.times do %>  
-                <i class="fas fa-star star"></i>
-              <% end %>
-              <span><%= "  | #{@event.category}" %></span>
-            <% else %>
-              <span><%="No reviews | #{@event.category}" %></span>
-            <% end %>
-          </div>
-
-          <!-- full event description -->
-          <h2>Full Description</h2>
-          <p id="expand" class="line-clamp"><%= @event.description %></p>
-          <button id="see-more">See More</button>
-
-          <hr>
-
-          <!-- user reviews -->
-          <div class="review-container">
-            <!-- review header -->
-            <h2><%= "Reviews (#{@event.reviews.count})"%></h2>
-            <!-- review-content -->
-            <% @event.reviews.each do |review| %>
-              <button class="review-front">
-                  <%= image_tag(review.order.user.avatar, class: "avatar-bordered") if review.order.user.avatar.attached? %>                 
-                  <p><%= review.order.user.first_name %></p>
-                  <% review.venue_rating.times do  %>
-                    <i class="fas fa-star star"></i>
-                  <% end %>
-              </button>
-              <div>
-                <p class="review-content"><%=review.event_review %></p>
-              </div>
-              <script>
-                document.querySelectorAll(".review-front").forEach((button) => { 
-                  button.addEventListener("click", () => {
-                    document.querySelectorAll(".review-content").forEach((reveal) => {
-                      if (reveal.style.display === "none") {
-                        reveal.style.display = "block";
-                      } else {
-                        reveal.style.display = "none";
-                      }
-                    });
-                  });
-                });
-              </script>
-            <% end %>
-          </div>  
-        </div>
-      </div>
-    </div>
-
-    <!-- total transaction bar -->  
-   
+  <!-- image carousel -->
+  <div id="carousel-container">
+    <%= render "components/carousel", locals: { event: @event } %>
   </div>
 
-   <div id="booking-container">
-      <%= render "components/booking-bar" %>
+  <!-- event countdown -->
+  <div id="event-countdown">
+    <div id="clockdiv">
+      <% if @event.start_time > Time.now %>
+        <h2>Starting in:</h2>
+      <!--   <div>
+          <span class="days"></span>
+          <div class="smalltext">Days</div>
+        </div>
+        <div>
+          <span class="hours"></span>
+          <div class="smalltext">Hours</div>
+        </div> -->
+        <div>
+          <span class="minutes"></span>
+          <div class="smalltext">Mins</div>
+        </div>
+        <div>
+          <span class="seconds"></span>
+          <div class="smalltext">Secs</div>
+        </div>
+      <% else %>
+        <span class="past-event">Past event</span>  
+      <% end %>
     </div>
-
+  </div>
   
+  <!-- event content -->
+  <div class="show-container">
+
+    <!-- event/venue names -->
+    <div class="show-header">
+      <div class="show-title">
+        <div class="show-favorites">
+        <p>Add to favourites</p>
+          <%= simple_form_for([ @event, Favourite.new ]) do |f|  %>
+            <%= button_tag type: 'submit' do %>
+              <i class="fab fa-gratipay"></i> 
+            <% end %>
+          <% end %>
+        </div>
+        <h2><%= @event.name %></h2>
+        <span><%= @event.venue.name %></span>
+
+        <!-- event rating -->
+        <div class="rating-container">
+          <span><%= "#{@event.reviews.average(:venue_rating)}" %></span>  
+          <% if @event.reviews.count > 0 %>
+            <% @event.reviews.average(:venue_rating).round.times do %>  
+              <i class="fas fa-star star"></i>
+            <% end %>
+            <span><%= "| #{@event.category}" %></span>
+          <% else %>
+            <span><%="No reviews| #{@event.category}" %></span>
+          <% end %>
+        </div>
+
+        <!-- full event description -->
+        <h2>Full Description</h2>
+        <p id="expand" class="line-clamp"><%= @event.description %></p>
+        <button id="see-more">See More</button>
+
+        <!-- user reviews -->
+        <div class="review-container">
+          <!-- review header -->
+          <h2><%= "Reviews (#{@event.reviews.count})"%></h2>
+          <!-- review-content -->
+                      <div class="flex">
+
+          <% @event.reviews.each do |review| %>
+            <button class="review-front">
+              <%= image_tag(review.order.user.avatar, class: "avatar-bordered") if review.order.user.avatar.attached? %>
+              <p><%= review.order.user.first_name %></p>
+              <% review.venue_rating.times do  %>
+                <i class="fas fa-star star"></i>
+              <% end %>
+            </button>
+            <div class="hide">
+              <p class="review-content"><%=review.event_review %></p>
+            </div>
+          <% end %>
+        </div>
+        </div>  
+      </div>
+    </div>
+  </div>
 </div>
 
+<!-- booking bar -->
+<div id="booking-container">
+  <%= render "components/booking-bar" %>
+</div>
+
+<!-- footer -->
 <div id="checkout-footer">
   <%= render "components/footer" %>
 </div>
@@ -119,4 +107,6 @@
 <%= javascript_tag "var obj = #{@event.to_json}" %>
 <%= javascript_pack_tag "countdown" %>
 <%= javascript_pack_tag "description-reveal" %>
+<%= javascript_pack_tag "review-toggle" %>
+
 
