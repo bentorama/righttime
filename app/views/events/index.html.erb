@@ -40,7 +40,8 @@
               </div>
               <div class="event-details">
                 <h2><%= link_to event.name, event_path(event) %></h2>
-                <p><% d = event.description %><% description = d.split[0...15].join(' ') %><%= description %>...</p>
+                <p><%= event.venue.name %></p>
+                <p><%= event.category %></p>
               </div>
               <div class="event-timer">
                 <p>Starts at <% t = event.start_time %><%= t.strftime("%l:%M %P") %>!</p>
