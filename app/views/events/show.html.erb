@@ -75,10 +75,15 @@
     <h2><%= "Reviews (#{@event.reviews.count})"%></h2>
     <!-- review-content -->
     <% @event.reviews.each do |review| %>
-      <%= image_tag(review.order.user.avatar, class: "avatar-bordered") if review.order.user.avatar.attached? %>
-      <% review.venue_rating.times do  %>
-        <i class="fas fa-star star"></i>
-      <% end %>
+      <div class ="review-header">
+        <%= image_tag(review.order.user.avatar, class: "avatar-bordered") if review.order.user.avatar.attached? %>      
+        <div class="review-info">
+          <p><%= review.order.user.first_name %></p>
+          <% review.venue_rating.times do  %>
+            <i class="fas fa-star star"></i>
+          <% end %>
+        </div>
+      </div>
       <div class="review-content">
         <span><%=review.event_review %></span>
       </div>
