@@ -1,14 +1,23 @@
+#counter {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#multiplier {
+  display: flex;
+}
+
 .booking-bar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
   height: 10vh;
-  background-color: var(--clr-primary);
+  background-color: black;
   position: fixed;
-  bottom: 2.5em;
-  width: 100%;
-  color: white;
+  bottom: 7vh;
+  width: 100vw;
+  color: #FFF;
 
   p {
     margin-bottom: 0rem !important;
@@ -17,17 +26,20 @@
   }
 }
 
-.booking-btn {
-  border-style: solid; 
-  border-radius: 5px;
-  border-color: white; 
-  padding: 4px;
-  color: white;
-}
+// .booking-btn {
+//   border-style: solid; 
+//   border-radius: 5px;
+//   border-color: white; 
+//   padding: 4px;
+//   color: white;
+// }
 
 .counter-btn {
-  border-style: solid;
-  border-color: white;
   border-radius: 50%;
   padding: 2px 8px;
+  border-style: none;
+  color: rgba(235, 96, 81, 1.00);
+  background: black;
+  // box-shadow: 5px 5px 10px grey,
+  // -5px -5px 10px lightgrey;
 }
