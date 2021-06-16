@@ -3,3 +3,4 @@ document.querySelectorAll(".filter-button").forEach((button) => {
     event.currentTarget.classList.toggle("filter-button-active");
   });
 });
+

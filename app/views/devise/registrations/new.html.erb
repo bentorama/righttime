@@ -5,13 +5,17 @@
       <%= f.error_notification %>
 
       <div class="form-inputs">
-        <%= f.input :first_name %>
-        <%= f.input :last_name %>
+        <%= f.input :first_name,
+                    label: false,
+                    placeholder: "John", 
+                    autofocus: true %>
+        <%= f.input :last_name,
+                    label: false,
+                    placeholder: "Doe" %>
         <%= f.input :email,
                     label: false, 
                     placeholder: 'Email',
                     required: true,
-                    autofocus: true,
                     input_html: { autocomplete: "email" }%>
         <%= f.input :password,
                     label: false,
