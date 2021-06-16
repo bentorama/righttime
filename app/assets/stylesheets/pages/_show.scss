@@ -40,9 +40,14 @@
   background: radial-gradient(circle at top, #3d324c, black, black, black 100%);
   background-attachment: fixed;
   margin-bottom: 16px;
-  padding-left: 8px;
-  padding-top: 16px;
+  padding-bottom: 8px;
+  padding-left: 10px;
+  padding-top: 6px;
   width: 100vw;
+
+  button {
+    margin-left: -5px;
+  }
 }
 
 .rating-container {
@@ -62,6 +67,7 @@
     color: #FFF;
     font-family: 'Oswald', sans-serif;
     font-size: 24px;
+    padding-bottom: 8px;
     text-transform: uppercase;
   }
 
@@ -69,6 +75,8 @@
     color: #FFF;
     font-family: 'Oswald', sans-serif;
     font-size: 20px;
+    padding-bottom: 2px;
+    padding-top: 6px;
     text-transform: uppercase;
   }
 
