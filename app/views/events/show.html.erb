@@ -9,7 +9,6 @@
   <div id="event-countdown">
     <div id="clockdiv">
       <% if @event.start_time > Time.now %>
-        <p>You Have</p>
       <!--   <div>
           <span class="days"></span>
           <div class="smalltext">Days</div>
@@ -18,15 +17,13 @@
           <span class="hours"></span>
           <div class="smalltext">Hours</div>
         </div> -->
-        <div>
-          <span class="minutes"></span>
-          <div class="smalltext">Mins</div>
+        <div class="flex">
+          <p class="minutes"></p>
+          <div class="smalltext">mins&nbsp</div>
+          <p class="seconds"></p>
+          <div class="smalltext">secs</div>
+          <p>&nbspremaining</p>
         </div>
-        <div>
-          <span class="seconds"></span>
-          <div class="smalltext">Secs</div>
-        </div>
-        <p>Left</p>
       <% else %>
         <span class="past-event">Past event</span>  
       <% end %>

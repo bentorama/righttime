@@ -8,11 +8,15 @@
 }
 
 // countdown
+.flex {
+  display: flex;
+  margin: auto;
+}
+
 #clockdiv{
   color: var(--clr-text);
   display: flex;
-  justify-content: space-evenly;
-  text-align: center;
+  height: 5vh;
   font-size: 16px;
   background-color: black;
 }
@@ -20,7 +24,7 @@
 // after-countdown
 .past-event {
   color: var(--clr-text);
-  justify-content: center;
+  justify-content: space-around;
   margin: auto;
 }
 
@@ -38,7 +42,6 @@
 // show content
 .show-details {
   background: radial-gradient(circle at top, #3d324c, black, black, black 100%);
-  background-attachment: fixed;
   filter: drop-shadow(0 15px 1rem rgba(15, 15, 15, 0.65));
   margin-bottom: 16px;
   padding-bottom: 8px;
