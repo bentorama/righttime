@@ -31,6 +31,38 @@
         <span class="past-event">Past event</span>  
       <% end %>
     </div>
+  <div class="show-container">
+    
+  <!-- event/venue names -->
+  <div class="show-header">
+    <div class="show-title">
+      <%= simple_form_for([ @event, Favourite.new ]) do |f|  %>
+        <%= button_tag type: 'submit' do %>
+          <i class="far fa-heart"></i> 
+      
+    <!-- event countdown -->
+    <div id="event-countdown">
+      <div id= "clockdiv">
+        <% if @event.start_time > Time.now %>
+          <h2>Starting in:</h2>
+        <!--   <div>
+            <span class="days"></span>
+            <div class="smalltext">Days</div>
+          </div>
+          <div>
+            <span class="hours"></span>
+            <div class="smalltext">Hours</div>
+          </div> -->
+          <div>
+            <span class="minutes"></span>
+            <div class="smalltext">Mins</div>
+          </div>
+          <div>
+            <span class="seconds"></span>
+            <div class="smalltext">Secs</div>
+          </div>
+        <% else %>
+          <span class="past-event">Past event</span>  
   </div>
   
   <!-- event content -->

@@ -43,6 +43,19 @@
                 <p><%= event.venue.name %></p>
                 <p><%= event.category %></p>
               </div>
+
+              <div id="heart">
+                <% if current_user.is_favourite_event?(event.id) %>
+                  <%= button_to favourite_path(event.favourites.find_by(user_id: current_user.id)), :method => :delete do %>
+                    <span class="fas fa-heart" id="index-heart"></span>
+                  <% end %>
+                <% else %>
+                  <%= simple_form_for([ event, Favourite.new ]) do |f|  %>
+                    <%= button_tag type: 'submit' do %>
+                  <span class="far fa-heart" id="index-heart"></span>
+                    <% end %>
+                  <% end %>
+                <% end %>
               <div class="event-timer">
                 <p>Starts at <% t = event.start_time %><%= t.strftime("%l:%M %P") %>!</p>
               </div>
