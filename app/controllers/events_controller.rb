@@ -47,6 +47,7 @@ class EventsController < ApplicationController
     if time < 1000
       current_price = @event.starting_price * multiple
       @event.starting_price = current_price
+      @event.price_cents = current_price * 100
       @event.save
     end
   end

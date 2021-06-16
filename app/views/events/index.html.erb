@@ -4,19 +4,27 @@
     <!-- map dimensions -->
     <div id="map" style="min-width: 320px; min-height: 68vh;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" data-center="<%= @center.to_json %>">
       <!-- filter buttons -->
+    
       <div id="filter-flex">  
         <%= render "components/filter" %>
       </div>
+
     </div>
+      <div class="price-button-container">
+        <button class="price-button" type="button" data-toggle="button">
+          <img src="https://res.cloudinary.com/markcarson121/image/upload/v1623348000/white_hot_i3opcg.png">
+        </button>
+      </div>   
     <!-- event cards -->
-    <div class="event-card-container">
+    
+    <div data-controller = "price" class="event-card-container">
       <% @events.each do |event| %>
         <% if event.start_time > Time.now %>
           <div class="event-card">
             <!-- event card image -->
             <div>
               <!-- event price -->
-              <span class="event-price" id = "price">£<%= event.starting_price.round(2) %></span>
+              <span data-price-target="drop" class="event-price" id = "price">£<%= event.starting_price.round(2) %></span>
               <%= link_to event_path(event) do %>
                 <%= image_tag(event.photos.first) %>
               <% end %>
