@@ -16,7 +16,7 @@
             <!-- event card image -->
             <div>
               <!-- event price -->
-              <span class="event-price">£<%= event.price_cents / 100 %></span>
+              <span class="event-price" id = "price">£<%= event.starting_price.round(2) %></span>
               <%= link_to event_path(event) do %>
                 <%= image_tag(event.photos.first) %>
               <% end %>
@@ -59,3 +59,5 @@
 </div>
 
 <%= javascript_pack_tag 'toggle' %>
+<%= javascript_pack_tag 'price' %>
+<%= javascript_tag "var obj = #{@events.to_json}" %>

@@ -30,6 +30,7 @@ import 'jquery-bar-rating/dist/themes/css-stars';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
+// import '/wheel';
 import { initMapbox } from '../plugins/init_mapbox';
 import { initStarRating } from '../plugins/init_star_rating';
 
