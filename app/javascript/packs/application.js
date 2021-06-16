@@ -33,11 +33,14 @@ import 'jquery-bar-rating/dist/themes/css-stars';
 // import '/wheel';
 import { initMapbox } from '../plugins/init_mapbox';
 import { initStarRating } from '../plugins/init_star_rating';
+// import { heartChanger } from 'favourites-heart.js';
+
 
 document.addEventListener('turbolinks:load', () => {
   // initializeClock('clockdiv', 'December 31 2021 23:59:59 GMT+0200')
   initMapbox();
   initStarRating();
+  // heartChanger();
   
   const currentLocation = document.getElementById("current-location");
   const hiddenSearch = document.getElementById("hidden");
@@ -47,11 +50,27 @@ document.addEventListener('turbolinks:load', () => {
   if (currentLocation) {
     currentLocation.addEventListener("click", (event) => {
       event.preventDefault();
-      console.log(event.currentTarget);
       navigator.geolocation.getCurrentPosition((data) => {
       hiddenSearch.value = [data.coords.latitude, data.coords.longitude];
       document.getElementById("search-form").submit();
       });
+    });
+  };
+
+  // heart toggle 
+  const indexHeart = document.querySelectorAll("#index-heart"); // hearts array
+  indexHeart.forEach(toggleFavourite);
+
+  function toggleFavourite(heart) {
+    heart.addEventListener("click", (event) => {
+      // event.preventDefault();
+      if (event.target.classList.contains("far")) {
+        event.target.classList.remove("far", "fa-heart");
+        event.target.classList.add("fas", "fa-heart");
+      } else {
+        event.target.classList.remove("fas", "fa-heart");
+        event.target.classList.add("far", "fa-heart");
+      };
     });
   };
 });

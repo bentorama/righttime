@@ -1,34 +1,13 @@
+// page container
 #page-container-show {
   background-color: white;
   display: flex;
   flex-direction: column;
+  margin-bottom: 17vh;
   min-height: 100vh;
 }
 
-#checkout-footer {
-  bottom: 0;
-  position: fixed;
-  width: 100vw;
-  // margin-top: auto;
-}
-
-#review-reveal {
-  // display: none;
-}
-
-p {
-  color: var(--clr-card-text);
-  font-size: 14px; 
-}
-
-.show-container {
-  min-height: 100vh;
-  
-  h2 {
-    font-weight: bold;
-  }
-}
-
+// countdown
 #clockdiv{
   color: var(--clr-text);
   display: flex;
@@ -36,69 +15,81 @@ p {
   text-align: center;
   font-size: 12px;
   background-color: var(--clr-primary);
-  font-weight: bold;
-
-  h2 {
-    font-size: 12px;
-    align-items: center;
-    margin: auto;
-    margin-right: 0px;
-    margin-left: 0px;
-  }
 }
 
-#event-countdown {
-  text-align: center;
-}
-
+// after-countdown
 .past-event {
   color: var(--clr-text);
   justify-content: center;
   margin: auto;
 }
 
-.rating-container {
-  display:flex;
-
+// add to favourites
+.show-favorites {
+  display: flex;
+  justify-content: flex-end;
 }
 
-.show-header {
-  display: flex;
+// show content
+.content {
+  h1 {
+    color: black;
+    font-family: oswald, sans-serif;
+  }
+
+  h2 {
+    color: black;
+  }
+
+  h3 {
+    color: black;
+  }
 
   i {
-    color: var(--clr-primary);
-    font-size: 12px;
+    color: rgba(254, 103, 87, 1.00);
   }
-}
 
-.star {
-  color: gold;
-}
-
-.review-container {
-   h2 {
-    margin-top: 5px;
-    font-size: 25px;
-  }
-}
-
-.review-header {
-  display: flex;
-}
-
-.review-info {
-  padding-left: 5px;
-  font-weight: bold;
-}
-
-.review-content {
   p {
-  display: none;
-  font-size: 12px;
-  font-style: italic;
-}
+    color: black;
+  }
 }
 
+// review section
+.review-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.review-card {
+  background: radial-gradient(circle at top, rgba(112, 85, 140, 1.00), black, black, black 100%);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+  min-width: 128px;
+  padding-bottom: 4px;
+  padding-top: 8px;
+  width: auto;
+
+  p {
+    color: #FFF;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+// footer 
+#checkout-footer {
+  bottom: 0;
+  position: fixed;
+  width: 100vw;
+  box-shadow: none;
+}
+
+// full description javascript
 .line-clamp {
   display: -webkit-box;
   -webkit-line-clamp: 3;
