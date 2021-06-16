@@ -1,4 +1,4 @@
-<div id="page-container-index">
+<div data-controller = "price" id="page-container-index">
   <div id="index-container">
     <!-- map viewport -->  
     <!-- map dimensions -->
@@ -11,13 +11,14 @@
 
     </div>
       <div class="price-button-container">
-        <button class="price-button" type="button" data-toggle="button">
+        <button data-action="click->price#refresh" 
+                class="price-button" type="button" data-toggle="button">
           <img src="https://res.cloudinary.com/markcarson121/image/upload/v1623348000/white_hot_i3opcg.png">
         </button>
       </div>   
     <!-- event cards -->
     
-    <div data-controller = "price" class="event-card-container">
+    <div  class="event-card-container">
       <% @events.each do |event| %>
         <% if event.start_time > Time.now %>
           <div class="event-card">
@@ -81,4 +82,3 @@
 
 <%= javascript_pack_tag 'toggle' %>
 <%= javascript_pack_tag 'price' %>
-<%= javascript_tag "var obj = #{@events.to_json}" %>

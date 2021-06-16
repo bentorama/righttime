@@ -4,6 +4,12 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
+
+    respond_to do |format|
+      format.html
+      format.json { render json: { restaurants: @restaurants } }
+    end
+
     if session[:location]
       find_near_events(session[:location])
     elsif params[:query].present? && params[:query] != ""
@@ -15,7 +21,7 @@ class EventsController < ApplicationController
       session[:location] = location
       find_near_events(location)
     else
-      @events 
+      @events
     end
     markers_and_center
   end
