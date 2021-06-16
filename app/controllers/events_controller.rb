@@ -18,7 +18,6 @@ class EventsController < ApplicationController
       @events 
     end
     markers_and_center
-
   end
 
   def show
@@ -45,7 +44,7 @@ class EventsController < ApplicationController
   def price_counter
     time = @event.start_time - Time.now
     multiple = [0.2, 0.5, 0.8].to_a.sample
-    if time < 1200
+    if time < 1000
       current_price = @event.starting_price * multiple
       @event.starting_price = current_price
       @event.save
