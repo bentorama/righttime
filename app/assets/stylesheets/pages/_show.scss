@@ -39,10 +39,12 @@
 .show-details {
   background: radial-gradient(circle at top, #3d324c, black, black, black 100%);
   background-attachment: fixed;
+  filter: drop-shadow(0 15px 1rem rgba(15, 15, 15, 0.65));
   margin-bottom: 16px;
   padding-bottom: 8px;
   padding-left: 10px;
   padding-top: 6px;
+  padding-right: 10px;
   width: 100vw;
 
   button {
@@ -53,6 +55,7 @@
 .rating-container {
   span {
     color: #FFF;
+    font-family: 'Source Sans Pro', sans-serif;
   }
 }
 
@@ -75,7 +78,7 @@
     color: #FFF;
     font-family: 'Oswald', sans-serif;
     font-size: 20px;
-    padding-bottom: 2px;
+    padding-bottom: 4px;
     padding-top: 6px;
     text-transform: uppercase;
   }
@@ -86,6 +89,7 @@
 
   p {
     color: #FFF;
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 16px;
   }
   
