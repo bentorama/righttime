@@ -43,26 +43,29 @@
         <% end %>
       <% end %>
     </div>
-    <h1><%= @event.name %></h1>
-    <h2><%= @event.venue.name %></h2>
 
-    <!-- event rating -->
-    <div class="rating-container">
-      <span><%= "#{@event.reviews.average(:venue_rating)}" %></span>  
-      <% if @event.reviews.count > 0 %>
-        <% @event.reviews.average(:venue_rating).round.times %>  
-          <i class="fas fa-star star"></i>
-      
-        <span><%= "| #{@event.category}" %></span>
-      <% else %>
-        <span><%="No reviews| #{@event.category}" %></span>
-      <% end %>
+    <div class="show-details">
+      <h1><%= @event.name %></h1>
+      <h2><%= @event.venue.name %></h2>
+
+      <!-- event rating -->
+      <div class="rating-container">
+        <span><%= "#{@event.reviews.average(:venue_rating)}" %></span>  
+        <% if @event.reviews.count > 0 %>
+          <% @event.reviews.average(:venue_rating).round.times %>  
+            <i class="fas fa-star star"></i>
+        
+          <span><%= "| #{@event.category}" %></span>
+        <% else %>
+          <span><%="No reviews| #{@event.category}" %></span>
+        <% end %>
+      </div>
+
+      <!-- full event description -->
+      <h3>Full Description</h3>
+      <p id="expand" class="line-clamp"><%= @event.description %></p>
+      <button id="see-more">See More</button>
     </div>
-
-    <!-- full event description -->
-    <h3>Full Description</h3>
-    <p id="expand" class="line-clamp"><%= @event.description %></p>
-    <button id="see-more">See More</button>
 
     <!-- review section -->
     
