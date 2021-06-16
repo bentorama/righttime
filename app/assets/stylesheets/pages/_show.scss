@@ -13,8 +13,8 @@
   display: flex;
   justify-content: space-evenly;
   text-align: center;
-  font-size: 12px;
-  background-color: var(--clr-primary);
+  font-size: 16px;
+  background-color: black;
 }
 
 // after-countdown
@@ -53,30 +53,37 @@
 
   p {
     color: black;
+    font-size: 16px;
   }
 
-  margin-left: 8px;
+  display: flex;
+  flex-direction: column;
 }
 
 // review section
 .review-container {
   align-items: center;
-  display: flex;
-  flex-direction: column;
-}
-
-.review-card {
-  background: radial-gradient(circle at top, rgba(112, 85, 140, 1.00), black, black, black 100%);
-  border-radius: 8px;
+  background: radial-gradient(circle at top, #3d324c, black, black, black 100%);  border-radius: 8px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 8px;
-  min-width: 128px;
-  padding-bottom: 4px;
-  padding-top: 8px;
-  width: auto;
+  margin-bottom: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90vw;
 
+  h3 {
+    color: white;
+  }
+}
+
+.review-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 8px;
+  padding-top: 8px;
+  
   p {
     color: #FFF;
   }

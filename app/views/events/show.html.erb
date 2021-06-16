@@ -67,9 +67,10 @@
     <!-- review section -->
     
       <!-- review header -->
-      <h3><%= "Reviews (#{@event.reviews.count})"%></h3>
+      
       <div class="review-container">
-      <!-- user reviews -->
+        <h3><%= "Reviews (#{@event.reviews.count})"%></h3>
+        <!-- user reviews -->
         <% @event.reviews.each do |review| %>
           <div class="review-card">
             <button class="review-click">
