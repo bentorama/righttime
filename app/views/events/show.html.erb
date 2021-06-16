@@ -39,7 +39,8 @@
       <%= simple_form_for([ @event, Favourite.new ]) do |f|  %>
         <%= button_tag type: 'submit' do %>
           <i class="far fa-heart"></i> 
-      
+        <% end %>
+      <% end %>
     <!-- event countdown -->
     <div id="event-countdown">
       <div id= "clockdiv">
@@ -62,7 +63,8 @@
             <div class="smalltext">Secs</div>
           </div>
         <% else %>
-          <span class="past-event">Past event</span>  
+          <span class="past-event">Past event</span> 
+        <% end %> 
   </div>
   
   <!-- event content -->
