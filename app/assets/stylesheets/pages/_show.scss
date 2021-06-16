@@ -26,6 +26,7 @@
 
 // add to favourites
 .show-favorites {
+  background-color: white;
   display: flex;
   justify-content: flex-end;
 }
@@ -34,17 +35,20 @@
 .content {
   h1 {
     color: black;
-    font-family: oswald, sans-serif;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
   }
 
   h2 {
     color: black;
-    font-family: oswald, sans-serif;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
   }
 
   h3 {
     color: black;
-    font-family: oswald, sans-serif;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
   }
 
   i {
@@ -55,7 +59,8 @@
     color: black;
     font-size: 16px;
   }
-
+  
+  background-image: linear-gradient(to left bottom, #ffdb56, #ffb54b, #ff904d, #ff6a56, #fa4f60, #f1326c, #e20a7a, #c90082, #ad0088, #8e018c, #6b118d);
   display: flex;
   flex-direction: column;
 }
@@ -64,7 +69,9 @@
 .review-container {
   align-items: center;
   background: radial-gradient(circle at top, #3d324c, black, black, black 100%);  border-radius: 8px;
+  background-attachment: fixed;
   display: flex;
+  filter: drop-shadow(0 15px 1rem rgba(15, 15, 15, 0.65));
   flex-direction: column;
   justify-content: center;
   margin-bottom: 16px;
@@ -74,6 +81,8 @@
 
   h3 {
     color: white;
+    position: flex-start;
+    text-transform: uppercase;
   }
 }
 

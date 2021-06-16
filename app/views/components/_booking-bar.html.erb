@@ -21,7 +21,7 @@
     <%= form_tag orders_path do %>
       <%= hidden_field_tag 'event_id', @event.id %>
       <%= hidden_field_tag 'order_amount', @event.price %>
-      <%= submit_tag 'Book Now', class: 'btn btn-primary' %>
+      <%= submit_tag 'Book Now', class: 'btn' %>
     <% end %>
   </div>
 </div>
