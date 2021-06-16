@@ -50,9 +50,9 @@
     <div class="rating-container">
       <span><%= "#{@event.reviews.average(:venue_rating)}" %></span>  
       <% if @event.reviews.count > 0 %>
-        <% @event.reviews.average(:venue_rating).round.times do %>  
+        <% @event.reviews.average(:venue_rating).round.times %>  
           <i class="fas fa-star star"></i>
-        <% end %>
+      
         <span><%= "| #{@event.category}" %></span>
       <% else %>
         <span><%="No reviews| #{@event.category}" %></span>
