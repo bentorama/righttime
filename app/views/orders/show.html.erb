@@ -13,12 +13,14 @@
     <%= image_tag(@order.event.photos.first) %>
   </div>
 
-  <div class="directions-btn">
-    <a href="#">Get Directions</a>
+  <div class="directions-btn " id="show-directions">
+    <p>Show Directions</p>
   </div>
-
-  <div id="map" style="min-width: 320px; min-height: 68vh;" data-destination="<%= @destination.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-  <div id="instructions"></div>
+  <div class="hide" id="directions-container">
+    <div id="map" style="min-width: 320px; min-height: 40vh;" data-destination="<%= @destination.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    <div id="instructions"></div>
+  </div>
+  
 
   <div class="directions-btn">
     <a href="/events">See More Events</a>
@@ -30,4 +32,13 @@
 </div>
 
 <%= javascript_pack_tag 'directions' %>
-
+<script type="text/javascript">
+  document.getElementById("show-directions").addEventListener("click", () => {
+    const toggle = document.getElementById("directions-container");
+    if (toggle.style.display === "none") {
+      toggle.style.display = "block";
+    } else {
+      toggle.style.display = "none";
+    }
+  })
+</script>

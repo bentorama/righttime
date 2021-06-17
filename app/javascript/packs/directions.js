@@ -18,7 +18,7 @@ const initDirections = () => {
     navigator.geolocation.getCurrentPosition((data) => {
       const map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v10'
+        style: 'mapbox://styles/bentorama/ckph9m798007s17qistei9iwy'
         // center: [data.coords.longitude, data.coords.latitude],
         // zoom: 13
       });
@@ -49,13 +49,10 @@ const initDirections = () => {
               coordinates: route
             }
           };
-          console.log(geojson);
           // if the route already exists on the map, reset it using setData
           if (map.getSource('route')) {
             map.getSource('route').setData(geojson);
-            console.log('in the if');
           } else { // otherwise, make a new request
-            console.log('in  the else');
             map.addLayer({
               id: 'route',
               type: 'line',
@@ -116,7 +113,7 @@ const initDirections = () => {
           },
           paint: {
             'circle-radius': 10,
-            'circle-color': '#3887be'
+            'circle-color': '#800080'
           }
         });
         // Add end point to the map
@@ -140,10 +137,11 @@ const initDirections = () => {
           },
           paint: {
             'circle-radius': 10,
-            'circle-color': '#3887be'
+            'circle-color': '#800080'
           }
         });
         getRoute(end);
+        map.moveLayer('end')
       });
     });
   }
