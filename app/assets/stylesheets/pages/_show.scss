@@ -22,10 +22,11 @@
 }
 
 #clockdiv{
-  color: var(--clr-text);
-  height: 5vh;
-  font-size: 16px;
   background-color: black;
+  color: var(--clr-text);
+  font-size: 16px;
+  height: 5vh;
+  padding-top: 1px;
 }
 
 // after-countdown
