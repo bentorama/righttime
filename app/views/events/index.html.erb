@@ -21,14 +21,13 @@
     <div  class="event-card-container">
       <% @events.each do |event| %>
         <% if event.start_time > Time.now %>
+          <%= link_to event_path(event) do %>
           <div class="event-card">
             <!-- event card image -->
             <div>
               <!-- event price -->
               <span data-price-target="drop" class="event-price" id = "price">£<%= event.starting_price.round(2) %></span>
-              <%= link_to event_path(event) do %>
                 <%= image_tag(event.photos.first) %>
-              <% end %>
             </div>
             <div class="event-information">
               <div>
@@ -64,7 +63,9 @@
                 <p>Starts at <% t = event.start_time %><%= t.strftime("%l:%M %P") %>!</p>
               </div>
             </div>
+           
           </div>
+           <% end %>
         <% end %>
       <% end %>
     </div>
@@ -74,12 +75,6 @@
     <%= render "components/footer" %>
   </div>
 </div>
-
-<style>
-#checkout-footer {
-  box-shadow: none;
-}
-</style>
 
 <%= javascript_pack_tag 'toggle' %>
 <%= javascript_pack_tag 'map' %>
