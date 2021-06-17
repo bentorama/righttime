@@ -9,15 +9,15 @@
         <%= render "components/filter" %>
       </div>
 
-    </div>
       <div class="price-button-container">
         <%= link_to price_update_path(events: @events), method: :get do %>
-          <button data-action="click->price#refresh" 
-                class="price-button" type="button">
-          <img src="https://res.cloudinary.com/markcarson121/image/upload/v1623348000/white_hot_i3opcg.png">
-        </button>
+          <button data-action="click->price#refresh" class="price-button" type="button">
+            <img src="https://res.cloudinary.com/markcarson121/image/upload/v1623348000/white_hot_i3opcg.png">
+          </button>
         <% end %> 
       </div>   
+    </div>
+    
     <!-- event cards -->
     
   <div  class="event-card-container">
