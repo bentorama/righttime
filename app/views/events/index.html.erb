@@ -2,7 +2,7 @@
   <div id="index-container">
     <!-- map viewport -->  
     <!-- map dimensions -->
-    <div id="map" style="min-width: 320px; min-height: 68vh;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" data-center="<%= @center.to_json %>">
+    <div id="map" style="min-width: 320px; height: 68vh;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" data-center="<%= @center.to_json %>">
       <!-- filter buttons -->
     
       <div id="filter-flex">  
@@ -42,7 +42,7 @@
               </div>
               <div class="event-details">
                 <h2><%= link_to event.name, event_path(event) %></h2>
-                <p><%= event.venue.name %></p>
+                <p>@ <%= event.venue.name %></p>
                 <p><%= event.category %></p>
               </div>
 
