@@ -36,6 +36,10 @@
     text-decoration: none;
   }
 
+  .fas {
+    color: rgba(254, 103, 87, 1.00);
+  }
+
   h2 {
     color: #FFF;
     font-family: var(--ff-header);
@@ -87,7 +91,7 @@
   }
 
   #icon-heart {
-    color: purple;
+    color: rgba(254, 103, 87, 1.00);
   }
 
   .delete-favourite {
