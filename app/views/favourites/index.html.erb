@@ -31,7 +31,9 @@
                   <% end %>
                 </div>
                 <div id="heart">
-                  <i id="icon-heart" class="fas fa-heart"></i>
+                  <%= link_to favourite_path(favourite), method: :delete, remote: true do %>
+                    <i id="icon-heart" class="fas fa-heart"></i>
+                  <% end %>
                 </div>
               </div>
             </div>
