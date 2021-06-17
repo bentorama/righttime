@@ -23,11 +23,12 @@
   margin-right: auto;
 
   a {
+    color: #FFF;
     text-decoration: none;
-    color: var(--clr-card-text);
   }
 
   h2 {
+    color: #FFF;
     font-family: var(--ff-header);
     font-size: 17px;
     font-weight: bold;
@@ -36,7 +37,9 @@
   }
 
   img {
-    height: 100%;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    height: 25vh;
     object-fit: cover;
     width: 150px;
   }
