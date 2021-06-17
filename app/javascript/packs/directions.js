@@ -2,6 +2,12 @@ import { get } from 'jquery';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
+const fitMapToMarkers = (map, markers) => {
+  const bounds = new mapboxgl.LngLatBounds();
+  markers.forEach(marker => bounds.extend([ marker[0], marker[1] ]));
+  map.fitBounds(bounds, { padding: 70, maxZoom: 15 });
+};
+
 const initDirections = () => {
   const mapElement = document.getElementById('map');
   const destination = JSON.parse(mapElement.dataset.destination);
@@ -12,14 +18,16 @@ const initDirections = () => {
     navigator.geolocation.getCurrentPosition((data) => {
       const map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v10',
-        center: [data.coords.longitude, data.coords.latitude],
-        zoom: 13
+        style: 'mapbox://styles/mapbox/streets-v10'
+        // center: [data.coords.longitude, data.coords.latitude],
+        // zoom: 13
       });
       // var canvas = map.getCanvasContainer();
       const start = [data.coords.longitude, data.coords.latitude];
       // console.log(start);
       const end = [destination.lng, destination.lat];
+      const markers = [start, end];
+      fitMapToMarkers(map, markers);
       // console.log(end);
       function getRoute(end) {
         // make a directions request using walking profile start point is current location
