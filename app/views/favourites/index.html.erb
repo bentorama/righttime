@@ -35,7 +35,7 @@
                 </div>
               </div>
             </div>
-            <div class="event-details">
+            <div class="favourite-details">
               <h2><%= link_to favourite.event.name, event_path(favourite.event) %></h2>
               <p><% d = favourite.event.description %><% description = d.split[0...15].join(' ') %><%= description %>...</p>
             </div>
