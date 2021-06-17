@@ -10,12 +10,19 @@
 // countdown
 .flex {
   display: flex;
-  margin: auto;
+  justify-content: center;
+
+  .minutes {
+    width: 20px;
+  }
+
+  .seconds {
+    width: 20px;
+  }
 }
 
 #clockdiv{
   color: var(--clr-text);
-  display: flex;
   height: 5vh;
   font-size: 16px;
   background-color: black;
@@ -113,22 +120,22 @@
 // review section
 .review-container {
   align-items: center;
-  background: radial-gradient(circle at top, #3d324c, black, black, black 100%);  border-radius: 8px;
+  background: radial-gradient(circle at top, #3d324c, black, black, black 100%);
   background-attachment: fixed;
   display: flex;
   filter: drop-shadow(0 15px 1rem rgba(15, 15, 15, 0.65));
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 16px;
   margin-left: auto;
   margin-right: auto;
   padding-top: 16px;
-  width: 90vw;
+  width: 100vw;
 
   h3 {
     color: white;
     font-size: 20px;
-    position: flex-start;
     text-transform: uppercase;
   }
 }
