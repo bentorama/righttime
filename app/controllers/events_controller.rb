@@ -7,7 +7,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.json { render json: { restaurants: @restaurants } }
+      format.json { render json: { events: @events } }
     end
 
     if session[:location]
@@ -45,7 +45,30 @@ class EventsController < ApplicationController
   def destroy
   end
 
+  def price_update
+    @events = []
+    params[:events].each do |event|
+      @events << Event.find(event.to_i)
+    end
+    price_reduction(@events)
+    render :index
+  end
+
   private
+
+  def price_reduction(events)
+    events.each do |event|
+      # time = event.start_time - Time.now
+      number = [1..3].sample
+      multiple = [0.2, 0.5, 0.8].to_a.sample
+      if number == 3 || 1
+        current_price = event.starting_price * multiple
+        event.starting_price = current_price
+        event.price_cents = current_price * 100
+        event.save
+      end
+    end
+  end
 
   def price_counter
     time = @event.start_time - Time.now

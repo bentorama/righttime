@@ -1,4 +1,4 @@
-<div data-controller = "price" id="page-container-index">
+<div id="page-container-index">
   <div id="index-container">
     <!-- map viewport -->  
     <!-- map dimensions -->
@@ -11,21 +11,23 @@
 
     </div>
       <div class="price-button-container">
-        <button data-action="click->price#refresh" 
-                class="price-button" type="button" data-toggle="button">
+        <%= link_to price_update_path(events: @events), method: :get do %>
+          <button data-action="click->price#refresh" 
+                class="price-button" type="button">
           <img src="https://res.cloudinary.com/markcarson121/image/upload/v1623348000/white_hot_i3opcg.png">
         </button>
+        <% end %> 
       </div>   
     <!-- event cards -->
     
-    <div  class="event-card-container">
+  <div  class="event-card-container">
       <% @events.each do |event| %>
         <% if event.start_time > Time.now %>
           <div class="event-card">
             <!-- event card image -->
             <div>
               <!-- event price -->
-              <span data-price-target="drop" class="event-price" id = "price">£<%= event.starting_price.round(2) %></span>
+              <span data-price-target="drop" class="event-price">£<%= event.starting_price.round(2) %></span>
               <%= link_to event_path(event) do %>
                 <%= image_tag(event.photos.first) %>
               <% end %>
