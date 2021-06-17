@@ -10,22 +10,24 @@ class FavouritesController < ApplicationController
   end
 
   def create
-    @favourite = Favourite.new
     @event = Event.find(params[:event_id])
+    existing_favourite = Favourite.find_by(user_id: current_user.id, event_id: @event.id)
+    return false if existing_favourite
+    @favourite = Favourite.new
     @favourite.user = current_user
     @favourite.event = @event
-    if @favourite.save
-        redirect_to favourites_path
-    else
-      flash[:alert] = "didn't save!"
-      render 'new'
-    end
+    @favourite.save!
+    # if @favourite.save
+    #     redirect_to favourites_path
+    # else
+    #   flash[:alert] = "didn't save!"
+    #   render 'new'
+    # end
   end
 
   def destroy
     @favourite = Favourite.find(params[:id])
     @favourite.destroy
-    redirect_to favourites_path
   end
 
   private

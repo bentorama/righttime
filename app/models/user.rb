@@ -19,7 +19,8 @@ class User < ApplicationRecord
     self.owner = false if owner.nil?
   end
 
-  # def avatar_thumbnail
-  #   avatar.variant(resize: "105x150!").processed if current_user.avatar.attached?
-  # end
+  def is_favourite_event?(event_id)
+    self.favourites.map(&:event_id).include?(event_id)
+  end
 end
+

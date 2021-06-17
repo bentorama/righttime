@@ -1,25 +1,28 @@
 <div class="booking-bar-container">
-  <span>Total: £</span>
-  <div id="price-input">
+   <div id="price-input">
+    <span>Total: £</span>
     <div id="price-html">
+  
       <%= @event.price %>
     </div>
   </div>
-  <div id="minus" class="counter-btn">
-    <span class="fas fa-minus"></span>
-  </div>  
-    <span class="far fa-user"></span>   
-  <div id="counter-Html">
-    1
-  </div>   
-  <div id="plus" class="counter-btn">
-    <span class="fas fa-plus"></span>
+  <div id="multiplier">
+    <div id="minus" class="counter-btn">
+      <span class="fas fa-minus"></span>
+    </div>  
+<!--       <span class="far fa-user"></span>   --> 
+    <div id="counter-Html">
+      1
+    </div>   
+    <div id="plus" class="counter-btn">
+      <span class="fas fa-plus"></span>
+    </div>
   </div>
   <div>
     <%= form_tag orders_path do %>
       <%= hidden_field_tag 'event_id', @event.id %>
       <%= hidden_field_tag 'order_amount', @event.price %>
-      <%= submit_tag 'Book Now', class: 'btn btn-primary' %>
+      <%= submit_tag 'Book Now', class: 'btn' %>
     <% end %>
   </div>
 </div>

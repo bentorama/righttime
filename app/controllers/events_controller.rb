@@ -3,6 +3,13 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show]
 
   def index
+    @events = Event.all
+
+    respond_to do |format|
+      format.html
+      format.json { render json: { restaurants: @restaurants } }
+    end
+
     if session[:location]
       find_near_events(session[:location])
     elsif params[:query].present? && params[:query] != ""
@@ -14,12 +21,14 @@ class EventsController < ApplicationController
       session[:location] = location
       find_near_events(location)
     else
-      @events = Event.all
+      @events
     end
     markers_and_center
   end
 
-  def show; end
+  def show
+    price_counter
+  end
 
   def new
   end
@@ -37,6 +46,17 @@ class EventsController < ApplicationController
   end
 
   private
+
+  def price_counter
+    time = @event.start_time - Time.now
+    multiple = [0.2, 0.5, 0.8].to_a.sample
+    if time < 1000
+      current_price = @event.starting_price * multiple
+      @event.starting_price = current_price
+      @event.price_cents = current_price * 100
+      @event.save
+    end
+  end
 
   def set_event
     @event = Event.find(params[:id])
