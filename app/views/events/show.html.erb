@@ -65,6 +65,9 @@
       <button id="see-more">See More</button>
     
       <h3><%= "Reviews (#{@event.reviews.count})"%></h3>
+      <div id="reveal-info">
+        <p>tap to reveal</p>
+      </div>
       <div class="review-container">
         <!-- user reviews -->
         <% @event.reviews.each do |review| %>

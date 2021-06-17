@@ -8,7 +8,7 @@
         <h1>Checkout Summary</h1>
         <div>
           <%= cl_image_tag @order.event.photos.first.key %>
-          <p>Attending <strong><%= @order.event.name %></strong> for <strong><%= humanized_money_with_symbol @order.amount_cents / 100 %></strong></p>
+          <p>Attending <strong><%= @order.event.name %></strong> for <strong><%= humanized_money_with_symbol @order.amount_cents / 10 %></strong></p>
         </div>
         <div>
         <button id="pay" class="btn">Pay Now</button>
