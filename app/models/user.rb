@@ -23,3 +23,4 @@ class User < ApplicationRecord
     self.favourites.map(&:event_id).include?(event_id)
   end
 end
+

@@ -1,9 +1,19 @@
+.btn {
+  background-color: #3d3cee;
+  box-shadow: 0 0.2px 0.3rem #3d3cee;
+  color: #FFF;;
+}
+
 #counter {
   padding-left: 4px;
   padding-right: 4px;
 }
 
 #multiplier {
+  display: flex;
+}
+
+#price-input {
   display: flex;
 }
 

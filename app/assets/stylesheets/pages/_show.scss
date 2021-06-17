@@ -8,41 +8,82 @@
 }
 
 // countdown
+.flex {
+  display: flex;
+  margin: auto;
+}
+
 #clockdiv{
   color: var(--clr-text);
   display: flex;
-  justify-content: space-evenly;
-  text-align: center;
-  font-size: 12px;
-  background-color: var(--clr-primary);
+  height: 5vh;
+  font-size: 16px;
+  background-color: black;
 }
 
 // after-countdown
 .past-event {
   color: var(--clr-text);
-  justify-content: center;
+  justify-content: space-around;
   margin: auto;
 }
 
 // add to favourites
 .show-favorites {
+  background-color: white;
   display: flex;
   justify-content: flex-end;
+
+  p {
+    color: black !important;
+  }
 }
 
 // show content
+.show-details {
+  background: radial-gradient(circle at top, #3d324c, black, black, black 100%);
+  filter: drop-shadow(0 15px 1rem rgba(15, 15, 15, 0.65));
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  padding-left: 10px;
+  padding-top: 6px;
+  padding-right: 10px;
+  width: 100vw;
+
+  button {
+    margin-left: -5px;
+  }
+}
+
+.rating-container {
+  span {
+    color: #FFF;
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+}
+
 .content {
   h1 {
-    color: black;
-    font-family: oswald, sans-serif;
+    color: #FFF;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
   }
 
   h2 {
-    color: black;
+    color: #FFF;
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+    padding-bottom: 8px;
+    text-transform: uppercase;
   }
 
   h3 {
-    color: black;
+    color: #FFF;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    padding-bottom: 4px;
+    padding-top: 6px;
+    text-transform: uppercase;
   }
 
   i {
@@ -50,28 +91,46 @@
   }
 
   p {
-    color: black;
+    color: #FFF;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
   }
+  
+  background-image: linear-gradient(to left bottom, #ffdb56, #ffb54b, #ff904d, #ff6a56, #fa4f60, #f1326c, #e20a7a, #c90082, #ad0088, #8e018c, #6b118d);
+  display: flex;
+  flex-direction: column;
 }
 
 // review section
 .review-container {
   align-items: center;
+  background: radial-gradient(circle at top, #3d324c, black, black, black 100%);  border-radius: 8px;
+  background-attachment: fixed;
   display: flex;
+  filter: drop-shadow(0 15px 1rem rgba(15, 15, 15, 0.65));
   flex-direction: column;
+  justify-content: center;
+  margin-bottom: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 16px;
+  width: 90vw;
+
+  h3 {
+    color: white;
+    font-size: 20px;
+    position: flex-start;
+    text-transform: uppercase;
+  }
 }
 
 .review-card {
-  background: radial-gradient(circle at top, rgba(112, 85, 140, 1.00), black, black, black 100%);
-  border-radius: 8px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  margin-bottom: 8px;
-  min-width: 128px;
-  padding-bottom: 4px;
+  padding-bottom: 8px;
   padding-top: 8px;
-  width: auto;
-
+  
   p {
     color: #FFF;
   }
@@ -95,4 +154,8 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;  
   overflow: hidden;
+}
+
+#see-more {
+  color: rgba(254, 103, 87, 1.00);
 }
