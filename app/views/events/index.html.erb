@@ -13,7 +13,7 @@
       <div class="price-button-container">
         <button data-action="click->price#refresh" 
                 class="price-button" type="button" data-toggle="button">
-          <img src="https://res.cloudinary.com/markcarson121/image/upload/v1623348000/white_hot_i3opcg.png">
+          <i class="fas fa-pound-sign"></i>
         </button>
       </div>   
     <!-- event cards -->
@@ -60,7 +60,7 @@
                 <% end %>
               </div>
               <div class="event-timer">
-                <p>Starts at <% t = event.start_time %><%= t.strftime("%l:%M %P") %>!</p>
+                <p>Starts at <% t = event.start_time %><%= t.strftime("%l:%M %P") %></p>
               </div>
             </div>
            
