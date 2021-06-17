@@ -47,7 +47,7 @@
                   <div id="heart">
                     <% if user_signed_in? %>
                       <% if current_user.is_favourite_event?(event.id) %>
-                        <%= button_to favourite_path(event.favourites.find_by(user_id: current_user.id)), :method => :delete do %>
+                        <%= link_to favourite_path(event.favourites.find_by(user_id: current_user.id)), :method => :delete do %>
                           <span class="fas fa-heart" id="index-heart"></span>
                         <% end %>
                       <% else %>
