@@ -31,7 +31,9 @@
                   <% end %>
                 </div>
                 <div id="heart">
-                  <i id="icon-heart" class="fas fa-heart"></i>
+                  <%= link_to favourite_path(favourite), method: :delete, remote: true do %>
+                    <i id="icon-heart" class="fas fa-heart"></i>
+                  <% end %>
                 </div>
               </div>
             </div>
@@ -41,11 +43,6 @@
             </div>
             <div>
               <p>Starts at <% t = favourite.event.start_time %><%= t.strftime("%l:%M %P") %>!</p>
-              <%= link_to "Remove",
-              favourite_path(favourite),
-              method: :delete,
-              class: "delete-favourite", 
-              remote: true %>
             </div>
           </div>
         </div>
