@@ -18,9 +18,11 @@
 }
 
 .event-card {
-  background: var(--clr-card-bg);
+  background: transparent;
   display: flex;
-  height: 25vh; 
+  height: 25vh;
+  margin-right: 8px;
+  margin-top: 8px;
   position: relative;
   width: 100vw;
 
@@ -62,8 +64,8 @@
   height: 25vh;
   min-width: 320px;
   overflow: scroll;
-  padding-bottom: 8px;  
-  padding-top: 8px;
+  // padding-bottom: 8px;  
+  // padding-top: 8px;
   position: static;
 }
 
