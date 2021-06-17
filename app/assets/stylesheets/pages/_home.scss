@@ -83,3 +83,80 @@ h3,
 p {
   margin:0
 }
+
+// clock
+.wrap {
+  width: 10vw;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock {
+  position: relative;
+  max-width: 400px;
+  width: 100%;
+  transform: scale(-1);
+
+  &:after {
+    content: '';
+    display: block;
+    padding-top: 100%;
+  }
+}
+
+.clock-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  border-radius: 50%;
+  border: 2px solid white;
+
+  .clock-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FFF;
+  }
+
+  .hand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: calc(50% - 10%);
+    height: 2px;
+    background-color: #FFF;
+    transform-origin: left center;
+    border-radius: 999px;
+    transform: translateY(-50%);
+
+  }
+
+  &.second {
+    opacity: 0.5;
+    height: 3px;
+    transform: translateY(-50%) rotate(-180deg);
+    transition: 0.1s ease-out;
+  }
+
+  &.minute {
+    transform: translateY(-50%) rotate(-90deg);
+    transition: 0.4s ease-out;
+  }
+
+  &.hour {
+    transform: translateY(-50%) rotate(45deg);
+    width: calc(50% - 80px);
+    transition: 0.4s ease-out;
+  }
+
+}
