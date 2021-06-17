@@ -43,11 +43,6 @@
             </div>
             <div>
               <p>Starts at <% t = favourite.event.start_time %><%= t.strftime("%l:%M %P") %>!</p>
-              <%= link_to "Remove",
-              favourite_path(favourite),
-              method: :delete,
-              class: "delete-favourite", 
-              remote: true %>
             </div>
           </div>
         </div>

@@ -34,11 +34,13 @@
     <div class="show-favorites">
       <p><strong>Add to favourites</strong></p>
       <%= simple_form_for([ @event, Favourite.new ]) do |f|  %>
-        <%= button_tag type: 'submit' do %>
-          <i class="fab fa-gratipay"></i> 
-        <% end %>
+          <%= button_to type: 'submit' do %>
+            <i class="fab fa-gratipay"></i>
+          <% end %>
       <% end %>
     </div>
+
+    
 
     <div class="show-details">
       <h1><%= @event.name %></h1>
