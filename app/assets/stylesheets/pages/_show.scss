@@ -121,6 +121,15 @@
 }
 
 // review section
+
+#reveal-info {
+  p {
+    color: rgba(254, 103, 87, 1.00);
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 12px;
+    margin-top: -6px;
+  }
+}
 .review-container {
   align-items: center;
   display: flex;
