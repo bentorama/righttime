@@ -1,4 +1,4 @@
-<div data-controller = "price" id="page-container-index">
+<div id="page-container-index">
   <div id="index-container">
     <!-- map viewport -->  
     <!-- map dimensions -->
@@ -9,16 +9,19 @@
         <%= render "components/filter" %>
       </div>
 
-    </div>
       <div class="price-button-container">
-        <button data-action="click->price#refresh" 
-                class="price-button" type="button" data-toggle="button">
-          <i class="fas fa-pound-sign"></i>
-        </button>
+
+        <%= link_to price_update_path(events: @events), method: :get do %>
+          <button data-action="click->price#refresh" class="price-button" type="button">
+            <i class="fas fa-pound-sign"></i>          
+          </button>
+        <% end %> 
       </div>   
+    </div>
+    
     <!-- event cards -->
     
-    <div  class="event-card-container">
+  <div  class="event-card-container">
       <% @events.each do |event| %>
         <% if event.start_time > Time.now %>
           <%= link_to event_path(event) do %>
@@ -26,7 +29,9 @@
             <!-- event card image -->
             <div>
               <!-- event price -->
-              <span data-price-target="drop" class="event-price" id = "price">£<%= event.starting_price.round(2) %></span>
+
+              <span data-price-target="drop" class="event-price">£<%= event.starting_price.round(2) %></span>
+              <%= link_to event_path(event) do %>
                 <%= image_tag(event.photos.first) %>
             </div>
             <div class="event-information">
@@ -38,6 +43,25 @@
                       <i class="far fa-star"></i>
                     <% end %>
                   </div>
+
+                  <div id="heart">
+                    <% if user_signed_in? %>
+                      <% if current_user.is_favourite_event?(event.id) %>
+                        <%= button_to favourite_path(event.favourites.find_by(user_id: current_user.id)), :method => :delete do %>
+                          <span class="fas fa-heart" id="index-heart"></span>
+                        <% end %>
+                      <% else %>
+                        <%= simple_form_for([ event, Favourite.new ]) do |f|  %>
+                          <%= button_tag type: 'submit' do %>
+                            <span class="far fa-heart" id="index-heart"></span>
+                          <% end %>
+                        <% end %>
+                      <% end %>
+                    <% else %>
+                      <span class="far fa-heart" id="index-heart"></span>
+                    <% end %>
+                  </div>
+
                 </div>
               </div>
               <div class="event-details">
@@ -47,17 +71,6 @@
               </div>
 
               <div id="heart">
-                <% if current_user.is_favourite_event?(event.id) %>
-                  <%= button_to favourite_path(event.favourites.find_by(user_id: current_user.id)), :method => :delete do %>
-                    <span class="fas fa-heart" id="index-heart"></span>
-                  <% end %>
-                <% else %>
-                  <%= simple_form_for([ event, Favourite.new ]) do |f|  %>
-                    <%= button_tag type: 'submit' do %>
-                  <span class="far fa-heart" id="index-heart"></span>
-                    <% end %>
-                  <% end %>
-                <% end %>
               </div>
               <div class="event-timer">
                 <p>Starts at <% t = event.start_time %><%= t.strftime("%l:%M %P") %></p>
