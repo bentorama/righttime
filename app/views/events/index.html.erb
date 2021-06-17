@@ -36,10 +36,7 @@
                   <div class="event-review">
                     <% if event.reviews.count > 0 %>
                       <p><%= "#{event.reviews.average(:venue_rating)}" %></p>
-                      <% event.reviews.average(:venue_rating).round.times do  %>  
-                          <i class="far fa-star"></i>
-                        <% end %>  
-                      <p><%= "(#{event.reviews.count})"%></p>
+                      <i class="far fa-star"></i>
                     <% end %>
                   </div>
                 </div>
