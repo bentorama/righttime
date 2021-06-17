@@ -10,15 +10,23 @@
 // countdown
 .flex {
   display: flex;
-  margin: auto;
+  justify-content: center;
+
+  .minutes {
+    width: 20px;
+  }
+
+  .seconds {
+    width: 20px;
+  }
 }
 
 #clockdiv{
-  color: var(--clr-text);
-  display: flex;
-  height: 5vh;
-  font-size: 16px;
   background-color: black;
+  color: var(--clr-text);
+  font-size: 16px;
+  height: 5vh;
+  padding-top: 3px;
 }
 
 // after-countdown
@@ -30,20 +38,27 @@
 
 // add to favourites
 .show-favorites {
-  background-color: white;
+  background-color: #FFF;
   display: flex;
+  height: 1.6rem;
   justify-content: flex-end;
 
   p {
     color: black !important;
   }
+
+  .fab {
+    bottom: 8px;
+    font-size: 2.5rem;
+    position: relative;
+    z-index: 1;
+  }
 }
 
 // show content
 .show-details {
-  background: radial-gradient(circle at top, #3d324c, black, black, black 100%);
-  filter: drop-shadow(0 15px 1rem rgba(15, 15, 15, 0.65));
-  margin-bottom: 16px;
+  background: radial-gradient(circle at 50%, #3d324c, black, black, black 200%);
+  background-attachment: fixed;
   padding-bottom: 8px;
   padding-left: 10px;
   padding-top: 6px;
@@ -101,25 +116,25 @@
   flex-direction: column;
 }
 
+#line {
+  color: white;
+}
+
 // review section
 .review-container {
   align-items: center;
-  background: radial-gradient(circle at top, #3d324c, black, black, black 100%);  border-radius: 8px;
-  background-attachment: fixed;
   display: flex;
-  filter: drop-shadow(0 15px 1rem rgba(15, 15, 15, 0.65));
   flex-direction: column;
   justify-content: center;
   margin-bottom: 16px;
   margin-left: auto;
   margin-right: auto;
   padding-top: 16px;
-  width: 90vw;
+  width: 100%;
 
   h3 {
     color: white;
     font-size: 20px;
-    position: flex-start;
     text-transform: uppercase;
   }
 }
@@ -129,10 +144,12 @@
   flex-direction: column;
   justify-content: center;
   padding-bottom: 8px;
+  padding-left: 8px;
   padding-top: 8px;
   
   p {
     color: #FFF;
+    overflow: auto;
   }
 }
 

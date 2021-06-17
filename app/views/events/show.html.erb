@@ -1,5 +1,4 @@
 <div id="page-container-show">
-
   <!-- image carousel -->
   <div id="carousel-container">
     <%= render "components/carousel", locals: { event: @event } %>
@@ -33,7 +32,7 @@
   <!-- event content -->
   <div class="content">
     <div class="show-favorites">
-      <p>Add to favourites</p>
+      <p><strong>Add to favourites</strong></p>
       <%= simple_form_for([ @event, Favourite.new ]) do |f|  %>
         <%= button_tag type: 'submit' do %>
           <i class="fab fa-gratipay"></i> 
@@ -62,14 +61,9 @@
       <h3>Full Description</h3>
       <p id="expand" class="line-clamp"><%= @event.description %></p>
       <button id="see-more">See More</button>
-    </div>
-
-    <!-- review section -->
     
-      <!-- review header -->
-      
+      <h3><%= "Reviews (#{@event.reviews.count})"%></h3>
       <div class="review-container">
-        <h3><%= "Reviews (#{@event.reviews.count})"%></h3>
         <!-- user reviews -->
         <% @event.reviews.each do |review| %>
           <div class="review-card">
@@ -85,7 +79,14 @@
             </div>
           </div>
         <% end %>
-    </div>  
+    </div> 
+    </div>
+
+    <!-- review section -->
+    
+      <!-- review header -->
+      
+       
   </div>
 </div>
 
