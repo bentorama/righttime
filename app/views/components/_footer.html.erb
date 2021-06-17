@@ -1,13 +1,13 @@
 <div class="wrapper">
   <div class="footer">
     <div>
-      <%= link_to favourites_path do %>
-        <i href="#" id="footer-heart" class="far fa-heart"></i>
+      <%= link_to root_path do %>
+        <i class="fas fa-home"></i>
       <% end %>
     </div>
     <div>
-      <%= link_to events_path do %>
-        <i class="far fa-map"></i>
+      <%= link_to favourites_path do %>
+        <i href="#" id="footer-heart" class="far fa-heart"></i>
       <% end %>
     </div>
     <% if user_signed_in? %>
