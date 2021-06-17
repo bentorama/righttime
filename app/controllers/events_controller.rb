@@ -27,7 +27,6 @@ class EventsController < ApplicationController
   end
 
   def show
-    price_counter
   end
 
   def new
