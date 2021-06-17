@@ -27,10 +27,7 @@
                 <div class="event-review">
                   <% if favourite.event.reviews.count > 0 %>
                     <p><%= "#{favourite.event.reviews.average(:venue_rating)}" %></p>
-                    <% favourite.event.reviews.average(:venue_rating).round.times do  %>  
-                      <i class="far fa-star"></i>
-                    <% end %>  
-                    <p><%= "(#{favourite.event.reviews.count})"%></p>
+                      <i class="fas fa-star star"></i> 
                   <% end %>
                 </div>
                 <div id="heart">
