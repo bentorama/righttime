@@ -21,6 +21,7 @@ class OrdersController < ApplicationController
 
   def show
     @order = current_user.orders.find(params[:id])
+    destination
   end
 
   def my_bookings
@@ -29,7 +30,13 @@ class OrdersController < ApplicationController
 
   private
 
-  def get_directions
-    
+  def destination
+    @destination = {
+      lat: @order.event.venue.latitude,
+      lng: @order.event.venue.longitude,
+      # info_window: render_to_string(partial: "info_window", locals: { event: event }),
+      image_url: helpers.asset_url('stopwatch.png')
+    }
+    # raise
   end
 end
