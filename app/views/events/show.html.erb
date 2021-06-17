@@ -33,7 +33,7 @@
   <!-- event content -->
   <div class="content">
     <div class="show-favorites">
-      <p>Add to favourites</p>
+      <p><strong>Add to favourites</strong></p>
       <%= simple_form_for([ @event, Favourite.new ]) do |f|  %>
         <%= button_tag type: 'submit' do %>
           <i class="fab fa-gratipay"></i> 
