@@ -63,13 +63,11 @@ class EventsController < ApplicationController
 
   def price_reduction(events)
     events.each do |event|
-      # time = event.start_time - Time.now
-      number = [1..5].sample
-      multiple = [0.2, 0.5, 0.8].to_a.sample
-      if number == 3 || 1
-        current_price = event.starting_price * multiple
-        event.starting_price = current_price
-        event.price_cents = current_price * 100
+      @number = (1..10).to_a.sample
+      multiple = [0.2, 0.5].sample
+      if @number > 5 && event.starting_price > event.min_price
+        event.starting_price = event.starting_price * multiple
+        event.price_cents = event.starting_price * 100
         event.save
       end
     end
