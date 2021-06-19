@@ -93,6 +93,7 @@ Venue.all.each do |venue|
     category = ["Hot", "Food", "Drink", "Show", "Music"].sample
     Event.create!(
       price_cents: starting_price * 100,
+      current_price: starting_price,
       # starting_price in £
       starting_price: starting_price,
       start_time: Faker::Time.between_dates(from: Date.today, to: Date.today + 1, period: :night),
