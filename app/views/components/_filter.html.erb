@@ -1,37 +1,45 @@
 <div class="toggle-container">
   <div>
-    <div class="filter-button">
-      <button type="button" data-toggle="button">
+    <div class="filter-button" id="hot">
+    <%= link_to events_path(category: "Hot"), remote: true do %>
+      <img src="https://res.cloudinary.com/markcarson121/image/upload/v1623348000/white_hot_i3opcg.png">
+    <% end %>
+      <%# <button type="button" data-toggle="button">
         <img src="https://res.cloudinary.com/markcarson121/image/upload/v1623348000/white_hot_i3opcg.png">
-      </button>
+      </button> %>
     </div>
   </div>
   <div>
-    <div class="filter-button">
-      <button type="button" data-toggle="button">
+    <div class="filter-button" id="food">
+      <%= link_to events_path(category: "Food") do %>
         <img src="https://res.cloudinary.com/markcarson121/image/upload/v1623347992/white_food_bw95sq.png">
-      </button>
+      <% end %>
     </div>
   </div>
   <div>
-    <div class="filter-button">
-      <button type="button" data-toggle="button">
+    <div class="filter-button" id="drink">
+      <%= link_to events_path(category: "Drink") do %>
         <img src="https://res.cloudinary.com/markcarson121/image/upload/v1623347981/white_drink_iixojr.png">
-      </button>
+      <% end %>
     </div>
   </div>
   <div>
-    <div class="filter-button">
-      <button type="button" data-toggle="button">
+    <div class="filter-button" id="show">
+      <%= link_to events_path(category: "Show") do %>
         <img src="https://res.cloudinary.com/markcarson121/image/upload/v1623348015/white_show_zpxyal.png">
-      </button>
+      <% end %>
     </div>
   </div>
   <div>
-    <div class="filter-button">
-      <button type="button" data-toggle="button">
+    <div class="filter-button" id="music">
+      <%= link_to events_path(category: "Food") do %>
         <img src="https://res.cloudinary.com/markcarson121/image/upload/v1623348008/white_music_ihzu6n.png">
-      </button>
+      <% end %>
+    </div>
+  </div>
+  <div>
+    <div class="filter-button" id="all">
+      <%= link_to "All", events_path %>
     </div>
   </div>
 </div>

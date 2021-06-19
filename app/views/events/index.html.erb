@@ -31,7 +31,7 @@
             <!-- event card image -->
             <div>
               <!-- event price -->
-              <span data-price-target="drop" class="event-price">£<%= event.starting_price.round(2) %></span>
+              <span data-price-target="drop" class="event-price">£<%= event.price %></span>
               <%= link_to event_path(event) do %>
                 <%= image_tag(event.photos.first) %>
               <% end %>
