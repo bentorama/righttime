@@ -24,10 +24,10 @@
     
     <!-- event cards -->
     
-    <div  class="event-card-container">
+    <div  class="event-card-container" id="scrolling-container">
       <% @events.each do |event| %>
         <% if event.start_time > Time.now %>
-          <div class="event-card">
+          <div class="event-card" id="id-<%=event.id%>">
             <!-- event card image -->
             <div>
               <!-- event price -->
