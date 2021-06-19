@@ -37,6 +37,7 @@ import { initMapbox } from './map';
 import { initStarRating } from '../plugins/init_star_rating';
 // import { heartChanger } from 'favourites-heart.js';
 
+import $ from 'jquery';
 
 document.addEventListener('turbolinks:load', () => {
   // initializeClock('clockdiv', 'December 31 2021 23:59:59 GMT+0200')
@@ -58,6 +59,10 @@ document.addEventListener('turbolinks:load', () => {
       });
     });
   };
+
+  $(".carousel").carousel({
+    interval: 2000
+  });
 
   // heart toggle 
   const indexHeart = document.querySelectorAll("#index-heart"); // hearts array
