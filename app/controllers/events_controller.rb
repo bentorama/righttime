@@ -41,8 +41,23 @@ class EventsController < ApplicationController
   def destroy
   end
 
-  private
+  # def price_update
+  #   @events = []
+  #   params[:events].each do |event|
+  #     @events << Event.find(event.to_i)
+  #   end
 
+  #   if session[:counter].positive?
+  #     price_reduction(@events)
+  #     session[:counter] -= 1
+  #     render :index
+  #   else
+  #     render :index
+  #   end
+  # end
+
+  private
+  
   def price_counter
     @events.each do |event|
       time = event.start_time - Time.now
@@ -55,9 +70,18 @@ class EventsController < ApplicationController
     end
   end
 
+
   def rand_event(events)
     @rand_event = events.sample
   end
+
+# events.each do |event|
+#       @number = (1..10).to_a.sample
+#       multiple = [0.2, 0.5].sample
+#       if @number > 5 && event.starting_price > event.min_price
+#         event.starting_price = event.starting_price * multiple
+#         event.price_cents = event.starting_price * 100
+#         event.save
 
   def set_event
     @event = Event.find(params[:id])
