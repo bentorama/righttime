@@ -13,6 +13,25 @@
   justify-content: center;
 }
 
+#venue {
+  p {
+    color: #FFF;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    margin-left: 8px;
+    margin-top: -4px;
+    text-transform: uppercase;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 138px;
+  }
+}
+
+#venue-details {
+  margin-left: 8px;
+}
+
 .event-card {
   background: radial-gradient(circle at top, rgba(61, 50, 76, 1.00), black, black, black 200%);
   border-radius: 6px;
@@ -25,15 +44,16 @@
   width: 95vw;
   z-index: 99999;
 
-  a {
-    text-decoration: none;
-    color: var(--clr-card-text);
-  }
-
   h2 {
     font-family: oswald, sans-serif;
-    font-size: 24px;
+    font-size: 28px;
+    margin-left: 8px;
+    margin-top: -36px;
     text-transform: uppercase;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 120px;
   }
 
   img {
@@ -44,7 +64,7 @@
   }
 
   p {
-    color: var(--clr-card-text);
+    color: #FFF;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 16px;
   }
@@ -57,8 +77,12 @@
 
   .fas {
     color: rgba(254, 103, 87, 1.00);
-    margin-left: -2px;
-    margin-right: -3px;
+  }
+
+  #heart {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
   }
 }
 
@@ -78,18 +102,22 @@
 }
 
 .event-price {
-  background-color: var(--clr-primary);
+  background-color: black;
   bottom: 0px;
-  border: 3px solid white;
+  border: 3px solid rgba(254, 103, 87, 1.00);
   border-radius: 20px;
-  color: var(--clr-text);
-  font-family: var(--ff-primary);
+  filter:drop-shadow(1px 1px 8px black);
   font-size: 16px;
   margin-bottom: 8px;
   margin-left: 8px;
   padding: 7px 10px;
   position: absolute;
   z-index: 1;
+}
+
+.event-timer {
+  margin-bottom: 4px;
+  margin-left: 8px;
 }
 
 .event-information {
@@ -100,18 +128,10 @@
   width: 200px;
 
   a {
-    color: white;
-  }
-
-  p {
-    color: white;
+    color: #FFF;
   }
 }
 
-.card-top-row {
-  display: flex;
- }
-
 #index-heart {
- color: red;
+  color: red;
 }
