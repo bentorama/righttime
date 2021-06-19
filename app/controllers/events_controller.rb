@@ -6,6 +6,7 @@ class EventsController < ApplicationController
     # @events = Event.all
     if session[:location]
       if params[:category].present?
+        # binding.pry
         find_near_events_type(session[:location], params[:category])
       else
         find_near_events(session[:location])

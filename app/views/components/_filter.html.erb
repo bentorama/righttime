@@ -1,7 +1,7 @@
 <div class="toggle-container">
   <div>
     <div class="filter-button" id="hot">
-    <%= link_to events_path(category: "Hot"), remote: true do %>
+    <%= link_to events_path(category: "Hot") do %>
       <img src="https://res.cloudinary.com/markcarson121/image/upload/v1623348000/white_hot_i3opcg.png">
     <% end %>
       <%# <button type="button" data-toggle="button">
@@ -32,7 +32,7 @@
   </div>
   <div>
     <div class="filter-button" id="music">
-      <%= link_to events_path(category: "Food") do %>
+      <%= link_to events_path(category: "Music") do %>
         <img src="https://res.cloudinary.com/markcarson121/image/upload/v1623348008/white_music_ihzu6n.png">
       <% end %>
     </div>
