@@ -1,6 +1,10 @@
-<div id="page-container-confirmation">
-  <div class="orders-show-container">
-    <h1>Order #<%= @order.id %> <small><span class="badge badge-primary"><%= @order.state %></span></small></h1>
+<div id="page-container">
+  <div class="confirmation-card">
+    <h1>Order #<%= @order.id %>
+      <small>
+        <span class="badge badge-primary"><%= @order.state %></span>
+      </small>
+    </h1>
     <h1>CONGRATS.</h1>
     <h2>You are going to</h2> 
     <h2><%= @order.event.name %>!</h2>
@@ -11,9 +15,9 @@
       <li><strong>TOTAL</strong> <%= humanized_money_with_symbol @order.amount %></li>
     </ul>
     <%= image_tag(@order.event.photos.first) %>
-  </div>
+  
 
-  <div class="directions-btn " id="show-directions">
+  <div class="directions-btn" id="show-directions">
     <p>Show Directions</p>
   </div>
   <div class="hide" id="directions-container">
@@ -24,6 +28,8 @@
 
   <div class="directions-btn">
     <a href="/events">See More Events</a>
+  </div>
+
   </div>
 
   <div id="checkout-footer">

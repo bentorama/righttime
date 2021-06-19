@@ -1,6 +1,8 @@
-#page-container-confirmation {
+#page-container {
+  background-image: linear-gradient(to left bottom, #ffdb56, #ffb54b, #ff904d, #ff6a56, #fa4f60, #f1326c, #e20a7a, #c90082, #ad0088, #8e018c, #6b118d);
   display: flex;
   flex-direction: column;
+  justify-content: center;
   min-height: 100vh;
 }
 
@@ -8,12 +10,26 @@
   margin-top: auto;
 }
 
-.orders-show-container {
+.confirmation-card {
+  align-items: center;
+  border-radius: 6px;
+  filter: drop-shadow(0 15px 1rem rgba(15, 15, 15, 0.65));
+  background: radial-gradient(circle at top, rgba(61, 50, 76, 1.00), black, black, black 100%);
+  width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
 
   h1 {
-    color: black;
-    margin: 10px;
+    color: #FFF;
+  }
+
+  h2 {
+    color: #FFF;
+  }
+
+  li {
+    color: #FFF;
   }
 }
 
@@ -22,22 +38,9 @@
 }
 
 .directions-btn {
-  border-style: solid;
-  border-width: 2px;
-  background-color: purple;
-  border-color: white;
-  padding: 10px;
-  border-radius: 8px;
-  margin: 25px 34px;
-  text-align: center;
-  
-  p {
-    color: white;
-    text-decoration: none;
-  }
-
-  a {
-    color: white;
-    text-decoration: none;
-  }
+  background-color: rgba(61, 60, 238, 1.00);
+  box-shadow: 0 0.2px 0.3rem rgba(61, 60, 238, 1.00);
+  color: #FFF;
+  margin-bottom: 8px;
+  width: 50%;
 }
