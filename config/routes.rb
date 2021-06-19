@@ -9,6 +9,9 @@ Rails.application.routes.draw do
     collection do
       get :my_bookings
     end
+    member do
+      get 'directions'
+    end
   end
   resources :events do
     resources :favourites, only: [:create]
