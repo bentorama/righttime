@@ -1,40 +1,36 @@
-<div id="page-container">
+<div class="confirmation-container">
   <div class="confirmation-card">
-    <h1>Order #<%= @order.id %>
-      <small>
-        <span class="badge badge-primary"><%= @order.state %></span>
-      </small>
-    </h1>
-    <h1>CONGRATS.</h1>
-    <h2>You are going to</h2> 
-    <h2><%= @order.event.name %>!</h2>
-    <ul class="list-unstyled">
-      <li><strong>START TIME</strong> <%= @order.event.start_time.strftime("%H:%M") %></li>
-      <li><strong>EVENT</strong> <%= @order.event.name %></li>
-      <li><strong>NO. TICKETS</strong> <%= (@order.amount / @order.event.price).to_i  %></li>
-      <li><strong>TOTAL</strong> <%= humanized_money_with_symbol @order.amount %></li>
-    </ul>
-    <%= image_tag(@order.event.photos.first) %>
+    <div class="confirmation-details">
+      <h1>Order #<%= @order.id %>
+      <span class="badge badge-primary"><%= @order.state %></span>  
+      </h1>
+      <h1>CONGRATS.</h1>
+      <%= image_tag(@order.event.photos.first) %>
+      <h2>You are going to</h2> 
+      <h2><%= @order.event.name %></h2>
+      <p>START TIME <%= @order.event.start_time.strftime("%H:%M") %></p>
+      <p>EVENT <%= @order.event.name %></p>
+      <p>NO. TICKETS <%= (@order.amount / @order.event.price).to_i  %></p>
+      <p>TOTAL <%= humanized_money_with_symbol @order.amount %></p>
+    </div>
   
+    <div class="btn" id="show-directions">
+      <p>Show Directions</p>
+    </div>
 
-  <div class="directions-btn" id="show-directions">
-    <p>Show Directions</p>
-  </div>
-  <div class="hide" id="directions-container">
-    <div id="map" style="min-width: 320px; min-height: 40vh;" data-destination="<%= @destination.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-    <div id="instructions"></div>
-  </div>
+    <div class="hide" id="directions-container">
+      <div id="map" style="min-width: 320px; min-height: 40vh;" data-destination="<%= @destination.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+      <div id="instructions"></div>
+    </div>
   
-
-  <div class="directions-btn">
-    <a href="/events">See More Events</a>
+    <div class="btn">
+      <%= link_to "See More Events", events_path %>
+    </div>
   </div>
+</div>
 
-  </div>
-
-  <div id="checkout-footer">
-    <%= render "components/footer" %>
-  </div>
+<div id="checkout-footer">
+  <%= render "components/footer" %>
 </div>
 
 <%= javascript_pack_tag 'directions' %>
