@@ -27,11 +27,21 @@ const addMarkersToMap = (map, markers) => {
     element.style.backgroundSize = 'contain';
     element.style.width = '25px';
     element.style.height = '25px';
+    element.id = `id-${marker.id}`;
+    element.onclick = () => {
+      const container = document.querySelector("#scrolling-container");
+      const card = container.querySelector(`#${element.id}`);
+      card.scrollIntoView({
+        behavior: "smooth",
+        inline: "center"
+      });
+    };
+
 
     // Pass the element as an argument to the new marker
     new mapboxgl.Marker(element)
       .setLngLat([marker.lng, marker.lat])
-      .setPopup(popup)
+      // .setPopup(popup)
       .addTo(map);
   });
 };

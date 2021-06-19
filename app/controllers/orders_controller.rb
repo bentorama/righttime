@@ -21,11 +21,15 @@ class OrdersController < ApplicationController
 
   def show
     @order = current_user.orders.find(params[:id])
-    destination
   end
 
   def my_bookings
     @orders = Order.where(user: current_user)
+  end
+
+  def directions
+    @order = current_user.orders.find(params[:id])
+    destination
   end
 
   private

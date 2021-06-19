@@ -8,30 +8,26 @@
       <div id="filter-flex">  
         <%= render "components/filter" %>
       </div>
-      <div class="price-button-container">
-        <p>Click for discount</p>
-        <%= link_to price_update_path(events: @events), method: :get  do %>
-          <button data-action="click->price#refresh" 
-                class="price-button" type="button">
-          <img src="https://res.cloudinary.com/markcarson121/image/upload/v1623348000/white_hot_i3opcg.png">
-        </button>
-        <% end %> 
-        <div class="price-counter">
-          <% if session[:counter].positive? %>
-            <p> <%="Only #{session[:counter]} tries left" %> </p>
-          <% else %>
-            <p>No more discounts for you</p>
-          <% end %>
+      <div class="surprise-button-container">
+        <div>
+          <p>Feeling lucky?</p>        
+        </div>
+        <div>
+          <%= link_to event_path(@rand_event) do %>
+            <button class="suprise-button" type="button">
+              <img src="https://res.cloudinary.com/markcarson121/image/upload/v1623348000/white_hot_i3opcg.png">
+            </button>
+          <% end %> 
         </div>
       </div>   
     </div>
     
     <!-- event cards -->
     
-    <div  class="event-card-container">
+    <div  class="event-card-container" id="scrolling-container">
       <% @events.each do |event| %>
         <% if event.start_time > Time.now %>
-          <div class="event-card">
+          <div class="event-card" id="id-<%=event.id%>">
             <!-- event card image -->
             <div>
               <!-- event price -->

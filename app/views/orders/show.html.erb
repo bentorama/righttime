@@ -13,8 +13,9 @@
       <p>NO. TICKETS <%= (@order.amount / @order.event.price).to_i  %></p>
       <p>TOTAL <%= humanized_money_with_symbol @order.amount %></p>
 
-      <button class="btn" id="show-directions">Show Directions
-      </button>
+  <div class="directions-btn">
+    <%= link_to "Get Directions", directions_order_path(@order) %>
+  </div>
 
       <div class="hide" id="directions-container">
         <div id="map" style="min-width: 320px; min-height: 40vh;" data-destination="<%= @destination.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
@@ -32,14 +33,4 @@
   <%= render "components/footer" %>
 </div>
 
-<%= javascript_pack_tag 'directions' %>
-<script type="text/javascript">
-  document.getElementById("show-directions").addEventListener("click", () => {
-    const toggle = document.getElementById("directions-container");
-    if (toggle.style.display === "none") {
-      toggle.style.display = "block";
-    } else {
-      toggle.style.display = "none";
-    }
-  })
-</script>
+
