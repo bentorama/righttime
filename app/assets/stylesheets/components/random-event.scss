@@ -9,20 +9,10 @@
   align-items: center;
   margin: 2px;
   width: 50px;
+  box-shadow: 2px 2px 4px #643b58;
   }
 
-  button {
-    background-color: transparent;
-    border: none;
-  }
-  
-  //javascript toggle property
-  .price-button-active {
-    border-radius: 50%;
-    box-shadow: inset 2px 2px 4px #643b58;
-  }
-
-  .price-button:active {
+  .surprise-button:active {
     background-color: white;
   }
 
@@ -31,21 +21,27 @@
     height: 30px;
   }
 
-.price-button-container {
-  height: 10px;
+.surprise-button-container {
+  background-color: #B16F9E ;
+  width:110px;
+  padding: 5px;
+  border-radius: 12px;
+  border-style: solid;
+  border-color: white;
+
   display: flex;
   flex-direction: column;
   // justify-content: center;
   align-items: center;
   // justify-content: space-between;
   position: absolute;
-  bottom: 25%;
-  right: 5px;
-  z-index: 1;
+  bottom: 2px;
+  right: 2px;
+  z-index: 99999;
   color: white;
-}
 
-.price-counter {
-  color: white;
-  font-family: 'Source Sans Pro', sans-serif;
+  p {
+    font-weight: bold;
+    font-size: 12px;
+  }
 }
