@@ -19,7 +19,7 @@ class EventsController < ApplicationController
       @events
     end
     markers_and_center
-    # price_reduction(@events)
+    price_counter
     rand_event(@events)
   end
 
@@ -57,19 +57,19 @@ class EventsController < ApplicationController
   # end
 
   private
+  
+  def price_counter
+    @events.each do |event|
+      time = event.start_time - Time.now
+      multiple = [0.2, 0.5, 0.8].to_a.sample
+        if event.starting_price == event.current_price && time < 9950.427164
+          event.current_price = event.starting_price * multiple
+          event.price_cents = event.current_price * 100
+          event.save
+        end
+    end
+  end
 
-  # def price_reduction(events)
-  #   events.each do |event|
-  #     time = event.start_time - Time.now
-  #     if time < 600
-  #       if event.starting_price > event.min_price
-  #         event.starting_price = event.starting_price * 0.8
-  #         event.price_cents = current_price * 100
-  #         event.save
-  #       end
-  #     end
-  #   end
-  # end
 
   def rand_event(events)
     @rand_event = events.sample
