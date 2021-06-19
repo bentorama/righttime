@@ -22,9 +22,11 @@
   border-radius: 6px;
   display: flex;
   height: 25vh;
-  margin-left: 5vw;
+  margin-bottom: 8px;
+  margin-left: 2.5vw;
   position: relative;
-  width: 90vw;
+  width: 95vw;
+  z-index: 99999;
 
   a {
     text-decoration: none;
@@ -57,6 +59,10 @@
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
   }
+
+  .fas {
+    color: rgba(254, 103, 87, 1.00);
+  }
 }
 
 .event-card-container {
@@ -64,10 +70,11 @@
   background-color: transparent;
   display: flex;
   height: 25vh;
+  margin-top: -25vh;
   min-width: 320px;
   overflow-x: scroll;
   overflow-y: hidden;
-  position: static;
+  position: relative;
 }
 
 .event-card-container:last-child {
