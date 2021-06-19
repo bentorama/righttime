@@ -12,19 +12,18 @@
       <p>EVENT <%= @order.event.name %></p>
       <p>NO. TICKETS <%= (@order.amount / @order.event.price).to_i  %></p>
       <p>TOTAL <%= humanized_money_with_symbol @order.amount %></p>
-    </div>
-  
-    <div class="btn" id="show-directions">
-      <p>Show Directions</p>
-    </div>
 
-    <div class="hide" id="directions-container">
-      <div id="map" style="min-width: 320px; min-height: 40vh;" data-destination="<%= @destination.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-      <div id="instructions"></div>
-    </div>
+      <button class="btn" id="show-directions">Show Directions
+      </button>
+
+      <div class="hide" id="directions-container">
+        <div id="map" style="min-width: 320px; min-height: 40vh;" data-destination="<%= @destination.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+        <div id="instructions"></div>
+      </div>
   
-    <div class="btn">
-      <%= link_to "See More Events", events_path %>
+      <button class="btn">
+        <%= link_to "See More Events", events_path %>
+      </button>
     </div>
   </div>
 </div>
