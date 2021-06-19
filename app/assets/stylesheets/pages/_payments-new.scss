@@ -1,5 +1,6 @@
 #page-container-checkout {
-  background-image: linear-gradient(to left bottom, #ffdb56, #ffb54b, #ff904d, #ff6a56, #fa4f60, #f1326c, #e20a7a, #c90082, #ad0088, #8e018c, #6b118d);  display: flex;
+  background-image: linear-gradient(to left bottom, #ffdb56, #ffb54b, #ff904d, #ff6a56, #fa4f60, #f1326c, #e20a7a, #c90082, #ad0088, #8e018c, #6b118d);  
+  display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
@@ -81,6 +82,7 @@
   .btn {
     background-color: rgba(61, 60, 238, 1.00);
     box-shadow: 0 0.2px 0.3rem rgba(61, 60, 238, 1.00);
+    font: 400 13.3333px Arial;
     color: #FFF;
     margin-top: -16px;
     margin-bottom: 8px;
