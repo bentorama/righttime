@@ -9,19 +9,15 @@
         <%= render "components/filter" %>
       </div>
       <div class="price-button-container">
-        <p>Click for discount</p>
-        <%= link_to price_update_path(events: @events), method: :get  do %>
-          <button data-action="click->price#refresh" 
-                class="price-button" type="button">
-          <img src="https://res.cloudinary.com/markcarson121/image/upload/v1623348000/white_hot_i3opcg.png">
-        </button>
-        <% end %> 
-        <div class="price-counter">
-          <% if session[:counter].positive? %>
-            <p> <%="Only #{session[:counter]} tries left" %> </p>
-          <% else %>
-            <p>No more discounts for you</p>
-          <% end %>
+        <div>
+          <p>Suprise me!</p>        
+        </div>
+        <div>
+          <%= link_to event_path(@rand_event) do %>
+            <button class="suprise-button" type="button">
+              <img src="https://res.cloudinary.com/markcarson121/image/upload/v1623348000/white_hot_i3opcg.png">
+            </button>
+          <% end %> 
         </div>
       </div>   
     </div>

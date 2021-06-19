@@ -1,4 +1,4 @@
-.price-button {
+.suprise-button {
   background-color: #B16F9E;
   border-style: solid;
   border-color: white;
@@ -34,9 +34,12 @@
 .price-button-container {
   height: 10px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+  // justify-content: space-between;
   position: absolute;
-  bottom: 40%;
+  bottom: 25%;
   right: 5px;
   z-index: 1;
   color: white;
@@ -44,4 +47,5 @@
 
 .price-counter {
   color: white;
+  font-family: 'Source Sans Pro', sans-serif;
 }
