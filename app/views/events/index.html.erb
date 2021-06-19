@@ -31,11 +31,10 @@
             <!-- event card image -->
             <div>
               <!-- event price -->
-
               <% if event.current_price == event.starting_price %>  
-                <span class="event-price">£<%= event.current_price.round(2) %></span>
+                <p class="event-price">£<%= event.current_price.round(2) %></p>
               <% else %>
-                <span class="event-price-discount">Discount: £<%= event.current_price.round(2) %></span>
+                <p class="event-price">Discount: £<%= event.current_price.round(2) %></p>
               <% end %>
               <%= link_to event_path(event) do %>
                 <%= image_tag(event.photos.first) %>
@@ -65,8 +64,6 @@
               </div>
               <div class="event-details">
                 <h2><%= link_to event.name, event_path(event) %></h2>
-                <p><%= event.venue.name %></p>
-                <p><%= event.category %></p>
                 <div id="venue">
                   <p>@ <%= event.venue.name %></p>
                 </div>
