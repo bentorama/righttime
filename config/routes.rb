@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users 
   root to: 'pages#home'
-  get "/price_update", to: 'events#price_update', as: :price_update
+  # get "/price_update", to: 'events#price_update', as: :price_update
 
   resources :orders, only: [:show, :create] do
     resources :payments, only: :new

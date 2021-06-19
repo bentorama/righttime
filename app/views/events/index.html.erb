@@ -10,22 +10,14 @@
       </div>
       <div class="price-button-container">
         <div>
-          <p>Click for discount</p>        
+          <p>Suprise me!</p>        
         </div>
         <div>
-          <%= link_to price_update_path(events: @events), method: :get  do %>
-            <button class="price-button" type="button">
-            <img src="https://res.cloudinary.com/markcarson121/image/upload/v1623348000/white_hot_i3opcg.png">
-          </button>
+          <%= link_to event_path(@rand_event) do %>
+            <button class="suprise-button" type="button">
+              <img src="https://res.cloudinary.com/markcarson121/image/upload/v1623348000/white_hot_i3opcg.png">
+            </button>
           <% end %> 
-        </div>
-        <div class="price-counter">
-          <% if session[:counter].positive? %>
-            <p> <%="Only #{session[:counter]} tries left" %> </p>
-            <h1> <%= @number %> </h1>
-          <% else %>
-            <p>No more discounts for you</p>
-          <% end %>
         </div>
       </div>   
     </div>
