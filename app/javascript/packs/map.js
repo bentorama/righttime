@@ -61,5 +61,5 @@ const initMapbox = () => {
     );
   }
 };
-initMapbox();
-// export { initMapbox };
+// initMapbox();
+export { initMapbox };

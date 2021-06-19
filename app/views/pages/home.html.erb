@@ -9,13 +9,26 @@
     </header>
   </div>
   <% session[:location] = nil %>
+  <% session[:counter] = 4 %>
   <!-- search bar -->
   <div id="search-bar">
     <%= render "components/search" %>
   </div>
 
+  <div class="wrap">
+    <div class="clock">
+      <div class="clock-inner">
+        <div class="clock-center"></div>
+        <div class="hand second"></div>
+        <div class="hand minute"></div>
+        <div class="hand hour"></div>
+      </div>
+    </div>
+  </div>
+
   <div id="checkout-footer">
     <%= render "components/footer" %>
   </div>
+</div>
 
-
+<%= javascript_pack_tag 'clock' %>
