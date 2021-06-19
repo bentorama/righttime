@@ -9,7 +9,7 @@ const fitMapToMarkers = (map, markers) => {
 };
 
 const initDirections = () => {
-  const mapElement = document.getElementById('map');
+  const mapElement = document.getElementById('map-directions');
   const destination = JSON.parse(mapElement.dataset.destination);
   // console.log(destination);
   if (mapElement) {
@@ -17,7 +17,7 @@ const initDirections = () => {
     // getting the current location and build a map
     navigator.geolocation.getCurrentPosition((data) => {
       const map = new mapboxgl.Map({
-        container: 'map',
+        container: 'map-directions',
         style: 'mapbox://styles/bentorama/ckph9m798007s17qistei9iwy'
         // center: [data.coords.longitude, data.coords.latitude],
         // zoom: 13
@@ -141,7 +141,7 @@ const initDirections = () => {
           }
         });
         getRoute(end);
-        map.moveLayer('end')
+        map.moveLayer('point');
       });
     });
   }
