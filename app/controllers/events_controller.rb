@@ -107,7 +107,8 @@ class EventsController < ApplicationController
         lat: event.venue.latitude,
         lng: event.venue.longitude,
         info_window: render_to_string(partial: "info_window", locals: { event: event }),
-        image_url: helpers.asset_url('stopwatch.png')
+        image_url: helpers.asset_url('stopwatch.png'),
+        id: event.id
       }
     end
     if params[:query] == "" || params[:query].nil?
