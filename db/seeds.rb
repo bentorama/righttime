@@ -95,6 +95,7 @@ Venue.all.each do |venue|
       price_cents: starting_price * 100,
       # starting_price in £
       starting_price: starting_price,
+      current_price: starting_price,
       start_time: Faker::Time.between_dates(from: Date.today, to: Date.today + 1, period: :night),
       # start_time: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
       venue: venue,
