@@ -27,7 +27,6 @@ class EventsController < ApplicationController
   end
 
   def show
-    price_counter
   end
 
   def new
@@ -50,8 +49,14 @@ class EventsController < ApplicationController
     params[:events].each do |event|
       @events << Event.find(event.to_i)
     end
-    price_reduction(@events)
-    render :index
+
+    if session[:counter].positive?
+      price_reduction(@events)
+      session[:counter] -= 1
+      render :index
+    else
+      render :index
+    end
   end
 
   private
@@ -59,7 +64,7 @@ class EventsController < ApplicationController
   def price_reduction(events)
     events.each do |event|
       # time = event.start_time - Time.now
-      number = [1..3].sample
+      number = [1..5].sample
       multiple = [0.2, 0.5, 0.8].to_a.sample
       if number == 3 || 1
         current_price = event.starting_price * multiple
@@ -70,16 +75,16 @@ class EventsController < ApplicationController
     end
   end
 
-  def price_counter
-    time = @event.start_time - Time.now
-    multiple = [0.2, 0.5, 0.8].to_a.sample
-    if time < 1000
-      current_price = @event.starting_price * multiple
-      @event.starting_price = current_price
-      @event.price_cents = current_price * 100
-      @event.save
-    end
-  end
+  # def price_counter
+  #   time = @event.start_time - Time.now
+  #   multiple = [0.2, 0.5, 0.8].to_a.sample
+  #   if time < 1000
+  #     current_price = @event.starting_price * multiple
+  #     @event.starting_price = current_price
+  #     @event.price_cents = current_price * 100
+  #     @event.save
+  #   end
+  # end
 
   def set_event
     @event = Event.find(params[:id])
