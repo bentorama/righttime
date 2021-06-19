@@ -18,7 +18,7 @@ const initDirections = () => {
     navigator.geolocation.getCurrentPosition((data) => {
       const map = new mapboxgl.Map({
         container: 'map-directions',
-        style: 'mapbox://styles/bentorama/ckph9m798007s17qistei9iwy'
+        style: 'mapbox://styles/mapbox/streets-v11'
         // center: [data.coords.longitude, data.coords.latitude],
         // zoom: 13
       });

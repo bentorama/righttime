@@ -2,24 +2,24 @@
   <div id="index-container">
     <!-- map viewport -->  
     <!-- map dimensions -->
-    <div id="map" style="min-width: 320px; min-height: 68vh;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" data-center="<%= @center.to_json %>">
+    <div id="map" style="min-width: 320px; min-height: 93vh;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" data-center="<%= @center.to_json %>">
       <!-- filter buttons -->
     
       <div id="filter-flex">  
         <%= render "components/filter" %>
       </div>
-      <div class="surprise-button-container">
+      <!-- <div class="surprise-button-container">
         <div>
           <p>Feeling lucky?</p>        
         </div>
         <div>
           <%= link_to event_path(@rand_event) do %>
-            <button class="suprise-button" type="button">
+            <button class="surprise-button" type="button">
               <img src="https://res.cloudinary.com/markcarson121/image/upload/v1623348000/white_hot_i3opcg.png">
             </button>
           <% end %> 
         </div>
-      </div>   
+      </div>    -->
     </div>
     
     <!-- event cards -->
@@ -31,6 +31,7 @@
             <!-- event card image -->
             <div>
               <!-- event price -->
+
               <% if event.current_price == event.starting_price %>  
                 <span class="event-price">£<%= event.current_price.round(2) %></span>
               <% else %>
@@ -43,30 +44,21 @@
             <div class="event-information">
               <div>
                 <div class="card-top-row">
-                  <div class="event-review">
-                    <% if event.reviews.count > 0 %>
-                      <p><%= "#{event.reviews.average(:venue_rating)}" %></p>
-                      <% event.reviews.average(:venue_rating).round.times do  %>  
-                        <i class="far fa-star"></i>
-                      <% end %>  
-                      <p><%= "(#{event.reviews.count})"%></p>
-                    <% end %>
-                  </div>
                   <div id="heart">
                     <% if user_signed_in? %>
                       <% if current_user.is_favourite_event?(event.id) %>
                         <%= link_to favourite_path(event.favourites.find_by(user_id: current_user.id)), :method => :delete do %>
-                          <span class="fas fa-heart" id="index-heart"></span>
+                          <i class="fas fa-heart" id="index-heart"></i>
                         <% end %>
                       <% else %>
                         <%= simple_form_for([ event, Favourite.new ]) do |f|  %>
                           <%= button_tag type: 'submit' do %>
-                            <span class="far fa-heart" id="index-heart"></span>
+                            <i class="far fa-heart" id="index-heart"></i>
                           <% end %>
                         <% end %>
                       <% end %>
                     <% else %>
-                      <span class="far fa-heart" id="index-heart"></span>
+                      <i class="far fa-heart" id="index-heart"></i>
                     <% end %>
                   </div>
                 </div>
@@ -75,13 +67,20 @@
                 <h2><%= link_to event.name, event_path(event) %></h2>
                 <p><%= event.venue.name %></p>
                 <p><%= event.category %></p>
-                
+                <div id="venue">
+                  <p>@ <%= event.venue.name %></p>
+                </div>
+                <div id="venue-details">
+                <span><%= "#{event.reviews.average(:venue_rating)}" %></span>  
+                <% if event.reviews.count > 0 %>
+                  <% event.reviews.average(:venue_rating).round.times %>  
+                  <i class="fas fa-star star"></i>
+                <% end %>
+                <span><%= "| #{event.category}" %></span>
               </div>
-
-              <div id="heart">
               </div>
               <div class="event-timer">
-                <p>Starts at <% t = event.start_time %><%= t.strftime("%l:%M %P") %>!</p>
+                <p>Starts at <% t = event.start_time %><%= t.strftime("%l:%M %P") %></p>
               </div>
             </div>
           </div>

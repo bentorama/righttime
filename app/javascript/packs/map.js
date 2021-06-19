@@ -6,12 +6,12 @@ const buildMap = (mapElement, center) => {
   if (center == null) {
     return new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/bentorama/ckph9m798007s17qistei9iwy'
+      style: 'mapbox://styles/mapbox/streets-v11'
     });
   } else {
     return new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/bentorama/ckph9m798007s17qistei9iwy',
+      style: 'mapbox://styles/mapbox/streets-v11',
       center: center
     });
   }
