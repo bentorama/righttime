@@ -14,7 +14,7 @@
         </div>
         <div>
           <%= link_to event_path(@rand_event) do %>
-            <button class="suprise-button" type="button">
+            <button class="surprise-button" type="button">
               <img src="https://res.cloudinary.com/markcarson121/image/upload/v1623348000/white_hot_i3opcg.png">
             </button>
           <% end %> 
@@ -41,11 +41,8 @@
                 <div class="card-top-row">
                   <div class="event-review">
                     <% if event.reviews.count > 0 %>
-                      <p><%= "#{event.reviews.average(:venue_rating)}" %></p>
-                      <% event.reviews.average(:venue_rating).round.times do  %>  
+                      <p><%= "#{event.reviews.average(:venue_rating)}" %></p> 
                         <i class="far fa-star"></i>
-                      <% end %>  
-                      <p><%= "(#{event.reviews.count})"%></p>
                     <% end %>
                   </div>
                   <div id="heart">
