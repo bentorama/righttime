@@ -3,10 +3,14 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show]
 
   def index
-    @events = Event.all
-
+    # @events = Event.all
     if session[:location]
-      find_near_events(session[:location])
+      if params[:category].present?
+        # binding.pry
+        find_near_events_type(session[:location], params[:category])
+      else
+        find_near_events(session[:location])
+      end
     elsif params[:query].present? && params[:query] != ""
       location = params[:query]
       session[:location] = location
@@ -16,11 +20,12 @@ class EventsController < ApplicationController
       session[:location] = location
       find_near_events(location)
     else
-      @events
+      @events = Event.all
     end
     markers_and_center
     # price_counter
     rand_event(@events)
+    # end
   end
 
   def show
@@ -70,9 +75,14 @@ class EventsController < ApplicationController
   #   end
   # end
 
-
   def rand_event(events)
-    @rand_event = events.sample
+    if events.empty?
+      find_near_events(session[:location])
+      # raise
+      @rand_event = @events.sample
+    else
+      @rand_event = events.sample
+    end
   end
 
 # events.each do |event|
@@ -92,6 +102,17 @@ class EventsController < ApplicationController
     Venue.near(location, 1).each do |venue|
       venue.events.each do |event|
         if event.start_time < (Date.today + 1).midnight && event.start_time > Time.now
+          @events << event
+        end
+      end
+    end
+  end
+
+  def find_near_events_type(location, category)
+    @events = []
+    Venue.near(location, 1).each do |venue|
+      venue.events.each do |event|
+        if event.start_time < (Date.today + 1).midnight && event.start_time > Time.now && event.category == category
           @events << event
         end
       end
