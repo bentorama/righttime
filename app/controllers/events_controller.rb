@@ -58,6 +58,7 @@ class EventsController < ApplicationController
 
   private
   
+<
   # def price_counter
   #   @events.each do |event|
   #     time = event.start_time - Time.now
@@ -69,7 +70,6 @@ class EventsController < ApplicationController
   #       end
   #   end
   # end
-
 
   def rand_event(events)
     @rand_event = events.sample
