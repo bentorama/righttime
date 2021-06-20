@@ -32,6 +32,7 @@ import 'jquery-bar-rating/dist/themes/css-stars';
 
 
 import { initMapbox } from './map';
+// import { removeMarkers } from './map';
 // import '/wheel';
 
 import { initStarRating } from '../plugins/init_star_rating';
@@ -48,7 +49,14 @@ document.addEventListener('turbolinks:load', () => {
   const currentLocation = document.getElementById("current-location");
   const hiddenSearch = document.getElementById("hidden");
   const search = document.getElementById("search");
+  // const remove = document.getElementById("hot")
 
+
+  // if (remove) {
+  //   remove.addEventListener("click", (event) => {
+  //     removeMarkers();
+  //   });
+  // };
   // current location pin 
   if (currentLocation) {
     currentLocation.addEventListener("click", (event) => {
