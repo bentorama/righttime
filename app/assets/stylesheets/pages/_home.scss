@@ -26,6 +26,11 @@ header {
   }
 }
 
+#bottom-container {
+  background-color: rgba(248, 248, 248, 1.00);
+  height: 100vh;
+}
+
 section {
   p {
     color: var(--clr-text);
