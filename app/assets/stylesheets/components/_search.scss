@@ -28,9 +28,9 @@ input {
   border-left-style: hidden;
   border-bottom-style: hidden;
   background-color: white;
-  border-radius: 6px;
+  border-radius: 32px;
   height: 60px;
-  padding-left: 16px;
+  padding-left: 24px;
   color: black; 
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 20px;
@@ -39,15 +39,19 @@ input {
 
 // location pin positioning
 #pin {
-  background-color: #3d3cee;
-  box-shadow: 0 0.2px 0.3rem #3d3cee;
-  color: #FFF;;
-  border-radius: 6px;
+  background-color: rgba(255, 222, 2, 1.00);
+  color: black;
+  border-radius: 50%;
   height: 60px;
   margin-right: 8px;
-  padding-top: 6px;
+  padding-top: 12px;
   text-align: center;
-  width: 20vw;
+  width: 60px;
+
+  .fas {
+    font-size: 32px;
+    color: black;
+  }
 }
 
 .search-container {
