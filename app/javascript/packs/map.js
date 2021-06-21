@@ -57,14 +57,12 @@ const addMarkersToMap = (map, markers) => {
 const toggleCards = () => {
   const container = document.querySelector("#scrolling-container");
   var cards = container.querySelectorAll(".event-card");
-  console.log(cards);
   cards.forEach((card) => {
     card.style.display = 'none';
   });
   currentElements.forEach((element) => {
     cards.forEach((card) => {
       if (element.id === card.id) {
-        console.log("in the if")
         card.style.display = 'unset';
       };
     });
@@ -99,6 +97,8 @@ const fitMapToMarkers = (map, markers) => {
   map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 1000 });
 };
 
+
+
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
   const hot = document.getElementById("hot")
@@ -106,6 +106,18 @@ const initMapbox = () => {
   const drink = document.getElementById("drink")
   const music = document.getElementById("music")
   const show = document.getElementById("show")
+  const buttons = [hot, food, drink, music, show];
+
+  const toggleButtons = (event) => {
+    if (event.currentTarget.classList.contains("filter-button-active")) {
+      event.currentTarget.classList.remove("filter-button-active");
+    } else {
+      buttons.forEach((button) => {
+        button.classList.remove("filter-button-active");
+      });
+      event.currentTarget.classList.add("filter-button-active");
+    };
+  };
 
   if (mapElement) {
     const center = JSON.parse(mapElement.dataset.center);
@@ -121,24 +133,29 @@ const initMapbox = () => {
         trackUserLocation: true
       })
     );
-    hot.addEventListener("click", () => {
-      var button = "Hot"
+    hot.addEventListener("click", (event) => {
+      toggleButtons(event);
+      var button = "Hot";
       removeMarkers(map, markers, button);
     });
     food.addEventListener("click", () => {
-      var button = "Food"
+      toggleButtons(event);
+      var button = "Food";
       removeMarkers(map, markers, button);
     });
     drink.addEventListener("click", () => {
-      var button = "Drink"
+      toggleButtons(event);
+      var button = "Drink";
       removeMarkers(map, markers, button);
     });
     music.addEventListener("click", () => {
-      var button = "Music"
+      toggleButtons(event);
+      var button = "Music";
       removeMarkers(map, markers, button);
     });
     show.addEventListener("click", () => {
-      var button = "Show"
+      toggleButtons(event);
+      var button = "Show";
       removeMarkers(map, markers, button);
     });
   }
