@@ -31,8 +31,14 @@ header {
   height: 100vh;
 
   .fas {
-    color: red;
-    font-size: 50px;
+    font-size: 40px;      
+    background:-moz-linear-gradient(to left bottom, #ffdb56, #ffb54b, #ff904d, #ff6a56, #fa4f60, #f1326c, #e20a7a, #c90082, #ad0088, #8e018c, #6b118d); 
+    background: -webkit-linear-gradient(to left bottom, #ffdb56, #ffb54b, #ff904d, #ff6a56, #fa4f60, #f1326c, #e20a7a, #c90082, #ad0088, #8e018c, #6b118d); 
+    background: linear-gradient(to left bottom, #ffdb56, #ffb54b, #ff904d, #ff6a56, #fa4f60, #f1326c, #e20a7a, #c90082, #ad0088, #8e018c, #6b118d);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color:transparent;
   }
 }
 
