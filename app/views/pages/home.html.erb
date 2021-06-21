@@ -5,7 +5,7 @@
       <header>
         <h1>RIGHTTIME</h1>
         <div class="typewriter">
-          <h2>It's Never Too Late...</h2>
+          <h2>It's Not Too Late...</h2>
         </div>  
       </header>
     </div>
@@ -31,10 +31,12 @@
   </div>
 
   <div id="bottom-container">
-    <h2>All the best events.</h2>
-    <h2>None of the fuss.</h2>
-    <div class="flex icon">
-      <div>
+    <div id="bottom-header">
+      <h2>All of the events near you.</h2>
+      <h2>None of the fuss.</h2>
+    </div>
+    <div id="action" class="flex">
+      <div class="icon">
         <i class="fas fa-map-marked-alt"></i>
       </div>
       <div class="text">
@@ -42,8 +44,8 @@
         <p>Designed to find all the events starting near you so that you don't miss out</p>
       </div>
     </div>
-    <div class="flex icon">
-      <div>
+    <div id="action" class="flex">
+      <div class="icon">
         <i class="fas fa-wallet"></i>
       </div>
       <div class="text">
@@ -52,10 +54,10 @@
       </div>
     </div>
   </div>
+</div>
 
-  <div id="checkout-footer">
-    <%= render "components/footer" %>
-  </div>
+<div id="checkout-footer-footer">
+  <%= render "components/footer" %>
 </div>
 
 <%= javascript_pack_tag 'clock' %>
