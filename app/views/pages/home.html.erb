@@ -1,29 +1,43 @@
 <div class="home-container">
   <!-- title and tagline -->
-  <div>
-    <header>
-      <h1>RIGHTTIME</h1>
-      <div class="typewriter">
-        <h2>The Clock's Ticking...</h2>
-      </div>  
-    </header>
-  </div>
-  <% session[:location] = nil %>
-  <% session[:counter] = 4 %>
-  <!-- search bar -->
-  <div id="search-bar">
-    <%= render "components/search" %>
+  <div id="top-container">
+    <div>
+      <header>
+        <h1>RIGHTTIME</h1>
+        <div class="typewriter">
+          <h2>The Clock's Ticking...</h2>
+        </div>  
+      </header>
+    </div>
+
+    <% session[:location] = nil %>
+    <% session[:counter] = 4 %>
+
+    <!-- search bar -->
+    <div id="search-bar">
+      <%= render "components/search" %>
+    </div>
+
+   <!--  <div class="wrap">
+      <div class="clock">
+        <div class="clock-inner">
+          <div class="clock-center"></div>
+          <div class="hand second"></div>
+          <div class="hand minute"></div>
+          <div class="hand hour"></div>
+        </div>
+      </div>
+    </div> -->
   </div>
 
-  <div class="wrap">
-    <div class="clock">
-      <div class="clock-inner">
-        <div class="clock-center"></div>
-        <div class="hand second"></div>
-        <div class="hand minute"></div>
-        <div class="hand hour"></div>
-      </div>
-    </div>
+  <div id="bottom-container">
+    <h2>All the benefits of classes. None of the limits.</h2>
+    <p>IMAGE</p>
+    <h3>Whenever they want.</h3>
+    <p>Designed for every employee's lifestyle, every prference and every schedule</p>
+    <p>IMAGE 2</p>
+    <h3>Wherever they want.</h3>
+    <p>At the gym, outside, or at home - Aaptiv suits wherever your employees live, work or play</p>
   </div>
 
   <div id="checkout-footer">
