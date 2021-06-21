@@ -19,7 +19,8 @@ header {
   background-image: linear-gradient(141.11deg, #000000 -0.95%, rgba(0, 0, 0, 0) 49.65%), url(https://res.cloudinary.com/markcarson121/image/upload/v1622143414/noiseporn-JNuKyKXLh8U-unsplash_cy4jyr.jpg);
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  height: 60vh;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  height: 100vh;
   // max-width: 320px;
   max-width: 100%;
   min-width: 320px;
@@ -68,7 +69,7 @@ header {
 
   #action {
     justify-content: center;
-    padding-top: 32px;
+    padding-top: 10px;
     width: 80%;
   }
 
