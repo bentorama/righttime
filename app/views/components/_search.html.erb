@@ -1,19 +1,12 @@
-<!-- rename classes -->
-<div class="component-container">
-  <div class="position-container">
-    <div class="search-container">
-      <div>
-        <i class="fas fa-search"></i>
-      </div>
-      
-      <%= form_tag events_path, method: :get, id: "search-form" do %>
-        <%= hidden_field_tag 'hidden', params[:hidden], id: "hidden" %>
-        <%= text_field_tag :query, params[:query], placeholder: "Enter Postcode:", id: "search" %>
-      <% end %>
-
-      <div id="pin">
-        <span id="current-location" class="fas fa-map-marker-alt"></span>
-      </div>
-    </div>
+<div class="search-container">
+  <div id="pin">
+    <span id="current-location" class="fas fa-map-marker-alt"></span>
+    <p>Find Me</p>
+  </div>
+  <div>
+    <%= form_tag events_path, method: :get, id: "search-form" do %>
+      <%= hidden_field_tag 'hidden', params[:hidden], id: "hidden" %>
+      <%= text_field_tag :query, params[:query], placeholder: "Enter Postcode:", id: "search" %>
+    <% end %>
   </div>
 </div>
