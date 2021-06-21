@@ -3,8 +3,6 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show]
 
   def index
-    @events = Event.all
-
     if session[:location]
       find_near_events(session[:location])
     elsif params[:query].present? && params[:query] != ""
@@ -16,7 +14,7 @@ class EventsController < ApplicationController
       session[:location] = location
       find_near_events(location)
     else
-      @events
+      @events = Event.all
     end
     markers_and_center
     price_counter
@@ -57,19 +55,18 @@ class EventsController < ApplicationController
   # end
 
   private
-  
+
   def price_counter
     @events.each do |event|
       time = event.start_time - Time.now
       multiple = [0.2, 0.5, 0.8].to_a.sample
-        if event.starting_price == event.current_price && time < 1600
+        if event.starting_price == event.current_price && time < 1200
           event.current_price = event.starting_price * multiple
           event.price_cents = event.current_price * 100
           event.save
         end
     end
   end
-
 
   def rand_event(events)
     @rand_event = events.sample
