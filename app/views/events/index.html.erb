@@ -37,6 +37,7 @@
               <% else %>
                 <p class="event-price">Discount: £<%= event.current_price.round(2) %></p>
               <% end %>
+            
               <%= link_to event_path(event) do %>
                 <%= image_tag(event.photos.first) %>
               <% end %>
