@@ -31,14 +31,21 @@ input {
   border-radius: 6px;
   height: 60px;
   padding-left: 16px;
+  color: black; 
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+  opacity: 1;
 }
 
 // location pin positioning
 #pin {
-  background-color: yellow;
+  background-color: #3d3cee;
+  box-shadow: 0 0.2px 0.3rem #3d3cee;
+  color: #FFF;;
   border-radius: 6px;
   height: 60px;
   margin-right: 8px;
+  padding-top: 6px;
   text-align: center;
   width: 20vw;
 }
@@ -55,25 +62,24 @@ input {
   opacity: 1;
 }
 
-// // remove outline from search form
-// #query:focus {
-//   outline: none;
-// }
+#query:focus {
+  outline: none;
+}
 
 #search {
-  hieght: 60px;
+  height: 60px;
   width: 225px;
 }
 
 // // position search form
-// #search-bar {
-//   left: 0;
-//   margin-left: auto;
-//   margin-right: auto;
-//   top: 60%;
-//   position: absolute;
-//   right: 0;
-// }
+#search-bar {
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  top: 85%;
+  position: absolute;
+  right: 0;
+}
 
 // .search-container {
 //   align-items: center;
