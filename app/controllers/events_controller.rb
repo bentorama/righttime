@@ -58,7 +58,6 @@ class EventsController < ApplicationController
 
   private
   
-<
   # def price_counter
   #   @events.each do |event|
   #     time = event.start_time - Time.now
