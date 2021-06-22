@@ -100,6 +100,7 @@ puts "creating events..."
 
 # create 1 event at each venue
 
+count = 0
 
 Venue.all.each do |venue|
   1.times do
