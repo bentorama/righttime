@@ -70,9 +70,6 @@
       <button id="see-more">See More</button>
     
       <h3><%= "Reviews (#{@event.reviews.count})"%></h3>
-      <div id="reveal-info">
-        <p>tap to reveal</p>
-      </div>
       <div class="review-container">
         <!-- user reviews -->
         <% @event.reviews.each do |review| %>
@@ -83,6 +80,9 @@
               <% review.venue_rating.times do  %>
                 <i class="fas fa-star star"></i>
               <% end %>
+              <div id="reveal-info">
+                <p>Show Review</p>
+              </div>
             </button>
             <div class="hide">
               <p><%=review.event_review %></p>
@@ -114,4 +114,5 @@
 <%= javascript_tag "var obj = #{@event.to_json}" %>
 <%= javascript_pack_tag "countdown" %>
 <%= javascript_pack_tag "description-reveal" %>
+<%= javascript_pack_tag "switch" %>
 <%= javascript_pack_tag "review-toggle" %>
