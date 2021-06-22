@@ -3,8 +3,6 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show]
 
   def index
-    @events = Event.all
-
     if session[:location]
       find_near_events(session[:location])
     elsif params[:query].present? && params[:query] != ""
@@ -16,11 +14,11 @@ class EventsController < ApplicationController
       session[:location] = location
       find_near_events(location)
     else
-      @events
+      @events = Event.all
     end
     markers_and_center
-    # price_counter
     rand_event(@events)
+    price_counter(Event.all)
   end
 
   def show
@@ -42,45 +40,27 @@ class EventsController < ApplicationController
   end
 
   # def price_update
-  #   @events = []
-  #   params[:events].each do |event|
-  #     @events << Event.find(event.to_i)
-  #   end
-
-  #   if session[:counter].positive?
-  #     price_reduction(@events)
-  #     session[:counter] -= 1
-  #     render :index
-  #   else
-  #     render :index
-  #   end
+  #   
   # end
 
   private
-  
-  # def price_counter
-  #   @events.each do |event|
-  #     time = event.start_time - Time.now
-  #     multiple = [0.2, 0.5, 0.8].to_a.sample
-  #       if event.starting_price == event.current_price && time < 9950.427164
-  #         event.current_price = event.starting_price * multiple
-  #         event.price_cents = event.current_price * 100
-  #         event.save
-  #       end
-  #   end
-  # end
+
+  def price_counter(events)
+    events.each do |event|
+      time = event.start_time - Time.now
+      multiple = [0.2, 0.5, 0.8].to_a.sample
+      if event.current_price == event.starting_price && time < 15154
+        event.current_price = event.starting_price * multiple
+        event.price_cents = event.current_price * 100
+        event.save
+      end
+    end
+  end
+
 
   def rand_event(events)
     @rand_event = events.sample
   end
-
-# events.each do |event|
-#       @number = (1..10).to_a.sample
-#       multiple = [0.2, 0.5].sample
-#       if @number > 5 && event.starting_price > event.min_price
-#         event.starting_price = event.starting_price * multiple
-#         event.price_cents = event.starting_price * 100
-#         event.save
 
   def set_event
     @event = Event.find(params[:id])
