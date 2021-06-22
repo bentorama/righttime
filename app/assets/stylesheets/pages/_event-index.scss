@@ -37,9 +37,9 @@
   display: flex;
   height: 20vh;
   margin-bottom: 8px;
-  margin-left: 2.5vw;
+  margin-left: 3.5vw;
   position: relative;
-  width: 95vw;
+  width: 98vw;
   z-index: 99999;
 
   h2 {
@@ -135,4 +135,6 @@
 
 #index-heart {
   color: red;
+  font-size: 24px;
+  padding-top: 4px;
 }
