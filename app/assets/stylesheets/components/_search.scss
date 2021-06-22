@@ -1,25 +1,25 @@
-// icon color
-.fas {
-  color: white;
-}
+// // icon color
+// .fas {
+//   color: white;
+// }
 
-// go button
-.go-btn {
-  border-color: var(--clr-text);
-  border-radius: 16px;
-  border-style: solid;
-  border-width: var(--border-width);
-  color: var(--clr-text);
-  font-family: var(--ff-primary);
-  font-size: var(--f-size-header);
-  // left: 0;
-  // margin-left: auto;
-  // margin-right: auto;
-  position: absolute;
-  // right: 0;
-  text-align: center;
-  // top: 150%;
-}
+// // go button
+// // .go-btn {
+// //   border-color: var(--clr-text);
+// //   border-radius: 16px;
+// //   border-style: solid;
+// //   border-width: var(--border-width);
+// //   color: var(--clr-text);
+// //   font-family: var(--ff-primary);
+// //   font-size: var(--f-size-header);
+// //   // left: 0;
+// //   // margin-left: auto;
+// //   // margin-right: auto;
+// //   position: absolute;
+// //   // right: 0;
+// //   text-align: center;
+// //   // top: 150%;
+// // }
 
 // remove default form styling
 input {
@@ -27,64 +27,81 @@ input {
   border-right-style: hidden;
   border-left-style: hidden;
   border-bottom-style: hidden;
-  background-color: #B16F9E;
-  color: white;
+  background-color: white;
+  border-radius: 32px;
+  height: 60px;
+  padding-left: 24px;
+  color: black; 
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+  opacity: 1;
 }
 
 // location pin positioning
 #pin {
-  margin-left: auto;
-  padding-right: 8px;
+  background-color: rgba(255, 222, 2, 1.00);
+  color: black;
+  border-radius: 50%;
+  height: 60px;
+  margin-right: 8px;
+  padding-top: 12px;
+  text-align: center;
+  width: 60px;
+
+  .fas {
+    font-size: 32px;
+    color: black;
+  }
 }
 
-// search form centring
-.position-container {
+.search-container {
   display: flex;
   justify-content: center;
 }
 
 ::placeholder {
-  color: var(--clr-text); 
-  font-family: var(--ff-primary);
+  color: black; 
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
   opacity: 1;
 }
 
-// remove outline from search form
 #query:focus {
   outline: none;
 }
 
 #search {
+  height: 60px;
   width: 225px;
 }
 
-// position search form
+// // position search form
 #search-bar {
   left: 0;
   margin-left: auto;
   margin-right: auto;
-  top: 60%;
+  top: 85%;
   position: absolute;
   right: 0;
 }
 
-.search-container {
-  align-items: center;
-  background-color: #B16F9E;
-  border-color: white;
-  border-radius: 16px;
-  border-style: solid;
-  display: flex;
-  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
-  height: 2em;
-  width: min(90vw);
+// .search-container {
+//   align-items: center;
+//   background-color: #B16F9E;
+//   border-color: white;
+//   border-radius: 16px;
+//   border-style: solid;
+//   display: flex;
+//   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
+//   height: 2em;
+//   width: min(90vw);
  
-  i {
-    color: white;
-    padding-left: 8px;
-    padding-right: 4px;
-  }
-}
+//   i {
+//     color: black;
+//     padding-left: 8px;
+//     padding-right: 4px;
+//   }
+// }
 
 #search:focus {
   outline: none;
