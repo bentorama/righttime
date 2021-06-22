@@ -12,13 +12,15 @@
   box-shadow: 2px 2px 4px #643b58;
   }
 
-  .surprise-button:active {
-    background-color: white;
+  .fas {
+    color: #FFF;
+    font-size: 26px;
+    padding-bottom: 2px;
+    padding-right: 2px;
   }
 
-  // button icons
-  img {
-    height: 30px;
+  .surprise-button:active {
+    background-color: white;
   }
 
 .surprise-button-container {
