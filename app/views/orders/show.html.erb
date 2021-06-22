@@ -5,7 +5,7 @@
       <span class="badge badge-warning"><%= @order.state %></span>  
       </h1>
       <h1>CONGRATS.</h1>
-      <%= image_tag(@order.event.photos.first) %>
+      <p><%= image_tag(@order.event.photos.first) %></p>
       <h2>You are going to</h2> 
       <h2><%= @order.event.name %></h2>
       <p>START TIME <%= @order.event.start_time.strftime("%H:%M") %></p>
