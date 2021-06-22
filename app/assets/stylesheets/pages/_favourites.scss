@@ -1,3 +1,9 @@
+.order-back {
+  input[type="submit"] {
+    font-family: FontAwesome;
+  }
+}
+
 #page-container-favourites {
   background-image: linear-gradient(to left bottom, #ffdb56, #ffb54b, #ff904d, #ff6a56, #fa4f60, #f1326c, #e20a7a, #c90082, #ad0088, #8e018c, #6b118d);
   display: flex;
