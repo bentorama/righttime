@@ -39,10 +39,6 @@ class EventsController < ApplicationController
   def destroy
   end
 
-  # def price_update
-  #   
-  # end
-
   private
 
   def price_counter(events)
@@ -56,7 +52,6 @@ class EventsController < ApplicationController
       end
     end
   end
-
 
   def rand_event(events)
     @rand_event = events.sample
