@@ -17,7 +17,7 @@
   h1 {
     color: #FFF;
     font-family: 'Oswald', sans-serif;
-    font-size: 24px;
+    font-size: 32px;
     text-transform: uppercase;
   }
 
@@ -40,12 +40,20 @@
   }
 
   .btn {
+    align-items: center;
     background-color: #3d3cee;
     box-shadow: 0 0.2px 0.3rem #3d3cee;
-    font: 400 13.3333px Arial;
-    color: #FFF;
-    margin-top: -16px;
-    margin-bottom: 8px;
+    display: inline-flex;
+    justify-content: center;
+    height: 58px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 16px;
+    width: 200px;
+
+    a {
+      color: #FFF;
+    }
   }
 }
 
@@ -61,13 +69,10 @@
 .confirmation-details {
   display: flex;
   flex-direction: column;
+  margin: auto;
   text-align: center;
 }
 
 #checkout-footer {
   margin-top: auto;
-}
-
-.directions-btn {
-  margin: 50px;
 }

@@ -2,20 +2,20 @@
   <div class="confirmation-card">
     <div class="confirmation-details">
       <h1>Order #<%= @order.id %>
-      <span class="badge badge-primary"><%= @order.state %></span>  
+      <span class="badge badge-warning"><%= @order.state %></span>  
       </h1>
       <h1>CONGRATS.</h1>
-      <%= image_tag(@order.event.photos.first) %>
+      <p><%= image_tag(@order.event.photos.first) %></p>
       <h2>You are going to</h2> 
       <h2><%= @order.event.name %></h2>
-      <p>START TIME <%= @order.event.start_time.strftime("%H:%M") %></p>
+      <p><strong>START TIME</strong> <%= @order.event.start_time.strftime("%H:%M") %></p>
       <p>EVENT <%= @order.event.name %></p>
       <p>NO. TICKETS <%= (@order.amount / @order.event.price).to_i  %></p>
       <p>TOTAL <%= humanized_money_with_symbol @order.amount %></p>
 
-  <div class="directions-btn">
-    <%= link_to "Get Directions", directions_order_path(@order) %>
-  </div>
+      <button class="btn">
+        <%= link_to "Get Directions", directions_order_path(@order) %>
+      </button>
 
       <div class="hide" id="directions-container">
         <div id="map" style="min-width: 320px; min-height: 40vh;" data-destination="<%= @destination.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
