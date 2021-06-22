@@ -15,14 +15,14 @@
   p {
     color: #FFF;
     font-family: 'Oswald', sans-serif;
-    font-size: 20px;
+    font-size: 24px;
     margin-left: 8px;
     margin-top: -4px;
     text-transform: uppercase;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    max-width: 138px;
+    max-width: 170px;
   }
 }
 
@@ -49,14 +49,15 @@
 
   h2 {
     font-family: oswald, sans-serif;
-    font-size: 28px;
+    font-size: 40px;
     margin-left: 8px;
-    margin-top: -36px;
+    margin-top: -74px;
     text-transform: uppercase;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     max-width: 120px;
+    padding-bottom: 4px;
   }
 
   img {
@@ -71,6 +72,7 @@
     color: #FFF;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 16px;
+    padding-bottom: 6px;
   }
 
   span {
