@@ -1,6 +1,11 @@
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
+var allMarkers = [];
+var currentMarkers = [];
+var filter = 'All';
+var currentElements = [];
+
 const buildMap = (mapElement, center) => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   if (center == null) {
@@ -18,6 +23,8 @@ const buildMap = (mapElement, center) => {
 };
 
 const addMarkersToMap = (map, markers) => {
+  currentMarkers = [];
+  currentElements = [];
   markers.forEach((marker) => {
     const popup = new mapboxgl.Popup().setHTML(marker.info_window);
     // Create a HTML element for your custom marker
@@ -28,6 +35,7 @@ const addMarkersToMap = (map, markers) => {
     element.style.width = '25px';
     element.style.height = '25px';
     element.id = `id-${marker.id}`;
+    currentElements.push(element);
     element.onclick = () => {
       const container = document.querySelector("#scrolling-container");
       const card = container.querySelector(`#${element.id}`);
@@ -37,13 +45,50 @@ const addMarkersToMap = (map, markers) => {
       });
     };
 
-
     // Pass the element as an argument to the new marker
-    new mapboxgl.Marker(element)
+    var oneMarker = new mapboxgl.Marker(element)
       .setLngLat([marker.lng, marker.lat])
-      // .setPopup(popup)
       .addTo(map);
+    currentMarkers.push(oneMarker);
   });
+  toggleCards();
+};
+
+const toggleCards = () => {
+  const container = document.querySelector("#scrolling-container");
+  var cards = container.querySelectorAll(".event-card");
+  cards.forEach((card) => {
+    card.style.display = 'none';
+  });
+  currentElements.forEach((element) => {
+    cards.forEach((card) => {
+      if (element.id === card.id) {
+        card.style.display = 'unset';
+      };
+    });
+  });
+};
+
+const removeMarkers = (map, markers, button) => {
+  if (button !== filter) {
+    currentMarkers.forEach((marker) => {
+      marker.remove();
+    });
+    var filterMarkers = [];
+    markers.forEach((marker) => {
+      if (marker.category === button) {
+        filterMarkers.push(marker);
+      };
+    });
+    addMarkersToMap(map, filterMarkers);
+    filter = button;
+  } else {
+    currentMarkers.forEach((marker) => {
+      marker.remove();
+    });
+    addMarkersToMap(map, markers);
+    filter = "All";
+  }
 };
 
 const fitMapToMarkers = (map, markers) => {
@@ -52,9 +97,28 @@ const fitMapToMarkers = (map, markers) => {
   map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 1000 });
 };
 
+
+
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
-  // console.log(mapElement.dataset.center)
+  const hot = document.getElementById("hot")
+  const food = document.getElementById("food")
+  const drink = document.getElementById("drink")
+  const music = document.getElementById("music")
+  const show = document.getElementById("show")
+  const buttons = [hot, food, drink, music, show];
+
+  const toggleButtons = (event) => {
+    if (event.currentTarget.classList.contains("filter-button-active")) {
+      event.currentTarget.classList.remove("filter-button-active");
+    } else {
+      buttons.forEach((button) => {
+        button.classList.remove("filter-button-active");
+      });
+      event.currentTarget.classList.add("filter-button-active");
+    };
+  };
+
   if (mapElement) {
     const center = JSON.parse(mapElement.dataset.center);
     const map = buildMap(mapElement, center);
@@ -69,7 +133,34 @@ const initMapbox = () => {
         trackUserLocation: true
       })
     );
+    hot.addEventListener("click", (event) => {
+      toggleButtons(event);
+      var button = "Hot";
+      removeMarkers(map, markers, button);
+    });
+    food.addEventListener("click", () => {
+      toggleButtons(event);
+      var button = "Food";
+      removeMarkers(map, markers, button);
+    });
+    drink.addEventListener("click", () => {
+      toggleButtons(event);
+      var button = "Drink";
+      removeMarkers(map, markers, button);
+    });
+    music.addEventListener("click", () => {
+      toggleButtons(event);
+      var button = "Music";
+      removeMarkers(map, markers, button);
+    });
+    show.addEventListener("click", () => {
+      toggleButtons(event);
+      var button = "Show";
+      removeMarkers(map, markers, button);
+    });
   }
+  
 };
 // initMapbox();
 export { initMapbox };
+// export { removeMarkers };

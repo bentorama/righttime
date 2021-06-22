@@ -32,6 +32,7 @@
             <div>
               <!-- event price -->
 
+
               <% if event.current_price == event.starting_price %>  
                 <p class="event-price">£<%= event.current_price.round(2) %></p>
               <% else %>
@@ -41,6 +42,7 @@
               <%= link_to event_path(event) do %>
                 <%= image_tag(event.photos.first) %>
               <% end %>
+
             </div>
             <div class="event-information">
               <div>
@@ -92,6 +94,3 @@
     <%= render "components/footer" %>
   </div>
 </div>
-
-<%= javascript_pack_tag 'toggle' %>
-<%= javascript_pack_tag 'map' %>

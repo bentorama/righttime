@@ -57,6 +57,7 @@ class EventsController < ApplicationController
     end
   end
 
+
   def rand_event(events)
     @rand_event = events.sample
   end
@@ -83,7 +84,8 @@ class EventsController < ApplicationController
         lng: event.venue.longitude,
         info_window: render_to_string(partial: "info_window", locals: { event: event }),
         image_url: helpers.asset_url('stopwatch.png'),
-        id: event.id
+        id: event.id,
+        category: event.category
       }
     end
     if params[:query] == "" || params[:query].nil?
