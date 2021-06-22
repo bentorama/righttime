@@ -1,0 +1,5 @@
+meta_product_name: "RightTime"
+meta_title: "RightTime - The Clock's Ticking..."
+meta_description: "Find huge discounts on last-minute events starting really soon near you!"
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@righttime"   # required for Twitter Cards
