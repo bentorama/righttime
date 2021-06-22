@@ -55,7 +55,8 @@
   }
 
   img {
-    border-radius: 6px;
+    border-top-left-radius: 6px;
+    border-bottom-right-radius: 6px;
     height: 20vh;
     object-fit: cover;
     width: 150px;
@@ -96,10 +97,6 @@
   overflow-y: hidden;
   position: relative;
   z-index: 99999;
-}
-
-.event-card-container:last-child {
-  margin-right: 8px;
 }
 
 .event-price {
