@@ -2,7 +2,7 @@
   <div class="confirmation-card">
     <div class="confirmation-details">
       <h1>Order #<%= @order.id %>
-      <span class="badge badge-primary"><%= @order.state %></span>  
+      <span class="badge badge-warning"><%= @order.state %></span>  
       </h1>
       <h1>CONGRATS.</h1>
       <%= image_tag(@order.event.photos.first) %>
