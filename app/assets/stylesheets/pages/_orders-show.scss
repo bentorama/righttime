@@ -40,11 +40,13 @@
   }
 
   .btn {
+    align-items: center;
     background-color: #3d3cee;
     box-shadow: 0 0.2px 0.3rem #3d3cee;
-    font: 400 13.3333px Arial;
-    color: #FFF;
-    margin-bottom: 8px;
+    display: inline-flex;
+    justify-content: center;
+    height: 58px;
+    margin-bottom: 16px;
 
     a {
       color: #FFF;
