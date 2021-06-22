@@ -3,9 +3,9 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters,
                 if: :devise_controller?
 
-  def default_url_options
-    { host: ENV["www.righttime.club"] || "localhost:3000" }
-  end
+  # def default_url_options
+  #   { host: ENV["www.righttime.club"] || "localhost:3000" }
+  # end
 
   private
 
