@@ -42,6 +42,11 @@
   width: 98vw;
   z-index: 99999;
 
+  button {
+    margin: 0;
+    padding: 0;
+  }
+
   h2 {
     font-family: oswald, sans-serif;
     font-size: 28px;
@@ -72,10 +77,19 @@
     color: #FFF;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 16px;
+  } 
+
+  .far {
+    margin: 0;
+    padding-right: 8px;
+    padding-top: 8px;
   }
 
   .fas {
     color: rgba(254, 103, 87, 1.00);
+    margin: 0;
+    padding-right: 8px;
+    padding-top: 8px;
   }
 
   #heart {
@@ -133,5 +147,4 @@
 #index-heart {
   color: red;
   font-size: 24px;
-  padding-top: 4px;
 }
