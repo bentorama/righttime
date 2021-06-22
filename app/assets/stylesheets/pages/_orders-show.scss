@@ -61,7 +61,12 @@
 .confirmation-details {
   display: flex;
   flex-direction: column;
+  margin: auto;
   text-align: center;
+
+  img {
+    margin-left: 16px;
+  }
 }
 
 #checkout-footer {
