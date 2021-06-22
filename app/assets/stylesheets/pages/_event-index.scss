@@ -89,6 +89,11 @@
     color: #FFF;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 16px;
+  }
+
+  .event {
+    display: flex;
+    justify-content: center;
   } 
 
   .far {
@@ -133,7 +138,6 @@
   filter:drop-shadow(1px 1px 8px black);
   font-size: 16px;
   margin-bottom: 8px;
-  margin-left: 8px;
   max-width: 100%;
   padding: 7px 10px;
   position: absolute;
