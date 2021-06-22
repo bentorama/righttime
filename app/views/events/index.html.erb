@@ -29,7 +29,7 @@
         <% if event.start_time > Time.now %>
           <div class="event-card" id="id-<%=event.id%>">
             <!-- event card image -->
-            <div>
+            <div class="event">
               <% if event.current_price == event.starting_price %>  
                 <p class="event-price">£<%= event.current_price.round(2) %></p>
               <% else %>
