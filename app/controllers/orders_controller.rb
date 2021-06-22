@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: [{
-        name: event.sku,
+        name: event.name,
         # images: [event.photo_url]
         amount: order.amount_cents,
         currency: 'gbp',
