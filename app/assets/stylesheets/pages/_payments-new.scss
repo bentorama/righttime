@@ -34,7 +34,7 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: auto;
-  margin-bottom: 130px;
+  margin-bottom: auto;
 
   position: absolute;
   left: 0;
@@ -71,12 +71,8 @@
     filter:drop-shadow(inset 0px 1px 2px black);
     font-size: 36px;
     margin-left: 8px;
-    position: fixed;
+    align-items: flex-start;
     z-index: 1;
-  }
-
-  .fas:hover {
-    color: rgba(61, 60, 238, 1.00);
   }
 
   .btn {
