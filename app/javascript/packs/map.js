@@ -63,7 +63,7 @@ const toggleCards = () => {
   currentElements.forEach((element) => {
     cards.forEach((card) => {
       if (element.id === card.id) {
-        card.style.display = 'unset';
+        card.style.display = 'flex';
       };
     });
   });
