@@ -5,6 +5,12 @@
   min-height: 100vh;
 }
 
+#back-arrow {
+  margin-top: 8px;
+  position: fixed;
+  top: 0;
+}
+
 #checkout-footer {
   margin-top: auto;
 }
@@ -67,8 +73,7 @@
   }
 
   .fas {
-    color: #FFF;
-    filter:drop-shadow(inset 0px 1px 2px black);
+    color: rgba(61, 50, 76, 1.00);
     font-size: 36px;
     margin-left: 8px;
     align-items: flex-start;
