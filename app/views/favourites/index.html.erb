@@ -2,7 +2,7 @@
   <div class="favourites-card-container">
     <div class="order-header">
       <div class="order-back">      
-        <%= link_to(events_path) do  %>
+        <%= link_to 'back', onclick: 'window.history.back();' do  %>
           <i class="fas fa-chevron-left back-btn"></i>
         <% end %>
       </div>
