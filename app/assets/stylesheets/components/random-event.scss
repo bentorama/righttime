@@ -12,28 +12,27 @@
   box-shadow: 2px 2px 4px #643b58;
   }
 
+  .fas {
+    color: #FFF;
+    font-size: 26px;
+    padding-bottom: 2px;
+    padding-right: 2px;
+  }
+
   .surprise-button:active {
     background-color: white;
   }
 
-  // button icons
-  img {
-    height: 30px;
-  }
-
 .surprise-button-container {
-  background-color: #B16F9E ;
+  background-color: #B16F9E;
   width:110px;
   padding: 5px;
   border-radius: 12px;
   border-style: solid;
   border-color: white;
-
   display: flex;
   flex-direction: column;
-  // justify-content: center;
   align-items: center;
-  // justify-content: space-between;
   position: absolute;
   bottom: 178px;
   right: 8px;

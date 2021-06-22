@@ -15,7 +15,7 @@
         <div>
           <%= link_to event_path(@rand_event) do %>
             <button class="surprise-button" type="button">
-              <img src="https://res.cloudinary.com/markcarson121/image/upload/v1623348000/white_hot_i3opcg.png">
+              <i class="fas fa-dice"></i>
             </button>
           <% end %> 
         </div>
@@ -29,11 +29,11 @@
         <% if event.start_time > Time.now %>
           <div class="event-card" id="id-<%=event.id%>">
             <!-- event card image -->
-            <div>
+            <div class="event">
               <% if event.current_price == event.starting_price %>  
                 <p class="event-price">£<%= event.current_price.round(2) %></p>
               <% else %>
-                <p class="event-price">Discount: £<%= event.current_price.round(2) %></p>
+                <p class="event-price">Reduced to £<%= event.current_price.round(2) %></p>
               <% end %>
             
               <%= link_to event_path(event) do %>

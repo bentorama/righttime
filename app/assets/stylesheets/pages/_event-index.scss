@@ -15,19 +15,29 @@
   p {
     color: #FFF;
     font-family: 'Oswald', sans-serif;
-    font-size: 20px;
+    font-size: 24px;
     margin-left: 8px;
     margin-top: -4px;
     text-transform: uppercase;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    max-width: 138px;
+    max-width: 170px;
   }
 }
 
 #venue-details {
   margin-left: 8px;
+  margin-top: -6px;
+
+  .fas {
+    font-size: 18px;
+    margin-right: -8px;
+  }
+
+  .p {
+    font-size: 30px;
+  }
 }
 
 .event-card {
@@ -37,35 +47,42 @@
   display: flex;
   height: 20vh;
   margin-bottom: 8px;
-  margin-left: 3.5vw;
+  margin-left: 2vw;
   position: relative;
-  width: 98vw;
+  width: 96vw;
   z-index: 99999;
+
+  button {
+    margin: 0;
+    padding: 0;
+  }
 
   h2 {
     font-family: oswald, sans-serif;
-    font-size: 28px;
+    font-size: 40px;
     margin-left: 8px;
-    margin-top: -36px;
+    margin-top: -70px;
     text-transform: uppercase;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     max-width: 120px;
+    padding-bottom: 4px;
   }
 
   img {
     border-top-left-radius: 6px;
-    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
     height: 20vh;
     object-fit: cover;
-    width: 150px;
+    width: 165px;
   }
 
   p {
     color: #FFF;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 16px;
+    padding-bottom: 6px;
   }
 
   span {
@@ -74,8 +91,22 @@
     font-size: 16px;
   }
 
+  .event {
+    display: flex;
+    justify-content: center;
+  } 
+
+  .far {
+    margin: 0;
+    padding-right: 8px;
+    padding-top: 8px;
+  }
+
   .fas {
     color: rgba(254, 103, 87, 1.00);
+    margin: 0;
+    padding-right: 8px;
+    padding-top: 8px;
   }
 
   #heart {
@@ -107,7 +138,7 @@
   filter:drop-shadow(1px 1px 8px black);
   font-size: 16px;
   margin-bottom: 8px;
-  margin-left: 8px;
+  max-width: 100%;
   padding: 7px 10px;
   position: absolute;
   z-index: 1;
@@ -133,5 +164,4 @@
 #index-heart {
   color: red;
   font-size: 24px;
-  padding-top: 4px;
 }
