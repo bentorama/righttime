@@ -13,7 +13,10 @@
 
 #filter-flex {
   display: flex;
-  justify-content: center;
+  flex-direction: row-reverse;
+  padding-right: 8px;
+  position: relative;
+  top: 10%;
 }
 
 #venue {

@@ -1,7 +1,7 @@
 .surprise-button {
-  background-color: #B16F9E;
+  background-color: black;
   border-style: solid;
-  border-color: white;
+  border-color: rgba(254, 103, 87, 1.00);
   border-radius: 50%;
   display: flex;
   height: 50px;
@@ -9,7 +9,9 @@
   align-items: center;
   margin: 2px;
   width: 50px;
-  box-shadow: 2px 2px 4px #643b58;
+  // box-shadow: 2px 2px 4px #643b58;
+  filter: drop-shadow(0px 0px 4px #333);
+
   }
 
   .fas {
@@ -19,28 +21,24 @@
     padding-right: 2px;
   }
 
-  .surprise-button:active {
-    background-color: white;
-  }
-
 .surprise-button-container {
-  background-color: #B16F9E;
-  width:110px;
-  padding: 5px;
-  border-radius: 12px;
-  border-style: solid;
-  border-color: white;
+  // background-color: #B16F9E;
+  // width:110px;
+  // padding: 5px;
+  // border-radius: 12px;
+  // border-style: solid;
+  // border-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: absolute;
-  bottom: 178px;
   right: 8px;
+  top: 53vh;
+  position: fixed;
   z-index: 99999;
   color: white;
 
-  p {
-    font-weight: bold;
-    font-size: 12px;
-  }
+  // p {
+  //   font-weight: bold;
+  //   font-size: 12px;
+  // }
 }
