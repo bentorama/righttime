@@ -16,13 +16,13 @@
         <div class="favourite-card">
           <!-- event card image -->
           <div>
-            <span>
+            <div class="event">
               <% if favourite.event.current_price == favourite.event.starting_price %>  
-                <p>£<%= favourite.event.current_price.round(2) %></p>
+                <p class="event-price">£<%= favourite.event.current_price.round(2) %></p>
               <% else %>
-                <p>Reduced to £<%= favourite.event.current_price.round(2) %></p>
+                <p class="event-price">Reduced to £<%= favourite.event.current_price.round(2) %></p>
               <% end %>
-            </span>
+            </div>
             <%= link_to event_path(favourite.event) do %>
               <%= image_tag(favourite.event.photos.first) %>
             <% end %>
