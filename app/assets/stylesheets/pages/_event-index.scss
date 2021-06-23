@@ -1,5 +1,10 @@
+#map {
+  position: relative;
+}
+
 #page-container-index {
-  height: 100vh;
+  height: 100%;
+  width: 100%;
 }
 
 #checkout-footer {
@@ -45,7 +50,7 @@
   border-radius: 6px;
   box-shadow: black 0px 15px 30px -10px;
   display: flex;
-  height: 20vh;
+  height: 25vh;
   margin-bottom: 8px;
   margin-left: 2vw;
   position: relative;
@@ -118,9 +123,9 @@
 
 .event-card-container {
   align-items: center;
-  top: 74.8%;
+  top: 62vh;
   display: flex;
-  // height: 25vh;
+  height: 30vh;
   // height: 140px;
   // margin-top: -140px;
   // min-width: 320px;
