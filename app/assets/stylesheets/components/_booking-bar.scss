@@ -45,21 +45,21 @@
   z-index: -1;
 }
 
-.neon-button:hover,
-.neon-button:focus {
-  color: black;
-  text-shadow: none;
-}
+// .neon-button:hover,
+// .neon-button:focus {
+//   color: black;
+//   text-shadow: none;
+// }
 
-.neon-button:hover::after,
-.neon-button:focus::after {
-  opacity: 1;
-}
+// .neon-button:hover::after,
+// .neon-button:focus::after {
+//   opacity: 1;
+// }
 
-.neon-button:hover::before,
-.neon-button:focus::before {
-  opacity: 1;
-}
+// .neon-button:hover::before,
+// .neon-button:focus::before {
+//   opacity: 1;
+// }
 
 
 
