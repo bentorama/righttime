@@ -1,13 +1,8 @@
-.order-back {
-  input[type="submit"] {
-    font-family: FontAwesome;
-  }
-}
-
 #page-container-favourites {
   background-image: linear-gradient(to left bottom, #ffdb56, #ffb54b, #ff904d, #ff6a56, #fa4f60, #f1326c, #e20a7a, #c90082, #ad0088, #8e018c, #6b118d);
   display: flex;
   flex-direction: column;
+  margin-bottom: 7vh;
   min-height: 100vh;
 }
 
@@ -36,11 +31,6 @@
   margin-left: 2vw;
   position: relative;
   width: 96vw;
-  z-index: 99999;
-
-  .fas {
-    color: rgba(254, 103, 87, 1.00);
-  }
 
   h2 {
     font-family: oswald, sans-serif;
@@ -71,24 +61,23 @@
   }
 
   span {
-    color: white;
-  }
-}
-
-.favourite-details {
-  h2 {
-    color: white;
-    font-family: 'Oswald', sans-serif;
-    font-size: 16px;
-    text-transform: uppercase;
-  }
-
-  p {
+    color: #FFF;
     font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    padding-bottom: 6px;
   }
-}
+  
+  .fas {
+    color: rgba(254, 103, 87, 1.00);
+  }
 
-.favourites-card-container {
+  #heart {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-right: 8px;
+    padding-top: 8px;
+  }
+
   #icon-heart {
     color: red;
     font-size: 24px;

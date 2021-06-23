@@ -48,7 +48,7 @@
                   <% favourite.event.reviews.average(:venue_rating).round.times %>  
                   <i class="fas fa-star star"></i>
                 <% end %>
-                <span><%= "| #{favourite.event.category}" %></span>
+                <span><%= " | #{favourite.event.category}" %></span>
               </div>
               <div class="event-timer">
                  <p>Starts at <% t = favourite.event.start_time %><%= t.strftime("%l:%M %P") %>!</p>
@@ -59,8 +59,8 @@
       <% end %>
     <% end %>
   </div>
+</div>
 
-  <div id="checkout-footer">
-    <%= render "components/footer" %>
-  </div>
+<div id="checkout-footer">
+  <%= render "components/footer" %>
 </div>
