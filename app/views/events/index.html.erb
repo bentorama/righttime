@@ -64,7 +64,7 @@
                 <div id="venue">
                   <p>@ <%= event.venue.name %></p>
                 </div>
-                <div id="venue-details">
+                <div class="venue-details">
                 <span><%= "#{event.reviews.average(:venue_rating)}" %></span>  
                 <% if event.reviews.count > 0 %>
                   <% event.reviews.average(:venue_rating).round.times %>  
