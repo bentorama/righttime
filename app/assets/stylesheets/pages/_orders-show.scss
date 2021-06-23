@@ -48,6 +48,23 @@
     height: 0%;
     width: 0%;
   }
+
+  .pulse {
+    transform: translate (-50%, -50%) scale (.9);
+    animation: pulse 1s linear infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 2.5px rgba(37, 160, 245, 0.5);
+    }
+    50% {
+      box-shadow: 0 0 0 6px rgba(37, 160, 245, 0.25);
+    }
+    100% {
+      box-shadow: 0 0 2.5px rgba(37, 160, 245, 0.5);
+    }
+  }
 }
 
 .confirmation-container {
