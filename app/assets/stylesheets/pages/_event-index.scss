@@ -78,7 +78,7 @@
   img {
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
-    height: 20vh;
+    height: 25vh;
     object-fit: cover;
     width: 165px;
   }
@@ -98,7 +98,7 @@
 
   .event {
     display: flex;
-    justify-content: center;
+    align-items: flex-start;
   } 
 
   .far {
@@ -126,9 +126,6 @@
   top: 62vh;
   display: flex;
   height: 30vh;
-  // height: 140px;
-  // margin-top: -140px;
-  // min-width: 320px;
   overflow-x: scroll;
   overflow-y: hidden;
   position: relative;
@@ -143,6 +140,7 @@
   filter:drop-shadow(1px 1px 8px black);
   font-size: 16px;
   margin-bottom: 8px;
+  margin-left: 8px;
   max-width: 100%;
   padding: 7px 10px;
   position: absolute;
