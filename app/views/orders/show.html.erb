@@ -13,8 +13,8 @@
       <p>NO. TICKETS <%= (@order.amount / @order.event.price).to_i  %></p>
       <p>TOTAL <%= humanized_money_with_symbol @order.amount %></p>
 
-      <button class="btn" id="show-directions">
-        <p>Show Directions</p>
+      <button class="neon-button" id="show-directions">
+        Show Directions
       </button>
 
       <div class="hide" id="directions-container">
@@ -22,7 +22,7 @@
         <%# <div id="instructions"></div> %>
       </div>
   
-      <button class="btn">
+      <button class="neon-button">
         <%= link_to "See More Events", events_path %>
       </button>
     </div>
