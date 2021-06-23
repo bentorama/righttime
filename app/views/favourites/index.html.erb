@@ -16,7 +16,13 @@
         <div class="favourite-card">
           <!-- event card image -->
           <div>
-            <span class="event-price">£<%= favourite.event.price_cents %></span>
+            <span>
+              <% if favourite.event.current_price == favourite.event.starting_price %>  
+                <p>£<%= favourite.event.current_price.round(2) %></p>
+              <% else %>
+                <p>Reduced to £<%= favourite.event.current_price.round(2) %></p>
+              <% end %>
+            </span>
             <%= link_to event_path(favourite.event) do %>
               <%= image_tag(favourite.event.photos.first) %>
             <% end %>
@@ -24,12 +30,6 @@
           <div class="event-information">
             <div>
               <div class="card-top-row">
-                <div class="event-review">
-                  <% if favourite.event.reviews.count > 0 %>
-                    <p><%= "#{favourite.event.reviews.average(:venue_rating)}" %></p>
-                      <i class="fas fa-star star"></i> 
-                  <% end %>
-                </div>
                 <div id="heart">
                   <%= link_to favourite_path(favourite), method: :delete, remote: true do %>
                     <i id="icon-heart" class="fas fa-heart"></i>
@@ -38,11 +38,22 @@
               </div>
             </div>
             <div class="favourite-details">
-              <h2><%= link_to favourite.event.name, event_path(favourite.event) %></h2>
-              <p><% d = favourite.event.description %><% description = d.split[0...15].join(' ') %><%= description %>...</p>
-            </div>
-            <div>
-              <p>Starts at <% t = favourite.event.start_time %><%= t.strftime("%l:%M %P") %>!</p>
+                   <h2><%= link_to favourite.event.name, event_path(favourite.event) %></h2>
+                <div id="venue">
+                  <p>@ <%= favourite.event.venue.name %></p>
+                </div>
+                <div id="venue-details">
+                <span><%= "#{favourite.event.reviews.average(:venue_rating)}" %></span>  
+                <% if favourite.event.reviews.count > 0 %>
+                  <% favourite.event.reviews.average(:venue_rating).round.times %>  
+                  <i class="fas fa-star star"></i>
+                <% end %>
+                <span><%= "| #{favourite.event.category}" %></span>
+              </div>
+              </div>
+              <div class="event-timer">
+                 <p>Starts at <% t = favourite.event.start_time %><%= t.strftime("%l:%M %P") %>!</p>
+              </div>
             </div>
           </div>
         </div>
