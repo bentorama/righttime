@@ -37,19 +37,18 @@
                 </div>
               </div>
             </div>
-            <div class="favourite-details">
-                   <h2><%= link_to favourite.event.name, event_path(favourite.event) %></h2>
-                <div id="venue">
-                  <p>@ <%= favourite.event.venue.name %></p>
-                </div>
-                <div id="venue-details">
-                <span><%= "#{favourite.event.reviews.average(:venue_rating)}" %></span>  
+            <div class="event-details">
+              <h2><%= link_to favourite.event.name, event_path(favourite.event) %></h2>
+              <div id="venue">
+                <p>@ <%= favourite.event.venue.name %></p>
+              </div>
+              <div id="venue-details">
+                <span><%= "#{favourite.event.reviews.average(:venue_rating)}" %></span>
                 <% if favourite.event.reviews.count > 0 %>
                   <% favourite.event.reviews.average(:venue_rating).round.times %>  
                   <i class="fas fa-star star"></i>
                 <% end %>
                 <span><%= "| #{favourite.event.category}" %></span>
-              </div>
               </div>
               <div class="event-timer">
                  <p>Starts at <% t = favourite.event.start_time %><%= t.strftime("%l:%M %P") %>!</p>
