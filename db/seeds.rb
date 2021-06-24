@@ -57,8 +57,8 @@ end
 puts "users created!"
 puts "creating venues..."
 
-# make the first 5 users venue owners and create 5 venues each
-# if geocoding fails (latitude == nil) delete the last venue and try with another address
+make the first 5 users venue owners and create 5 venues each
+if geocoding fails (latitude == nil) delete the last venue and try with another address
 User.first(5).each do |owner|
   owner.owner = true
   5.times do 
@@ -104,7 +104,7 @@ count = 0
 
 Venue.all.each do |venue|
   1.times do
-    starting_price = rand(5.0...40.0).round(2)
+    starting_price = rand(5.0...40.0).round(0)
     category = ["Hot", "Food", "Drink", "Show", "Music"].sample
     Event.create!(
       price_cents: starting_price * 100,
@@ -118,7 +118,7 @@ Venue.all.each do |venue|
       name: Faker::Kpop.iii_groups,
       num_tickets: (5..100).to_a.sample,
       duration: [30, 60, 90, 120].sample,
-      min_price: rand((starting_price * 0.5)..(starting_price*0.9)).round(2),
+      min_price: rand((starting_price * 0.5)..(starting_price*0.9)).round(0),
       category: category,
       sku: "event_#{count}"
     )
@@ -169,7 +169,7 @@ end
 puts 'bookings created!'
 puts 'creating reviews...'
 
-# Order.joins(:event).where('events.start_time < ?', Time.now).each do |order|
+Order.joins(:event).where('events.start_time < ?', Time.now).each do |order|
 Order.all.each do |order|
   Review.create!(
     event_review: Faker::Restaurant.review,
@@ -216,16 +216,16 @@ puts "creating events..."
 count = 0
 
 blues_kitchen_event = Event.create!(
-    price_cents: 3000.00,
-    current_price: 30.00,
-    starting_price: 30.00,
-    start_time: "Tue 22 June 2021 22:30:00 UTC +00:00",
+    price_cents: 3050.00,
+    current_price: 30.50,
+    starting_price: 30.50,
+    start_time: "Thu 24 June 2021 22:30:00 UTC +00:00",
     venue: blues_kitchen,
     description: "Our world-famous house band hit the stage, filling the room with classic funk, soul & rock n roll. From Aretha to Stevie Wonder & Fleetwood Mac to The Rolling Stones. Hang out on the dance-floor with us indulging in cocktails, craft beers & bourbon.",
     name: "Shoreditch Got Soul",
     num_tickets: 10,
     duration: 180,
-    min_price: 6.00,
+    min_price: 6.50,
     category: "Hot",
     sku: "event_#{count}"
   )
@@ -239,16 +239,16 @@ blues_kitchen_event = Event.create!(
     end
 
   morito_event = Event.create!(
-    price_cents: 2000.00,
-    current_price: 20.00,
-    starting_price: 20.00,
-    start_time: "Tue 22 June 2021 21:00:00 UTC +00:00",
+    price_cents: 2050.00,
+    current_price: 20.50,
+    starting_price: 20.50,
+    start_time: "Thu 24 June 2021 21:00:00 UTC +00:00",
     venue: morito,
     description: "Bright walls and a flamenco soundtrack make the highly animated dining room at Morito a fun atmosphere in which to enjoy ham and sherry. You’ll find classic tapas dishes such as Spanish omelette with chorizo and lamb shoulder casserole with oloroso on the menu too, but it’s the mouth-watering choice of ibérico hams that guests rave about.",
     name: "Tapas Set Menu",
     num_tickets: 10,
     duration: 60,
-    min_price: 5.00,
+    min_price: 5.50,
     category: "Hot",
     sku: "event_#{count}"
   )
@@ -263,16 +263,16 @@ blues_kitchen_event = Event.create!(
   end
 
   moon_event = Event.create!(
-    price_cents: 100,
-    current_price: 1.00,
-    starting_price: 1.00,
-    start_time: "Tue 22 June 2021 22:00:00 UTC +00:00",
+    price_cents: 150.00,
+    current_price: 1.50,
+    starting_price: 1.50,
+    start_time: "Thu 24 June 2021 22:00:00 UTC +00:00",
     venue: moon,
     description: "If you’re a penny pincher, Howling' Happy Hour £2.50 drinks are gonna sort. you. out. There's also bottles of wine for £12, 2 cocktails for a tenner, or you can grab a few of their cocktail teapots for £15 while you play a few rounds of something old school on the SEGA megadrive..",
     name: "Howling Happy Hour",
     num_tickets: 10,
     duration: 60,
-    min_price: 1.00,
+    min_price: 1.50,
     category: "Hot",
     sku: "event_#{count}"
   )
@@ -286,16 +286,16 @@ blues_kitchen_event = Event.create!(
   end
 
 curzon_event = Event.create!(
-    price_cents: 200.00,
-    current_price: 20.00,
-    starting_price: 20.00,
-    start_time: "Tue 22 June 2021 22:00:00 UTC +00:00",
+    price_cents: 2050.00,
+    current_price: 20.50,
+    starting_price: 20.50,
+    start_time: "Thu 24 June 2021 22:00:00 UTC +00:00",
     venue: curzon,
     description: "In the Heights centers on a variety of characters living in the neighborhood of Washington Heights, on the northern tip of Manhattan. At the center of the show is Usnavi, a bodega owner who looks after the aging Cuban lady next door, pines for the gorgeous girl working in the neighboring beauty salon and dreams of winning the lottery and escaping to the shores of his native Dominican Republic. Meanwhile, Nina, a childhood friend of Usnavi's, has returned to the neighborhood from her first year at college with surprising news for her parents, who have spent their life savings on building a better life for their daughter. Ultimately, Usnavi and the residents of the close-knit neighborhood get a dose of what it means to be home.",
     name: "In the Heights",
     num_tickets: 10,
     duration: 120,
-    min_price: 10.00,
+    min_price: 10.50,
     category: "Hot",
     sku: "event_#{count}"
   )

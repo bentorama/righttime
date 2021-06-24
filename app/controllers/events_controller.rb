@@ -45,7 +45,7 @@ class EventsController < ApplicationController
     events.each do |event|
       time = event.start_time - Time.now
       multiple = [0.2, 0.5, 0.8].to_a.sample
-      if event.current_price == event.starting_price && time < 15154
+      if event.current_price == event.starting_price && time < 9000
         event.current_price = event.starting_price * multiple
         event.price_cents = event.current_price * 100
         event.save
