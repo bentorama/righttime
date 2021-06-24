@@ -20,7 +20,7 @@ header {
   background-position: 48% 50%;
   background-repeat: no-repeat;
   box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-  height: 93vh;
+  height: calc(var(--vh, 1vh) * 93);;
   // max-width: 320px;
   max-width: 100%;
   min-width: 320px;
@@ -45,10 +45,10 @@ header {
 
 #bottom-container {
   background-color: rgba(248, 248, 248, 1.00);
-  min-height: 33vh;
+  min-height: calc(var(--vh, 1vh) * 33);
   max-width: 100%;
   min-width: 100vw;
-  margin-bottom: 7vh;
+  margin-bottom: calc(var(--vh, 1vh) * 7);
   padding-left: 8px;
   padding-right: 8px;
   padding-top: 48px;
@@ -140,7 +140,7 @@ p {
 // clock
 .wrap {
   width: 10vw;
-  height: 10vh;
+  height: calc(var(--vh, 1vh) * 10);
   display: flex;
   justify-content: center;
   align-items: center;
