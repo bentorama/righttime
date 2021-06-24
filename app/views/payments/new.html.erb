@@ -11,7 +11,7 @@
           <p>Attending <strong><%= @order.event.name %></strong> for <strong><%= humanized_money_with_symbol @order.amount %></strong></p>
         </div>
         <div>
-        <button id="pay" class="neon-button">Pay Now</button>
+        <button id="pay" class="neon-button pulse">Pay Now</button>
         <script src="https://js.stripe.com/v3/"></script>
         <script>
           const paymentButton = document.getElementById('pay');
