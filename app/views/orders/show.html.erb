@@ -3,9 +3,9 @@
     <div class="confirmation-details">
       <h1>Order Confirmation</h1>
       <% if @order.state == "pending" %>
-        <i class="far fa-times-circle"></i>
-      <% else %>
         <i class="far fa-check-circle success"></i>
+      <% else %>
+        <i class="far fa-times-circle"></i>
       <% end %>  
       </h1>
       <h2>Get Ready Now.</h2>
