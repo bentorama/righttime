@@ -44,9 +44,6 @@
   button {
     margin-left: auto;
     margin-right: auto;
-    width: 287.33px;
-    margin-bottom: 8px;
-    margin-top: 8px;
   }
 
   .far {
@@ -63,6 +60,12 @@
   .success {
     color: rgba(27, 215, 96, 1.00);
     text-shadow: 0 0 0.05em rgba(255, 255, 255, 0.5), 0 0 0.45em rgba(27, 215, 96, 1.00);
+  }
+
+  .neon-button {
+    width: 287.33px;
+    margin-bottom: 8px;
+    margin-top: 8px;
   }
 
   .neon-button::before {
@@ -122,6 +125,8 @@
 #directions-container {
   margin-top: 8px;
   margin-bottom: 8px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #map-directions {
