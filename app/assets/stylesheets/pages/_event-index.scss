@@ -51,7 +51,7 @@
 .event-card {
   background: radial-gradient(circle at top, rgba(61, 50, 76, 1.00), black, black, black 200%);
   border-radius: 6px;
-  box-shadow: black 0px 15px 30px -10px;
+  filter: drop-shadow(0px 2px 4px #333);
   display: flex;
   height: 25vh;
   margin-bottom: 8px;
@@ -132,12 +132,11 @@
 
 .event-card-container {
   align-items: center;
-  top: 62vh;
   display: flex;
   height: 28vh;
   overflow-x: scroll;
   overflow-y: hidden;
-  position: relative;
+  position: sticky; top: 64.9vh;
   z-index: 99999;
 }
 
