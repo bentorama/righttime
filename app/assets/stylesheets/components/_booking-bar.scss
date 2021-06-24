@@ -92,10 +92,12 @@
 
 #multiplier {
   display: flex;
+  justify-content: space-evenly;
 }
 
 #price-input {
   display: flex;
+  width: 125px;
 }
 
 .booking-bar-container {
@@ -129,8 +131,16 @@
   border-radius: 50%;
   padding: 2px 8px;
   border-style: none;
-  color: rgba(235, 96, 81, 1.00);
-  background: black;
+  background: transparent;
   // box-shadow: 5px 5px 10px grey,
   // -5px -5px 10px lightgrey;
+
+  .fas {
+    font-size: 16px;
+  }
+}
+
+#counter-Html {
+  width: 22px;
+  text-align: center;
 }
