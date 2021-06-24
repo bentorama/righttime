@@ -6,11 +6,12 @@
   flex-direction: column;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 15%;
-  margin-bottom: auto;
+  margin-top: 10%;
+  margin-bottom: 100px;
   padding-top: 10px;
   padding-bottom: 32px;
   width: 90vw;
+
 
   // a {
   //   color: #FFF;
@@ -37,6 +38,9 @@
   }
 
   button {
+    margin-left: auto;
+    margin-right: auto;
+    width: 287.33px;
     margin-bottom: 8px;
     margin-top: 8px;
   }
@@ -89,5 +93,18 @@
 }
 
 #checkout-footer {
-  margin-top: auto;
+  bottom: 0;
+  position: fixed;
+  width: 100vw;
+  box-shadow: none;
 }
+
+#directions-container {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+#map-directions {
+  border-radius: 6px;
+}
+

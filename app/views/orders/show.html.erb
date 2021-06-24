@@ -1,7 +1,7 @@
 <div class="confirmation-container">
   <div class="confirmation-card">
     <div class="confirmation-details">
-      <h1>Order #<%= @order.id %>
+      <h1>Order Status:
       <span class="badge badge-warning"><%= @order.state %></span>  
       </h1>
       <h1>CONGRATS.</h1>
@@ -16,7 +16,7 @@
       <button class="neon-button pulse" id="show-directions">Show Directions</button>
 
       <div id="directions-container" class="hide">
-        <div id="map-directions" style="min-width: 320px; min-height: 40vh;" data-destination="<%= @destination.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+        <div id="map-directions" style="width: 287.33px; min-height: 40vh;" data-destination="<%= @destination.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
         <%# <div id="instructions"></div> %>
       </div>
   
