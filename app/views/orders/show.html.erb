@@ -13,11 +13,9 @@
       <p>NO. TICKETS <%= (@order.amount / @order.event.price).to_i  %></p>
       <p>TOTAL <%= humanized_money_with_symbol @order.amount %></p>
 
-      <button class="neon-button pulse" id="show-directions">
-        Show Directions
-      </button>
+      <button class="neon-button pulse" id="show-directions">Show Directions</button>
 
-      <div class="hide" id="directions-container">
+      <div id="directions-container" class="hide">
         <div id="map-directions" style="min-width: 320px; min-height: 40vh;" data-destination="<%= @destination.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
         <%# <div id="instructions"></div> %>
       </div>
@@ -34,19 +32,15 @@
 </div>
 
 <%= javascript_pack_tag 'directions' %>
-<script type="text/javascript">
-  document.getElementById("show-directions").addEventListener("click", (event) => {
-    const toggle = document.getElementById("directions-container");
-    if (toggle.style.display === "none") {
-      toggle.style.display = "block";
-    } else {
-      toggle.style.display = "none";
-    }
-    if (event.currentTarget.innerHTML === "Show Directions") {
-      event.currentTarget.innerHTML = "Hide Directions";
-    } else {
-      event.currentTarget.innerHTML = "Show Directions";
-    }
-  })
-</script>
 
+<script>
+  const directions = document.getElementById("show-directions");
+  directions.addEventListener("click", (e) => {
+     if (e.currentTarget.innerText === "SHOW DIRECTIONS") {
+       e.currentTarget.innerText = "Hide Directions";
+     } else {
+       e.currentTarget.innerText = "Show Directions";
+     }
+    document.getElementById("directions-container").classList.toggle('hide');
+  });
+</script>
