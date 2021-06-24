@@ -18,8 +18,6 @@
 
 #checkout-content {
   align-items: center;
-  display: flex;
-  flex-direction: column;
   justify-content: space-around;
   height: 100%;
   position: absolute;
@@ -28,6 +26,15 @@
   top: 0;
   bottom: 0;
   text-align: center;
+
+  h1 {
+    font-size: 24px;
+    margin-top: 32px;
+  }
+
+  img {
+    margin-top: 32px;
+  }
 }
 
 #checkout-window {
@@ -40,7 +47,7 @@
   height: 60%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: auto;
+  margin-top: 30%;
   margin-bottom: auto;
 
   position: absolute;
@@ -70,7 +77,7 @@
     font-family: 'Oswald', sans-serif;
     font-size: 16px;
     text-transform: uppercase;
-    margin-top: 12px;
+    margin-top: 16px;
   }
 
   .fas {
@@ -81,12 +88,7 @@
     z-index: 1;
   }
 
-  .btn {
-    background-color: rgba(61, 60, 238, 1.00);
-    box-shadow: 0 0.2px 0.3rem rgba(61, 60, 238, 1.00);
-    font: 400 13.3333px Arial;
-    color: #FFF;
-    margin-top: -16px;
-    margin-bottom: 8px;
+  .neon-button {
+    margin-top: 40px;
   }
 }

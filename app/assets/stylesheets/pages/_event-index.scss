@@ -1,5 +1,10 @@
+#map {
+  position: relative;
+}
+
 #page-container-index {
-  height: 100vh;
+  height: 100%;
+  width: 100%;
 }
 
 #checkout-footer {
@@ -8,7 +13,10 @@
 
 #filter-flex {
   display: flex;
-  justify-content: center;
+  flex-direction: row-reverse;
+  padding-right: 8px;
+  position: relative;
+  top: 10%;
 }
 
 #venue {
@@ -26,7 +34,7 @@
   }
 }
 
-#venue-details {
+.venue-details {
   margin-left: 8px;
   margin-top: -6px;
 
@@ -45,12 +53,17 @@
   border-radius: 6px;
   box-shadow: black 0px 15px 30px -10px;
   display: flex;
-  height: 20vh;
+  height: 25vh;
   margin-bottom: 8px;
   margin-left: 2vw;
   position: relative;
   width: 96vw;
   z-index: 99999;
+
+  a {
+    color: #FFF;
+    text-decoration: none;
+  }
 
   button {
     margin: 0;
@@ -58,6 +71,7 @@
   }
 
   h2 {
+    color: #FFF;
     font-family: oswald, sans-serif;
     font-size: 40px;
     margin-left: 8px;
@@ -66,14 +80,14 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    max-width: 120px;
+    max-width: 145px;
     padding-bottom: 4px;
   }
 
   img {
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
-    height: 20vh;
+    height: 25vh;
     object-fit: cover;
     width: 165px;
   }
@@ -93,7 +107,7 @@
 
   .event {
     display: flex;
-    justify-content: center;
+    align-items: flex-start;
   } 
 
   .far {
@@ -118,12 +132,9 @@
 
 .event-card-container {
   align-items: center;
-  top: 74.8%;
+  top: 62vh;
   display: flex;
-  // height: 25vh;
-  // height: 140px;
-  // margin-top: -140px;
-  // min-width: 320px;
+  height: 30vh;
   overflow-x: scroll;
   overflow-y: hidden;
   position: relative;
@@ -138,10 +149,11 @@
   filter:drop-shadow(1px 1px 8px black);
   font-size: 16px;
   margin-bottom: 8px;
+  margin-left: 8px;
   max-width: 100%;
   padding: 7px 10px;
   position: absolute;
-  z-index: 1;
+  // z-index: 1;
 }
 
 .event-timer {

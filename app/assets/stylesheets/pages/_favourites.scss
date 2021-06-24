@@ -1,13 +1,9 @@
-.order-back {
-  input[type="submit"] {
-    font-family: FontAwesome;
-  }
-}
-
 #page-container-favourites {
   background-image: linear-gradient(to left bottom, #ffdb56, #ffb54b, #ff904d, #ff6a56, #fa4f60, #f1326c, #e20a7a, #c90082, #ad0088, #8e018c, #6b118d);
   display: flex;
   flex-direction: column;
+  margin-bottom: 7vh;
+  padding-top: 8px;
   min-height: 100vh;
 }
 
@@ -22,37 +18,33 @@
     color: black;
     font-family: 'Oswald', sans-serif;
     font-size: 24px;
+    padding-bottom: 6px;
     text-transform: uppercase;
   }
 }
 
 .favourite-card {
-  align-items: center;
+  background: radial-gradient(circle at top, rgba(61, 50, 76, 1.00), black, black, black 200%);
   border-radius: 6px;
+  box-shadow: black 0px 15px 30px -10px;
   display: flex;
-  filter: drop-shadow(0 15px 1rem rgba(15, 15, 15, 0.65));
-  background: radial-gradient(circle at top, rgba(61, 50, 76, 1.00), black, black, black 100%);
-  width: 90vw;
   height: 25vh;
-  margin-left: auto;
-  margin-right: auto;
-
-  a {
-    color: #FFF;
-    text-decoration: none;
-  }
-
-  .fas {
-    color: rgba(254, 103, 87, 1.00);
-  }
+  margin-bottom: 16px;
+  margin-left: 2vw;
+  position: relative;
+  width: 96vw;
 
   h2 {
     color: #FFF;
-    font-family: var(--ff-header);
-    font-size: 17px;
-    font-weight: bold;
-    margin: 0;
-    padding-left: 8px;
+    font-family: oswald, sans-serif;
+    font-size: 40px;
+    margin-left: 8px;
+    margin-top: -120px;
+    text-transform: uppercase;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 145px;
   }
 
   img {
@@ -60,53 +52,48 @@
     border-bottom-left-radius: 6px;
     height: 25vh;
     object-fit: cover;
-    width: 150px;
+    width: 165px;
   }
 
   p {
     color: #FFF;
-    font-family: var(--ff-primary);
-    font-size: 16px;
-    line-height: 1.4;
-    padding-left: 8px;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-  }
-}
-
-.favourite-details {
-  h2 {
-    color: white;
-    font-family: 'Oswald', sans-serif;
-    font-size: 16px;
-    text-transform: uppercase;
-  }
-
-  p {
     font-family: 'Source Sans Pro', sans-serif;
-  }
-}
-
-.favourites-card-container {
-  padding: 10px;
-
-  .event-card {
-    margin: 10px;
+    font-size: 16px;
+    padding-bottom: 6px;
   }
 
-  #icon-heart {
+  span {
+    color: #FFF;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    padding-bottom: 6px;
+  }
+
+  .event-timer {
+    margin-top: 30px;
+  }
+
+  .fas {
     color: rgba(254, 103, 87, 1.00);
   }
 
-  .delete-favourite {
-    border-style: solid;
-    border-color: purple;
-    padding: 4px;
-    border-radius: 5px;
-    color: purple;
-    text-align: center;
-    margin: 0px 10px;
+  #heart {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-right: 8px;
+    padding-top: 8px;
+  }
+
+  #icon-heart {
+    color: red;
+    font-size: 24px;
+  }
+
+  .venue-details {
+    margin-top: -8px;
+
+    .fas {
+      padding-right: 6px;
+    }
   }
 }
