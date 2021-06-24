@@ -2,6 +2,14 @@
   position: relative;
 }
 
+.mapboxgl-ctrl-bottom-left {
+  display: none;
+}
+
+.mapboxgl-ctrl-bottom-right {
+  display: none;
+}
+
 #page-container-index {
   height: 100%;
   width: 100%;
