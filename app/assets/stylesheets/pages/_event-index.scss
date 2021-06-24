@@ -146,7 +146,7 @@
   height: calc(var(--vh, 1vh) * 28);
   overflow-x: scroll;
   overflow-y: hidden;
-  position: sticky; top: 64.9vh;
+  position: sticky; top: calc(var(--vh, 1vh) * 64.9);
   z-index: 99999;
 }
 
