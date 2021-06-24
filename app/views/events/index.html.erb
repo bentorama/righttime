@@ -2,7 +2,7 @@
   <div>
     <!-- map viewport -->  
     <!-- map dimensions -->
-    <div id="map" style="width: 100vw; height: 93vh;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" data-center="<%= @center.to_json %>">
+    <div id="map" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" data-center="<%= @center.to_json %>">
       <%# filter buttons  %>
     
       <div id="filter-flex">  
@@ -88,3 +88,5 @@
     <%= render "components/footer" %>
   </div>
 </div>
+
+<%= javascript_pack_tag 'screen' %>
