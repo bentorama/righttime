@@ -29,10 +29,13 @@
   h2 {
     color: #FFF;
     font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+    padding-bottom: 12px;
     text-transform: uppercase;
   }
 
   img {
+    background-color: black;
     border-radius: 6px;
     height: 110px;
     width: 190px;
@@ -54,7 +57,7 @@
     text-shadow: 0 0 0.05em rgba(255, 255, 255, 0.5), 0 0 0.45em rgba(255, 0, 0, 1.00);
     position: relative;
     margin-top: 8px;
-    margin-bottom: 4px;
+    margin-bottom: 12px;
   }
 
   .success {
@@ -123,5 +126,13 @@
 
 #map-directions {
   border-radius: 6px;
+}
+
+#destination {
+  padding-top: 12px;
+}
+
+#order-info {
+  padding-bottom: 8px;
 }
 

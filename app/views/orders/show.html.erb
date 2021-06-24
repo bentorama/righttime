@@ -8,14 +8,16 @@
         <i class="far fa-check-circle success"></i>
       <% end %>  
       </h1>
-      <h1>CONGRATS.</h1>
+      <h2>Get Ready Now.</h2>
       <p><%= image_tag(@order.event.photos.first) %></p>
-      <h2>You are going to</h2> 
-      <h2><%= @order.event.name %></h2>
-      <p>Start: <%= @order.event.start_time.strftime("%H:%M") %></p>
-      <p>Quantity: <%= (@order.amount / @order.event.price).to_i  %></p>
-      <p>Total: <%= humanized_money_with_symbol @order.amount %></p>
-
+      <div id="destination">
+        <h2>You are going to <strong><%= @order.event.name %></strong></h2>
+      </div>
+      <div id="order-info">
+        <p>Start: <%= @order.event.start_time.strftime("%H:%M") %></p>
+        <p>Tickets x <%= (@order.amount / @order.event.price).to_i  %></p>
+        <p>Total: <%= humanized_money_with_symbol @order.amount %></p>
+      </div>
       <button class="neon-button pulse" id="show-directions">Show Directions</button>
 
       <div id="directions-container" class="hide">
