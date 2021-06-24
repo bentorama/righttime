@@ -108,7 +108,7 @@
   height: 11vh;
   background-color: black;
   position: fixed;
-  bottom: 7vh;
+  bottom: calc(var(--vh, 1vh) * 7);
   width: 100vw;
   color: #FFF;
 
