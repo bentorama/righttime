@@ -2,7 +2,7 @@
   align-items: center;
   background-color: black;
   display: flex;
-  height: 7vh;
+  height: calc(var(--vh, 1vh) * 7);
   justify-content: space-around;
   max-width: 100%;
   width: 100vw;
