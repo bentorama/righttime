@@ -34,4 +34,11 @@
       </button>
     </div>
   </div>
+  <div class="surprise-button-container">
+    <%= link_to event_path(@rand_event) do %>
+      <button class="surprise-button" type="button">
+        <i class="fas fa-dice"></i>
+      </button>
+    <% end %> 
+  </div>
 </div>

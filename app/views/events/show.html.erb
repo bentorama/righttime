@@ -17,11 +17,11 @@
           <div class="smalltext">Hours</div>
         </div> -->
         <div class="flex">
+          <p>Starting in&nbsp;</p>
           <p class="minutes"></p>
           <div class="smalltext">mins&nbsp</div>
           <p class="seconds"></p>
           <div class="smalltext">secs</div>
-          <p>&nbspremaining to start</p>
         </div>
       <% else %>
         <span class="past-event">Past event</span>  
@@ -32,10 +32,10 @@
   <!-- event content -->
   <div class="content">
     <div class="show-favorites">
-      <p><strong>Add to favourites</strong></p>
+      <p id="focus">Add to favourites</p>
       <%= simple_form_for([ @event, Favourite.new ]) do |f|  %>
           <%= button_tag type: 'submit' do %>
-            <i class="fab fa-gratipay"></i>
+            <i id="heart-js" class="fas fa-heart"></i>
           <% end %>
       <% end %>
     </div>
@@ -116,3 +116,4 @@
 <%= javascript_pack_tag "description-reveal" %>
 <%= javascript_pack_tag "switch" %>
 <%= javascript_pack_tag "review-toggle" %>
+<%= javascript_pack_tag "favourites-heart" %>

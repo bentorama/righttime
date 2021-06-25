@@ -26,7 +26,10 @@
   color: var(--clr-text);
   font-size: 16px;
   height: 5vh;
-  padding-top: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -2px;
 }
 
 // after-countdown
@@ -42,6 +45,7 @@
   display: flex;
   height: 1.6rem;
   justify-content: flex-end;
+  max-width: 100%;
 
   p {
     color: black !important;
@@ -53,6 +57,41 @@
     position: relative;
     z-index: 1;
   }
+
+  .fas {
+    margin-top: 1px;
+    position: relative;
+    font-size: 1.4rem;
+  }
+
+  button:focus {
+    .fas {
+      transform: scale( 1.25 );
+    }
+
+    animation: heartbeat 1s infinite;
+  }
+
+  @keyframes heartbeat {
+    0% {
+      transform: scale( .75 );
+    }
+    20% {
+      transform: scale( 1 );
+    }
+    40% {
+      transform: scale( .75 );
+    }
+    60% {
+      transform: scale( 1 );
+    }
+    80% {
+      transform: scale( .75 );
+    }
+    100% {
+      transform: scale( .75 );
+    }
+  } 
 }
 
 // show content
@@ -124,6 +163,8 @@
 }
 
 #colour {
+  width: 100px;
+
   p {
     color: rgba(254, 103, 87, 1.00);
     font-size: 12px;

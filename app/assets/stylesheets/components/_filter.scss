@@ -18,6 +18,9 @@
   
   //javascript toggle property
   .filter-button-active {
+    background-color: black;
+    border-radius: 50px;
+    background: radial-gradient(rgba(254, 103, 87, 1.00) 1%, black 80%);    
     animation-name: spin;
     animation-duration: 5000ms;
     animation-iteration-count: infinite;
