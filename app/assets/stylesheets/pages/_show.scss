@@ -26,7 +26,10 @@
   color: var(--clr-text);
   font-size: 16px;
   height: 5vh;
-  padding-top: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -2px;
 }
 
 // after-countdown
