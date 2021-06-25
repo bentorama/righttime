@@ -1,11 +1,5 @@
-//favourites-heart toggle
-// const heartChanger = () => {
-//   const indexHeart = document.querySelector(".test-heart");
-
-//   indexHeart.addEventListener("click", (event) => {
-//       event.preventDefault();
-//       console.log("heart");
-//   };
-// };
-
-// export { heartChanger };
+const heart = document.getElementById("heart-js");
+  heart.addEventListener("click", (e) => {
+  const favourites = document.getElementById("focus")
+    favourites.innerText = "Added to favourites"
+  });
