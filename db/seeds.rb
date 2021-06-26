@@ -57,8 +57,8 @@ end
 puts "users created!"
 puts "creating venues..."
 
-make the first 5 users venue owners and create 5 venues each
-if geocoding fails (latitude == nil) delete the last venue and try with another address
+# make the first 5 users venue owners and create 5 venues each
+# if geocoding fails (latitude == nil) delete the last venue and try with another address
 User.first(5).each do |owner|
   owner.owner = true
   5.times do 
@@ -170,12 +170,13 @@ puts 'bookings created!'
 puts 'creating reviews...'
 
 Order.joins(:event).where('events.start_time < ?', Time.now).each do |order|
-Order.all.each do |order|
-  Review.create!(
-    event_review: Faker::Restaurant.review,
-    venue_rating: (1..5).to_a.sample,
-    order: order
-  )
+  Order.all.each do |order|
+    Review.create!(
+      event_review: Faker::Restaurant.review,
+      venue_rating: (1..5).to_a.sample,
+      order: order
+    )
+  end
 end
 
 puts 'reviews created!'
