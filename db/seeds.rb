@@ -105,7 +105,7 @@ count = 0
 Venue.all.each do |venue|
   1.times do
     starting_price = rand(5.0...40.0).round(0)
-    category = ["Hot", "Food", "Drink", "Show", "Music"].sample
+    category = ["Food", "Drink", "Show", "Music"].sample
     Event.create!(
       price_cents: starting_price * 100,
       current_price: starting_price,
