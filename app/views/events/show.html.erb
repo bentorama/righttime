@@ -8,20 +8,18 @@
   <div id="event-countdown">
     <div id="clockdiv">
       <% if @event.start_time > Time.now %>
-      <!--   <div>
+      <!-- <div>
           <span class="days"></span>
           <div class="smalltext">Days</div>
-        </div>
-        <div>
-          <span class="hours"></span>
-          <div class="smalltext">Hours</div>
         </div> -->
         <div class="flex">
           <p>Starting in&nbsp;</p>
+          <p class="hours"></p>
+          <div class="smalltext">&nbsp;hours&nbsp;</div>
           <p class="minutes"></p>
-          <div class="smalltext">mins&nbsp</div>
+          <div class="smalltext">&nbsp;mins&nbsp;</div>
           <p class="seconds"></p>
-          <div class="smalltext">secs</div>
+          <div class="smalltext">&nbsp;secs</div>
         </div>
       <% else %>
         <span class="past-event">Past event</span>  
