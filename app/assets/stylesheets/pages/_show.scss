@@ -123,6 +123,10 @@
   }
 }
 
+#push {
+  margin-top: -28px;
+}
+
 .content {
   h1 {
     color: #FFF;
@@ -165,7 +169,12 @@
 
 #colour {
   width: 100px;
+  height: 4rem;
   position: relative;
+  z-index: 9999;
+  padding-top: 18px;
+  margin-top: -16px;
+  padding-bottom: 18px;
 
   p {
     color: rgba(254, 103, 87, 1.00);

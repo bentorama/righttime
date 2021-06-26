@@ -43,11 +43,12 @@
     
 
     <div class="show-details">
+      <%= link_to events_path do %>
       <div id="colour">
-        <%= link_to events_path do %>
           <p>Back to events</p>
-        <% end %>
       </div>
+      <% end %>
+      <div id="push">
       <h1><%= @event.name %></h1>
       <h2>@ <%= @event.venue.name %></h2>
 
@@ -91,6 +92,7 @@
         <% end %>
     </div> 
     </div>
+  </div>
 
     <!-- review section -->
     
