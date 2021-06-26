@@ -169,7 +169,7 @@ end
 puts 'bookings created!'
 puts 'creating reviews...'
 
-Order.joins(:event).where('events.start_time < ?', Time.now).each do |order|
+# Order.joins(:event).where('events.start_time < ?', Time.now).each do |order|
   Order.all.each do |order|
     Review.create!(
       event_review: Faker::Restaurant.review,
@@ -177,7 +177,7 @@ Order.joins(:event).where('events.start_time < ?', Time.now).each do |order|
       order: order
     )
   end
-end
+# end
 
 puts 'reviews created!'
 
@@ -217,19 +217,19 @@ puts "creating events..."
 count = 0
 
 blues_kitchen_event = Event.create!(
-    price_cents: 3050.00,
-    current_price: 30.50,
-    starting_price: 30.50,
-    start_time: "Sat 26 June 2021 22:30:00 UTC +00:00",
-    venue: blues_kitchen,
-    description: "Our world-famous house band hit the stage, filling the room with classic funk, soul & rock n roll. From Aretha to Stevie Wonder & Fleetwood Mac to The Rolling Stones. Hang out on the dance-floor with us indulging in cocktails, craft beers & bourbon.",
-    name: "Shoreditch Got Soul",
-    num_tickets: 10,
-    duration: 180,
-    min_price: 6.50,
-    category: "Hot",
-    sku: "event_#{count}"
-  )
+  price_cents: 3050.00,
+  current_price: 30.50,
+  starting_price: 30.50,
+  start_time: "Sat 26 June 2021 22:30:00 UTC +00:00",
+  venue: blues_kitchen,
+  description: "Our world-famous house band hit the stage, filling the room with classic funk, soul & rock n roll. From Aretha to Stevie Wonder & Fleetwood Mac to The Rolling Stones. Hang out on the dance-floor with us indulging in cocktails, craft beers & bourbon.",
+  name: "Shoreditch Got Soul",
+  num_tickets: 10,
+  duration: 180,
+  min_price: 6.50,
+  category: "Hot",
+  sku: "event_#{count}"
+)
 
   count += 1
 
