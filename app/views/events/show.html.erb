@@ -32,7 +32,7 @@
   <!-- event content -->
   <div class="content">
     <div class="show-favorites">
-      <p id="focus">Add to favourites</p>
+      <!-- <p id="focus">Add to favourites</p> -->
       <%= simple_form_for([ @event, Favourite.new ]) do |f|  %>
           <%= button_tag type: 'submit' do %>
             <i id="heart-js" class="fas fa-heart"></i>
@@ -116,4 +116,4 @@
 <%= javascript_pack_tag "description-reveal" %>
 <%= javascript_pack_tag "switch" %>
 <%= javascript_pack_tag "review-toggle" %>
-<%= javascript_pack_tag "favourites-heart" %>
+
