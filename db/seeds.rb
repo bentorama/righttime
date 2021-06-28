@@ -1,5 +1,6 @@
 require 'open-uri'
 require 'csv'
+require 'date'
 
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
@@ -35,9 +36,7 @@ csv_options = { headers: :first_row, header_converters: :symbol }
 CSV.foreach('./app/assets/data/london_postcodes_v4.csv', csv_options) do |row|
   address = "#{row[:pcd]}, London, UK"
   address_array << address
-end  
-
-puts "creating venue..."
+end
 
 puts "creating users..."
 
@@ -181,8 +180,8 @@ puts 'creating reviews...'
 
 puts 'reviews created!'
 
-puts 'creating real events....'
-
+puts 'creating real events...'
+puts 'creating the venues...'
 # Create a Venue
 blues_kitchen = Venue.create!(
   address: "EC2A 3AR",
@@ -216,11 +215,13 @@ puts "creating events..."
 
 count = 0
 
+today = Date.today.strftime("%A %-d %B %Y")
+
 blues_kitchen_event = Event.create!(
   price_cents: 3050.00,
   current_price: 30.50,
   starting_price: 30.50,
-  start_time: "Sat 26 June 2021 22:30:00 UTC +00:00",
+  start_time: "#{today} 22:30:00 UTC +00:00",
   venue: blues_kitchen,
   description: "Our world-famous house band hit the stage, filling the room with classic funk, soul & rock n roll. From Aretha to Stevie Wonder & Fleetwood Mac to The Rolling Stones. Hang out on the dance-floor with us indulging in cocktails, craft beers & bourbon.",
   name: "Shoreditch Got Soul",
@@ -243,7 +244,7 @@ blues_kitchen_event = Event.create!(
     price_cents: 2050.00,
     current_price: 20.50,
     starting_price: 20.50,
-    start_time: "Sat 26 June 2021 19:00:00 UTC +00:00",
+    start_time: "#{today} 19:00:00 UTC +00:00",
     venue: morito,
     description: "Bright walls and a flamenco soundtrack make the highly animated dining room at Morito a fun atmosphere in which to enjoy ham and sherry. You’ll find classic tapas dishes such as Spanish omelette with chorizo and lamb shoulder casserole with oloroso on the menu too, but it’s the mouth-watering choice of ibérico hams that guests rave about.",
     name: "Tapas Set Menu",
@@ -267,7 +268,7 @@ blues_kitchen_event = Event.create!(
     price_cents: 150.00,
     current_price: 1.50,
     starting_price: 1.50,
-    start_time: "Sat 26 June 2021 20:00:00 UTC +00:00",
+    start_time: "#{today} 20:00:00 UTC +00:00",
     venue: moon,
     description: "If you’re a penny pincher, Howling' Happy Hour £2.50 drinks are gonna sort. you. out. There's also bottles of wine for £12, 2 cocktails for a tenner, or you can grab a few of their cocktail teapots for £15 while you play a few rounds of something old school on the SEGA megadrive..",
     name: "Howling Happy Hour",
@@ -290,7 +291,7 @@ curzon_event = Event.create!(
     price_cents: 2050.00,
     current_price: 20.50,
     starting_price: 20.50,
-    start_time: "Sat 26 June 2021 22:00:00 UTC +00:00",
+    start_time: "#{today} 22:00:00 UTC +00:00",
     venue: curzon,
     description: "In the Heights centers on a variety of characters living in the neighborhood of Washington Heights, on the northern tip of Manhattan. At the center of the show is Usnavi, a bodega owner who looks after the aging Cuban lady next door, pines for the gorgeous girl working in the neighboring beauty salon and dreams of winning the lottery and escaping to the shores of his native Dominican Republic. Meanwhile, Nina, a childhood friend of Usnavi's, has returned to the neighborhood from her first year at college with surprising news for her parents, who have spent their life savings on building a better life for their daughter. Ultimately, Usnavi and the residents of the close-knit neighborhood get a dose of what it means to be home.",
     name: "In the Heights",
