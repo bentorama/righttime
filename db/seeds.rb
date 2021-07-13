@@ -31,67 +31,67 @@ main_user.avatar.attach({
     filename: "faker_image.jpg"
 })
 
-address_array = []
-csv_options = { headers: :first_row, header_converters: :symbol }
-CSV.foreach('./app/assets/data/london_postcodes_v4.csv', csv_options) do |row|
-  address = "#{row[:pcd]}, London, UK"
-  address_array << address
-end
+# address_array = []
+# csv_options = { headers: :first_row, header_converters: :symbol }
+# CSV.foreach('./app/assets/data/london_postcodes_v4.csv', csv_options) do |row|
+#   address = "#{row[:pcd]}, London, UK"
+#   address_array << address
+# end
 
 puts "creating users..."
 
-20.times do
-  user = User.create!(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    email: Faker::Internet.email,
-    password: "password"
-  )
-  user.avatar.attach({
-     io: image_fetcher,
-     filename: "faker_image.jpg"
-  })
-end
+# 20.times do
+#   user = User.create!(
+#     first_name: Faker::Name.first_name,
+#     last_name: Faker::Name.last_name,
+#     email: Faker::Internet.email,
+#     password: "password"
+#   )
+#   user.avatar.attach({
+#      io: image_fetcher,
+#      filename: "faker_image.jpg"
+#   })
+# end
 
 puts "users created!"
 puts "creating venues..."
 
 # make the first 5 users venue owners and create 5 venues each
 # if geocoding fails (latitude == nil) delete the last venue and try with another address
-User.first(5).each do |owner|
-  owner.owner = true
-  5.times do 
-    Venue.create!(
-      address: address_array.sample,
-      name: Faker::Restaurant.name,
-      description: Faker::Restaurant.description,
-      user: owner
-    )
-    while Venue.last.latitude.nil?
-      Venue.last.destroy
-      Venue.create!(
-      address: address_array.sample,
-      name: Faker::Restaurant.name,
-      description: Faker::Restaurant.description,
-      user: owner
-    )
-    end
-  end
-  owner.save!
-end
+# User.first(5).each do |owner|
+#   owner.owner = true
+#   5.times do 
+#     Venue.create!(
+#       address: address_array.sample,
+#       name: Faker::Restaurant.name,
+#       description: Faker::Restaurant.description,
+#       user: owner
+#     )
+#     while Venue.last.latitude.nil?
+#       Venue.last.destroy
+#       Venue.create!(
+#       address: address_array.sample,
+#       name: Faker::Restaurant.name,
+#       description: Faker::Restaurant.description,
+#       user: owner
+#     )
+#     end
+#   end
+#   owner.save!
+# end
 
 puts "venues created!"
 puts "adding venue images..."
 puts "wait for it..."
 
-Venue.all.each do |venue|
-  3.times do
-    image_file = ['https://res.cloudinary.com/dhkhvto68/image/upload/v1622731507/samples/venue/Iconic-music-venues-Chicago-Theatre_imtjhe.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731507/samples/venue/Iconic-music-venues-Red-Rock-Colorado_ba8rvg.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731507/samples/venue/Iconic-music-venues-Krakow-salt-mines_hnonny.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731508/samples/venue/Iconic-music-venues-Royal-Albert-Hall_ududjw.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731507/samples/venue/best-music-venues-_patrickhayeslighting-Fonda-Theatre_znwsf0.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731508/samples/venue/best-music-venues-_mike__manos-Preservation-Hall-New-Orleans_z6g9s8.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731509/samples/venue/Best-music-venues-Bowery-Ballroom_ubd41l.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731508/samples/venue/Iconic-music-venues-Sydney-opera-house_wjw2lb.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731509/samples/venue/Best-music-venues-Cherry-Bar-Melbourne_gnpft9.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1622300343/samples/venue/joshua-eckstein-lbRzSxHS2kU-unsplash_bd7tbv.jpg'].sample
-    file = URI.open(image_file)
-    venue.photos.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
-    puts "still going..."
-  end
-end
+# Venue.all.each do |venue|
+#   3.times do
+#     image_file = ['https://res.cloudinary.com/dhkhvto68/image/upload/v1622731507/samples/venue/Iconic-music-venues-Chicago-Theatre_imtjhe.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731507/samples/venue/Iconic-music-venues-Red-Rock-Colorado_ba8rvg.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731507/samples/venue/Iconic-music-venues-Krakow-salt-mines_hnonny.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731508/samples/venue/Iconic-music-venues-Royal-Albert-Hall_ududjw.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731507/samples/venue/best-music-venues-_patrickhayeslighting-Fonda-Theatre_znwsf0.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731508/samples/venue/best-music-venues-_mike__manos-Preservation-Hall-New-Orleans_z6g9s8.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731509/samples/venue/Best-music-venues-Bowery-Ballroom_ubd41l.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731508/samples/venue/Iconic-music-venues-Sydney-opera-house_wjw2lb.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731509/samples/venue/Best-music-venues-Cherry-Bar-Melbourne_gnpft9.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1622300343/samples/venue/joshua-eckstein-lbRzSxHS2kU-unsplash_bd7tbv.jpg'].sample
+#     file = URI.open(image_file)
+#     venue.photos.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+#     puts "still going..."
+#   end
+# end
 
 
 puts "venue images added!"
@@ -101,42 +101,42 @@ puts "creating events..."
 
 count = 0
 
-Venue.all.each do |venue|
-  1.times do
-    starting_price = rand(5.0...40.0).round(0)
-    category = ["Food", "Drink", "Show", "Music"].sample
-    Event.create!(
-      price_cents: starting_price * 100,
-      current_price: starting_price,
-      # starting_price in £
-      starting_price: starting_price,
-      start_time: Faker::Time.between_dates(from: Date.today, to: Date.today + 1, period: :night),
-      # start_time: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
-      venue: venue,
-      description: Faker::Restaurant.description,
-      name: Faker::Kpop.iii_groups,
-      num_tickets: (5..100).to_a.sample,
-      duration: [30, 60, 90, 120].sample,
-      min_price: rand((starting_price * 0.5)..(starting_price*0.9)).round(0),
-      category: category,
-      sku: "event_#{count}"
-    )
-  end
-  count += 1
-end
+# Venue.all.each do |venue|
+#   1.times do
+#     starting_price = rand(5.0...40.0).round(0)
+#     category = ["Food", "Drink", "Show", "Music"].sample
+#     Event.create!(
+#       price_cents: starting_price * 100,
+#       current_price: starting_price,
+#       # starting_price in £
+#       starting_price: starting_price,
+#       start_time: Faker::Time.between_dates(from: Date.today, to: Date.today + 1, period: :night),
+#       # start_time: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
+#       venue: venue,
+#       description: Faker::Restaurant.description,
+#       name: Faker::Kpop.iii_groups,
+#       num_tickets: (5..100).to_a.sample,
+#       duration: [30, 60, 90, 120].sample,
+#       min_price: rand((starting_price * 0.5)..(starting_price*0.9)).round(0),
+#       category: category,
+#       sku: "event_#{count}"
+#     )
+#   end
+#   count += 1
+# end
 
 puts "events created!"
 puts "adding events images..."
 puts "wait for it..."
 
-Event.all.each do |event|
-  3.times do
-    image_file = ['https://res.cloudinary.com/dhkhvto68/image/upload/v1622731307/samples/venue/beac4cdb16edb9d0cfd1db1e70cabb9b--concert-posters-music-posters_q3erlf.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731307/samples/venue/18001520-1b12-11e8-bd93-a3fa09536edb_ut2qxk.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731307/samples/venue/rolling-stones-steven-parker-canvas-print_afreoi.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731307/samples/venue/901b97c7af133ee9a63f35c13d946e0a_sexd4m.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731308/samples/venue/fleeceposters_vlkb3l.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731308/samples/venue/Blues_Concert_Band_Line-up_Flyer_-_Made_with_PosterMyWall_faz7ij.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622730667/samples/venue/Joseph_waw57x.png','https://res.cloudinary.com/dhkhvto68/image/upload/v1622730667/samples/venue/grease_fe5rk1.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622730667/samples/venue/phantom_kslpay.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622298458/samples/venue/sebastiaan-stam-qWaWdIchPqE-unsplash_bu2ba4.jpg', 'https://res.cloudinary.com/dhkhvto68/image/upload/v1622729754/samples/venue/Theatre_claqtr.jpg', 'https://res.cloudinary.com/dhkhvto68/image/upload/v1622730554/samples/venue/lionking_nmnvpi.jpg'].sample
-    file = URI.open(image_file)
-    event.photos.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
-  end
-  puts "still going..."
-end
+# Event.all.each do |event|
+#   3.times do
+#     image_file = ['https://res.cloudinary.com/dhkhvto68/image/upload/v1622731307/samples/venue/beac4cdb16edb9d0cfd1db1e70cabb9b--concert-posters-music-posters_q3erlf.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731307/samples/venue/18001520-1b12-11e8-bd93-a3fa09536edb_ut2qxk.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731307/samples/venue/rolling-stones-steven-parker-canvas-print_afreoi.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731307/samples/venue/901b97c7af133ee9a63f35c13d946e0a_sexd4m.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731308/samples/venue/fleeceposters_vlkb3l.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622731308/samples/venue/Blues_Concert_Band_Line-up_Flyer_-_Made_with_PosterMyWall_faz7ij.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622730667/samples/venue/Joseph_waw57x.png','https://res.cloudinary.com/dhkhvto68/image/upload/v1622730667/samples/venue/grease_fe5rk1.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622730667/samples/venue/phantom_kslpay.jpg','https://res.cloudinary.com/dhkhvto68/image/upload/v1622298458/samples/venue/sebastiaan-stam-qWaWdIchPqE-unsplash_bu2ba4.jpg', 'https://res.cloudinary.com/dhkhvto68/image/upload/v1622729754/samples/venue/Theatre_claqtr.jpg', 'https://res.cloudinary.com/dhkhvto68/image/upload/v1622730554/samples/venue/lionking_nmnvpi.jpg'].sample
+#     file = URI.open(image_file)
+#     event.photos.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+#   end
+#   puts "still going..."
+# end
 
 puts "added events images!"
 puts "creating bookings..."
@@ -146,36 +146,36 @@ User.where(owner: false).each do |user|
   users << user
 end
 
-Event.all.each do |event|
-  counter = event.num_tickets
-  5.times do
-    if counter > 0
-      max_attendees = [counter, 5].min
-      num_attendees = rand(1..max_attendees)
-      # total_price in cents / pence
-      total_price = num_attendees * event.starting_price * 100
-      Order.create!(
-        num_attendees: num_attendees,
-        amount_cents: total_price,
-        event: event,
-        user: users.sample
-      )
-      counter -= num_attendees
-    end
-  end
-end
+# Event.all.each do |event|
+#   counter = event.num_tickets
+#   5.times do
+#     if counter > 0
+#       max_attendees = [counter, 5].min
+#       num_attendees = rand(1..max_attendees)
+#       # total_price in cents / pence
+#       total_price = num_attendees * event.starting_price * 100
+#       Order.create!(
+#         num_attendees: num_attendees,
+#         amount_cents: total_price,
+#         event: event,
+#         user: users.sample
+#       )
+#       counter -= num_attendees
+#     end
+#   end
+# end
 
 puts 'bookings created!'
 puts 'creating reviews...'
 
 # Order.joins(:event).where('events.start_time < ?', Time.now).each do |order|
-  Order.all.each do |order|
-    Review.create!(
-      event_review: Faker::Restaurant.review,
-      venue_rating: (1..5).to_a.sample,
-      order: order
-    )
-  end
+  # Order.all.each do |order|
+  #   Review.create!(
+  #     event_review: Faker::Restaurant.review,
+  #     venue_rating: (1..5).to_a.sample,
+  #     order: order
+  #   )
+  # end
 # end
 
 puts 'reviews created!'
@@ -228,11 +228,11 @@ blues_kitchen_event = Event.create!(
   num_tickets: 10,
   duration: 180,
   min_price: 6.50,
-  category: "Hot",
+  category: "Music",
   sku: "event_#{count}"
 )
 
-  count += 1
+count += 1
 
     image_file = ['./app/assets/images/blues_one.jpg','./app/assets/images/blues_two.png','./app/assets/images/blues_three.jpg']
     image_file.each do |photo|
@@ -251,7 +251,7 @@ blues_kitchen_event = Event.create!(
     num_tickets: 10,
     duration: 60,
     min_price: 5.50,
-    category: "Hot",
+    category: "Food",
     sku: "event_#{count}"
   )
 
@@ -275,7 +275,7 @@ blues_kitchen_event = Event.create!(
     num_tickets: 10,
     duration: 60,
     min_price: 1.50,
-    category: "Hot",
+    category: "Drink",
     sku: "event_#{count}"
   )
 
