@@ -1,23 +1,23 @@
 .surprise-button {
-  background-color: black;
+  align-items: center;
+  background-color: var(--clr-black);
   border-style: solid;
   border-color: rgba(130, 55, 118, 1.00);
   border-radius: 50%;
   display: flex;
+  filter: drop-shadow(0px 0px 4px #333);
   height: 50px;
   justify-content: center;
-  align-items: center;
   margin: 2px;
   width: 50px;
-  filter: drop-shadow(0px 0px 4px #333);
-  }
+}
 
-  .fas {
-    color: #FFF;
-    font-size: 26px;
-    padding-bottom: 2px;
-    padding-right: 2px;
-  }
+.fas {
+  color: var(--clr-white);
+  font-size: 26px;
+  padding-bottom: 2px;
+  padding-right: 2px;
+}
 
 .surprise-button-container {
   padding-top: 24px;

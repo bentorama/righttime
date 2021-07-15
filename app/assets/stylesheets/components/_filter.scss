@@ -1,14 +1,14 @@
 .filter-button {
-  background-color: black;
-  border-style: solid;
-  border-color: rgba(254, 103, 87, 1.00);
+  background-color: var(--clr-black);
+  border-color: var(--clr-orange);
   border-radius: 50%;
+  border-style: solid;
   display: flex;
+  filter: drop-shadow(0px 0px 4px #333);
   height: 50px;
   justify-content: center;
   margin: 2px;
   width: 50px;
-  filter: drop-shadow(0px 0px 4px #333);
 }
 
 button {
@@ -17,13 +17,13 @@ button {
 }
   
 .filter-button-active {
-  background-color: black;
+  background: radial-gradient(var(--clr-orange) 1%, var(--clr-black) 80%);    
+  background-color: var(--clr-black);
   border-radius: 50px;
-  background: radial-gradient(rgba(254, 103, 87, 1.00) 1%, black 80%);    
-  animation-name: spin;
-  animation-duration: 5000ms;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear; 
+  // animation-name: spin;
+  // animation-duration: 5000ms;
+  // animation-iteration-count: infinite;
+  // animation-timing-function: linear; 
 }
 
 // @keyframes spin {
@@ -41,8 +41,8 @@ img {
 }
 
 .toggle-container {
-  height: 10px;
   display: flex;
+  height: 10px;
   flex-direction: column;
   position: absolute;
   z-index: 1;

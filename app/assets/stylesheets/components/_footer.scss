@@ -1,6 +1,6 @@
 .footer {
   align-items: center;
-  background-color: black;
+  background-color: var(--clr-black);
   display: flex;
   height: calc(var(--vh, 1vh) * 7);
   justify-content: space-around;
@@ -8,12 +8,12 @@
   width: 100vw;
 
   a {
-    color: rgba(254, 103, 87, 1.00);
+    color: var(--clr-orange);
     font-size: 1.3em;
     margin-top: 4px;
   }
   
   i {
-    color: rgba(254, 103, 87, 1.00);
+    color: var(--clr-orange);
   }
 }

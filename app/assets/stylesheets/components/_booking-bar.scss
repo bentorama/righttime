@@ -1,33 +1,36 @@
+#multiplier,
+#price-input,
+.booking-bar-container {
+  display: flex;
+}
+
 #counter {
   padding-left: 4px;
   padding-right: 4px;
 }
 
 #multiplier {
-  display: flex;
   justify-content: space-evenly;
 }
 
 #price-input {
-  display: flex;
   width: 125px;
 }
 
 .booking-bar-container {
-  display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
   height: 11vh;
-  background-color: black;
+  background-color: var(--clr-black);
   position: fixed;
   bottom: calc(var(--vh, 1vh) * 7);
   width: 100vw;
-  color: #FFF;
+  color: var(--clr-white);
 
   p {
     margin-bottom: 0rem !important;
-    color: white;
+    color: var(--clr-white);
     font-size: 20px;
   }
 }

@@ -1,5 +1,5 @@
 #page-container-checkout {
-  background-image: linear-gradient(to left bottom, #ffdb56, #ffb54b, #ff904d, #ff6a56, #fa4f60, #f1326c, #e20a7a, #c90082, #ad0088, #8e018c, #6b118d);  
+  background-image: linear-gradient(to left bottom, var(--clr-gradient));  
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -58,23 +58,23 @@
   text-align: center;
 
   img {
-    background-color: white;
+    background-color: var(--clr-white);
     border-radius: 6px;
     height: 110px;
     width: 190px;
   }
 
   h1 {
-    color: white;
-    font-family: 'Oswald', sans-serif;
+    color: var(--clr-white);
+    font-family: var(--ff-header);
     font-size: 24px;
     text-transform: uppercase;
     padding-top: 10px;
   }
 
   p {
-    color: white;
-    font-family: 'Oswald', sans-serif;
+    color: var(--clr-white);
+    font-family: var(--ff-header);
     font-size: 16px;
     text-transform: uppercase;
     margin-top: 16px;
