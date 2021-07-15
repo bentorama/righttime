@@ -1,5 +1,5 @@
 #page-container-favourites {
-  background-image: linear-gradient(to left bottom, #ffdb56, #ffb54b, #ff904d, #ff6a56, #fa4f60, #f1326c, #e20a7a, #c90082, #ad0088, #8e018c, #6b118d);
+  background-image: linear-gradient(to left bottom, var(--clr-gradient));
   display: flex;
   flex-direction: column;
   margin-bottom: 7vh;
@@ -16,7 +16,7 @@
 .order-header {
   h2 {
     color: var(--clr-black);
-    font-family: 'Oswald', sans-serif;
+    font-family: var(--ff-header);
     font-size: 24px;
     padding-bottom: 6px;
     text-transform: uppercase;
@@ -35,8 +35,8 @@
   width: 96vw;
 
   h2 {
-    color: #FFF;
-    font-family: oswald, sans-serif;
+    color: var(--clr-white);
+    font-family: var(--ff-header);
     font-size: 40px;
     margin-left: 8px;
     margin-top: -120px;
@@ -74,7 +74,7 @@
   }
 
   .fas {
-    color: rgba(254, 103, 87, 1.00);
+    color: var(--clr-orange);
   }
 
   #heart {
