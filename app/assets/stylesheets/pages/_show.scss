@@ -1,6 +1,17 @@
+#BG-BLACK,
+#page-container-show,
+#clockdiv {
+  background-color: var(--clr-black);
+}
+
+#F-WHITE,
+#clockdiv,
+.past-event {
+  color: var(--clr-white);
+}
+
 // page container
 #page-container-show {
-  background-color: var(--clr-black);
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -20,9 +31,7 @@
   }
 }
 
-#clockdiv{
-  background-color: var(--clr-black);
-  color: var(--clr-text);
+#clockdiv {
   font-size: 16px;
   height: 5vh;
   display: flex;
@@ -33,7 +42,6 @@
 
 // after-countdown
 .past-event {
-  color: var(--clr-text);
   justify-content: space-around;
   margin: auto;
 }
