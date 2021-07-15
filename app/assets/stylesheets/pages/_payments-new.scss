@@ -42,7 +42,7 @@
   border-radius: 6px;
   display: flex;
   filter: drop-shadow(0 15px 1rem rgba(15, 15, 15, 0.65));
-  background: radial-gradient(circle at top, rgba(61, 50, 76, 1.00), black, black, black 100%);
+  background: radial-gradient(circle at top, var(--clr-purple), var(--clr-black), var(--clr-black), var(--clr-black) 100%);
   width: 90vw;
   height: 60%;
   margin-left: auto;
@@ -64,24 +64,25 @@
     width: 190px;
   }
 
-  h1 {
+  h1,
+  p {
     color: var(--clr-white);
     font-family: var(--ff-header);
-    font-size: 24px;
     text-transform: uppercase;
+  }
+
+  h1 {
+    font-size: 24px;
     padding-top: 10px;
   }
 
   p {
-    color: var(--clr-white);
-    font-family: var(--ff-header);
     font-size: 16px;
-    text-transform: uppercase;
     margin-top: 16px;
   }
 
   .fas {
-    color: rgba(61, 50, 76, 1.00);
+    color: var(--clr-purple);
     font-size: 36px;
     margin-left: 8px;
     align-items: flex-start;

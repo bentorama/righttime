@@ -57,7 +57,7 @@
 }
 
 .event-card {
-  background: radial-gradient(circle at top, rgba(61, 50, 76, 1.00), var(--clr-black), var(--clr-black), var(--clr-black) 200%);
+  background: radial-gradient(circle at top, var(--clr-purple), var(--clr-black), var(--clr-black), var(--clr-black) 200%);
   border-radius: 6px;
   filter: drop-shadow(0px 2px 4px #333);
   display: flex;
