@@ -15,7 +15,7 @@
 
 .order-header {
   h2 {
-    color: black;
+    color: var(--clr-black);
     font-family: 'Oswald', sans-serif;
     font-size: 24px;
     padding-bottom: 6px;
@@ -24,9 +24,9 @@
 }
 
 .favourite-card {
-  background: radial-gradient(circle at top, rgba(61, 50, 76, 1.00), black, black, black 200%);
+  background: radial-gradient(circle at top, rgba(61, 50, 76, 1.00), var(--clr-black), var(--clr-black), var(--clr-black) 200%);
   border-radius: 6px;
-  box-shadow: black 0px 15px 30px -10px;
+  box-shadow: var(--clr-black) 0px 15px 30px -10px;
   display: flex;
   height: 25vh;
   margin-bottom: 16px;
@@ -56,15 +56,15 @@
   }
 
   p {
-    color: #FFF;
-    font-family: 'Source Sans Pro', sans-serif;
+    color: var(--clr-white);
+    font-family: var(--ff-primary);
     font-size: 16px;
     padding-bottom: 6px;
   }
 
   span {
-    color: #FFF;
-    font-family: 'Source Sans Pro', sans-serif;
+    color: var(--clr-white);
+    font-family: var(--ff-primary);
     font-size: 16px;
     padding-bottom: 6px;
   }
