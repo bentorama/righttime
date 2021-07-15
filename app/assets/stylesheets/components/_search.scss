@@ -3,20 +3,20 @@ input {
   border-right-style: hidden;
   border-left-style: hidden;
   border-bottom-style: hidden;
-  background-color: white;
+  background-color: var(--clr-white);
   border-radius: 32px;
   height: 60px;
   padding-left: 24px;
-  color: black; 
-  font-family: 'Source Sans Pro', sans-serif;
+  color: var(--clr-black); 
+  font-family: var(--ff-primary);
   font-size: 20px;
   opacity: 1;
   padding-bottom: 4px;
 }
 
 #pin {
-  background-color: rgba(255, 222, 2, 1.00);
-  color: black;
+  background-color: var(--clr-yellow);
+  color: var(--clr-black);
   border-radius: 50%;
   height: 60px;
   margin-right: 8px;
@@ -26,18 +26,13 @@ input {
 
   .fas {
     font-size: 32px;
-    color: black;
+    color: var(--clr-black);
   }
 }
 
-.search-container {
-  display: flex;
-  justify-content: center;
-}
-
 ::placeholder {
-  color: black; 
-  font-family: 'Source Sans Pro', sans-serif;
+  color: var(--clr-black); 
+  font-family: var(--ff-primary);
   font-size: 20px;
   opacity: 1;
 }
@@ -58,6 +53,11 @@ input {
   top: 85%;
   position: absolute;
   right: 0;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
 }
 
 #search:focus {
