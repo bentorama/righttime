@@ -67,24 +67,6 @@
     }
   }
 
-// .neon-button:hover,
-// .neon-button:focus {
-//   color: black;
-//   text-shadow: none;
-// }
-
-// .neon-button:hover::after,
-// .neon-button:focus::after {
-//   opacity: 1;
-// }
-
-// .neon-button:hover::before,
-// .neon-button:focus::before {
-//   opacity: 1;
-// }
-
-
-
 #counter {
   padding-left: 4px;
   padding-right: 4px;
@@ -119,21 +101,11 @@
   }
 }
 
-// .booking-btn {
-//   border-style: solid; 
-//   border-radius: 5px;
-//   border-color: white; 
-//   padding: 4px;
-//   color: white;
-// }
-
 .counter-btn {
   border-radius: 50%;
   padding: 2px 8px;
   border-style: none;
   background: transparent;
-  // box-shadow: 5px 5px 10px grey,
-  // -5px -5px 10px lightgrey;
 
   .fas {
     font-size: 16px;
