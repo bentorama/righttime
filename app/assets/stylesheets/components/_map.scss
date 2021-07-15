@@ -1,21 +1,14 @@
 // map marker card
-.mapboxgl-popup {
-  padding: 0px !important;
-}
-
 .mapboxgl-popup-content {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
-  padding: 0px !important;
 
   a {
     color: purple;
-    line-height: 0px;
     text-decoration: none;
   }
 }
 
 .img-map-card {
     height: 100px;
-    margin: 0px;
 } 
