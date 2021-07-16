@@ -1,4 +1,4 @@
-<div id="page-container-show">
+<div id="page-container-show" class="flex-col">
   <!-- image carousel -->
   <div id="carousel-container">
     <%= render "components/carousel", locals: { event: @event } %>
@@ -8,7 +8,7 @@
   <div id="event-countdown">
     <div id="clockdiv">
       <% if @event.start_time > Time.now %>
-        <div class="flex">
+        <div id="countdown" class="flex-center">
           <p>Starting in&nbsp;</p>
           <p class="hours"></p>
           <div class="smalltext">&nbsp;hours&nbsp;</div>

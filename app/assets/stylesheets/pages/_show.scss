@@ -10,16 +10,11 @@
 
 // page container
 #page-container-show {
-  display: flex;
-  flex-direction: column;
   height: 100vh;
 }
 
 // countdown
-.flex {
-  display: flex;
-  justify-content: center;
-
+.countdown {
   .minutes,
   .seconds {
     width: 20px;

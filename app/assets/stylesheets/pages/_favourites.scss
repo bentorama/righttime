@@ -1,19 +1,11 @@
-#page-container-favourites {
+#saved-container {
   background-image: linear-gradient(to left bottom, var(--clr-gradient));
-  display: flex;
-  flex-direction: column;
   margin-bottom: 7vh;
   padding-top: 8px;
   min-height: 100vh;
 }
 
-#checkout-footer {
-  bottom: 0;
-  position: fixed;
-  width: 100vw;
-}
-
-.order-header {
+#saved-header {
   h2 {
     color: var(--clr-black);
     font-family: var(--ff-header);
@@ -27,7 +19,6 @@
   background: radial-gradient(circle at top, var(--clr-purple), var(--clr-black), var(--clr-black), var(--clr-black) 200%);
   border-radius: 6px;
   box-shadow: var(--clr-black) 0px 15px 30px -10px;
-  display: flex;
   height: 25vh;
   margin-bottom: 16px;
   margin-left: 2vw;
@@ -63,7 +54,7 @@
     padding-bottom: 6px;
   }
 
-  .event-timer {
+  .event-time {
     margin-top: 30px;
   }
 
@@ -72,8 +63,6 @@
   }
 
   #heart {
-    display: flex;
-    flex-direction: row-reverse;
     padding-right: 8px;
     padding-top: 8px;
   }
