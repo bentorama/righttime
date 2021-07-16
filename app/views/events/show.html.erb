@@ -7,7 +7,7 @@
   <!-- event countdown -->
   <div id="event-countdown">
     <div id="clockdiv">
-      <% if @event.start_time > Time.now %>
+      <% if @event.start_time.hour > Time.now.hour %>
       <!-- <div>
           <span class="days"></span>
           <div class="smalltext">Days</div>
