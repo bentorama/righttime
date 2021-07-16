@@ -25,27 +25,23 @@
                 <%= image_tag(event.photos.first) %>
               <% end %>
             </div>
-            <div id="event-info" class="flex-col">
-              <div>
-                <div class="card-top-row">
-                  <div id="heart" class="flex-reverse">
-                    <% if user_signed_in? %>
-                      <% if current_user.is_favourite_event?(event.id) %>
-                        <%= link_to favourite_path(event.favourites.find_by(user_id: current_user.id)), :method => :delete do %>
-                          <i class="fas fa-heart" id="index-heart"></i>
-                        <% end %>
-                      <% else %>
-                        <%= simple_form_for([ event, Favourite.new ]) do |f|  %>
-                          <%= button_tag type: 'submit' do %>
-                            <i class="far fa-heart" id="index-heart"></i>
-                          <% end %>
-                        <% end %>
-                      <% end %>
-                    <% else %>
-                      <i class="far fa-heart" id="index-heart"></i>
+            <div class="event-info flex-col">
+              <div id="heart" class="flex-reverse">
+                <% if user_signed_in? %>
+                  <% if current_user.is_favourite_event?(event.id) %>
+                    <%= link_to favourite_path(event.favourites.find_by(user_id: current_user.id)), :method => :delete do %>
+                      <i class="fas fa-heart" id="index-heart"></i>
                     <% end %>
-                  </div>
-                </div>
+                  <% else %>
+                    <%= simple_form_for([ event, Favourite.new ]) do |f|  %>
+                      <%= button_tag type: 'submit' do %>
+                        <i class="far fa-heart" id="index-heart"></i>
+                      <% end %>
+                    <% end %>
+                  <% end %>
+                <% else %>
+                  <i class="far fa-heart" id="index-heart"></i>
+                <% end %>
               </div>
               <div class="event-details">
                 <h2><%= link_to event.name, event_path(event) %></h2>

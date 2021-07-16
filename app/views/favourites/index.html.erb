@@ -1,10 +1,8 @@
 <div id="saved-container" class="flex-col">
   <div id="saved-header" class="flex-center">
-    <div class="order-back">      
-      <%= link_to 'back', onclick: 'window.history.back();' do  %>
-        <i class="fas fa-chevron-left back-btn"></i>
-      <% end %>
-    </div>
+    <%= link_to 'back', onclick: 'window.history.back();' do  %>
+      <i id="arrow" class="fas fa-chevron-left"></i>
+    <% end %>
     <h2>Saved</h2>
   </div>
 
@@ -13,7 +11,6 @@
   <% @favourites.each do |favourite| %>
     <% if favourite.event.start_time > Time.now %>
       <div class="favourite-card flex">
-        <!-- event card image -->
         <div>
           <div>
             <% if favourite.event.current_price == favourite.event.starting_price %>  
@@ -26,15 +23,11 @@
             <%= image_tag(favourite.event.photos.first) %>
           <% end %>
         </div>
-        <div class="event-information">
-          <div>
-            <div class="card-top-row">
-              <div id="heart" class="flex-reverse">
-                <%= link_to favourite_path(favourite), method: :delete, remote: true do %>
-                  <i id="icon-heart" class="fas fa-heart"></i>
-                <% end %>
-              </div>
-            </div>
+        <div class="event-info flex-col">
+          <div id="heart" class="flex-reverse">
+            <%= link_to favourite_path(favourite), method: :delete, remote: true do %>
+              <i id="icon-heart" class="fas fa-heart"></i>
+            <% end %>
           </div>
           <div>
             <h2><%= link_to favourite.event.name, event_path(favourite.event) %></h2>
