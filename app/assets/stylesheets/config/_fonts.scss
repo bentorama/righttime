@@ -5,7 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap');
 
 // Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
+$body-font: var(--ff-header);
 $headers-font: "Nunito", "Helvetica", "sans-serif";
 $header-one: 'Fredoka One', cursive;
 $header-two: 'Patrick Hand', cursive;

@@ -1,6 +1,23 @@
-.filter-button {
+#filter-container {
+  height: 10px;
+  position: absolute;
+  z-index: 1;
+}
+
+#button-position {
+  padding-top: 24px;
+}
+
+.fas {
+  color: var(--clr-white);
+  font-size: 26px;
+  padding-bottom: 2px;
+  padding-right: 2px;
+}
+
+.filter-button,
+.random-event-button {
   background-color: var(--clr-black);
-  border-color: var(--clr-orange);
   border-radius: 50%;
   border-style: solid;
   display: flex;
@@ -11,40 +28,26 @@
   width: 50px;
 }
 
-button {
-  background-color: transparent;
-  border: none;
+.filter-button {
+  border-color: var(--clr-orange); 
 }
-  
+
 .filter-button-active {
   background: radial-gradient(var(--clr-orange) 1%, var(--clr-black) 80%);    
   background-color: var(--clr-black);
   border-radius: 50px;
-  // animation-name: spin;
-  // animation-duration: 5000ms;
-  // animation-iteration-count: infinite;
-  // animation-timing-function: linear; 
 }
 
-// @keyframes spin {
-//   from {
-//     transform:rotate(0deg);
-//   }
-//   to {
-//     transform:rotate(360deg);
-//   }
-// }
-    
-// button icons
+.random-event-button {
+  align-items: center;
+  border-color: rgba(130, 55, 118, 1.00);
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+   
 img {
   height: 30px;
 }
-
-.toggle-container {
-  display: flex;
-  height: 10px;
-  flex-direction: column;
-  position: absolute;
-  z-index: 1;
-}
-

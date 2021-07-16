@@ -1,25 +1,24 @@
-<div class="wrapper">
-  <div class="footer">
-    <div>
-      <%= link_to root_path do %>
-        <i class="fas fa-home"></i>
-      <% end %>
-    </div>
-    <div>
-      <%= link_to favourites_path do %>
-        <i href="#" id="footer-heart" class="far fa-heart"></i>
-      <% end %>
-    </div>
-    <% if user_signed_in? %>
-      <div>
-        <%= link_to(my_bookings_orders_path) do %>
-          <i class="fas fa-user"></i>
-        <% end %>
-      </div>
-    <% else %>
-      <div>
-        <a href="/users/sign_in" class="far fa-user"></a>
-      </div>
+<div id="footer" class="flex-around">
+  <div>
+    <%= link_to root_path do %>
+      <i class="fas fa-home"></i>
     <% end %>
   </div>
+  <div>
+    <%= link_to favourites_path do %>
+      <i class="far fa-heart"></i>
+    <% end %>
+  </div>
+  <% if user_signed_in? %>
+    <div>
+      <%= link_to(my_bookings_orders_path) do %>
+        <i class="fas fa-user"></i>
+      <% end %>
+    </div>
+  <% else %>
+    <div>
+      <a href="/users/sign_in" class="far fa-user"></a>
+    </div>
+  <% end %>
 </div>
+

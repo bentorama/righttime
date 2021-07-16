@@ -1,10 +1,8 @@
-#BG-BLACK,
 #page-container-show,
 #clockdiv {
   background-color: var(--clr-black);
 }
 
-#F-WHITE,
 #clockdiv,
 .past-event {
   color: var(--clr-white);
@@ -12,20 +10,12 @@
 
 // page container
 #page-container-show {
-  display: flex;
-  flex-direction: column;
   height: 100vh;
 }
 
 // countdown
-.flex {
-  display: flex;
-  justify-content: center;
-
-  .minutes {
-    width: 20px;
-  }
-
+.countdown {
+  .minutes,
   .seconds {
     width: 20px;
   }
@@ -136,28 +126,27 @@
 }
 
 .content {
-  h1 {
-    color: var(--clr-white);
-    font-family: var(--ff-header);
-    margin-top: -2px;
-    text-transform: uppercase;
-  }
-
-  h2 {
-    color: var(--clr-white);
-    font-family: var(--ff-header);
-    font-size: 24px;
-    padding-bottom: 8px;
-    text-transform: uppercase;
-  }
-
+  h1,
+  h2,
   h3 {
     color: var(--clr-white);
     font-family: var(--ff-header);
+    text-transform: uppercase;
+  }
+
+  h1 {
+    margin-top: -2px;
+  }
+
+  h2 {
+    font-size: 24px;
+    padding-bottom: 8px;
+  }
+
+  h3 {
     font-size: 20px;
     padding-bottom: 4px;
     padding-top: 6px;
-    text-transform: uppercase;
   }
 
   i {
@@ -193,16 +182,13 @@
 // review section
 
 #reveal-info {
-  color: var(--clr-white);
-  font-family: var(--ff-primary);
-  font-size: 12px;
-  
   p {
     color: var(--clr-white);
     font-family: var(--ff-primary);
     font-size: 12px;
   }
 }
+
 .review-container {
   align-items: center;
   display: flex;
@@ -261,14 +247,6 @@
 
 .hide {
   display: none;
-}
-
-// footer 
-#checkout-footer {
-  bottom: 0;
-  position: fixed;
-  width: 100vw;
-  box-shadow: none;
 }
 
 // full description javascript

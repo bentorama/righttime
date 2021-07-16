@@ -14,14 +14,7 @@
   width: 100%;
 }
 
-#checkout-footer {
-  margin-top: auto;
-}
-
-
-#filter-flex {
-  display: flex;
-  flex-direction: row-reverse;
+#filter-buttons {
   padding-right: 8px;
   position: relative;
   top: 10%;
@@ -34,11 +27,11 @@
     font-size: 24px;
     margin-left: 8px;
     margin-top: -4px;
-    text-transform: uppercase;
+    max-width: 170px;
     overflow: hidden;
     text-overflow: ellipsis;
+    text-transform: uppercase;
     white-space: nowrap;
-    max-width: 170px;
   }
 }
 
@@ -57,7 +50,7 @@
 }
 
 .event-card {
-  background: radial-gradient(circle at top, rgba(61, 50, 76, 1.00), var(--clr-black), var(--clr-black), var(--clr-black) 200%);
+  background: radial-gradient(circle at top, var(--clr-purple), var(--clr-black), var(--clr-black), var(--clr-black) 200%);
   border-radius: 6px;
   filter: drop-shadow(0px 2px 4px #333);
   display: flex;
@@ -111,11 +104,6 @@
     font-size: 16px;
   }
 
-  .event {
-    display: flex;
-    align-items: flex-start;
-  } 
-
   .far,
   .fas {
     margin: 0;
@@ -128,13 +116,11 @@
   }
 
   #heart {
-    display: flex;
-    flex-direction: row-reverse;
     width: 100%;
   }
 }
 
-.event-card-container {
+#card-container {
   align-items: center;
   display: flex;
   height: calc(var(--vh, 1vh) * 28);
@@ -158,15 +144,13 @@
   position: absolute;
 }
 
-.event-timer {
+.event-time {
   margin-bottom: 4px;
   margin-left: 8px;
 }
 
-.event-information {
+.event-info {
   background-color: transparent;
-  display: flex;
-  flex-direction: column;
   justify-content: space-between;
   width: 100%;
 
@@ -176,6 +160,6 @@
 }
 
 #index-heart {
-  color: red;
+  color: var(--clr-red);
   font-size: 24px;
 }
