@@ -1,23 +1,20 @@
 input {
-  border-top-style: hidden;
-  border-right-style: hidden;
-  border-left-style: hidden;
-  border-bottom-style: hidden;
   background-color: var(--clr-white);
   border-radius: 32px;
-  height: 60px;
-  padding-left: 24px;
+  border-style: hidden;
   color: var(--clr-black); 
   font-family: var(--ff-primary);
   font-size: 20px;
+  height: 60px;
   opacity: 1;
   padding-bottom: 4px;
+  padding-left: 24px;
 }
 
-#pin {
+#locate-button {
   background-color: var(--clr-yellow);
-  color: var(--clr-black);
   border-radius: 50%;
+  color: var(--clr-black);
   height: 60px;
   margin-right: 8px;
   padding-top: 12px;
@@ -37,7 +34,8 @@ input {
   opacity: 1;
 }
 
-#query:focus {
+#query:focus,
+#search:focus {
   outline: none;
 }
 
@@ -53,15 +51,6 @@ input {
   top: 85%;
   position: absolute;
   right: 0;
-}
-
-.search-container {
-  display: flex;
-  justify-content: center;
-}
-
-#search:focus {
-  outline: none;
 }
 
 input[type=text]::-ms-clear {  display: none; width : 0; height: 0; }
