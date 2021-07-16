@@ -1,10 +1,3 @@
-#page-container-checkout {
-  background-image: linear-gradient(to left bottom, var(--clr-gradient));  
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
 #back-arrow {
   margin-top: 8px;
   position: fixed;
@@ -12,11 +5,12 @@
   z-index: 1;
 }
 
-#checkout-footer {
-  margin-top: auto;
+#checkout-container {
+  background-image: linear-gradient(to left bottom, var(--clr-gradient));  
+  min-height: 100vh;
 }
 
-#checkout-content {
+#checkout-info {
   align-items: center;
   justify-content: space-around;
   height: 100%;
@@ -49,7 +43,6 @@
   margin-right: auto;
   margin-top: 30%;
   margin-bottom: auto;
-
   position: absolute;
   left: 0;
   right: 0;
