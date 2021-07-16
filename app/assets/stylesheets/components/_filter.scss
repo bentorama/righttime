@@ -4,6 +4,17 @@
   z-index: 1;
 }
 
+#button-position {
+  padding-top: 24px;
+}
+
+.fas {
+  color: var(--clr-white);
+  font-size: 26px;
+  padding-bottom: 2px;
+  padding-right: 2px;
+}
+
 .filter-button,
 .random-event-button {
   background-color: var(--clr-black);
@@ -40,14 +51,3 @@ button {
 img {
   height: 30px;
 }
-
-.fas {
-  color: var(--clr-white);
-  font-size: 26px;
-  padding-bottom: 2px;
-  padding-right: 2px;
-}
-
-#button-position {
-  padding-top: 24px;
-} 
