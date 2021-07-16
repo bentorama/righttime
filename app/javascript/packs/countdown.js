@@ -16,9 +16,11 @@
 
 
 const getTimeRemaining = (endtime) => {
+  console.log(endtime);
   const end = new Date(endtime);
+  console.log(end);
   const timeNow = new Date();
-  const endSecs = end.getHours() * 3600 + end.getMinutes() * 60 + end.getSeconds();
+  const endSecs = (end.getHours() - 1) * 3600 + end.getMinutes() * 60 + end.getSeconds();
   const nowSecs = timeNow.getHours() * 3600 + timeNow.getMinutes() * 60 + timeNow.getSeconds();
   // const total = Date.parse(endtime) - Date.parse(new Date());
   const total = endSecs - nowSecs;
