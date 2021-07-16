@@ -9,7 +9,7 @@
       
     <!-- event cards -->
     
-    <div id="card-container" id="scrolling-container">
+    <div class="card-container" id="scrolling-container">
       <% @events.each do |event| %>
         <% if event.start_time.hour > Time.now.hour %>
           <div class="event-card" id="id-<%=event.id%>">
