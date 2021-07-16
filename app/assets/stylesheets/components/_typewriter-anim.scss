@@ -1,0 +1,32 @@
+.typewriter h2 {
+  color: var(--clr-text);
+  font-size: var(--f-size-header);
+  margin-left: 2px;
+  margin-top: -8px;
+  overflow: hidden;
+  border-right: .15em solid var(--clr-logo);
+  white-space: nowrap;
+  animation: 
+    typing 8s steps(40, end),
+    blink-caret .75s step-end infinite;
+    animation-iteration-count: infinite;
+}
+
+@keyframes typing {
+  0% {
+    width: 0; 
+  }
+
+  50% {
+    width: 83%;
+  }
+
+  100% {
+    width: 83%;
+  }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--clr-white); }
+}

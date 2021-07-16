@@ -8,10 +8,6 @@
   <div id="event-countdown">
     <div id="clockdiv">
       <% if @event.start_time > Time.now %>
-      <!-- <div>
-          <span class="days"></span>
-          <div class="smalltext">Days</div>
-        </div> -->
         <div class="flex">
           <p>Starting in&nbsp;</p>
           <p class="hours"></p>
@@ -30,15 +26,12 @@
   <!-- event content -->
   <div class="content">
     <div class="show-favorites">
-      <!-- <p id="focus">Add to favourites</p> -->
       <%= simple_form_for([ @event, Favourite.new ]) do |f|  %>
           <%= button_tag type: 'submit' do %>
             <i id="heart-js" class="fas fa-heart"></i>
           <% end %>
       <% end %>
     </div>
-
-    
 
     <div class="show-details">
       <%= link_to events_path do %>
@@ -91,12 +84,6 @@
     </div> 
     </div>
   </div>
-
-    <!-- review section -->
-    
-      <!-- review header -->
-      
-       
   </div>
 </div>
 
