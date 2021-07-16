@@ -1,4 +1,4 @@
-<div id="page-container-show">
+<div id="page-container-show" class="flex-col">
   <!-- image carousel -->
   <div id="carousel-container">
     <%= render "components/carousel", locals: { event: @event } %>
@@ -8,11 +8,7 @@
   <div id="event-countdown">
     <div id="clockdiv">
       <% if @event.start_time.hour > Time.now.hour %>
-      <!-- <div>
-          <span class="days"></span>
-          <div class="smalltext">Days</div>
-        </div> -->
-        <div class="flex">
+        <div id="countdown" class="flex-center">
           <p>Starting in&nbsp;</p>
           <p class="hours"></p>
           <div class="smalltext">&nbsp;hours&nbsp;</div>
@@ -30,15 +26,12 @@
   <!-- event content -->
   <div class="content">
     <div class="show-favorites">
-      <!-- <p id="focus">Add to favourites</p> -->
       <%= simple_form_for([ @event, Favourite.new ]) do |f|  %>
           <%= button_tag type: 'submit' do %>
             <i id="heart-js" class="fas fa-heart"></i>
           <% end %>
       <% end %>
     </div>
-
-    
 
     <div class="show-details">
       <%= link_to events_path do %>
@@ -91,12 +84,6 @@
     </div> 
     </div>
   </div>
-
-    <!-- review section -->
-    
-      <!-- review header -->
-      
-       
   </div>
 </div>
 
@@ -114,6 +101,5 @@
 <%= javascript_tag "var obj = #{@event.to_json}" %>
 <%= javascript_pack_tag "countdown" %>
 <%= javascript_pack_tag "description-reveal" %>
-<%= javascript_pack_tag "switch" %>
 <%= javascript_pack_tag "review-toggle" %>
 

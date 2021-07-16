@@ -7,7 +7,6 @@
       <% else %>
         <i class="far fa-times-circle"></i>
       <% end %>  
-      </h1>
       <h2>Get Ready Now.</h2>
       <p><%= image_tag(@order.event.photos.first) %></p>
       <div id="destination">
@@ -22,7 +21,6 @@
 
       <div id="directions-container" class="hide">
         <div id="map-directions" style="width: 287.33px; min-height: 40vh;" data-destination="<%= @destination.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-        <%# <div id="instructions"></div> %>
       </div>
   
       <button class="neon-button">

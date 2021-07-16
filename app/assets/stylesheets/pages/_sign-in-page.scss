@@ -1,11 +1,10 @@
 // devise
-
 .sign-in-container {
   padding: 20px;
-    h1 {
-    color: $content-color;
-    }
 
+  h1 {
+    color: $content-color;
+  }
 }
 
 .form-container {
@@ -13,7 +12,7 @@
 }
 
 .log-in-button {
-  color: white;
+  color: var(--clr-white);
   font: $header-two;
   background-color: $content-color;
   padding: 2px 8px;
@@ -33,7 +32,7 @@
 .sign-up-btn {
   color: $content-color;
   font: $header-two;
-  background-color: white;
+  background-color: var(--clr-white);
   padding: 8px 8px;
   border-width: 2px;
   border-style: solid;

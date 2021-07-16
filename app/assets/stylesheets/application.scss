@@ -13,21 +13,17 @@
 @import "pages/index";
 
 :root {
-  --clr-footer-icons: #A9729C;
-  --clr-footer-bg: #fff;
-  --clr-logo: #fff;
-  --clr-primary: #A9729C;
-  --clr-text: #fff;
-  --clr-card-text: black;
-  --clr-card-bg: #fff;
+  --clr-black: black;
+  --clr-white: #fff;
+  --clr-blue: rgba(37, 160, 245, 1.00);
+  --clr-yellow: rgba(255, 222, 2, 1.00);
+  --clr-orange: rgba(254, 103, 87, 1.00);
+  --clr-red: red;
+  --clr-purple: rgba(61, 50, 76, 1.00);
+  --clr-gradient: #ffdb56, #ffb54b, #ff904d, #ff6a56, #fa4f60, #f1326c, #e20a7a, #c90082, #ad0088, #8e018c, #6b118d;
 
-  --ff-logo: 'Fredoka One', cursive;
-  --ff-header: 'Arial';
-  --ff-primary: 'Puritan';
-
-  --border-width: 3px;
-
-  --f-size-logo: 3.2em;
-  --f-size-header: 1.2em;
+  --ff-logo: 'Righteous', cursive;
+  --ff-header: 'Oswald', sans-serif;
+  --ff-primary: 'Source Sans Pro', sans-serif;
 }
 

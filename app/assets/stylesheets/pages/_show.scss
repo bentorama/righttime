@@ -1,28 +1,27 @@
+#page-container-show,
+#clockdiv {
+  background-color: var(--clr-black);
+}
+
+#clockdiv,
+.past-event {
+  color: var(--clr-white);
+}
+
 // page container
 #page-container-show {
-  background-color: black;
-  display: flex;
-  flex-direction: column;
   height: 100vh;
 }
 
 // countdown
-.flex {
-  display: flex;
-  justify-content: center;
-
-  .minutes {
-    width: 20px;
-  }
-
+.countdown {
+  .minutes,
   .seconds {
     width: 20px;
   }
 }
 
-#clockdiv{
-  background-color: black;
-  color: var(--clr-text);
+#clockdiv {
   font-size: 16px;
   height: 5vh;
   display: flex;
@@ -33,21 +32,20 @@
 
 // after-countdown
 .past-event {
-  color: var(--clr-text);
   justify-content: space-around;
   margin: auto;
 }
 
 // add to favourites
 .show-favorites {
-  background-color: #FFF;
+  background-color: var(--clr-white);
   display: flex;
   height: 1.6rem;
   justify-content: flex-end;
   max-width: 100%;
 
   p {
-    color: black !important;
+    color: var(--clr-black) !important;
   }
 
   .fab {
@@ -95,7 +93,7 @@
 
 // show content
 .show-details {
-  background: radial-gradient(circle at 50%, #3d324c, black, black, black 200%);
+  background: radial-gradient(circle at 50%, #3d324c, var(--clr-black), var(--clr-black), var(--clr-black) 200%);
   background-attachment: fixed;
   background-size: cover;
   padding-bottom: 27vh;
@@ -112,12 +110,12 @@
 
 .rating-container {
   span {
-    color: #FFF;
-    font-family: 'Source Sans Pro', sans-serif;
+    color: var(--clr-white);
+    font-family: var(--ff-primary);
   }
 
   .fas {
-    color: rgba(254, 103, 87, 1.00);
+    color: var(--clr-orange);
     font-size: 16px;
     margin: 0;
   }
@@ -128,41 +126,40 @@
 }
 
 .content {
-  h1 {
-    color: #FFF;
-    font-family: 'Oswald', sans-serif;
-    margin-top: -2px;
+  h1,
+  h2,
+  h3 {
+    color: var(--clr-white);
+    font-family: var(--ff-header);
     text-transform: uppercase;
+  }
+
+  h1 {
+    margin-top: -2px;
   }
 
   h2 {
-    color: #FFF;
-    font-family: 'Oswald', sans-serif;
     font-size: 24px;
     padding-bottom: 8px;
-    text-transform: uppercase;
   }
 
   h3 {
-    color: #FFF;
-    font-family: 'Oswald', sans-serif;
     font-size: 20px;
     padding-bottom: 4px;
     padding-top: 6px;
-    text-transform: uppercase;
   }
 
   i {
-    color: rgba(254, 103, 87, 1.00);
+    color: var(--clr-orange);
   }
 
   p {
-    color: #FFF;
-    font-family: 'Source Sans Pro', sans-serif;
+    color: var(--clr-white);
+    font-family: var(--ff-primary);
     font-size: 16px;
   }
   
-  background-image: linear-gradient(to left bottom, #ffdb56, #ffb54b, #ff904d, #ff6a56, #fa4f60, #f1326c, #e20a7a, #c90082, #ad0088, #8e018c, #6b118d);
+  background-image: linear-gradient(to left bottom, var(--clr-gradient));
   display: flex;
   flex-direction: column;
 }
@@ -177,7 +174,7 @@
   padding-bottom: 18px;
 
   p {
-    color: rgba(254, 103, 87, 1.00);
+    color: var(--clr-orange);
     font-size: 12px;
   }
 }
@@ -185,16 +182,13 @@
 // review section
 
 #reveal-info {
-  color: #FFF;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 12px;
-  
   p {
-    color: #FFF;
-    font-family: 'Source Sans Pro', sans-serif;
+    color: var(--clr-white);
+    font-family: var(--ff-primary);
     font-size: 12px;
   }
 }
+
 .review-container {
   align-items: center;
   display: flex;
@@ -207,31 +201,31 @@
   width: 100%;
 
   h3 {
-    color: white;
+    color: var(--clr-white);
     font-size: 20px;
     text-transform: uppercase;
   }
 
   .fas {
-    color: rgba(254, 103, 87, 1.00);
+    color: var(--clr-orange);
     font-size: 16px;
     margin: 0;
   }
 
   .far {
     background-color: transparent;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: var(--ff-primary);
     font-size: 1rem;
-    color: rgba(37, 160, 245, 1.00);
+    color: var(--clr-blue);
     display: inline-block;
     cursor: pointer;
     text-decoration: none;
-    border: rgba(37, 160, 245, 1.00) 0.125em solid;
+    border: var(--clr-blue) 0.125em solid;
     padding: .25em 1.25em;
     border-radius: 0.25em;
     text-transform: uppercase;
-    text-shadow: 0 0 0.125em rgba(255, 255, 255, 0.5), 0 0 0.45em rgba(37, 160, 245, 1.00);
-    box-shadow: inset 0 0 0.5em 0 rgba(37, 160, 245, 1.00), 0 0 0.5em 0 rgba(37, 160, 245, 1.00);
+    text-shadow: 0 0 0.125em rgba(255, 255, 255, 0.5), 0 0 0.45em var(--clr-blue);
+    box-shadow: inset 0 0 0.5em 0 var(--clr-blue), 0 0 0.5em 0 var(--clr-blue);
     position: relative;
     height: 3rem;
   }
@@ -246,21 +240,13 @@
   padding-top: 8px;
   
   p {
-    color: #FFF;
+    color: var(--clr-white);
     overflow: auto;
   }
 }
 
 .hide {
   display: none;
-}
-
-// footer 
-#checkout-footer {
-  bottom: 0;
-  position: fixed;
-  width: 100vw;
-  box-shadow: none;
 }
 
 // full description javascript
@@ -272,5 +258,5 @@
 }
 
 #see-more {
-  color: rgba(254, 103, 87, 1.00);
+  color: var(--clr-orange);
 }

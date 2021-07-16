@@ -1,48 +1,20 @@
-// // icon color
-// .fas {
-//   color: white;
-// }
-
-// // go button
-// // .go-btn {
-// //   border-color: var(--clr-text);
-// //   border-radius: 16px;
-// //   border-style: solid;
-// //   border-width: var(--border-width);
-// //   color: var(--clr-text);
-// //   font-family: var(--ff-primary);
-// //   font-size: var(--f-size-header);
-// //   // left: 0;
-// //   // margin-left: auto;
-// //   // margin-right: auto;
-// //   position: absolute;
-// //   // right: 0;
-// //   text-align: center;
-// //   // top: 150%;
-// // }
-
-// remove default form styling
 input {
-  border-top-style: hidden;
-  border-right-style: hidden;
-  border-left-style: hidden;
-  border-bottom-style: hidden;
-  background-color: white;
+  background-color: var(--clr-white);
   border-radius: 32px;
-  height: 60px;
-  padding-left: 24px;
-  color: black; 
-  font-family: 'Source Sans Pro', sans-serif;
+  border-style: hidden;
+  color: var(--clr-black); 
+  font-family: var(--ff-primary);
   font-size: 20px;
+  height: 60px;
   opacity: 1;
   padding-bottom: 4px;
+  padding-left: 24px;
 }
 
-// location pin positioning
-#pin {
-  background-color: rgba(255, 222, 2, 1.00);
-  color: black;
+#locate-button {
+  background-color: var(--clr-yellow);
   border-radius: 50%;
+  color: var(--clr-black);
   height: 60px;
   margin-right: 8px;
   padding-top: 12px;
@@ -51,23 +23,19 @@ input {
 
   .fas {
     font-size: 32px;
-    color: black;
+    color: var(--clr-black);
   }
 }
 
-.search-container {
-  display: flex;
-  justify-content: center;
-}
-
 ::placeholder {
-  color: black; 
-  font-family: 'Source Sans Pro', sans-serif;
+  color: var(--clr-black); 
+  font-family: var(--ff-primary);
   font-size: 20px;
   opacity: 1;
 }
 
-#query:focus {
+#query:focus,
+#search:focus {
   outline: none;
 }
 
@@ -76,7 +44,6 @@ input {
   width: 225px;
 }
 
-// // position search form
 #search-bar {
   left: 0;
   margin-left: auto;
@@ -86,29 +53,6 @@ input {
   right: 0;
 }
 
-// .search-container {
-//   align-items: center;
-//   background-color: #B16F9E;
-//   border-color: white;
-//   border-radius: 16px;
-//   border-style: solid;
-//   display: flex;
-//   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
-//   height: 2em;
-//   width: min(90vw);
- 
-//   i {
-//     color: black;
-//     padding-left: 8px;
-//     padding-right: 4px;
-//   }
-// }
-
-#search:focus {
-  outline: none;
-}
-
-// Remove styling from input
 input[type=text]::-ms-clear {  display: none; width : 0; height: 0; }
 input[type=text]::-ms-reveal {  display: none; width : 0; height: 0; }
 input[type="search"]::-webkit-search-decoration,

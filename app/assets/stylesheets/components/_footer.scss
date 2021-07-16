@@ -1,19 +1,17 @@
-.footer {
+#footer {
   align-items: center;
-  background-color: black;
-  display: flex;
+  background-color: var(--clr-black);
   height: calc(var(--vh, 1vh) * 7);
-  justify-content: space-around;
   max-width: 100%;
   width: 100vw;
 
-  a {
-    color: rgba(254, 103, 87, 1.00);
-    font-size: 1.3em;
-    margin-top: 4px;
+  a,
+  i {
+    color: var(--clr-orange);
   }
   
-  i {
-    color: rgba(254, 103, 87, 1.00);
+  a {
+    font-size: 1.3em;
+    margin-top: 4px;
   }
 }

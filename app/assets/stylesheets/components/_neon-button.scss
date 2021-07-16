@@ -1,0 +1,68 @@
+.neon-button {
+  background-color: transparent;
+  border: var(--clr-blue) 0.125em solid;
+  border-radius: 0.25em;
+  box-shadow: inset 0 0 0.5em 0 var(--clr-blue), 0 0 0.5em 0 var(--clr-blue);
+  color: var(--clr-blue);
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1rem;
+  height: 3rem;
+  padding: .25em 1.25em;
+  position: relative;
+  text-decoration: none;
+  text-shadow: 0 0 0.125em rgba(255, 255, 255, 0.5), 0 0 0.45em var(--clr-blue);
+  text-transform: uppercase;
+
+  a {
+    color: var(--clr-blue);
+    text-decoration: none;
+  }
+}
+
+.neon-button::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  background: var(--clr-blue);
+  top: 80%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1.2em);
+  opacity: 0.7;
+}
+
+.neon-button::after {
+  background: var(--clr-blue);
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 12em 0.5em var(--clr-blue);
+  opacity: 0;
+  transition: opacity 100ms linear;
+  z-index: -1;
+}
+
+.pulse {
+    transform: translate (-50%, -50%) scale (.9);
+    animation: pulse 1s linear infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 2.5px rgba(37, 160, 245, 0.5);
+    }
+    50% {
+      box-shadow: 0 0 0 6px rgba(37, 160, 245, 0);
+    }
+    100% {
+      box-shadow: 0 0 2.5px rgba(37, 160, 245, 0.5);
+    }
+  }

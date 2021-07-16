@@ -1,10 +1,3 @@
-#page-container-checkout {
-  background-image: linear-gradient(to left bottom, #ffdb56, #ffb54b, #ff904d, #ff6a56, #fa4f60, #f1326c, #e20a7a, #c90082, #ad0088, #8e018c, #6b118d);  
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
 #back-arrow {
   margin-top: 8px;
   position: fixed;
@@ -12,11 +5,12 @@
   z-index: 1;
 }
 
-#checkout-footer {
-  margin-top: auto;
+#checkout-container {
+  background-image: linear-gradient(to left bottom, var(--clr-gradient));  
+  min-height: 100vh;
 }
 
-#checkout-content {
+#checkout-info {
   align-items: center;
   justify-content: space-around;
   height: 100%;
@@ -42,14 +36,13 @@
   border-radius: 6px;
   display: flex;
   filter: drop-shadow(0 15px 1rem rgba(15, 15, 15, 0.65));
-  background: radial-gradient(circle at top, rgba(61, 50, 76, 1.00), black, black, black 100%);
+  background: radial-gradient(circle at top, var(--clr-purple), var(--clr-black), var(--clr-black), var(--clr-black) 100%);
   width: 90vw;
   height: 60%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 30%;
   margin-bottom: auto;
-
   position: absolute;
   left: 0;
   right: 0;
@@ -58,30 +51,31 @@
   text-align: center;
 
   img {
-    background-color: white;
+    background-color: var(--clr-white);
     border-radius: 6px;
     height: 110px;
     width: 190px;
   }
 
-  h1 {
-    color: white;
-    font-family: 'Oswald', sans-serif;
-    font-size: 24px;
+  h1,
+  p {
+    color: var(--clr-white);
+    font-family: var(--ff-header);
     text-transform: uppercase;
+  }
+
+  h1 {
+    font-size: 24px;
     padding-top: 10px;
   }
 
   p {
-    color: white;
-    font-family: 'Oswald', sans-serif;
     font-size: 16px;
-    text-transform: uppercase;
     margin-top: 16px;
   }
 
   .fas {
-    color: rgba(61, 50, 76, 1.00);
+    color: var(--clr-purple);
     font-size: 36px;
     margin-left: 8px;
     align-items: flex-start;
