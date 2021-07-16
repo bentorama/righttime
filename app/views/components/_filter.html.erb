@@ -34,11 +34,13 @@
       </button>
     </div>
   </div>
-  <div class="surprise-button-container">
+  <div id="button-position">
     <%= link_to event_path(@rand_event) do %>
-      <button class="surprise-button" type="button">
+      <button class="random-event-button" type="button">
         <i class="fas fa-dice"></i>
       </button>
     <% end %> 
   </div>
 </div>
+
+<%= javascript_pack_tag 'toggle' %>
