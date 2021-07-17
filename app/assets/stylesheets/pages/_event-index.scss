@@ -20,32 +20,16 @@
   top: 10%;
 }
 
-#venue {
+#card-header {
   p {
     color: var(--clr-white);
     font-family: var(--ff-header);
     font-size: 24px;
-    margin-left: 8px;
-    margin-top: -4px;
-    max-width: 170px;
+    max-width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
     text-transform: uppercase;
     white-space: nowrap;
-  }
-}
-
-.venue-details {
-  margin-left: 8px;
-  margin-top: -6px;
-
-  .fas {
-    font-size: 18px;
-    margin-right: -8px;
-  }
-
-  .p {
-    font-size: 30px;
   }
 }
 
@@ -57,8 +41,9 @@
   height: calc(var(--vh, 1vh) * 25);
   margin-bottom: 8px;
   margin-left: 2vw;
+  margin-top: -8px;
   position: relative;
-  width: 96vw;
+  width: 100%;
   z-index: 99999;
 
   a {
@@ -75,14 +60,11 @@
     color: var(--clr-white);
     font-family: var(--ff-header);
     font-size: 40px;
-    margin-left: 8px;
-    margin-top: -70px;
     text-transform: uppercase;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    max-width: 145px;
-    padding-bottom: 4px;
+    max-width: 170px;
   }
 
   img {
@@ -104,19 +86,8 @@
     font-size: 16px;
   }
 
-  .far,
-  .fas {
-    margin: 0;
-    padding-right: 8px;
-    padding-top: 8px;
-  }
-
   .fas {
     color: var(--clr-orange);
-  }
-
-  #heart {
-    width: 100%;
   }
 }
 
@@ -131,6 +102,7 @@
 }
 
 .event-price {
+  justify-content: center;
   background-color: var(--clr-black);
   bottom: 0px;
   border: 3px solid var(--clr-orange);
@@ -140,26 +112,29 @@
   margin-bottom: 8px;
   margin-left: 8px;
   max-width: 100%;
-  padding: 7px 10px;
+  padding: 5px 10px;
   position: absolute;
-}
-
-.event-time {
-  margin-bottom: 4px;
-  margin-left: 8px;
 }
 
 .event-info {
   background-color: transparent;
   justify-content: space-between;
-  width: 200px;
+  padding-left: 8px;
+  height: calc(var(--vh, 1vh) * 25);
+  overflow: hidden;
 
   a {
     color: var(--clr-white);
   }
+
+  .fas {
+    font-size: 18px;
+  }
 }
 
-#index-heart {
+#heart {
   color: var(--clr-red);
   font-size: 24px;
+  padding-top: 8px;
+  padding-right: 8px;
 }
