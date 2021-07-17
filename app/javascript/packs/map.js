@@ -107,13 +107,20 @@ const initMapbox = () => {
   const music = document.getElementById("music")
   const show = document.getElementById("show")
   const buttons = [hot, food, drink, music, show];
+  console.log(buttons);
 
   const toggleButtons = (event) => {
     if (event.currentTarget.classList.contains("filter-button-active")) {
+      console.log(event.currentTarget.classList);
+      console.log("int the if");
       event.currentTarget.classList.remove("filter-button-active");
     } else {
+      console.log(event.currentTarget.classList);
+      console.log("in the else");
       buttons.forEach((button) => {
+        console.log(button);
         button.classList.remove("filter-button-active");
+        // button.classList.add("filter-button");
       });
       event.currentTarget.classList.add("filter-button-active");
     };
@@ -139,22 +146,22 @@ const initMapbox = () => {
       var button = "Hot";
       removeMarkers(map, markers, button);
     });
-    food.addEventListener("click", () => {
+    food.addEventListener("click", (event) => {
       toggleButtons(event);
       var button = "Food";
       removeMarkers(map, markers, button);
     });
-    drink.addEventListener("click", () => {
+    drink.addEventListener("click", (event) => {
       toggleButtons(event);
       var button = "Drink";
       removeMarkers(map, markers, button);
     });
-    music.addEventListener("click", () => {
+    music.addEventListener("click", (event) => {
       toggleButtons(event);
       var button = "Music";
       removeMarkers(map, markers, button);
     });
-    show.addEventListener("click", () => {
+    show.addEventListener("click", (event) => {
       toggleButtons(event);
       var button = "Show";
       removeMarkers(map, markers, button);

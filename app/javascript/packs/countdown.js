@@ -16,10 +16,17 @@
 
 
 const getTimeRemaining = (endtime) => {
-  const total = Date.parse(endtime) - Date.parse(new Date());
-  const seconds = Math.floor((total / 1000) % 60);
-  const minutes = Math.floor((total / 1000 / 60) % 60);
-  const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+  console.log(endtime);
+  const end = new Date(endtime);
+  console.log(end);
+  const timeNow = new Date();
+  const endSecs = (end.getHours() - 1) * 3600 + end.getMinutes() * 60 + end.getSeconds();
+  const nowSecs = timeNow.getHours() * 3600 + timeNow.getMinutes() * 60 + timeNow.getSeconds();
+  // const total = Date.parse(endtime) - Date.parse(new Date());
+  const total = endSecs - nowSecs;
+  const seconds = Math.floor(total % 60);
+  const minutes = Math.floor((total / 60) % 60);
+  const hours = Math.floor((total / (60 * 60)) % 24);
   // const days = Math.floor(total / (1000 * 60 * 60 * 24));
 
   return {

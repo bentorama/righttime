@@ -65,7 +65,7 @@ class EventsController < ApplicationController
     @events = []
     Venue.near(location, 1).each do |venue|
       venue.events.each do |event|
-        if event.start_time < (Date.today + 1).midnight && event.start_time > Time.now
+        if event.start_time.hour > Time.now.hour
           @events << event
         end
       end
