@@ -28,14 +28,14 @@
                 <div id="card-header">
                   <h2><%= link_to event.name, event_path(event) %></h2>
                   <p>@ <%= event.venue.name %></p>
-                </div>
-                <div>
                   <span><%= "#{event.reviews.average(:venue_rating)}" %></span>  
                   <% if event.reviews.count > 0 %>
                     <% event.reviews.average(:venue_rating).round.times %>  
                     <i class="fas fa-star star"></i>
                   <% end %>
                   <span><%= "| #{event.category}" %></span>
+                </div>
+                <div>
                   <p>Starts at <% t = event.start_time %><%= t.strftime("%l:%M %P") %></p>
                 </div>
               </div>

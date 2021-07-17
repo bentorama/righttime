@@ -24,7 +24,7 @@
   p {
     color: var(--clr-white);
     font-family: var(--ff-header);
-    font-size: 24px;
+    font-size: 1.5rem;
     max-width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -59,7 +59,7 @@
   h2 {
     color: var(--clr-white);
     font-family: var(--ff-header);
-    font-size: 40px;
+    font-size: 2.5rem;
     text-transform: uppercase;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -83,7 +83,7 @@
   p {
     color: var(--clr-white);
     font-family: var(--ff-primary);
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   .fas {
@@ -108,7 +108,7 @@
   border: 3px solid var(--clr-orange);
   border-radius: 20px;
   filter: drop-shadow(1px 1px 8px var(--clr-black));
-  font-size: 16px;
+  font-size: 1rem;
   margin-bottom: 8px;
   margin-left: 8px;
   max-width: 100%;
@@ -128,13 +128,13 @@
   }
 
   .fas {
-    font-size: 18px;
+    font-size: 1rem;
   }
 }
 
 #heart {
   color: var(--clr-red);
-  font-size: 24px;
+  font-size: 1.5rem;
   padding-top: 8px;
   padding-right: 8px;
 }
