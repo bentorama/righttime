@@ -25,7 +25,7 @@
             <!-- event information and heart -->
             <div class="flex">
               <div class="event-info flex-col">
-                <div id="card-header">
+                <div id="event-card-details">
                   <h2><%= link_to event.name, event_path(event) %></h2>
                   <p>@ <%= event.venue.name %></p>
                   <span><%= "#{event.reviews.average(:venue_rating)}" %></span>  
