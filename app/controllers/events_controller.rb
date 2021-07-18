@@ -19,6 +19,8 @@ class EventsController < ApplicationController
     markers_and_center
     rand_event(@events)
     price_counter(Event.all)
+
+    
   end
 
   def show
