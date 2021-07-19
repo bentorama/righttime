@@ -111,16 +111,11 @@ const initMapbox = () => {
 
   const toggleButtons = (event) => {
     if (event.currentTarget.classList.contains("filter-button-active")) {
-      console.log(event.currentTarget.classList);
-      console.log("int the if");
       event.currentTarget.classList.remove("filter-button-active");
-    } else {
-      console.log(event.currentTarget.classList);
-      console.log("in the else");
+    } else {   
       buttons.forEach((button) => {
         console.log(button);
         button.classList.remove("filter-button-active");
-        // button.classList.add("filter-button");
       });
       event.currentTarget.classList.add("filter-button-active");
     };
