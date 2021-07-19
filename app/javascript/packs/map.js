@@ -107,7 +107,6 @@ const initMapbox = () => {
   const music = document.getElementById("music")
   const show = document.getElementById("show")
   const buttons = [hot, food, drink, music, show];
-  console.log(buttons);
 
   const toggleButtons = (event) => {
     if (event.currentTarget.classList.contains("filter-button-active")) {
