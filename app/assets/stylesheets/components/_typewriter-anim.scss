@@ -1,15 +1,15 @@
-.typewriter h2 {
-  color: var(--clr-text);
-  font-size: var(--f-size-header);
-  margin-left: 2px;
-  margin-top: -8px;
+.typewriter-container {
+  display: inline-block;
+}
+
+.typewriter {
   overflow: hidden;
-  border-right: .15em solid var(--clr-logo);
+  border-right: .15em solid var(--clr-white);
   white-space: nowrap;
   animation: 
     typing 8s steps(40, end),
-    blink-caret .75s step-end infinite;
-    animation-iteration-count: infinite;
+    blink-caret 1s step-end infinite;
+    // animation-iteration-count: infinite;
 }
 
 @keyframes typing {
@@ -18,11 +18,11 @@
   }
 
   50% {
-    width: 83%;
+    width: 50%;
   }
 
   100% {
-    width: 83%;
+    width: 100%;
   }
 }
 
