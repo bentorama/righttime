@@ -1,3 +1,14 @@
+// card carousel position and configuration
+.card-container {
+  align-items: center;
+  display: flex;
+  height: calc(var(--vh, 1vh) * 28);
+  overflow-x: scroll;
+  overflow-y: hidden;
+  position: sticky; top: calc(var(--vh, 1vh) * 64.9);
+  z-index: 99999;
+}
+
 // map positioning and configuration
 #map {
   position: relative;

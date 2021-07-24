@@ -1,32 +1,3 @@
-#venue {
-  p {
-    color: var(--clr-white);
-    font-family: var(--ff-header);
-    font-size: 24px;
-    margin-left: 8px;
-    margin-top: -4px;
-    max-width: 170px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-transform: uppercase;
-    white-space: nowrap;
-  }
-}
-
-.venue-details {
-  margin-left: 8px;
-  margin-top: -6px;
-
-  .fas {
-    font-size: 18px;
-    margin-right: -8px;
-  }
-
-  .p {
-    font-size: 30px;
-  }
-}
-
 .event-card {
   background: radial-gradient(circle at top, var(--clr-purple), var(--clr-black), var(--clr-black), var(--clr-black) 200%);
   border-radius: 6px;
@@ -35,8 +6,9 @@
   height: calc(var(--vh, 1vh) * 25);
   margin-bottom: 8px;
   margin-left: 2vw;
+  margin-top: -8px;
   position: relative;
-  width: 96vw;
+  width: 100%;
   z-index: 99999;
 
   a {
@@ -52,21 +24,18 @@
   h2 {
     color: var(--clr-white);
     font-family: var(--ff-header);
-    font-size: 40px;
-    margin-left: 8px;
-    margin-top: -70px;
+    font-size: 2.5rem;
     text-transform: uppercase;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    max-width: 145px;
-    padding-bottom: 4px;
+    max-width: 170px;
   }
 
   img {
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
-    height: calc(var(--vh, 1vh) * 25);
+    height: 100%;
     object-fit: cover;
     width: 165px;
   }
@@ -79,33 +48,25 @@
   p {
     color: var(--clr-white);
     font-family: var(--ff-primary);
-    font-size: 16px;
-  }
-
-  .far,
-  .fas {
-    margin: 0;
-    padding-right: 8px;
-    padding-top: 8px;
+    font-size: 1rem;
   }
 
   .fas {
     color: var(--clr-orange);
   }
-
-  #heart {
-    width: 100%;
-  }
 }
 
-.card-container {
-  align-items: center;
-  display: flex;
-  height: calc(var(--vh, 1vh) * 28);
-  overflow-x: scroll;
-  overflow-y: hidden;
-  position: sticky; top: calc(var(--vh, 1vh) * 64.9);
-  z-index: 99999;
+#card-header {
+  p {
+    color: var(--clr-white);
+    font-family: var(--ff-header);
+    font-size: 1.5rem;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
 }
 
 .event-price {
@@ -114,30 +75,34 @@
   border: 3px solid var(--clr-orange);
   border-radius: 20px;
   filter: drop-shadow(1px 1px 8px var(--clr-black));
-  font-size: 16px;
+  font-size: 1rem;
+  justify-content: center;
   margin-bottom: 8px;
   margin-left: 8px;
   max-width: 100%;
-  padding: 7px 10px;
+  padding: 5px 10px;
   position: absolute;
-}
-
-.event-time {
-  margin-bottom: 4px;
-  margin-left: 8px;
 }
 
 .event-info {
   background-color: transparent;
   justify-content: space-between;
-  width: 200px;
+  padding-left: 8px;
+  height: calc(var(--vh, 1vh) * 25);
+  overflow: hidden;
 
   a {
     color: var(--clr-white);
   }
+
+  .fas {
+    font-size: 1rem;
+  }
 }
 
-#index-heart {
+#heart {
   color: var(--clr-red);
-  font-size: 24px;
+  font-size: 1.5rem;
+  padding-top: 8px;
+  padding-right: 8px;
 }

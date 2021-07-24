@@ -65,7 +65,7 @@ document.addEventListener('turbolinks:load', () => {
   });
 
   // heart toggle 
-  const indexHeart = document.querySelectorAll("#index-heart"); // hearts array
+  const indexHeart = document.querySelectorAll("#heart"); // hearts array
   indexHeart.forEach(toggleFavourite);
 
   function toggleFavourite(heart) {
