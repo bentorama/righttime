@@ -7,7 +7,8 @@
   background-image: linear-gradient(to left bottom, var(--clr-gradient));
   margin-bottom: 7vh;
   padding-top: 8px;
-  min-height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  width: 100%;
 }
 
 #saved-header {
@@ -20,68 +21,68 @@
   }
 }
 
-.favourite-card {
-  background: radial-gradient(circle at top, var(--clr-purple), var(--clr-black), var(--clr-black), var(--clr-black) 200%);
-  border-radius: 6px;
-  box-shadow: var(--clr-black) 0px 15px 30px -10px;
-  height: 25vh;
-  margin-bottom: 16px;
-  margin-left: 2vw;
-  position: relative;
-  width: 96vw;
+// .favourite-card {
+//   background: radial-gradient(circle at top, var(--clr-purple), var(--clr-black), var(--clr-black), var(--clr-black) 200%);
+//   border-radius: 6px;
+//   box-shadow: var(--clr-black) 0px 15px 30px -10px;
+//   height: 25vh;
+//   margin-bottom: 16px;
+//   margin-left: 2vw;
+//   position: relative;
+//   width: 96vw;
 
-  h2 {
-    color: var(--clr-white);
-    font-family: var(--ff-header);
-    font-size: 40px;
-    margin-left: 8px;
-    margin-top: -120px;
-    text-transform: uppercase;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    max-width: 145px;
-  }
+  // h2 {
+  //   color: var(--clr-white);
+  //   font-family: var(--ff-header);
+  //   font-size: 40px;
+  //   margin-left: 8px;
+  //   margin-top: -120px;
+  //   text-transform: uppercase;
+  //   overflow: hidden;
+  //   text-overflow: ellipsis;
+  //   white-space: nowrap;
+  //   max-width: 145px;
+  // }
 
-  img {
-    border-top-left-radius: 6px;
-    border-bottom-left-radius: 6px;
-    height: 25vh;
-    object-fit: cover;
-    width: 165px;
-  }
+  // img {
+  //   border-top-left-radius: 6px;
+  //   border-bottom-left-radius: 6px;
+  //   height: 25vh;
+  //   object-fit: cover;
+  //   width: 165px;
+  // }
 
-  p,
-  span {
-    color: var(--clr-white);
-    font-family: var(--ff-primary);
-    font-size: 16px;
-    padding-bottom: 6px;
-  }
+  // p,
+  // span {
+  //   color: var(--clr-white);
+  //   font-family: var(--ff-primary);
+  //   font-size: 16px;
+  //   padding-bottom: 6px;
+  // }
 
-  .event-time {
-    margin-top: 30px;
-  }
+  // .event-time {
+  //   margin-top: 30px;
+  // }
 
-  .fas {
-    color: var(--clr-orange);
-  }
+  // .fas {
+  //   color: var(--clr-orange);
+  // }
 
-  #heart {
-    padding-right: 8px;
-    padding-top: 8px;
-  }
+  // #heart {
+  //   padding-right: 8px;
+  //   padding-top: 8px;
+  // }
 
-  #icon-heart {
-    color: red;
-    font-size: 24px;
-  }
+  // #icon-heart {
+  //   color: red;
+  //   font-size: 24px;
+  // }
 
-  .venue-details {
-    margin-top: -8px;
+  // .venue-details {
+  //   margin-top: -8px;
 
-    .fas {
-      padding-right: 6px;
-    }
-  }
-}
+  //   .fas {
+  //     padding-right: 6px;
+  //   }
+  // }
+// }
