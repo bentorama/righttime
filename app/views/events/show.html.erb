@@ -49,7 +49,6 @@
         <% if @event.reviews.count > 0 %>
           <% @event.reviews.average(:venue_rating).round.times %>  
             <i class="fas fa-star star"></i>
-        
           <span><%= "| #{@event.category}" %></span>
         <% else %>
           <span><%="No reviews| #{@event.category}" %></span>
