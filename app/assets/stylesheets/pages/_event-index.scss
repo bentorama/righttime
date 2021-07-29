@@ -5,8 +5,9 @@
   height: calc(var(--vh, 1vh) * 28);
   overflow-x: scroll;
   overflow-y: hidden;
-  position: sticky; top: calc(var(--vh, 1vh) * 64.9);
+  position: sticky; top: calc(var(--vh, 1vh) * 70);
   z-index: 99999;
+  margin-bottom: -12px;
 }
 
 // map positioning and configuration
