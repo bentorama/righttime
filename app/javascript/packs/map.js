@@ -113,7 +113,7 @@ const initMapbox = () => {
       event.currentTarget.classList.remove("filter-button-active");
     } else {   
       buttons.forEach((button) => {
-        console.log(button);
+        // console.log(button);
         button.classList.remove("filter-button-active");
       });
       event.currentTarget.classList.add("filter-button-active");
