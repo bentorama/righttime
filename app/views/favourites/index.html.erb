@@ -21,9 +21,10 @@
         <% end %>
         <div class="flex">
           <div class="event-info flex-col">
-            <div class="card-header">
+            <div class="favourite-card-header">
               <h2><%= link_to favourite.event.name, event_path(favourite.event) %></h2>
               <p>@ <%= favourite.event.venue.name %></p>
+              <div id="position">
               <span><%= "#{favourite.event.reviews.average(:venue_rating)}" %></span>
               <% if favourite.event.reviews.count > 0 %>
                 <% favourite.event.reviews.average(:venue_rating).round.times %>  
@@ -31,13 +32,14 @@
               <% end %>
               <span><%= " | #{favourite.event.category}" %></span>
             </div>
+            </div>
             <div>
                <p>Starts at <% t = favourite.event.start_time %><%= t.strftime("%l:%M %P") %></p>
             </div>
           </div>
-            <div id="heart">
+            <div id="favourite-heart">
               <%= link_to favourite_path(favourite), method: :delete, remote: true do %>
-                <i id="heart" class="fas fa-heart"></i>
+                <i id="favourite-heart" class="fas fa-heart"></i>
               <% end %>
             </div>
           </div>
