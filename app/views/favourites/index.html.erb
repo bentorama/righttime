@@ -10,7 +10,7 @@
   <div class="flex-col-center">
   <% @favourites.each do |favourite| %>
     <% if favourite.event.start_time > Time.now %>
-      <div class="event-card">
+      <div class="favourite-card">
         <% if favourite.event.current_price == favourite.event.starting_price %>  
           <p class="event-price">£<%= favourite.event.price %></p>
         <% else %>

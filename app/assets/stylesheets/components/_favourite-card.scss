@@ -1,0 +1,65 @@
+.favourite-card {
+  background: radial-gradient(circle at top, var(--clr-purple), var(--clr-black), var(--clr-black), var(--clr-black) 200%);
+  border-radius: 6px;
+  filter: drop-shadow(0px 2px 4px #333);
+  display: flex;
+  width: 100%;
+
+  a {
+    color: var(--clr-white);
+    text-decoration: none;
+  }
+
+  button {
+    margin: 0;
+    padding: 0;
+  }
+
+  h2 {
+    color: var(--clr-white);
+    font-family: var(--ff-header);
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 170px;
+  }
+
+  img {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    height: 100%;
+    object-fit: cover;
+    width: 165px;
+  }
+
+  p {
+    padding-bottom: 6px;
+  }
+
+  span,
+  p {
+    color: var(--clr-white);
+    font-family: var(--ff-primary);
+    font-size: 1rem;
+  }
+
+  .fas {
+    color: var(--clr-orange);
+  }
+}
+
+// effects width of card
+.card-header {
+  p {
+    color: var(--clr-white);
+    font-family: var(--ff-header);
+    font-size: 1.5rem;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+}
