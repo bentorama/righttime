@@ -32,12 +32,12 @@ class FavouritesController < ApplicationController
     @favourite = Favourite.find(params[:id])
     @favourite.destroy
     redirect_to events_path
+    authorize @favourite
   end
 
   private
 
   def set_favourite
     @favourite = Favourite.find(params[:id])
-    
   end
 end

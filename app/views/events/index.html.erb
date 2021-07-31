@@ -39,7 +39,7 @@
               </div>
               <div>
                 <% if user_signed_in? %>
-                  <% if current_user.is_favourite_event?(event.id) %>
+                  <% if current_user.is_favourite_event?(event.id)%>
                     <%= link_to favourite_path(event.favourites.find_by(user_id: current_user.id)), :method => :delete do %>
                       <i class="fas fa-heart" id="heart"></i>
                     <% end %>
