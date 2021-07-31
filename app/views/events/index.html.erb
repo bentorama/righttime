@@ -1,74 +1,67 @@
 <div id="page-container-index">
-  <div>
-    <!-- map viewport -->  
-    <!-- map dimensions -->
-    <div id="map" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" data-center="<%= @center.to_json %>"> 
-      <div id="filter-buttons" class="flex-reverse">  
-        <%= render "components/filter" %>
-      </div>
-      
-    <!-- event cards -->
+  <!-- map viewport -->  
+  <!-- map dimensions -->
+  <div id="map" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" data-center="<%= @center.to_json %>"> 
+    <div id="filter-buttons" class="flex-reverse">  
+      <%= render "components/filter" %>
+    </div>
     
+    <!-- event cards -->
     <div class="card-container" id="scrolling-container">
       <% @events.each do |event| %>
         <% if event.start_time.hour > Time.now.hour %>
           <div class="event-card" id="id-<%=event.id%>">
-            <!-- event card image -->
-            <div class="flex-start">
+            <!-- event card image and price -->
               <% if event.current_price == event.starting_price %>  
-                <p class="event-price">£<%= event.price %></p>
+                <p class="event-price flex-col">£<%= event.price %></p>
               <% else %>
-                <p class="event-price">Reduced to £<%= event.price%></p>
+                <p class="event-price flex-col">Reduced to £<%= event.price%></p>
               <% end %>
-            
               <%= link_to event_path(event) do %>
                 <%= image_tag(event.photos.first) %>
               <% end %>
-            </div>
-            <div class="event-info flex-col">
-              <div id="heart" class="flex-reverse">
+                 <!-- event information and heart -->
+            <div class="flex">
+              <div class="event-info flex-col">
+                <div id="card-header">
+                  <h2><%= link_to event.name, event_path(event) %></h2>
+                  <p>@ <%= event.venue.name %></p>
+                  <span><%= "#{event.reviews.average(:venue_rating)}" %></span>  
+                  <% if event.reviews.count > 0 %>
+                    <% event.reviews.average(:venue_rating).round.times %>  
+                    <i class="fas fa-star star"></i>
+                  <% end %>
+                  <span><%= "| #{event.category}" %></span>
+                </div>
+                <div>
+                  <p>Starts at <% t = event.start_time %><%= t.strftime("%l:%M %P") %></p>
+                </div>
+              </div>
+              <div>
                 <% if user_signed_in? %>
                   <% if current_user.is_favourite_event?(event.id) %>
                     <%= link_to favourite_path(event.favourites.find_by(user_id: current_user.id)), :method => :delete do %>
-                      <i class="fas fa-heart" id="index-heart"></i>
+                      <i class="fas fa-heart" id="heart"></i>
                     <% end %>
                   <% else %>
                     <%= simple_form_for([ event, Favourite.new ]) do |f|  %>
                       <%= button_tag type: 'submit' do %>
-                        <i class="far fa-heart" id="index-heart"></i>
+                        <i class="far fa-heart" id="heart"></i>
                       <% end %>
                     <% end %>
                   <% end %>
                 <% else %>
-                  <i class="far fa-heart" id="index-heart"></i>
+                  <i class="far fa-heart" id="heart"></i>
                 <% end %>
-              </div>
-              <div class="event-details">
-                <h2><%= link_to event.name, event_path(event) %></h2>
-                <div id="venue">
-                  <p>@ <%= event.venue.name %></p>
-                </div>
-                <div class="venue-details">
-                <span><%= "#{event.reviews.average(:venue_rating)}" %></span>  
-                <% if event.reviews.count > 0 %>
-                  <% event.reviews.average(:venue_rating).round.times %>  
-                  <i class="fas fa-star star"></i>
-                <% end %>
-                <span><%= "| #{event.category}" %></span>
-              </div>
-              </div>
-              <div class="event-time">
-                <p>Starts at <% t = event.start_time %><%= t.strftime("%l:%M %P") %></p>
               </div>
             </div>
           </div>
         <% end %>
       <% end %>
     </div>
-     </div>
   </div>
-
   <div id="checkout-footer">
     <%= render "components/footer" %>
   </div>
 </div>
+<%= javascript_pack_tag 'screen' %>

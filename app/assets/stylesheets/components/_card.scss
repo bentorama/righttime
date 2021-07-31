@@ -1,0 +1,108 @@
+.event-card {
+  background: radial-gradient(circle at top, var(--clr-purple), var(--clr-black), var(--clr-black), var(--clr-black) 200%);
+  border-radius: 6px;
+  filter: drop-shadow(0px 2px 4px #333);
+  display: flex;
+  height: calc(var(--vh, 1vh) * 23);
+  margin-bottom: 8px;
+  margin-left: 2vw;
+  margin-top: -8px;
+  position: relative;
+  width: fit-content;
+  z-index: 99999;
+
+  a {
+    color: var(--clr-white);
+    text-decoration: none;
+  }
+
+  button {
+    margin: 0;
+    padding: 0;
+  }
+
+  h2 {
+    color: var(--clr-white);
+    font-family: var(--ff-header);
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 170px;
+  }
+
+  img {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    height: 100%;
+    object-fit: cover;
+    width: 165px;
+  }
+
+  p {
+    padding-bottom: 6px;
+  }
+
+  span,
+  p {
+    color: var(--clr-white);
+    font-family: var(--ff-primary);
+    font-size: 1rem;
+  }
+
+  .fas {
+    color: var(--clr-orange);
+  }
+}
+
+#card-header {
+  p {
+    color: var(--clr-white);
+    font-family: var(--ff-header);
+    font-size: 1.5rem;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+}
+
+.event-price {
+  background-color: var(--clr-black);
+  bottom: 0px;
+  border: 3px solid var(--clr-orange);
+  border-radius: 20px;
+  filter: drop-shadow(1px 1px 8px var(--clr-black));
+  font-size: 1rem;
+  justify-content: center;
+  margin-bottom: 8px;
+  margin-left: 8px;
+  max-width: 100%;
+  padding: 5px 10px;
+  position: absolute;
+}
+
+.event-info {
+  background-color: transparent;
+  justify-content: space-between;
+  padding-left: 8px;
+  height: calc(var(--vh, 1vh) * 23);
+  overflow: hidden;
+
+  a {
+    color: var(--clr-white);
+  }
+
+  .fas {
+    font-size: 1rem;
+  }
+}
+
+#heart {
+  color: var(--clr-red);
+  font-size: 1.5rem;
+  padding-top: 8px;
+  padding-right: 8px;
+}
