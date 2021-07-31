@@ -29,6 +29,7 @@ gem 'image_processing', '~> 1.2'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'devise'
+gem 'pundit'
 
 gem 'faker'
 gem 'cloudinary', '~> 1.16.0'
