@@ -19,8 +19,7 @@ class EventsController < ApplicationController
     markers_and_center
     rand_event(@events)
     price_counter(Event.all)
-
-    
+    @events = policy_scope(Event)
   end
 
   def show
@@ -61,6 +60,7 @@ class EventsController < ApplicationController
 
   def set_event
     @event = Event.find(params[:id])
+    authorize @event
   end
 
   def find_near_events(location)

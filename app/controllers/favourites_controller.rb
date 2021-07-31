@@ -3,10 +3,12 @@ class FavouritesController < ApplicationController
 
   def index
     @favourites = Favourite.all
+    @favourites = policy_scope(Favourite)
   end
 
   def new
     @event = Event.find(params[:event_id])
+    authorize @favourite
   end
 
   def create
@@ -23,6 +25,7 @@ class FavouritesController < ApplicationController
     #   flash[:alert] = "didn't save!"
     #   render 'new'
     # end
+    authorize @favourite
   end
 
   def destroy
@@ -35,5 +38,6 @@ class FavouritesController < ApplicationController
 
   def set_favourite
     @favourite = Favourite.find(params[:id])
+    
   end
 end

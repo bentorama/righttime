@@ -1,4 +1,4 @@
-class VenuePolicy < ApplicationPolicy
+class OrderPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
@@ -9,7 +9,11 @@ class VenuePolicy < ApplicationPolicy
     true
   end
 
-  def update?
-    user == record.user
+  def show?
+    true
+  end
+
+  def my_bookings?
+    true
   end
 end

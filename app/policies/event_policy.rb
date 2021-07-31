@@ -1,15 +1,15 @@
-class VenuePolicy < ApplicationPolicy
+class EventPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
     end
   end
 
-  def create?
+  def show?
     true
   end
 
-  def update?
-    user == record.user
+  def create?
+    true
   end
 end
