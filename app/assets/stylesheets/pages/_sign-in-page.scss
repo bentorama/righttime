@@ -6,26 +6,28 @@
   position: absolute;
 
   a {
-    color: rgba(37, 160, 245, 1.00);
+    color: var(--clr-blue);
   }
 }
 
 #remember-me {
+  .form-check {
+    display: flex;
+    align-items: center;
+    padding-top: -8px;
+  }
+
   .form-check-input {
-    margin-left: -14px;
-    margin-top: 10px;
-    margin-right: 8px;
+    // margin-left: -14px;
+    margin-top: 0;
+    margin-right: 6px;
     position: static;
   }
 
   label {
-    color: white;
+    color: var(--clr-white);
     font-family: var(--ff-primary);
     font-size: 0.8em;
-  }
-
-  input {
-    margin: 0;
   }
 }
 
@@ -66,7 +68,8 @@
 
   a {
     padding-top: 9px;
-    width: fit-content;
+    text-decoration: none;
+    // width: fit-content;
   }
 }
 
