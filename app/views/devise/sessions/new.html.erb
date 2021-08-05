@@ -1,18 +1,20 @@
 <div id="sign-in-container" class="flex-col">
-  <div id="sign-in-window">
+  <div id="sign-in-window" class="flex-col-center">
     <h1>RIGHTTIME</h1>
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <%= f.input :email,
-                    label: false, 
-                    placeholder: 'Email',
-                    required: false,
-                    autofocus: true,
-                    input_html: { autocomplete: "email" } %>
-        <%= f.input :password,
-                    label: false,
-                    placeholder: 'Password',
-                    required: false,
-                    input_html: { autocomplete: "current-password" } %>
+        <div id="sign-in-form">
+          <%= f.input :email,
+                      label: false, 
+                      placeholder: 'Email',
+                      required: false,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" } %>
+          <%= f.input :password,
+                      label: false,
+                      placeholder: 'Password',
+                      required: false,
+                      input_html: { autocomplete: "current-password" } %>
+        </div>
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
         <%= f.button :submit, "Log in", class: "neon-button" %>
     <% end %>
