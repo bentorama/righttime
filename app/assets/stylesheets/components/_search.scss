@@ -1,14 +1,16 @@
-input {
-  background-color: var(--clr-white);
-  border-radius: 32px;
-  border-style: hidden;
-  color: var(--clr-black); 
-  font-family: var(--ff-primary);
-  font-size: 20px;
-  height: 60px;
-  opacity: 1;
-  padding-bottom: 4px;
-  padding-left: 24px;
+#search-input {
+  input {
+    background-color: var(--clr-white);
+    border-radius: 32px;
+    border-style: hidden;
+    color: var(--clr-black); 
+    font-family: var(--ff-primary);
+    font-size: 20px;
+    height: 60px;
+    opacity: 1;
+    padding-bottom: 4px;
+    padding-left: 24px;
+  }
 }
 
 #locate-button {
