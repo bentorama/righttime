@@ -22,6 +22,13 @@
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
       </div>
     <% end %>
-    <%= render "devise/shared/links" %>
+    <div>
+      <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+        <%= link_to "Sign Up", new_registration_path(resource_name), :class => "neon-button" %>
+      <% end %>
+    </div>
+    <div id="forgot-password">
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
 </div>
