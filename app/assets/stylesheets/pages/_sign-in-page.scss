@@ -66,6 +66,11 @@
   bottom: 60px;
   position: absolute;
 
+  .neon-button {
+    box-shadow: none;
+    text-shadow: none;
+  }
+
   a {
     padding-top: 9px;
     text-decoration: none;
