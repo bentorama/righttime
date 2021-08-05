@@ -14,12 +14,16 @@
 }
 
 #sign-in-window {
-  background-color: black;
-  height: 90%;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+  height: 85%;
+  padding: 16px;
   width: 90%;
 
   h1 {
-    color: white;
+    color: var(--clr-white);
+    font-family: var(--ff-logo);
+    font-size: 3rem;
   }
 }
 
