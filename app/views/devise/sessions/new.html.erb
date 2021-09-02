@@ -1,8 +1,8 @@
-<div class="sign-in-container">
-  <h1>RIGHTTIME</h1>
-  <div class="form-container">
+<div id="sign-in-container" class="flex-col">
+  <div id="sign-in-window" class="flex-col-center">
+    <h1>RIGHTTIME</h1>
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="form-inputs">
+      <div id="sign-in-form">
         <%= f.input :email,
                     label: false, 
                     placeholder: 'Email',
@@ -15,11 +15,20 @@
                     required: false,
                     input_html: { autocomplete: "current-password" } %>
       </div>
-      <div class="form-actions">
+      <div id="remember-me">
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-        <%= f.button :submit, "Log in", class: "log-in-button" %>
+      </div>
+      <div class="flex-col-center">
+        <%= f.button :submit, "Log in", class: "neon-button pulse" %>
       </div>
     <% end %>
+    <div id="sign-up">
+      <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+        <%= link_to "Sign Up", new_registration_path(resource_name), :class => "neon-button" %>
+      <% end %>
+    </div>
+    <div id="forgot-password">
       <%= render "devise/shared/links" %>
+    </div>
   </div>
 </div>
