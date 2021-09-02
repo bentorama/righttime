@@ -56,7 +56,9 @@
   }
 }
 
-#card-header {
+.card-header {
+  padding: 0;
+  
   p {
     color: var(--clr-white);
     font-family: var(--ff-header);
