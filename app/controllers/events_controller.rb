@@ -3,6 +3,8 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show]
 
   def index
+    # sets default search to E2 8DY
+    params[:query] = "E2 8DY"
     if session[:location]
       find_near_events(session[:location])
     elsif params[:query].present? && params[:query] != ""
