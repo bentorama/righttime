@@ -5,7 +5,7 @@
   <div id="search-input">
     <%= form_tag events_path, method: :get, id: "search-form" do %>
       <%= hidden_field_tag 'hidden', params[:hidden], id: "hidden" %>
-      <%= text_field_tag :query, params[:query], placeholder: "Enter Postcode:", id: "search" %>
+      <%= text_field_tag :query, params[:query], placeholder: "Enter Postcode:", id: "search", autocomplete: "off" %>
     <% end %>
   </div>
 </div>

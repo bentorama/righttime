@@ -50,15 +50,15 @@ document.addEventListener('turbolinks:load', () => {
   const search = document.getElementById("search");
 
   // current location pin 
-  if (currentLocation) {
-    currentLocation.addEventListener("click", (event) => {
-      event.preventDefault();
-      navigator.geolocation.getCurrentPosition((data) => {
-      hiddenSearch.value = [data.coords.latitude, data.coords.longitude];
-      document.getElementById("search-form").submit();
-      });
-    });
-  };
+  // if (currentLocation) {
+  //   currentLocation.addEventListener("click", (event) => {
+  //     event.preventDefault();
+  //     navigator.geolocation.getCurrentPosition((data) => {
+  //     hiddenSearch.value = [data.coords.latitude, data.coords.longitude];
+  //     document.getElementById("search-form").submit();
+  //     });
+  //   });
+  // };
 
   $(".carousel").carousel({
     interval: 2000

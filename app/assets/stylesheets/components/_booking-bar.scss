@@ -20,8 +20,9 @@
 .booking-bar-container {
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  height: 11vh;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 10vh;
   background-color: var(--clr-black);
   position: fixed;
   bottom: calc(var(--vh, 1vh) * 7);
@@ -47,6 +48,7 @@
 }
 
 #counter-Html {
+  padding-top: 2px;
   width: 22px;
   text-align: center;
 }
