@@ -1,17 +1,17 @@
-<div class="sign-in-container">
-  <h1>SIGNUP</h1>
-  <div class="form-container">
+<div class="sign-in-container flex-col">
+  <div class="sign-in-window flex-col-center">
+    <h1>SIGN UP</h1>
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
 
-      <div class="form-inputs">
+      <div class="sign-in-form sign-up-form">
         <%= f.input :first_name,
                     label: false,
-                    placeholder: "John", 
+                    placeholder: "First Name", 
                     autofocus: true %>
         <%= f.input :last_name,
                     label: false,
-                    placeholder: "Doe" %>
+                    placeholder: "Last Name" %>
         <%= f.input :email,
                     label: false, 
                     placeholder: 'Email',
@@ -28,12 +28,12 @@
                     placeholder: 'Confirm Password',
                     required: true,
                     input_html: { autocomplete: "new-password" } %>
-
-        <%= f.input :avatar, label: "Add profile picture" %>
+<!-- 
+        <%= f.input :avatar, label: "Add profile picture" %> -->
       </div>
 
-      <div class="form-actions">
-        <%= f.button :submit, "Submit", :class => "sign-up-btn" %>
+      <div class="flex-col-center submit-button">
+        <%= f.button :submit, "Submit", class: "neon-button" %>
       </div>
     <% end %>
   </div>
