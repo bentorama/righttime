@@ -4,7 +4,7 @@
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
 
-      <div class="sign-in-form">
+      <div class="sign-in-form sign-up-form">
         <%= f.input :first_name,
                     label: false,
                     placeholder: "First Name", 
@@ -28,12 +28,12 @@
                     placeholder: 'Confirm Password',
                     required: true,
                     input_html: { autocomplete: "new-password" } %>
-
-        <%= f.input :avatar, label: "Add profile picture" %>
+<!-- 
+        <%= f.input :avatar, label: "Add profile picture" %> -->
       </div>
 
-      <div class="form-actions neon-button sign-up-button">
-        <%= f.button :submit, "Submit" %>
+      <div class="flex-col-center submit-button">
+        <%= f.button :submit, "Submit", class: "neon-button" %>
       </div>
     <% end %>
   </div>
