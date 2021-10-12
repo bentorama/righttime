@@ -1,10 +1,10 @@
-<div class="sign-in-container">
-  <div class="sign-in-window">
-    <h1>RIGHTTIME</h1>
+<div class="sign-in-container flex-col">
+  <div class="sign-in-window flex-col-center">
+    <h1>SIGN UP</h1>
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
 
-      <div class="form-inputs">
+      <div class="sign-in-form">
         <%= f.input :first_name,
                     label: false,
                     placeholder: "First Name", 
@@ -32,8 +32,8 @@
         <%= f.input :avatar, label: "Add profile picture" %>
       </div>
 
-      <div class="form-actions neon-button">
-        <%= f.button :submit, "Submit", :class => "sign-up-btn" %>
+      <div class="form-actions neon-button sign-up-button">
+        <%= f.button :submit, "Submit" %>
       </div>
     <% end %>
   </div>
